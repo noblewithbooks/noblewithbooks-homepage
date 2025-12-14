@@ -88,15 +88,18 @@ body {
 
 /* HERO */
 .hero{
-  position: relative;
   width: 100%;
   border-radius: 18px;
   overflow: hidden;
   margin: 18px auto 24px;
+
+  /* 중요: 예전 배경 방식 흔적 완전 차단 */
+  background: none !important;
+  background-image: none !important;
 }
 
 .hero-img{
   display: block;
   width: 100%;
-  height: auto;      /* 핵심: 비율 유지 */
+  height: auto;
 }
