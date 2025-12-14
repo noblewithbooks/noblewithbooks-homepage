@@ -90,36 +90,13 @@ body {
 .hero{
   position: relative;
   width: 100%;
-  height: 56vh;
-  min-height: 420px;
-  max-height: 720px;
-
-background-image: url("asset/hero_nocrop.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
   border-radius: 18px;
   overflow: hidden;
   margin: 18px auto 24px;
 }
 
-.hero-overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.25) 0%,
-    rgba(0,0,0,0.10) 45%,
-    rgba(0,0,0,0.35) 100%
-  );
-}
-
-/* 기본 레이아웃이 없다면 최소한의 폭 제한(있으면 중복되니 생략 가능) */
-main, header, .hero{
-  max-width: 1100px;
-}
-.hero{
-  margin-left: auto;
-  margin-right: auto;
+.hero-img{
+  display: block;
+  width: 100%;
+  height: auto;      /* 핵심: 비율 유지 */
 }
