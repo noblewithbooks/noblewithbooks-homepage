@@ -1,22 +1,30 @@
 :root{
-  /* Green Flash — Dawn Sky (premium, bright) */
-  --bg: #F3F6FB;                /* 새벽 하늘 바탕 */
-  --text: #121826;              /* 차콜 텍스트 */
+  /* Green Flash — Pearl Mint (mint forward, white as highlight) */
+  --bg: #CFF2E2;
+              /* ✅ 민트 베이스를 확실히 */
+  --text: #121826;
   --muted: rgba(18,24,38,0.70);
   --line: rgba(18,24,38,0.14);
 
-  --panel: rgba(255,255,255,0.70);
+  --panel: rgba(255,255,255,0.68);
   --panel-strong: rgba(255,255,255,0.82);
 
   --shadow: 0 14px 38px rgba(2, 10, 20, 0.10);
   --shadow-soft: 0 10px 26px rgba(2, 10, 20, 0.08);
 
-  --mint: rgba(143,230,211,0.55);     /* 민트 헤이즈 */
-  --mint2: rgba(143,230,211,0.28);
+  /* ✅ 민트 광선 강하게(배경 지배) */
+  --mint: rgba(80, 220, 190, 0.62);
+  --mint2: rgba(80, 220, 190, 0.34);
+
+  /* ✅ 퍼플은 '반사광'만 */
+  --pearl-purple: rgba(205, 190, 255, 0.20);
+
+  /* ✅ 화이트는 하이라이트(너무 세면 싸보임) */
+  --pearl-white: rgba(255,255,255,0.42);
 }
 
-*{ box-sizing: border-box; }
 
+*{ box-sizing: border-box; }
 body{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
@@ -25,17 +33,28 @@ body{
   line-height: 1.6;
   color: var(--text);
 
-  /* 밝은 하늘 + 아주 옅은 민트 광선 */
+  /* ✅ mint forward: 강한 민트 바탕 + 펄 반사 */
   background:
-    radial-gradient(1200px 600px at 18% 0%, rgba(170,190,255,0.28), transparent 55%),
-    radial-gradient(900px 500px at 86% 12%, var(--mint2), transparent 55%),
-    radial-gradient(1200px 900px at 50% 120%, rgba(245, 250, 255, 0.85), transparent 60%),
-    var(--bg);
+    /* 민트 광선 레이어 (주연) */
+    radial-gradient(1200px 700px at 22% 6%, var(--mint), transparent 58%),
+    radial-gradient(1000px 600px at 80% 14%, var(--mint2), transparent 60%),
 
+    /* 퍼플 스파클 반사광 (조연) */
+    radial-gradient(1100px 650px at 18% 0%, var(--pearl-purple), transparent 62%),
+    radial-gradient(900px 540px at 86% 10%, rgba(225,210,255,0.14), transparent 60%),
+
+    /* 화이트 하이라이트 (끝에 아주 얇게) */
+    radial-gradient(1200px 760px at 50% -14%, var(--pearl-white), transparent 66%),
+
+    /* 베이스 도장 */
+    linear-gradient(180deg, #E9FBF4 0%, var(--bg) 42%, #CDEEE3 100%);
+
+  background-attachment: fixed;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .container{
   max-width: 920px;
@@ -55,7 +74,7 @@ body{
   border-bottom: 1px solid var(--line);
 
   /* bright glass */
-  background: rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.52);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -126,23 +145,25 @@ body{
   transform: translateY(-1px);
   border-color: rgba(18,24,38,0.18);
   box-shadow: var(--shadow);
-  background: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.84);
 }
 
 .nav a.btn-space:active{ transform: translateY(0); }
 
-/* orbit-dot with mint glow */
+/* orbit-dot with mint glow + micro sparkle ring */
 .nav a.btn-space .ico{
   width: 12px;
   height: 12px;
   border-radius: 999px;
   background: rgba(18,24,38,0.65);
-  box-shadow: 0 0 0 4px rgba(143,230,211,0.18);
+  box-shadow:
+    0 0 0 4px rgba(143,230,211,0.18),
+    0 0 0 7px rgba(210,200,255,0.10);
 }
 
 /* current page emphasis */
 .nav a[aria-current="page"]{
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.90);
   border-color: rgba(18,24,38,0.20);
 }
 
@@ -152,13 +173,35 @@ body{
 .hero{
   width: 100%;
   max-width: 920px;
-  height: 600px;             /* 압도감 */
-  border-radius: 18px;
+
+  /* ✅ 체감 2배: 높이 + 여백 + 그림자 */
+  height: 760px;                 /* 기존 600 → 760 (체감 상승) */
+  border-radius: 22px;
   overflow: hidden;
-  margin: 18px auto 24px;
+  margin: 26px auto 34px;
+
+  position: relative;
+
+  /* 히어로 자체도 펄 유리감 살짝 */
+  box-shadow: 0 22px 60px rgba(2,10,20,0.14);
+  border: 1px solid rgba(18,24,38,0.10);
 
   background: none !important;
   background-image: none !important;
+}
+
+/* 이미지 위에 “녹색광선” 필터를 아주 얇게: 과하면 촌스러움 */
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(900px 480px at 22% 18%, rgba(210,200,255,0.16), transparent 60%),
+    radial-gradient(1000px 520px at 78% 22%, rgba(143,230,211,0.12), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.00) 45%, rgba(18,24,38,0.06) 100%);
+  mix-blend-mode: soft-light;
 }
 
 .hero-img{
@@ -173,7 +216,7 @@ body{
 ========================= */
 .card{
   border: 1px solid rgba(18,24,38,0.12);
-  background: rgba(255,255,255,0.66);
+  background: rgba(255,255,255,0.58);
   border-radius: 16px;
   padding: 18px;
   margin: 16px 0;
@@ -207,7 +250,7 @@ body{
 .tile{
   display: block;
   border: 1px solid rgba(18,24,38,0.12);
-  background: rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.56);
   border-radius: 16px;
   padding: 14px;
   text-decoration: none;
@@ -219,7 +262,7 @@ body{
 .tile:hover{
   transform: translateY(-1px);
   border-color: rgba(18,24,38,0.16);
-  background: rgba(255,255,255,0.76);
+  background: rgba(255,255,255,0.78);
 }
 
 .tile h3{
@@ -289,7 +332,7 @@ body{
   transform: translateY(-1px);
   border-color: rgba(18,24,38,0.18);
   box-shadow: var(--shadow);
-  background: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.84);
 }
 
 .btn-space:active{ transform: translateY(0); }
@@ -299,7 +342,9 @@ body{
   height: 12px;
   border-radius: 999px;
   background: rgba(18,24,38,0.65);
-  box-shadow: 0 0 0 4px rgba(143,230,211,0.18);
+  box-shadow:
+    0 0 0 4px rgba(143,230,211,0.18),
+    0 0 0 7px rgba(210,200,255,0.10);
 }
 
 /* misc */
@@ -330,12 +375,13 @@ body{
 @media (max-width: 760px){
   .grid{ grid-template-columns: 1fr; }
 
+  /* 모바일도 “히어로 크게” 원칙 유지 */
   .hero{
-    height: 260px; /* 밝은 테마는 모바일에서 조금 더 여유 있게 */
+    height: 420px;   /* 기존 260은 너무 작음 */
+    margin: 18px auto 24px;
+    border-radius: 18px;
   }
 
   .nav{ gap: 8px; }
   .nav a.btn-space{ padding: 8px 10px; }
 }
-
-
