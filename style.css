@@ -487,3 +487,11 @@ body{
   font-weight:700;
 }
 .notice__cta:hover{transform:translateY(-1px)}
+.site-footer{
+  margin-top:80px;
+  padding:24px 12px;
+  text-align:center;
+  font-size:0.85rem;
+  color:var(--muted);
+}
+
