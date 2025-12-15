@@ -521,10 +521,10 @@ body{
 }
 
 /* Wave offset (핵심) */
-.film-frame:nth-child(1){ transform: translateY(0); }
-.film-frame:nth-child(2){ transform: translateY(40px); }
-.film-frame:nth-child(3){ transform: translateY(-30px); }
-.film-frame:nth-child(4){ transform: translateY(20px); }
+.film-frame:nth-child(1){ transform: translateY(10px); }
+.film-frame:nth-child(2){ transform: translateY(55px); }
+.film-frame:nth-child(3){ transform: translateY(-40px); }
+.film-frame:nth-child(4){ transform: translateY(30px); }
 
 /* Inner */
 .frame-inner{
@@ -554,4 +554,62 @@ body{
 .film-frame:hover{
   transform: translateY(-6px) scale(1.03);
   box-shadow:var(--shadow);
+}
+/* ===== Film Look ===== */
+
+/* Film frame body */
+.film-frame{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.85),
+      rgba(230,245,238,0.75)
+    );
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:22px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Film perforation (top & bottom holes) */
+.film-frame::before,
+.film-frame::after{
+  content:"";
+  position:absolute;
+  left:8px;
+  right:8px;
+  height:8px;
+  background:
+    radial-gradient(circle,
+      rgba(0,0,0,0.25) 2px,
+      transparent 3px
+    );
+  background-size:18px 8px;
+  background-repeat:repeat-x;
+  opacity:0.35;
+}
+
+.film-frame::before{
+  top:6px;
+}
+
+.film-frame::after{
+  bottom:6px;
+}
+
+/* Inner content lifted slightly */
+.frame-inner{
+  z-index:2;
+}
+
+/* Subtle film curve illusion */
+.film-frame{
+  transform-style:preserve-3d;
+}
+
+.film-frame:hover{
+  transform:
+    translateY(-6px)
+    scale(1.04)
+    rotateZ(-0.3deg);
 }
