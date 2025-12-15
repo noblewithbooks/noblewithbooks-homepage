@@ -382,7 +382,7 @@ body{
    FIRST MANIFESTO CARD
 ========================= */
 
-..card-manifesto{
+.card-manifesto{
   background: transparent;
   border: none;
   box-shadow: none;
