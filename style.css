@@ -103,3 +103,72 @@ body {
   width: 100%;
   height: auto;
 }
+:root{
+  --bg: #070A12;
+  --panel: rgba(255,255,255,0.06);
+  --panel2: rgba(255,255,255,0.10);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.72);
+  --line: rgba(255,255,255,0.14);
+
+  --glow: 0 0 0 1px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.35);
+  --glow2: 0 0 0 1px rgba(255,255,255,0.18), 0 16px 42px rgba(0,0,0,0.42);
+}
+
+/* 우주 배경은 '티'가 나면 망함, 아주 약하게만 */
+body{
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(120,140,255,0.10), transparent 55%),
+              radial-gradient(900px 500px at 90% 10%, rgba(170,120,255,0.08), transparent 50%),
+              var(--bg);
+}
+
+/* 공통 버튼, 우주 캡슐 */
+.btn-space{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  box-shadow: var(--glow);
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.btn-space:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--glow2);
+  border-color: rgba(255,255,255,0.22);
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+}
+
+.btn-space:active{
+  transform: translateY(0);
+}
+
+.btn-space .ico{
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.nav a{
+  /* 기존 nav a를 버튼화 */
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.nav a.btn-space{
+  /* nav에서 btn-space를 쓰도록 */
+}

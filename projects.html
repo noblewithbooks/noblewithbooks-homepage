@@ -4,50 +4,88 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects, Noblewithbooks</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20251214a" />
 </head>
-<body>
-  <header class="header">
-    <div class="brand">
-      <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
-      <p class="tagline">Projects</p>
-    </div>
 
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" aria-current="page">Projects</a>
-      <a href="editor.html">편집자의 책상</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<body>
+
+  <!-- HEADER : 브랜드 + 메뉴 -->
+  <header class="header">
+    <div class="header-inner">
+
+      <div class="brand">
+        <h1>Noblewithbooks</h1>
+        <p class="tagline">Projects</p>
+        <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+      </div>
+
+      <nav class="nav">
+        <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
+        <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
+        <a class="btn-space" href="editor.html"><span class="ico"></span>Editor</a>
+        <a class="btn-space" href="projects.html" aria-current="page"><span class="ico"></span>Projects</a>
+        <a class="btn-space" href="contact.html"><span class="ico"></span>Contact</a>
+      </nav>
+
+    </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
+
+    <!-- INTRO -->
     <section class="card">
-      <h2>프로젝트 목록</h2>
-      <p>내일 원래 홈페이지가 복구되면, 여기로 프로젝트 정보를 퍼 와서 채웁니다.</p>
+      <h2>Projects</h2>
+      <p>
+        Noblewithbooks에서 진행 중인 출판, 전자책, 교육 프로젝트를 정리합니다.<br>
+        기존 홈페이지가 복구되면, 순차적으로 내용을 이관·확장할 예정입니다.
+      </p>
     </section>
 
-    <section class="card">
-      <h3>출판</h3>
-      <ul>
-        <li>준비 중, 업데이트 예정</li>
-      </ul>
+    <!-- PROJECT GRID -->
+    <section class="projects-grid">
 
-      <h3>전자책, 인터랙티브</h3>
-      <ul>
-        <li>준비 중, 업데이트 예정</li>
-      </ul>
+      <article class="project-card">
+        <h3>출판 프로젝트</h3>
+        <p>
+          인문·철학 기반 단행본과 시리즈 출판.<br>
+          종이책과 전자책을 병행하며, 장기적으로 축적되는 아카이브를 지향합니다.
+        </p>
+        <div class="actions">
+          <a class="btn-space" href="#"><span class="ico"></span>준비 중</a>
+        </div>
+      </article>
 
-      <h3>교육</h3>
-      <ul>
-        <li>준비 중, 업데이트 예정</li>
-      </ul>
+      <article class="project-card">
+        <h3>전자책 · 인터랙티브</h3>
+        <p>
+          EPUB 기반 인터랙티브 콘텐츠, 실험적 형식의 디지털 출판 프로젝트.<br>
+          읽기 경험 자체를 확장하는 것을 목표로 합니다.
+        </p>
+        <div class="actions">
+          <a class="btn-space" href="#"><span class="ico"></span>준비 중</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>교육 · 논술</h3>
+        <p>
+          철학적 사고와 글쓰기를 결합한 교육 콘텐츠.<br>
+          교재, 강의, 온라인 프로젝트로 확장 예정입니다.
+        </p>
+        <div class="actions">
+          <a class="btn-space" href="#"><span class="ico"></span>준비 중</a>
+        </div>
+      </article>
+
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 Noblewithbooks</p>
   </footer>
+
 </body>
 </html>
