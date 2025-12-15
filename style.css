@@ -456,3 +456,34 @@ body{
   font-size: 14px;
   line-height: 1.7;
 }
+.notice{margin:28px 0}
+.notice__inner{
+  padding:18px 18px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:18px;
+  box-shadow:var(--shadow-soft);
+}
+.notice__kicker{
+  margin:0 0 6px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.86rem;
+}
+.notice__title{margin:0 0 6px; font-size:1.22rem}
+.notice__desc{margin:0 0 10px; color:var(--muted); line-height:1.55}
+.notice__cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:var(--panel-strong);
+  text-decoration:none;
+  color:var(--text);
+  font-weight:700;
+}
+.notice__cta:hover{transform:translateY(-1px)}
