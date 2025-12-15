@@ -378,3 +378,48 @@ body{
   .nav{ gap: 8px; }
   .nav a.btn-space{ padding: 8px 10px; }
 }
+/* =========================
+   FIRST MANIFESTO CARD
+========================= */
+
+.card-manifesto{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  padding: 56px 24px 64px;
+  margin-top: 12px;
+
+  max-width: 720px;
+}
+
+/* 영화 대사 */
+.film-quote{
+  margin: 0 0 28px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(18,24,38,0.80);
+}
+
+.film-quote .source{
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(18,24,38,0.55);
+}
+
+/* 선언 문장 */
+.card-manifesto h2{
+  margin: 0 0 22px;
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* 설명 문단 */
+.card-manifesto .lead{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(18,24,38,0.72);
+}
