@@ -613,3 +613,25 @@ body{
     scale(1.04)
     rotateZ(-0.3deg);
 }
+/* Manifesto – Film Cut */
+.manifesto-film{
+  margin:140px auto 80px;
+  text-align:center;
+}
+
+.film-line{
+  display:block;
+  font-size:1.6rem;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+
+.film-line.highlight{
+  margin-top:22px;
+  display:inline-block;
+  padding:8px 22px;
+  border-radius:999px;
+  background:rgba(80,220,190,0.18);
+  font-size:1.3rem;
+  color:var(--text);
+}
