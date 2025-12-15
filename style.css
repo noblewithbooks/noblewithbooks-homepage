@@ -170,25 +170,18 @@ body{
 /* =========================
    HERO
 ========================= */
-.hero{
-  width: 100%;
-  max-width: 920px;
-
-  /* ✅ 체감 2배: 높이 + 여백 + 그림자 */
-  height: 760px;                 /* 기존 600 → 760 (체감 상승) */
+..hero{
+  width: min(1280px, calc(100vw - 36px)); /* ✅ 화면폭을 거의 다 쓰되 과하게 넓어지진 않게 */
+  max-width: none;                         /* ✅ 920 제한 해제 */
+  height: 760px;
   border-radius: 22px;
   overflow: hidden;
-  margin: 26px auto 34px;
-
+  margin: 26px auto 18px;
   position: relative;
-
-  /* 히어로 자체도 펄 유리감 살짝 */
   box-shadow: 0 22px 60px rgba(2,10,20,0.14);
   border: 1px solid rgba(18,24,38,0.10);
-
-  background: none !important;
-  background-image: none !important;
 }
+
 
 /* 이미지 위에 “녹색광선” 필터를 아주 얇게: 과하면 촌스러움 */
 .hero::after{
