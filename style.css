@@ -152,19 +152,19 @@ body{
 ========================= */
 .hero{
   width: 100%;
+  max-width: 920px;
+  height: 320px;           /* 핵심 */
   border-radius: 18px;
   overflow: hidden;
   margin: 18px auto 24px;
-
-  background: none !important;
-  background-image: none !important;
 }
 
 .hero-img{
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;       /* 이미지 잘라서 맞춤 */
 }
+
 
 /* =========================
    CARDS / CONTENT
@@ -329,4 +329,10 @@ body{
 
 @media (max-width: 760px){
   .grid{ grid-template-columns: 1fr; }
+
+  /* HERO: 모바일에서 대문 너무 커지는 것 방지 */
+  .hero{
+    height: 220px;
+  }
 }
+
