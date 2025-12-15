@@ -74,7 +74,7 @@ body{
   border-bottom: 1px solid var(--line);
 
   /* bright glass */
-  background: rgba(255,255,255,0.52);
+  background: rgba(255,255,255,0.56);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -170,7 +170,7 @@ body{
 /* =========================
    HERO
 ========================= */
-..hero{
+.hero{
   width: min(1280px, calc(100vw - 36px)); /* ✅ 화면폭을 거의 다 쓰되 과하게 넓어지진 않게 */
   max-width: none;                         /* ✅ 920 제한 해제 */
   height: 760px;
@@ -382,16 +382,17 @@ body{
    FIRST MANIFESTO CARD
 ========================= */
 
-.card-manifesto{
+..card-manifesto{
   background: transparent;
   border: none;
   box-shadow: none;
 
   padding: 56px 24px 64px;
-  margin-top: 12px;
+  margin: 12px auto 0;   /* 👈 가운데 정렬 */
 
-   max-width: 680px;
+  max-width: 680px;
 }
+
 
 /* 영화 대사 */
 .film-quote{
@@ -422,4 +423,20 @@ body{
   font-size: 1.05rem;
   line-height: 1.7;
   color: rgba(18,24,38,0.72);
+}
+.book-cover{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(18,24,38,0.10);
+  box-shadow: 0 16px 40px rgba(2,10,20,0.10);
+}
+
+.book-kicker{
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: rgba(18,24,38,0.55);
+  margin: 0 0 6px;
 }
