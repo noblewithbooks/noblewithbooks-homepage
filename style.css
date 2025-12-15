@@ -440,3 +440,19 @@ body{
   color: rgba(18,24,38,0.55);
   margin: 0 0 6px;
 }
+.book-meta{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(18,24,38,0.12);
+}
+.book-meta h4{
+  margin: 0 0 8px;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+.book-meta .meta-text{
+  margin: 0 0 14px;
+  color: rgba(18,24,38,0.72);
+  font-size: 14px;
+  line-height: 1.7;
+}
