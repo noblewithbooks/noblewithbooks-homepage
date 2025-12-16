@@ -969,14 +969,14 @@ body{
   line-height: 1.55;
 
   /* ✅ 항상 "색이 있는 글자" */
-  color: rgba(235,250,248,0.98);
-  -webkit-text-fill-color: rgba(235,250,248,0.98);
+  color: rgba(56, 40, 92, 0.98);
+-webkit-text-fill-color: rgba(56, 40, 92, 0.98);
+
 
   text-shadow:
-    0 1px 0 rgba(0,0,0,0.22),
-    0 0 10px rgba(80,220,190,0.34),
-    0 0 22px rgba(190,225,255,0.22),
-    0 0 28px rgba(205,190,255,0.18);
+  0 1px 0 rgba(0,0,0,0.22),
+  0 0 6px rgba(80,220,190,0.22);
+
 
   /* 기본은 숨김(하지만 !important 금지: 영구 실종 원인) */
   opacity: 0;
