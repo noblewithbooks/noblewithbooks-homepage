@@ -989,9 +989,36 @@ body{
   align-items: center !important;
   justify-content: center !important;
 
-  opacity: 0 !important;         /* ✅ 기본으로는 절대 안 보이게 */
+ 
   transform: translateY(8px) !important;
   pointer-events: none !important;
   white-space: normal !important;
   text-align: center !important;
+}
+/* SHOW ONE LINE AT A TIME (12s cycle, no overlap) */
+#home-manifesto .m1{ animation: slot1 12s infinite; }
+#home-manifesto .m2{ animation: slot2 12s infinite; }
+#home-manifesto .m3{ animation: slot3 12s infinite; }
+
+@keyframes slot1{
+  0%   { opacity: 0; transform: translateY(8px); }
+  8%   { opacity: 1; transform: translateY(0); }
+  28%  { opacity: 1; transform: translateY(0); }
+  36%  { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes slot2{
+  0%   { opacity: 0; transform: translateY(8px); }
+  36%  { opacity: 0; transform: translateY(8px); }
+  44%  { opacity: 1; transform: translateY(0); }
+  64%  { opacity: 1; transform: translateY(0); }
+  72%  { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes slot3{
+  0%   { opacity: 0; transform: translateY(8px); }
+  72%  { opacity: 0; transform: translateY(8px); }
+  80%  { opacity: 1; transform: translateY(0); }
+  96%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-6px); }
 }
