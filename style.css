@@ -1353,3 +1353,22 @@ body{
   -webkit-background-clip: initial !important;
   background-clip: initial !important;
 }
+/* EMERGENCY: make manifesto text visible no matter what */
+#home-manifesto .m-line{
+  display: block !important;
+  opacity: 1 !important;
+
+  color: rgba(235,250,248,0.96) !important;
+  background: none !important;
+
+  /* 사파리/크롬 계열에서 투명 글자 방지 */
+  -webkit-text-fill-color: rgba(235,250,248,0.96) !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.22),
+    0 0 10px rgba(80,220,190,0.34),
+    0 0 22px rgba(190,225,255,0.22),
+    0 0 28px rgba(205,190,255,0.18) !important;
+}
