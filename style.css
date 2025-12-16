@@ -635,3 +635,56 @@ body{
   font-size:1.3rem;
   color:var(--text);
 }
+.page.contact {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 18px;
+}
+
+.page-head h2 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  letter-spacing: -0.2px;
+}
+
+.contact-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  padding: 20px 18px;
+}
+
+.contact-brand {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list .row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.contact-list .row + .row {
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.contact-list dt {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.contact-list dd {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.contact-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
