@@ -1372,3 +1372,39 @@ body{
     0 0 22px rgba(190,225,255,0.22),
     0 0 28px rgba(205,190,255,0.18) !important;
 }
+/* HARD FIX: bring manifesto text back above rays */
+#home-manifesto .m-seq{ position: relative !important; z-index: 1 !important; }
+
+#home-manifesto .m-line{
+  position: relative !important;
+  z-index: 5 !important;
+  display: block !important;
+  visibility: visible !important;
+
+  /* 글자 강제 복구 */
+  opacity: 1 !important;
+  color: rgba(235,250,248,0.98) !important;
+  -webkit-text-fill-color: rgba(235,250,248,0.98) !important;
+
+  /* 펄/클립 계열 전부 끊기 */
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+
+  /* 크기/두께도 기본 복구 */
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem) !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.01em !important;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.22),
+    0 0 10px rgba(80,220,190,0.34),
+    0 0 22px rgba(190,225,255,0.22),
+    0 0 28px rgba(205,190,255,0.18) !important;
+}
+
+/* 광선(가상요소)은 글자 “아래”로 내리기 */
+#home-manifesto .m-seq::before,
+#home-manifesto .m-seq::after{
+  z-index: 0 !important;
+}
