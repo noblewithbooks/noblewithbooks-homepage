@@ -739,3 +739,24 @@ body{
     grid-template-columns: 92px 1fr;
   }
 }
+.editor-note {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.editor-note__title {
+  margin: 0 0 32px;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+}
+
+.editor-note__body p {
+  margin: 0 0 22px;
+  line-height: 1.7;
+}
+
+.editor-note__signature {
+  margin-top: 40px;
+  font-style: italic;
+  color: var(--muted);
+}
