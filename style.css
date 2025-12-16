@@ -1449,30 +1449,38 @@ body{
   76%{opacity:1} 92%{opacity:1}
   100%{opacity:0}
 }
-/* FINAL LOCK: ensure m1/m2/m3 all animate and are visible */
-#home-manifesto .m-seq{
-  position: relative !important;
-  min-height: 3.6em !important;
-}
 
-#home-manifesto .m-seq .m-line{
-  position: absolute !important;
-  left: 50% !important;
-  top: 0 !important;
-  transform: translateX(-50%) !important;
-  width: min(760px, calc(100vw - 48px)) !important;
-  text-align: center !important;
+/* ========= MANIFESTO FINAL SAFE (NO TRANSPARENT EVER) ========= */
 
-  /* ✅ 투명 텍스트 금지: 무조건 보이게 */
+/* 0) 펄/클립/투명 계열을 전부 무력화 */
+#home-manifesto .m-line{
   color: rgba(235,250,248,0.98) !important;
   -webkit-text-fill-color: rgba(235,250,248,0.98) !important;
   background: none !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
+}
 
-  opacity: 0 !important;
+/* 1) 한 줄만 같은 자리에서 나타났다 사라지게 고정 */
+#home-manifesto .m-seq{
+  position: relative !important;
+  min-height: 3.8em !important;
+  padding-bottom: 26px !important; /* 아래 광선 자리 */
+}
+
+#home-manifesto .m-line{
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  transform: translateX(-50%) !important;
+
+  width: min(760px, calc(100vw - 48px)) !important;
+  text-align: center !important;
+
   display: block !important;
   visibility: visible !important;
+
+  opacity: 0 !important; /* 기본 숨김 */
   font-weight: 650 !important;
   line-height: 1.55 !important;
 
@@ -1483,10 +1491,10 @@ body{
     0 0 28px rgba(205,190,255,0.18) !important;
 }
 
-/* ✅ 애니메이션을 클래스에 ‘직접’ 박아버린다 */
-#home-manifesto .m-seq .m1{ animation: mLine1 12s infinite !important; }
-#home-manifesto .m-seq .m2{ animation: mLine2 12s infinite !important; }
-#home-manifesto .m-seq .m3{ animation: mLine3 12s infinite !important; }
+/* 2) 애니메이션을 강제로 박는다 */
+#home-manifesto .m1{ animation: mLine1 12s infinite !important; }
+#home-manifesto .m2{ animation: mLine2 12s infinite !important; }
+#home-manifesto .m3{ animation: mLine3 12s infinite !important; }
 
 @keyframes mLine1{
   0%, 10%   {opacity:0}
@@ -1502,4 +1510,13 @@ body{
   0%, 74%   {opacity:0}
   78%, 94%  {opacity:1}
   100%      {opacity:0}
+}
+
+/* 3) 광선은 m-seq 아래에만 (겹침 방지, z-index 고정) */
+#home-manifesto .m-seq::before,
+#home-manifesto .m-seq::after{
+  z-index: 0 !important;
+}
+#home-manifesto .m-line{
+  z-index: 2 !important;
 }
