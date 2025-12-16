@@ -898,25 +898,35 @@ body{
 /* =========================
    Option 3 + Sequence Motion (CSS only)
 ========================= */
+/* =========================================================
+   HOME MANIFESTO — CLEAN FINAL (only this block)
+   - one line at a time (no overlap)
+   - text never permanently disappears
+   - green ray stays UNDER text
+   - no transparent text / no clip tricks
+========================================================= */
 
-/* strip frame (hero 아래, 이미지 안 건드림) */
+/* container */
 #home-manifesto{
   width: min(860px, calc(100vw - 36px));
   margin: 18px auto 34px;
+  position: relative;
+  z-index: 5;
   text-align: center;
 }
 
+/* strip (투명 패널 버전 유지: 박스 없애고 싶다 했으니 기본은 투명) */
 #home-manifesto .manifesto-strip{
-  padding: 18px 18px 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.58);
-  border: 1px solid rgba(18,24,38,0.12);
-  box-shadow: 0 18px 55px rgba(2,10,20,0.10);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  padding: 12px 18px 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-/* quote small */
+/* quote */
 #home-manifesto .m-quote{
   margin: 0 0 10px;
   font-size: 0.98rem;
@@ -930,313 +940,73 @@ body{
   color: rgba(18,24,38,0.52);
 }
 
-/* ===== sequence stage ===== */
+/* stage */
 #home-manifesto .m-seq{
   position: relative;
-  height: 3.1em;        /* ✅ 한 줄 높이의 무대(고정) */
-  margin: 6px auto 0;
-  max-width: 720px;
+  width: min(760px, calc(100vw - 48px));
+  margin: 8px auto 0;
+
+  /* 문장 영역 고정: 흔들림/겹침 방지 */
+  min-height: 3.8em;
+  padding-bottom: 26px; /* 아래 광선 자리 */
 }
 
-/* each line overlays, appears one-by-one */
+/* lines: 절대 투명 텍스트 금지 (clip/shimmer 전부 안 씀) */
 #home-manifesto .m-line{
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 
-  font-size: 1.22rem;
+  width: 100%;
+  display: block;
+  text-align: center;
+  white-space: normal;
+
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
   font-weight: 650;
   letter-spacing: -0.01em;
-  color: rgba(18,24,38,0.92);
+  line-height: 1.55;
 
-  opacity: 0;
-  transform: translateY(10px);
-  animation: mFadeSeq 12s infinite;
-}
+  /* ✅ 항상 "색이 있는 글자" */
+  color: rgba(235,250,248,0.98);
+  -webkit-text-fill-color: rgba(235,250,248,0.98);
 
-/* 순서: 1→2→3 */
-#home-manifesto .m1{ animation-delay: 0s; }
-#home-manifesto .m2{ animation-delay: 3s; }
-#home-manifesto .m3{ animation-delay: 6s; }
-
-/* keyframes: 등장(0~18%) 유지(18~62%) 퇴장(62~80%) */
-@keyframes mFadeSeq{
-  0%   { opacity: 0; transform: translateY(10px); }
-  18%  { opacity: 1; transform: translateY(0); }
-  62%  { opacity: 1; transform: translateY(0); }
-  80%  { opacity: 0; transform: translateY(-8px); }
-  100% { opacity: 0; transform: translateY(-8px); }
-}
-
-/* 모바일 */
-@media (max-width: 760px){
-  #home-manifesto .m-seq{ height: 3.6em; }
-  #home-manifesto .m-line{ font-size: 1.05rem; }
-}
-/* HARD RESET: stop baseline text (force overlay) */
-#home-manifesto .m-seq{
-  position: relative !important;
-  height: 3.2em !important;
-  overflow: hidden !important;
-}
-
-#home-manifesto .m-line{
-  position: absolute !important;
-  inset: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
- 
-  transform: translateY(8px) !important;
-  pointer-events: none !important;
-  white-space: normal !important;
-  text-align: center !important;
-}
-/* SHOW ONE LINE AT A TIME (12s cycle, no overlap) */
-#home-manifesto .m1{ animation: slot1 12s infinite; }
-#home-manifesto .m2{ animation: slot2 12s infinite; }
-#home-manifesto .m3{ animation: slot3 12s infinite; }
-
-@keyframes slot1{
-  0%   { opacity: 0; transform: translateY(8px); }
-  8%   { opacity: 1; transform: translateY(0); }
-  28%  { opacity: 1; transform: translateY(0); }
-  36%  { opacity: 0; transform: translateY(-6px); }
-  100% { opacity: 0; transform: translateY(-6px); }
-}
-@keyframes slot2{
-  0%   { opacity: 0; transform: translateY(8px); }
-  36%  { opacity: 0; transform: translateY(8px); }
-  44%  { opacity: 1; transform: translateY(0); }
-  64%  { opacity: 1; transform: translateY(0); }
-  72%  { opacity: 0; transform: translateY(-6px); }
-  100% { opacity: 0; transform: translateY(-6px); }
-}
-@keyframes slot3{
-  0%   { opacity: 0; transform: translateY(8px); }
-  72%  { opacity: 0; transform: translateY(8px); }
-  80%  { opacity: 1; transform: translateY(0); }
-  96%  { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-6px); }
-}
-/* STEP 1: manifesto 박스 제거 */
-#home-manifesto .manifesto-strip{
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-/* STEP 2: manifesto 텍스트에 생기 주기 */
-#home-manifesto .m-line{
-  color: rgba(20,40,36,0.95);
-  text-shadow:
-    0 0 12px rgba(80,220,190,0.45),
-    0 0 22px rgba(205,190,255,0.22);
-}
-/* STEP 1: manifesto 박스 제거 */
-#home-manifesto .manifesto-strip{
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-/* STEP 3: 영화 오프닝용 빛 라인 */
-#home-manifesto::before{
-  content:"";
-  display:block;
-  width:140px;
-  height:2px;
-  margin: 6px auto 14px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(80,220,190,0.9),
-    transparent
-  );
-}
-
-#home-manifesto{
-  position: relative;
-}
-
-#home-manifesto::before{
-  content:"";
-  display:block;
-  width: 260px;
-  height: 3px;
-  margin: 6px auto 14px;
-  border-radius: 999px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(80,220,190,0.00),
-    rgba(80,220,190,0.95),
-    rgba(210,255,245,1),
-    rgba(80,220,190,0.95),
-    rgba(80,220,190,0.00),
-    transparent
-  );
-
-  opacity: 0;
-  filter: blur(0.35px);
-  transform: scaleX(0.86);
-
-  animation: greenRay6 12s infinite;
-}
-#home-manifesto::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  top: 6px;                  /* before의 위치와 맞추는 값 */
-  transform: translateX(-50%) scaleX(0.9);
-  width: 340px;
-  height: 26px;
-  border-radius: 999px;
-  pointer-events:none;
-
-  background: radial-gradient(
-    ellipse at center,
-    rgba(80,220,190,0.28),
-    rgba(205,190,255,0.10),
-    transparent 70%
-  );
-
-  opacity: 0;
-  filter: blur(6px);
-  mix-blend-mode: screen;
-
-  animation: greenRay6Glow 12s infinite;
-}
-@keyframes greenRay6{
-  0% { opacity:0; transform:scaleX(0.80); }
-
-  6%  { opacity:0; }
-  9%  { opacity:.98; transform:scaleX(1.05); }
-  12% { opacity:.12; transform:scaleX(1.15); }
-  14% { opacity:0; transform:scaleX(.92); }
-
-  32% { opacity:0; }
-  35% { opacity:.92; transform:scaleX(1.05); }
-  38% { opacity:.10; transform:scaleX(1.15); }
-  40% { opacity:0; transform:scaleX(.92); }
-
-  41% { opacity:0; }
-  44% { opacity:.98; transform:scaleX(1.05); }
-  47% { opacity:.12; transform:scaleX(1.15); }
-  49% { opacity:0; transform:scaleX(.92); }
-
-  66% { opacity:0; }
-  69% { opacity:.92; transform:scaleX(1.05); }
-  72% { opacity:.10; transform:scaleX(1.15); }
-  74% { opacity:0; transform:scaleX(.92); }
-
-  75% { opacity:0; }
-  78% { opacity:.98; transform:scaleX(1.05); }
-  81% { opacity:.12; transform:scaleX(1.15); }
-  83% { opacity:0; transform:scaleX(.92); }
-
-  92% { opacity:0; }
-  95% { opacity:.92; transform:scaleX(1.05); }
-  98% { opacity:.10; transform:scaleX(1.15); }
-  100%{ opacity:0; transform:scaleX(.92); }
-}
-@keyframes greenRay6Glow{
-  0% { opacity:0; }
-
-  9%  { opacity:.85; }
-  16% { opacity:0; }
-
-  35% { opacity:.75; }
-  42% { opacity:0; }
-
-  44% { opacity:.85; }
-  52% { opacity:0; }
-
-  69% { opacity:.75; }
-  76% { opacity:0; }
-
-  78% { opacity:.85; }
-  86% { opacity:0; }
-
-  95% { opacity:.75; }
-  100%{ opacity:0; }
-}
-#home-manifesto .m-line{
-  color: rgba(255,255,255,0.96);
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.25),
-    0 0 12px rgba(80,220,190,0.40),
-    0 0 28px rgba(205,190,255,0.28);
-}
-#home-manifesto{
-  background: linear-gradient(
-    180deg,
-    rgba(10,16,24,0.00),
-    rgba(10,16,24,0.10),
-    rgba(10,16,24,0.00)
-  );
-}
-/* =========================
-   FINAL OVERRIDE — Mediterranean Pearl + Ray Under Text
-   (paste at VERY END of style.css)
-========================= */
-
-/* 0) 혹시 예전에 #home-manifesto::before/::after로 광선을 만들었다면
-      화면 분산/중복 방지를 위해 일단 끈다 */
-#home-manifesto::before,
-#home-manifesto::after{
-  content: none !important;
-  display: none !important;
-}
-
-/* 1) 글자: 지중해 아이보리 + 펄(보석) 쉬머 */
-#home-manifesto .m-line{
-  /* pearlescent ink */
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.98),
-    rgba(210,255,245,0.98),
-    rgba(190,225,255,0.94),
-    rgba(205,190,255,0.86),
-    rgba(255,255,255,0.98)
-  );
-  background-size: 320% 100%;
-  background-position: 0% 50%;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  /* “펄 광택”은 과하지 않게, 고급 잔광만 */
   text-shadow:
     0 1px 0 rgba(0,0,0,0.22),
     0 0 10px rgba(80,220,190,0.34),
     0 0 22px rgba(190,225,255,0.22),
     0 0 28px rgba(205,190,255,0.18);
 
-  animation: pearlShimmer 6.5s ease-in-out infinite;
+  /* 기본은 숨김(하지만 !important 금지: 영구 실종 원인) */
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  z-index: 2;
+  pointer-events: none;
 }
 
-@keyframes pearlShimmer{
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
+/* one-line-at-a-time: 12s cycle */
+#home-manifesto .m1{ animation: mLine1 12s infinite; }
+#home-manifesto .m2{ animation: mLine2 12s infinite; }
+#home-manifesto .m3{ animation: mLine3 12s infinite; }
+
+@keyframes mLine1{
+  0%, 10%   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  14%, 30%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  34%, 100% { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+}
+@keyframes mLine2{
+  0%, 42%   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  46%, 62%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  66%, 100% { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+}
+@keyframes mLine3{
+  0%, 74%   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  78%, 94%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100%      { opacity: 0; transform: translateX(-50%) translateY(-6px); }
 }
 
-/* 2) 녹색 광선: 문장 아래(= m-seq 아래)로 이동 */
-#home-manifesto .m-seq{
-  position: relative;
-  display: block;
-  padding-bottom: 22px;  /* 광선 자리 */
-}
-
-/* Core ray (선명한 중심) */
+/* green ray UNDER text (attached to m-seq) */
 #home-manifesto .m-seq::before{
   content:"";
   position:absolute;
@@ -1259,13 +1029,14 @@ body{
     transparent
   );
 
-  opacity: 0;                 /* ✅ 기본 OFF (인쇄오류 방지) */
+  opacity: 0;
   filter: blur(0.35px);
+  z-index: 0;
+  pointer-events: none;
+
   animation: greenRay6 12s infinite;
-  pointer-events:none;
 }
 
-/* Glow haze (보석 코팅 잔광) */
 #home-manifesto .m-seq::after{
   content:"";
   position:absolute;
@@ -1287,11 +1058,13 @@ body{
   opacity: 0;
   filter: blur(6px);
   mix-blend-mode: screen;
+  z-index: 0;
+  pointer-events: none;
+
   animation: greenRay6Glow 12s infinite;
-  pointer-events:none;
 }
 
-/* 3) 네가 말한 “빈도 괜찮음” 유지: 6번/사이클 */
+/* same timing as lines: multiple flashes per cycle */
 @keyframes greenRay6{
   0% { opacity:0; transform: translateX(-50%) scaleX(0.80); }
 
@@ -1347,176 +1120,10 @@ body{
   95% { opacity:.75; }
   100%{ opacity:0; }
 }
-#home-manifesto .m-line{
-  color: rgba(235,250,248,0.96) !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-}
-/* EMERGENCY: make manifesto text visible no matter what */
-#home-manifesto .m-line{
-  display: block !important;
-  opacity: 1 !important;
 
-  color: rgba(235,250,248,0.96) !important;
-  background: none !important;
-
-  /* 사파리/크롬 계열에서 투명 글자 방지 */
-  -webkit-text-fill-color: rgba(235,250,248,0.96) !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.22),
-    0 0 10px rgba(80,220,190,0.34),
-    0 0 22px rgba(190,225,255,0.22),
-    0 0 28px rgba(205,190,255,0.18) !important;
-}
-/* HARD FIX: bring manifesto text back above rays */
-#home-manifesto .m-seq{ position: relative !important; z-index: 1 !important; }
-
-#home-manifesto .m-line{
-  position: relative !important;
-  z-index: 5 !important;
-  display: block !important;
-  visibility: visible !important;
-
-  /* 글자 강제 복구 */
-  opacity: 1 !important;
-  color: rgba(235,250,248,0.98) !important;
-  -webkit-text-fill-color: rgba(235,250,248,0.98) !important;
-
-  /* 펄/클립 계열 전부 끊기 */
-  background: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-
-  /* 크기/두께도 기본 복구 */
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem) !important;
-  font-weight: 650 !important;
-  letter-spacing: -0.01em !important;
-
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.22),
-    0 0 10px rgba(80,220,190,0.34),
-    0 0 22px rgba(190,225,255,0.22),
-    0 0 28px rgba(205,190,255,0.18) !important;
-}
-
-/* 광선(가상요소)은 글자 “아래”로 내리기 */
-#home-manifesto .m-seq::before,
-#home-manifesto .m-seq::after{
-  z-index: 0 !important;
-}
-/* FIX: one-line-at-a-time manifesto (no stacking) */
-#home-manifesto .m-seq{
-  position: relative;
-  min-height: 3.6em;          /* ✅ 영역 높이 고정(겹침/흔들림 방지) */
-  margin-top: 10px;
-}
-
-#home-manifesto .m-line{
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: min(760px, calc(100vw - 48px));
-  text-align: center;
-
-  opacity: 0;                 /* ✅ 기본은 숨김 */
-  display: block;
-  line-height: 1.55;
-  font-weight: 650;
-}
-
-/* 애니메이션이 혹시 무효화돼 있었으면 강제로 복구 */
-#home-manifesto .m1{ animation: mLine1 12s infinite; }
-#home-manifesto .m2{ animation: mLine2 12s infinite; }
-#home-manifesto .m3{ animation: mLine3 12s infinite; }
-
-@keyframes mLine1{
-  0%{opacity:0}  6%{opacity:0}
-  12%{opacity:1} 28%{opacity:1}
-  34%{opacity:0} 100%{opacity:0}
-}
-@keyframes mLine2{
-  0%{opacity:0}  38%{opacity:0}
-  44%{opacity:1} 60%{opacity:1}
-  66%{opacity:0} 100%{opacity:0}
-}
-@keyframes mLine3{
-  0%{opacity:0}  70%{opacity:0}
-  76%{opacity:1} 92%{opacity:1}
-  100%{opacity:0}
-}
-
-/* ========= MANIFESTO FINAL SAFE (NO TRANSPARENT EVER) ========= */
-
-/* 0) 펄/클립/투명 계열을 전부 무력화 */
-#home-manifesto .m-line{
-  color: rgba(235,250,248,0.98) !important;
-  -webkit-text-fill-color: rgba(235,250,248,0.98) !important;
-  background: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-}
-
-/* 1) 한 줄만 같은 자리에서 나타났다 사라지게 고정 */
-#home-manifesto .m-seq{
-  position: relative !important;
-  min-height: 3.8em !important;
-  padding-bottom: 26px !important; /* 아래 광선 자리 */
-}
-
-#home-manifesto .m-line{
-  position: absolute !important;
-  left: 50% !important;
-  top: 0 !important;
-  transform: translateX(-50%) !important;
-
-  width: min(760px, calc(100vw - 48px)) !important;
-  text-align: center !important;
-
-  display: block !important;
-  visibility: visible !important;
-
-  opacity: 0 !important; /* 기본 숨김 */
-  font-weight: 650 !important;
-  line-height: 1.55 !important;
-
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.22),
-    0 0 10px rgba(80,220,190,0.34),
-    0 0 22px rgba(190,225,255,0.22),
-    0 0 28px rgba(205,190,255,0.18) !important;
-}
-
-/* 2) 애니메이션을 강제로 박는다 */
-#home-manifesto .m1{ animation: mLine1 12s infinite !important; }
-#home-manifesto .m2{ animation: mLine2 12s infinite !important; }
-#home-manifesto .m3{ animation: mLine3 12s infinite !important; }
-
-@keyframes mLine1{
-  0%, 10%   {opacity:0}
-  14%, 30%  {opacity:1}
-  34%, 100% {opacity:0}
-}
-@keyframes mLine2{
-  0%, 42%   {opacity:0}
-  46%, 62%  {opacity:1}
-  66%, 100% {opacity:0}
-}
-@keyframes mLine3{
-  0%, 74%   {opacity:0}
-  78%, 94%  {opacity:1}
-  100%      {opacity:0}
-}
-
-/* 3) 광선은 m-seq 아래에만 (겹침 방지, z-index 고정) */
-#home-manifesto .m-seq::before,
-#home-manifesto .m-seq::after{
-  z-index: 0 !important;
-}
-#home-manifesto .m-line{
-  z-index: 2 !important;
+/* mobile */
+@media (max-width: 760px){
+  #home-manifesto{ margin: 14px auto 26px; }
+  #home-manifesto .m-seq{ min-height: 4.2em; padding-bottom: 24px; }
+  #home-manifesto .m-line{ font-size: 1.05rem; }
 }
