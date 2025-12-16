@@ -709,3 +709,189 @@ body{
   font-weight: 600;
   letter-spacing: -0.01em;
 }
+/* =========================
+   LOCKED MANIFESTO PANEL
+   - stable center
+   - not affected by other sections/cards
+   - visually “special”
+========================= */
+#home-manifesto{
+  width: min(860px, calc(100vw - 36px));
+  margin: -36px auto 34px;     /* ✅ hero 아래에 살짝 겹쳐 “장치감” */
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+#home-manifesto .manifesto-panel{
+  padding: 22px 18px 20px;
+  border-radius: 20px;
+
+  /* glass panel */
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(18,24,38,0.14);
+  box-shadow: 0 18px 55px rgba(2,10,20,0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* subtle mint/purple reflection */
+  background-image:
+    radial-gradient(700px 260px at 20% 0%, rgba(80,220,190,0.18), transparent 62%),
+    radial-gradient(760px 280px at 86% 12%, rgba(205,190,255,0.14), transparent 66%);
+}
+
+#home-manifesto .manifesto-panel::before{
+  content:"";
+  display:block;
+  width: 72px;
+  height: 3px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  background: rgba(18,24,38,0.18);
+}
+
+/* quote */
+#home-manifesto .manifesto-quote{
+  margin: 0 0 14px;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: rgba(18,24,38,0.78);
+}
+
+#home-manifesto .manifesto-source{
+  display:block;
+  margin-top: 6px;
+  font-size: 0.86rem;
+  color: rgba(18,24,38,0.55);
+}
+
+/* 핵심 선언(포스터처럼) */
+#home-manifesto .manifesto-core{
+  margin: 0;
+  font-size: clamp(1.35rem, 2.6vw, 1.72rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: rgba(18,24,38,0.92);
+}
+
+/* 형광펄 한 번만 */
+#home-manifesto .manifesto-core{
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(80,220,190,0.18);
+}
+
+/* 서사 문단 */
+#home-manifesto .manifesto-body{
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(18,24,38,0.74);
+}
+
+/* 모바일: 겹침 줄이기 */
+@media (max-width: 760px){
+  #home-manifesto{
+    margin: -18px auto 26px;
+  }
+  #home-manifesto .manifesto-panel{
+    padding: 18px 14px 16px;
+    border-radius: 18px;
+  }
+}
+/* =========================
+   LOCKED MANIFESTO PANEL
+   - stable center
+   - not affected by other sections/cards
+   - visually “special”
+========================= */
+#home-manifesto{
+  width: min(860px, calc(100vw - 36px));
+  margin: -36px auto 34px;     /* ✅ hero 아래에 살짝 겹쳐 “장치감” */
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+#home-manifesto .manifesto-panel{
+  padding: 22px 18px 20px;
+  border-radius: 20px;
+
+  /* glass panel */
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(18,24,38,0.14);
+  box-shadow: 0 18px 55px rgba(2,10,20,0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* subtle mint/purple reflection */
+  background-image:
+    radial-gradient(700px 260px at 20% 0%, rgba(80,220,190,0.18), transparent 62%),
+    radial-gradient(760px 280px at 86% 12%, rgba(205,190,255,0.14), transparent 66%);
+}
+
+#home-manifesto .manifesto-panel::before{
+  content:"";
+  display:block;
+  width: 72px;
+  height: 3px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  background: rgba(18,24,38,0.18);
+}
+
+/* quote */
+#home-manifesto .manifesto-quote{
+  margin: 0 0 14px;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: rgba(18,24,38,0.78);
+}
+
+#home-manifesto .manifesto-source{
+  display:block;
+  margin-top: 6px;
+  font-size: 0.86rem;
+  color: rgba(18,24,38,0.55);
+}
+
+/* 핵심 선언(포스터처럼) */
+#home-manifesto .manifesto-core{
+  margin: 0;
+  font-size: clamp(1.35rem, 2.6vw, 1.72rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: rgba(18,24,38,0.92);
+}
+
+/* 형광펄 한 번만 */
+#home-manifesto .manifesto-core{
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(80,220,190,0.18);
+}
+
+/* 서사 문단 */
+#home-manifesto .manifesto-body{
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(18,24,38,0.74);
+}
+
+/* 모바일: 겹침 줄이기 */
+@media (max-width: 760px){
+  #home-manifesto{
+    margin: -18px auto 26px;
+  }
+  #home-manifesto .manifesto-panel{
+    padding: 18px 14px 16px;
+    border-radius: 18px;
+  }
+}
