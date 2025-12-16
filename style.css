@@ -1449,3 +1449,57 @@ body{
   76%{opacity:1} 92%{opacity:1}
   100%{opacity:0}
 }
+/* FINAL LOCK: ensure m1/m2/m3 all animate and are visible */
+#home-manifesto .m-seq{
+  position: relative !important;
+  min-height: 3.6em !important;
+}
+
+#home-manifesto .m-seq .m-line{
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  transform: translateX(-50%) !important;
+  width: min(760px, calc(100vw - 48px)) !important;
+  text-align: center !important;
+
+  /* ✅ 투명 텍스트 금지: 무조건 보이게 */
+  color: rgba(235,250,248,0.98) !important;
+  -webkit-text-fill-color: rgba(235,250,248,0.98) !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+
+  opacity: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  font-weight: 650 !important;
+  line-height: 1.55 !important;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.22),
+    0 0 10px rgba(80,220,190,0.34),
+    0 0 22px rgba(190,225,255,0.22),
+    0 0 28px rgba(205,190,255,0.18) !important;
+}
+
+/* ✅ 애니메이션을 클래스에 ‘직접’ 박아버린다 */
+#home-manifesto .m-seq .m1{ animation: mLine1 12s infinite !important; }
+#home-manifesto .m-seq .m2{ animation: mLine2 12s infinite !important; }
+#home-manifesto .m-seq .m3{ animation: mLine3 12s infinite !important; }
+
+@keyframes mLine1{
+  0%, 10%   {opacity:0}
+  14%, 30%  {opacity:1}
+  34%, 100% {opacity:0}
+}
+@keyframes mLine2{
+  0%, 42%   {opacity:0}
+  46%, 62%  {opacity:1}
+  66%, 100% {opacity:0}
+}
+@keyframes mLine3{
+  0%, 74%   {opacity:0}
+  78%, 94%  {opacity:1}
+  100%      {opacity:0}
+}
