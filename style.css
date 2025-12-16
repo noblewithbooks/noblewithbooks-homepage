@@ -1347,3 +1347,9 @@ body{
   95% { opacity:.75; }
   100%{ opacity:0; }
 }
+#home-manifesto .m-line{
+  color: rgba(235,250,248,0.96) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
