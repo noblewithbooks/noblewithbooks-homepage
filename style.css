@@ -1022,3 +1022,40 @@ body{
   96%  { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-6px); }
 }
+/* STEP 1: manifesto 박스 제거 */
+#home-manifesto .manifesto-strip{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+/* STEP 2: manifesto 텍스트에 생기 주기 */
+#home-manifesto .m-line{
+  color: rgba(20,40,36,0.95);
+  text-shadow:
+    0 0 12px rgba(80,220,190,0.45),
+    0 0 22px rgba(205,190,255,0.22);
+}
+/* STEP 1: manifesto 박스 제거 */
+#home-manifesto .manifesto-strip{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+/* STEP 3: 영화 오프닝용 빛 라인 */
+#home-manifesto::before{
+  content:"";
+  display:block;
+  width:140px;
+  height:2px;
+  margin: 6px auto 14px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(80,220,190,0.9),
+    transparent
+  );
+}
