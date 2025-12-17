@@ -1206,8 +1206,8 @@ body{
   margin: 0 auto;
   padding: 0 18px 40px;
 }
-
-.history-card{
+/* ===== History detail page layout ===== */
+.history-detail{
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 22px;
@@ -1215,12 +1215,10 @@ body{
   padding: 18px;
 }
 
-.history-card__media img{
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  display: block;
+@media (max-width: 900px){
+  .history-detail{ grid-template-columns: 1fr; }
 }
+
 
 .history-section-title{
   margin: 0 0 10px;
@@ -1296,42 +1294,7 @@ body{
 @media (max-width: 900px){
   .history-card{ grid-template-columns: 1fr; }
 }
-/* HISTORY GRID — size down */
-.history-grid{
-  max-width: 980px;          /* 전체 폭 줄임 */
-  margin: 18px auto 8px;
-  padding: 0 16px;
 
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;                 /* 간격도 약간 줄임 */
-}
-
-/* 카드 자체를 ‘작은 패널’로 고정 */
-.history-card{
-  display: block;
-  border-radius: 12px;
-  overflow: hidden;
-  max-width: 170px;          /* ✅ 카드 최대 폭(핵심) */
-  justify-self: center;      /* 각 칸 가운데 정렬 */
-}
-
-/* 이미지도 너무 커지지 않게 */
-.history-card img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 반응형에서 칸 수 조정 */
-@media (max-width: 980px){
-  .history-grid{ grid-template-columns: repeat(3, 1fr); }
-  .history-card{ max-width: 180px; }
-}
-@media (max-width: 620px){
-  .history-grid{ grid-template-columns: repeat(2, 1fr); }
-  .history-card{ max-width: 190px; }
-}
 /* --- HISTORY GRID LINK FIX --- */
 .history-grid{
   position: relative;
@@ -1369,4 +1332,48 @@ body.history-page .history-detail__media img { width: 100%; height: auto; displa
   width: 100%;
   height: auto;
   pointer-events: auto;
+}
+/* =========================
+   HISTORY GRID (HOME) — BIG
+========================= */
+.history-grid{
+  max-width: 1200px;
+  margin: 64px auto 72px;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.history-grid .history-card{
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: none;          /* ✅ 170px 같은 제한 제거 */
+  justify-self: stretch;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.history-grid .history-card img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+.history-grid .history-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+}
+
+@media (max-width: 520px){
+  .history-grid{
+    padding: 0 16px;
+    gap: 16px;
+  }
+  .history-grid .history-card img{
+    border-radius: 14px;
+  }
 }
