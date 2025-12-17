@@ -1356,3 +1356,17 @@ body.history-page .history-detail__media img { width: 100%; height: auto; displa
 .golden-strip { position: relative; z-index: 10; }
 .golden-strip .golden-card { display: block; position: relative; z-index: 11; pointer-events: auto; }
 .golden-strip .golden-img { display: block; width: 100%; height: auto; }
+/* Force history cards to be clickable (override overlays / pointer-events) */
+.history-grid { position: relative; z-index: 1; }
+.history-grid .history-card {
+  position: relative;
+  z-index: 5;
+  display: block;
+  pointer-events: auto;
+}
+.history-grid .history-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: auto;
+}
