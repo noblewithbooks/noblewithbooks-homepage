@@ -1296,3 +1296,39 @@ body{
 @media (max-width: 900px){
   .history-card{ grid-template-columns: 1fr; }
 }
+/* HISTORY GRID — size down */
+.history-grid{
+  max-width: 980px;          /* 전체 폭 줄임 */
+  margin: 18px auto 8px;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;                 /* 간격도 약간 줄임 */
+}
+
+/* 카드 자체를 ‘작은 패널’로 고정 */
+.history-card{
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 170px;          /* ✅ 카드 최대 폭(핵심) */
+  justify-self: center;      /* 각 칸 가운데 정렬 */
+}
+
+/* 이미지도 너무 커지지 않게 */
+.history-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 반응형에서 칸 수 조정 */
+@media (max-width: 980px){
+  .history-grid{ grid-template-columns: repeat(3, 1fr); }
+  .history-card{ max-width: 180px; }
+}
+@media (max-width: 620px){
+  .history-grid{ grid-template-columns: repeat(2, 1fr); }
+  .history-card{ max-width: 190px; }
+}
