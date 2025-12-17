@@ -1353,3 +1353,6 @@ body{
 }
 body.history-page .history-detail { display: block; }
 body.history-page .history-detail__media img { width: 100%; height: auto; display: block; }
+.golden-strip { position: relative; z-index: 10; }
+.golden-strip .golden-card { display: block; position: relative; z-index: 11; pointer-events: auto; }
+.golden-strip .golden-img { display: block; width: 100%; height: auto; }
