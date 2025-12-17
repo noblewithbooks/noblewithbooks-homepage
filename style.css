@@ -1332,3 +1332,24 @@ body{
   .history-grid{ grid-template-columns: repeat(2, 1fr); }
   .history-card{ max-width: 190px; }
 }
+/* --- HISTORY GRID LINK FIX --- */
+.history-grid{
+  position: relative;
+  z-index: 5;               /* 다른 섹션 위로 */
+}
+
+.history-card{
+  display: block;
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.history-card img{
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: auto;     /* 클릭 허용 */
+}
+body.history-page .history-detail { display: block; }
+body.history-page .history-detail__media img { width: 100%; height: auto; display: block; }
