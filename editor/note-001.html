@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>편집자 노트, Noblewithbooks</title>
+  <link rel="stylesheet" href="style.css?v=20251215-greenflash" />
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NPRRLQZM70');
+  </script>
+
+  <!-- NOTE PAGE ONLY: 매거진 편집 장치 (이 파일에서만 적용) -->
+  <style>
+    :root{
+      --note-ink: rgba(24, 34, 44, 0.95);
+      --note-muted: rgba(24, 34, 44, 0.70);
+      --note-line: rgba(24, 34, 44, 0.18);
+      --note-chip: rgba(80, 220, 190, 0.16);
+      --note-paper: rgba(255,255,255,0.22);
+    }
+
+    .editor-note{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 18px 16px 44px;
+      color: var(--note-ink);
+    }
+
+    .note-topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 10px 0 14px;
+      border-bottom: 1px solid var(--note-line);
+    }
+
+    .note-kicker{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--note-muted);
+    }
+
+    .note-kicker .chip{
+      padding: 6px 10px;
+      border: 1px solid var(--note-line);
+      border-radius: 999px;
+      background: var(--note-chip);
+      letter-spacing: 0.08em;
+    }
+
+    .note-date{
+      font-size: 13px;
+      color: var(--note-muted);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .note-hero{
+      margin: 26px 0 18px;
+      padding: 22px 0 0;
+      position: relative;
+    }
+
+    .note-hero:before{
+      content:"";
+      position:absolute;
+      left:0; top:0;
+      width: 84px; height: 6px;
+      background: var(--note-ink);
+      opacity: 0.10;
+      border-radius: 999px;
+    }
+
+    .editor-note__title{
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+    }
+
+    .note-dek{
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--note-muted);
+      margin: 0;
+      max-width: 60ch;
+    }
+
+    .note-body{
+      font-size: 16px;
+      line-height: 1.95;
+      letter-spacing: -0.01em;
+      margin-top: 26px;
+    }
+
+    .note-body p{
+      margin: 0 0 18px;
+    }
+
+    /* 드롭캡: 첫 문단 첫 글자 */
+    .note-body p:first-of-type::first-letter{
+      float:left;
+      font-size: 3.1em;
+      line-height: 0.9;
+      padding: 6px 10px 0 0;
+      margin-right: 4px;
+      color: var(--note-ink);
+      opacity: 0.92;
+    }
+
+    /* 풀쿼트: 딱 한 번만 꽂기 */
+    .pullquote{
+      margin: 26px 0;
+      padding: 18px 18px;
+      border-left: 4px solid var(--note-line);
+      background: var(--note-paper);
+      border-radius: 16px;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+    .pullquote strong{
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* 하단 서명(너의 기존 구조 유지) */
+    .editor-note__signature{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--note-line);
+      color: var(--note-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* 작은 네비(있어도 좋고 없어도 됨) */
+    .note-mini-nav{
+      margin-top: 14px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--note-muted);
+    }
+    .note-mini-nav a{
+      text-decoration: none;
+      border-bottom: 1px solid var(--note-line);
+      color: inherit;
+      padding-bottom: 2px;
+    }
+    .note-mini-nav a:hover{
+      border-bottom-color: var(--note-ink);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
+        <p class="tagline">편집자 노트</p>
+        <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+      </div>
+
+      <nav class="nav">
+        <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
+        <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
+        <a class="btn-space" href="editor.html" aria-current="page"><span class="ico"></span>편집자 노트</a>
+        <a class="btn-space" href="books.html"><span class="ico"></span>책 소개</a>
+        <a class="btn-space" href="press.html"><span class="ico"></span>언론의 시선</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <article class="editor-note">
+
+      <div class="note-topline">
+        <div class="note-kicker">
+          <span class="chip">EDITOR’S NOTE</span>
+          <span>Étoile Bleue Créations</span>
+        </div>
+        <div class="note-date">2025.12.16</div>
+      </div>
+
+      <header class="note-hero">
+        <h2 class="editor-note__title"><span class="accent">디지털</span> 건축가로 산다는 것</h2>
+
+        <p class="note-dek">
+  도면이 종이에서 화면으로 옮겨갔다. 그러나 <span class="accent">본질</span>은 같다. 사람이 머무는 구조를 설계하는 일.
+</p>
+
+      </header>
+
+      <div class="note-body">
+
+        <p>한때 나는 건축학과에 가고 싶었다. 도면을 그리고, 땅 위에 집을 세우는 사람이 되고 싶었다. 그때의 나는 막연히 그렇게 생각했다. 집을 짓는 일은, 사람의 삶을 설계하는 일이라고.</p>
+
+        <p>지금 생각해보면, 그 감각은 틀리지 않았다. 다만 장소가 바뀌었을 뿐이다.</p>
+
+        <p>『건축학개론』에서 제주도의 집은 로맨스의 결말이 아니다. 그 집은 오래 미뤄졌던 마음이 구조로 드러난 흔적에 가깝다. 설계는 이미 끝났지만, 집은 늦게 지어진다. 그리고 집이 완성되었을 때, 우리는 비로소 알게 된다. 아, 이 사람은 이렇게 살고 싶었던 거구나.</p>
+
+        <p>나는 건축학과에 가지 않았다. 대신 디지털에 집을 짓고 있다.</p>
+
+        <p>주소가 있고, 구조가 있고, 누군가는 드나들고, 누군가는 머무르는 공간. 빛이 들어오는 시간대를 고민하고, 사람이 오래 머무를 수 있는 동선을 생각한다. 문장을 어디에 둘지, 메뉴를 어디에 달지 고민하는 일은 실제 집을 고치는 일과 생각보다 많이 닮아 있다.</p>
+
+        <p>어제 우리는 이런 이야기를 나눴다. 이제는 물리적 건물보다, 디지털 공간을 설계할 줄 아는 사람이 더 필요한 시대라고. 사람들이 시간을 보내는 곳은 점점 화면 안으로 들어오고, 그 안에도 분명히 집과 길과 방이 생긴다.</p>
+
+        <p>이번에 Noblewithbooks의 홈페이지를 다시 짓게 된 건, 기술적인 문제 때문만은 아니었다. 나는 이미 알고 있었다. 그동안 남이 관리해주는 집에 살고 있었다는 것을. 언제 불이 꺼질지 모르는 집, 비 오는 밤에 갑자기 문이 잠길 수 있는 집.</p>
+
+        <div class="pullquote">
+          <strong>내가 사는 집은, 내가 직접 짓자고.</strong><br>
+          실패가 아니라, 거주자의 권리다.
+        </div>
+
+        <p>처음부터 멋진 집일 필요는 없다. 벽은 얇아도 되고, 여백은 살아보면서 늘리면 된다. 하나 고치고, 며칠 살아보고, 다시 뜯고, 다시 세운다. 이것은 실패가 아니라, 거주자의 권리다.</p>
+
+        <p>나는 지금 디지털 건축가로 살고 있다. 땅 위에 콘크리트를 붓지는 않지만, 사람이 머무는 구조를 만든다는 점에서는 예전에 꿈꾸던 일과 크게 다르지 않다.</p>
+
+        <p>오히려 이 시대에는, 이쪽이 더 건축에 가깝다.</p>
+
+        <p>이 편집자 노트는 집을 짓는 사람의 작업 일지다. 완공을 알리는 글도 아니고, 홍보를 위한 설명도 아니다. 어디를 고쳤고, 왜 그렇게 했는지, 그리고 내일은 무엇을 손볼지를 기록한다.</p>
+
+        <p>이제 Noblewithbooks는 디지털에 지은 집에서 산다. 그리고 이 집은, 계속 고쳐질 것이다.</p>
+
+      </div>
+
+      <p class="editor-note__signature">
+        — Noblewithbooks<br>
+        <span>Étoile Bleue Créations / 푸른별창작소</span>
+      </p>
+
+      <div class="note-mini-nav">
+        <a href="editor.html">편집자 노트 목록으로</a>
+        <a href="index.html">Home</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Noblewithbooks (책읽는귀족, est. 2012) ·
+      Étoile Bleue Créations (푸른별창작소, Imprint, est. 2025) ·
+      © All rights reserved by Noblewithbooks / 본 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
+    </p>
+    <p>
+      (10388) 경기도 고양시 일산서구 대산로 123, 현대프라자 K-ILSAN Business Center 342호(주엽동) ·
+      전화 070-7613-8491 ·
+      이메일 idea444@naver.com
+    </p>
+  </footer>
+
+</body>
+</html>

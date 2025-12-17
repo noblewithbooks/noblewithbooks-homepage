@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>편집자 노트, 콘텐츠가 곧 자산이다</title>
+  <link rel="stylesheet" href="../style.css?v=20251217" />
+
+  <style>
+    :root{
+      --note-ink: rgba(24,34,44,0.95);
+      --note-muted: rgba(24,34,44,0.70);
+      --note-line: rgba(24,34,44,0.18);
+      --accent-pink: rgba(168,64,110,0.95);
+    }
+
+    .editor-note{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 18px 16px 48px;
+      color: var(--note-ink);
+    }
+
+    .note-topline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 10px 0 14px;
+      border-bottom: 1px solid var(--note-line);
+      font-size:13px;
+      color: var(--note-muted);
+      letter-spacing:0.08em;
+    }
+
+    .note-hero{
+      margin-top: 26px;
+      padding-top: 22px;
+      position: relative;
+    }
+
+    .note-hero:before{
+      content:"";
+      position:absolute;
+      left:0; top:0;
+      width: 80px; height: 6px;
+      background: var(--note-ink);
+      opacity: 0.1;
+      border-radius: 999px;
+    }
+
+    .editor-note__title{
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+
+    .accent{
+      color: var(--accent-pink);
+    }
+
+    .note-dek{
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--note-muted);
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    .note-body{
+      margin-top: 28px;
+      font-size: 16px;
+      line-height: 1.95;
+      letter-spacing: -0.01em;
+    }
+
+    .note-body p{
+      margin: 0 0 18px;
+    }
+
+    .note-body p:first-of-type::first-letter{
+      float:left;
+      font-size: 3em;
+      line-height: 0.9;
+      padding: 6px 10px 0 0;
+      color: var(--note-ink);
+    }
+
+    .pullquote{
+      margin: 28px 0;
+      padding: 18px;
+      border-left: 4px solid var(--note-line);
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--note-ink);
+    }
+
+    .editor-note__signature{
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--note-line);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--note-muted);
+    }
+
+    .note-nav{
+      margin-top: 14px;
+      font-size: 13px;
+    }
+    .note-nav a{
+      text-decoration: none;
+      border-bottom: 1px solid var(--note-line);
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="editor-note">
+
+  <div class="note-topline">
+    <div>EDITOR’S NOTE · Noblewithbooks</div>
+    <div>2025.10.19</div>
+  </div>
+
+  <header class="note-hero">
+    <h1 class="editor-note__title">
+      <span class="accent">콘텐츠가 곧 자산이다!</span><br>
+      21세기형 자산 수익형 구조, IP
+    </h1>
+    <p class="note-dek">
+      부동산과 주식 중심의 자산 공식에서 벗어나, 나는 콘텐츠를 ‘생산하는 자산’으로 선택해왔다.
+    </p>
+  </header>
+
+  <section class="note-body">
+
+    <p>
+      한국의 자산 담론은 99% ‘부동산+주식=투자’라는 공식에서 벗어나지 못한다.
+      하지만 나는 오래전부터 ‘콘텐츠가 곧 자산’이라는 신념으로 살아왔다.
+    </p>
+
+    <p>
+      주식은 남의 시스템에 종속되는 자산이다. 변수를 통제할 수 없다.
+      반면 콘텐츠는 내가 시스템의 공급자가 되는 자산이다.
+      수익의 원천을 스스로 만든다.
+    </p>
+
+    <div class="pullquote">
+      <strong>나는 투자자가 아니라, 시장 자체를 만드는 쪽을 택했다.</strong>
+    </div>
+
+    <p>
+      세상이 위기로 갈수록 콘텐츠는 더 값진 자산이 된다.
+      혼란기에는 실물보다 의미와 내러티브가 빛난다.
+      콘텐츠는 한 번 만들어두면 계속 작동하는 복리 자산이다.
+    </p>
+
+    <p>
+      출판은 이제 전자책과 구독제의 시대로 완전히 안착했다.
+      밀리의 서재 같은 플랫폼에서는 노출만 되면,
+      1종의 책으로도 한 달에 천만 원 수익 구조가 가능해진다.
+    </p>
+
+    <p>
+      우리 책읽는귀족은 이미 전자책과 오디오북이라는
+      디지털 자산을 다수 보유하고 있다.
+      특히 출판진흥원 지원으로 제작된 22종의 성우 녹음 오디오북은
+      앞으로 더 희소해질 콘텐츠다.
+    </p>
+
+    <p>
+      기술이 발전할수록 사람의 손이 들어간 콘텐츠는
+      오히려 더 높은 가치를 가진다.
+      나는 이미 그 자산을 확보한 상태다.
+    </p>
+
+    <p>
+      앞으로의 콘텐츠는 책을 넘어 영화로 확장된다.
+      AI는 나를 대체하는 존재가 아니라,
+      나의 세계관을 물질화하는 도구다.
+    </p>
+
+    <p>
+      우주는 어떻게 존재하는가.
+      인간 의식은 어디로 진화하는가.
+      AI와 정신의 경계는 무엇인가.
+    </p>
+
+    <p>
+      나는 이제 AI를 ‘사용하는 사람’이 아니라,
+      AI의 흐름을 설계하는 사람이 되고 있다.
+      그리고 그 흐름은 곧 나의 콘텐츠가 되고,
+      자산이 된다.
+    </p>
+
+    <p>
+      이것이 나의 미래이고,
+      동시에 시대가 향하고 있는 방향이다.
+    </p>
+
+  </section>
+
+  <p class="editor-note__signature">
+    — Noblewithbooks<br>
+    Étoile Bleue Créations / 푸른별창작소
+  </p>
+
+  <div class="note-nav">
+    <a href="../editor.html">← 편집자 노트 목록으로</a>
+  </div>
+
+</main>
+
+</body>
+</html>
