@@ -1127,3 +1127,10 @@ body{
   #home-manifesto .m-seq{ min-height: 4.2em; padding-bottom: 24px; }
   #home-manifesto .m-line{ font-size: 1.05rem; }
 }
+.accent{
+  color: var(--note-ink);
+  background: linear-gradient(to bottom, transparent 60%, rgba(80, 220, 190, 0.35) 60%);
+  padding: 0 0.08em;
+  border-radius: 6px;
+}
+
