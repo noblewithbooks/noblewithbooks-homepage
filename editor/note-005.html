@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>철학 + 불문학 + 한국어, 그 콜라보레이션! | Noblewithbooks</title>
+  <link rel="stylesheet" href="../style.css?v=20251218-green-note" />
+
+  <style>
+    :root{
+      /* GREEN EDITION — neon editorial */
+      --g-ink: rgba(14, 18, 22, 0.94);
+      --g-muted: rgba(14, 18, 22, 0.62);
+      --g-line: rgba(14, 18, 22, 0.14);
+
+      --g-accent: rgba(40, 205, 130, 0.98);   /* 진한 그린 */
+      --g-accent-2: rgba(18, 140, 92, 0.96);  /* 깊은 그린 */
+      --g-glow: rgba(40, 205, 130, 0.22);
+      --g-soft: rgba(40, 205, 130, 0.10);
+
+      --g-paper: rgba(255,255,255,0.80);
+      --g-paper-2: rgba(245, 255, 250, 0.62);
+
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+
+      --shadow-a: 0 18px 46px rgba(0,0,0,0.10);
+      --shadow-b: 0 10px 26px rgba(0,0,0,0.08);
+    }
+
+    .g-note{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 18px 78px;
+      color: var(--g-ink);
+    }
+
+    /* TOP META STRIP — thin + precise */
+    .g-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 14px;
+      padding: 10px 4px 16px;
+      border-bottom: 1px solid var(--g-line);
+      margin-bottom: 22px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--g-muted);
+    }
+    .g-top .left{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .g-pulse{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--g-accent);
+      box-shadow: 0 0 0 6px var(--g-soft);
+      flex: 0 0 auto;
+    }
+
+    /* HERO — line geometry */
+    .g-hero{
+      position: relative;
+      margin: 10px 0 10px;
+    }
+    .g-hero:before{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:-10px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(40,205,130,0), rgba(40,205,130,0.55), rgba(40,205,130,0));
+      opacity: 0.9;
+      pointer-events:none;
+    }
+
+    .g-title{
+      font-size: clamp(34px, 5.0vw, 60px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+    }
+
+    /* Lead highlight — “marker” */
+    .g-lead{
+      margin: 14px 0 28px;
+      max-width: 76ch;
+      font-size: 18px;
+      line-height: 1.95;
+      color: var(--g-muted);
+      position: relative;
+    }
+    .g-lead strong{
+      color: var(--g-ink);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      background:
+        linear-gradient(180deg,
+          rgba(40,205,130,0) 55%,
+          rgba(40,205,130,0.30) 56%,
+          rgba(40,205,130,0.30) 92%,
+          rgba(40,205,130,0) 93%);
+      padding: 0 .10em;
+      border-radius: 10px;
+      box-shadow: 0 0 0 8px rgba(40,205,130,0.06);
+    }
+
+    /* Chips — collaboration tags */
+    .g-chips{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin: 18px 0 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--g-line);
+    }
+    .g-chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--g-paper-2);
+      border: 1px solid rgba(14,18,22,0.10);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      font-size: 13px;
+      color: rgba(14,18,22,0.76);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .g-chip .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--g-accent);
+      box-shadow: 0 0 14px var(--g-glow);
+    }
+
+    /* Body */
+    .g-body{
+      font-size: 16px;
+      line-height: 2.05;
+    }
+    .g-body p{
+      margin: 0 0 22px;
+    }
+
+    /* Scanline divider */
+    .g-scan{
+      margin: 34px 0 34px;
+      height: 1px;
+      background: linear-gradient(90deg,
+        rgba(40,205,130,0),
+        rgba(40,205,130,0.55),
+        rgba(40,205,130,0));
+      position: relative;
+      opacity: 0.9;
+    }
+    .g-scan:after{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:-10px;
+      height: 22px;
+      background: radial-gradient(500px 18px at 50% 50%, rgba(40,205,130,0.16), rgba(40,205,130,0));
+      pointer-events:none;
+    }
+
+    /* Pull quote — left bar + glow */
+    .g-quote{
+      margin: 36px 0;
+      padding: 22px 20px;
+      border-radius: var(--radius-lg);
+      background: var(--g-paper);
+      border: 1px solid rgba(40,205,130,0.22);
+      box-shadow: var(--shadow-b);
+      position: relative;
+      overflow: hidden;
+    }
+    .g-quote:before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--g-accent), var(--g-accent-2));
+      box-shadow: 0 0 24px var(--g-glow);
+    }
+    .g-quote p{
+      margin: 0;
+      padding-left: 10px;
+      font-size: 18px;
+      line-height: 1.95;
+      letter-spacing: -0.01em;
+      color: rgba(14,18,22,0.84);
+    }
+    .g-quote em{
+      font-style: normal;
+      font-weight: 900;
+      color: rgba(18,140,92,0.98);
+      background: rgba(40,205,130,0.12);
+      padding: 0 .12em;
+      border-radius: 8px;
+    }
+
+    /* Section header — minimalist */
+    .g-sec{
+      margin: 52px 0 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .g-sec h3{
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      position: relative;
+      padding-left: 14px;
+    }
+    .g-sec h3:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top: 0.35em;
+      width: 6px;
+      height: 0.9em;
+      border-radius: 99px;
+      background: var(--g-accent);
+      box-shadow: 0 0 18px var(--g-glow);
+    }
+    .g-sec .mini{
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--g-muted);
+    }
+
+    /* Sign + nav */
+    .g-sign{
+      margin-top: 62px;
+      padding-top: 18px;
+      border-top: 1px solid var(--g-line);
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--g-muted);
+    }
+    .g-nav{
+      margin-top: 16px;
+      display:flex;
+      gap: 14px;
+      flex-wrap:wrap;
+      font-size: 13px;
+      color: var(--g-muted);
+    }
+    .g-nav a{
+      text-decoration:none;
+      color: inherit;
+      border-bottom: 1px solid rgba(40,205,130,0.34);
+      padding-bottom: 2px;
+    }
+    .g-nav a:hover{
+      border-bottom-color: rgba(14,18,22,0.70);
+    }
+
+    @media (max-width: 520px){
+      .g-note{ padding: 22px 14px 70px; }
+      .g-sec{ align-items:flex-start; flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav">
+      <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+      <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+      <a class="btn-space" href="../editor.html"><span class="ico"></span>편집자 노트</a>
+      <a class="btn-space" href="../books.html"><span class="ico"></span>책 소개</a>
+      <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+    </nav>
+  </div>
+</header>
+
+<main class="g-note">
+
+  <div class="g-top">
+    <div class="left">
+      <span class="g-pulse"></span>
+      <span>EDITORIAL NOTE · COLLAB</span>
+    </div>
+    <div>2025.11.14</div>
+  </div>
+
+  <section class="g-hero">
+    <h1 class="g-title">철학 + 불문학 + 한국어,<br>그 콜라보레이션!</h1>
+
+    <p class="g-lead">
+      <strong>흔들리지 않는 자산은 ‘스펙’이 아니라, 조합이다.</strong>
+      철학과 불문학, 한국어, 그리고 AI라는 새 도구가 한 궤도로 합류하는 순간이 온다.
+    </p>
+  </section>
+
+  <div class="g-chips" aria-label="collaboration tags">
+    <span class="g-chip"><span class="dot"></span>philosophy</span>
+    <span class="g-chip"><span class="dot"></span>french literature</span>
+    <span class="g-chip"><span class="dot"></span>korean language</span>
+    <span class="g-chip"><span class="dot"></span>ai publishing</span>
+  </div>
+
+  <section class="g-body">
+
+    <p>오늘 아침 문득 '철학, 불문학, 한국어', 이 세 가지 자산의 의미를 떠올려보았다.</p>
+
+    <p>내가 가진 자산, 오롯이 나 자신에게 속한 자산. 그 어떤 상황에서도 흔들리지 않을 나의 자산이다.</p>
+
+    <p>철학 학사 학위, 곧 나의 것이 될 불문학 학사 학위, 그리고 한국어.</p>
+
+    <div class="g-scan" aria-hidden="true"></div>
+
+    <p>또, 2026년 봄에 외대사이버대 한국어학부에 편입하면 외국인을 위한 한국어 교원자격증뿐만 아니라, ‘문학사’라는 학위도 얻게 된다. 이건 2년 후.</p>
+
+    <p>물론 지금도 이미 20년 편집자 인생에, 작가에, 어릴 때부터 읽고 쓰고 한글을 직업적으로 품고 살아온 나에게 한국어란 보통 한국 사람들보다는 대단히 특별한 것이다.</p>
+
+    <div class="g-quote">
+      <p>
+        <em>철학 + 불문학 + 한국어</em>는 단순한 나열이 아니라,
+        서로 다른 언어·사유·교육을 한 몸으로 묶어내는 조합이다.
+      </p>
+    </div>
+
+    <div class="g-sec">
+      <h3>AI라는 추가 자산</h3>
+      <div class="mini">prompt · publishing</div>
+    </div>
+
+    <p>게다가 이 인공지능 시대에 나에게 더 첨가된, 아주 특출한 자산 하나.</p>
+    <p>AI 프롬프트 엔지니어이자 AI 퍼블리싱 디렉터(AI Prompt Engineer &amp; AI Publishing Director).</p>
+
+    <p>그래서 나의 2026년이 더 궁금해지는 아침이다. 더 나아가, 남은 내 인생에 어떤 일들이 펼쳐질지 심히 궁금해지는 시간.</p>
+
+    <div class="g-scan" aria-hidden="true"></div>
+
+    <p>앞으로 인간의 수명 또한 예측할 수 없는 시대가 되었다. 모든 기존의 패러다임이 변하고 있다. 인간의 수명도 예전과 달리, 얼마든지 늘어날 수 있는 시대. 이젠 물리적 나이, 시간의 의미가 사라지는 시대가 다가오고 있다.</p>
+
+    <p>오늘 아침, 철학 + 불문학 + 한국어, 그 콜라보레이션이 궁금해진다.</p>
+
+    <p>그리고 멀지 않은 미래, 영화학 석사라는 또 하나의 흐름이 이 조합에 합류한다면, 내 인생은 어디까지 확장될까. 어떤 세계를 새로 열게 될까.</p>
+
+    <p>문득, 그 미래가 나를 어느 무대까지 데려갈지 궁금해진다.</p>
+
+  </section>
+
+  <p class="g-sign">
+    — Étoile Bleue Créations / 푸른별창작소<br>
+    Editorial Note · Green Edition
+  </p>
+
+  <div class="g-nav">
+    <a href="../editor.html">← 편집자 노트 목록으로</a>
+    <a href="../index.html">Home</a>
+  </div>
+
+</main>
+
+</body>
+</html>
