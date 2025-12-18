@@ -1443,3 +1443,9 @@ h3{ margin-bottom: 0.8em; }
     );
   background-blend-mode: multiply;
 }
+main > h2,
+main > p{
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
