@@ -1449,3 +1449,11 @@ main > p{
   margin-left: auto;
   margin-right: auto;
 }
+.archive-intro{
+  font-size: 13px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+   color: rgba(170, 140, 90, 0.85);
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
