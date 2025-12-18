@@ -1640,3 +1640,91 @@ main > p{
 .essay-fr{
   margin-bottom: 28px;
 }
+/* ===== Cinema Film Strip: stronger frame look ===== */
+
+.film-strip{
+  margin: 28px 0 64px;
+}
+
+.film-track{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.film-frame{
+  display: block;
+  text-decoration: none;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(24,34,44,0.10);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+}
+
+.film-frame::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg,
+    rgba(255,185,110,0.95),
+    rgba(210,160,60,0.95),
+    rgba(90,190,230,0.75)
+  );
+  opacity: 0.95;
+}
+
+.film-frame::after{
+  content:"";
+  position:absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.film-frame:hover{
+  transform: translateY(-2px);
+  transition: transform 160ms ease;
+}
+
+.frame-inner{
+  padding: 18px 16px 16px 18px;
+}
+
+.frame-no{
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: rgba(210,160,60,0.9);
+  margin-bottom: 6px;
+}
+
+.frame-title{
+  display: block;
+  font-size: 18px;
+  line-height: 1.25;
+  color: rgba(24,34,44,0.95);
+  margin-bottom: 10px;
+}
+
+.frame-sub{
+  display: block;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(24,34,44,0.72);
+}
+
+/* Mobile */
+@media (max-width: 720px){
+  .film-track{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .frame-title{
+    font-size: 17px;
+  }
+}
