@@ -1391,3 +1391,9 @@ body.history-page .history-detail__media img { width: 100%; height: auto; displa
   pointer-events:auto;
 }
 
+h1, h2, h3{
+  margin-top: 0;
+}
+h1{ margin-bottom: 0.6em; }
+h2{ margin-bottom: 0.7em; }
+h3{ margin-bottom: 0.8em; }
