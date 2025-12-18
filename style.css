@@ -1497,10 +1497,12 @@ main > p{
   max-width: 860px;
   margin: 0 auto 80px;
   padding-left: 56px;
+  padding-right: 16px; /* 모바일 숨 쉴 공간 */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
+
 
 .journal-card{
   border: 1px solid rgba(210,160,60,0.22);
@@ -1602,4 +1604,24 @@ main > p{
 
 .journal-apres a:hover{
   border-bottom-color: rgba(200, 165, 110, 0.95);
+}
+/* archive intro alignment fix */
+
+.archive-intro{
+  max-width: 860px;
+  margin: 0 auto 24px;
+  padding-left: 56px; /* timeline 기준선과 정렬 */
+  padding-right: 16px;
+}
+@media (max-width: 720px){
+  .journal-grid{
+    grid-template-columns: 1fr;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .archive-intro{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
