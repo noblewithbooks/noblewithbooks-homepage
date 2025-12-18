@@ -2184,3 +2184,11 @@ main > p{
   .cinema-body{ padding: 18px 14px 16px; }
   .cinema-body p{ line-height: 1.8; }
 }
+.cinema-insert{
+  margin: 22px 0;
+  padding-top: 6px;
+}
+
+.cinema-insert p{
+  color: rgba(18,24,38,0.78);
+}
