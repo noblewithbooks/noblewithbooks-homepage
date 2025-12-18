@@ -1,28 +1,153 @@
-<h2>편집자 노트</h2>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>편집자 노트 | Noblewithbooks</title>
+  <link rel="stylesheet" href="style.css" />
 
-<p>
-  이 공간은 편집자의 작업 기록이 축적되는 아카이브입니다.
-</p>
+  <style>
+    /* === ARCHIVE TIMELINE === */
 
-<ul>
-  <li>
-    <a href="editor/note-001.html">2025.12.16 · 디지털 건축가로 산다는 것</a>
-  </li>
-  <li>
-  <a href="editor/note-006.html">2025.11.14 · 볼로냐에서 칸까지, 생활권이 바뀌면 인생이 바뀐다</a>
-</li>
+    .timeline{
+      position: relative;
+      max-width: 860px;
+      margin: 40px auto 80px;
+      padding-left: 56px;
+    }
 
-<li>
-  <a href="editor/note-005.html">2025.11.14 · 철학 + 불문학 + 한국어, 그 콜라보레이션!</a>
-</li>
+    /* 세로 골드 라인 */
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left: 26px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 99px;
+      background-image:
+        linear-gradient(180deg,
+          rgba(255,232,150,0.92),
+          rgba(210,160,60,0.92),
+          rgba(255,232,150,0.82)
+        ),
+        repeating-linear-gradient(135deg,
+          rgba(0,0,0,0.08) 0 2px,
+          rgba(255,255,255,0.06) 2px 4px
+        );
+      background-blend-mode: multiply;
+    }
 
-  <li>
-    <a href="editor/note-004.html">2025.11.13 · 2026년을 기대하며</a>
-  </li>
-  <li>
-    <a href="editor/note-002.html">2025.10.19 · 콘텐츠가 곧 자산이다</a>
-  </li>
-  <li>
-    <a href="editor/note-003.html">2025.10.25 · Étoile Bleue Créations, 파리 비전 선언</a>
-  </li>
-</ul>
+    .timeline ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .timeline li{
+      position: relative;
+      padding: 18px 0 18px 0;
+    }
+
+    /* 연도 점 */
+    .timeline li::before{
+      content:"";
+      position:absolute;
+      left: -34px;
+      top: 28px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-image:
+        radial-gradient(circle at 30% 30%,
+          rgba(255,245,200,0.95),
+          rgba(210,160,60,0.95) 55%,
+          rgba(120,80,20,0.95) 100%
+        ),
+        repeating-linear-gradient(0deg,
+          rgba(0,0,0,0.10) 0 1px,
+          rgba(255,255,255,0.06) 1px 2px
+        );
+      background-blend-mode: multiply;
+      box-shadow:
+        0 0 0 1px rgba(210,160,60,0.22),
+        0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .timeline a{
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(24,34,44,0.95);
+      border-bottom: 1px solid rgba(210,160,60,0.28);
+      padding-bottom: 2px;
+    }
+
+    .timeline a:hover{
+      border-bottom-color: rgba(24,34,44,0.95);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav">
+      <a class="btn-space" href="index.html">Home</a>
+      <a class="btn-space" href="books.html">책 소개</a>
+      <a class="btn-space" href="press.html">언론의 시선</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <h2>편집자 노트</h2>
+
+  <p>
+    이 공간은 편집자의 작업 기록이 축적되는 아카이브입니다.
+  </p>
+
+  <!-- ★ 타임라인 시작 -->
+  <div class="timeline">
+
+    <ul>
+      <li>
+        <a href="editor/note-001.html">2025.12.16 · 디지털 건축가로 산다는 것</a>
+      </li>
+
+      <li>
+        <a href="editor/note-006.html">2025.11.14 · 볼로냐에서 칸까지, 생활권이 바뀌면 인생이 바뀐다</a>
+      </li>
+
+      <li>
+        <a href="editor/note-005.html">2025.11.14 · 철학 + 불문학 + 한국어, 그 콜라보레이션!</a>
+      </li>
+
+      <li>
+        <a href="editor/note-004.html">2025.11.13 · 2026년을 기대하며</a>
+      </li>
+
+      <li>
+        <a href="editor/note-002.html">2025.10.19 · 콘텐츠가 곧 자산이다</a>
+      </li>
+
+      <li>
+        <a href="editor/note-003.html">2025.10.25 · Étoile Bleue Créations, 파리 비전 선언</a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- ★ 타임라인 끝 -->
+
+</main>
+
+</body>
+</html>
