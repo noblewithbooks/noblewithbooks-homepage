@@ -1390,7 +1390,4 @@ body.history-page .history-detail__media img { width: 100%; height: auto; displa
   display:block;
   pointer-events:auto;
 }
-ul li a {
-  position: relative;
-  z-index: 10;
-}
+
