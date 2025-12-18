@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2026년을 기대하며 | Noblewithbooks</title>
+  <link rel="stylesheet" href="../style.css?v=20251218-editor-note-orange" />
+
+  <style>
+    :root{
+      /* ORANGE EDITION */
+      --ink: rgba(18, 20, 26, 0.94);
+      --muted: rgba(18, 20, 26, 0.62);
+      --line: rgba(18, 20, 26, 0.14);
+
+      --accent: rgba(255, 92, 0, 0.98);      /* 진한 오렌지 */
+      --accent-deep: rgba(208, 61, 0, 0.96); /* 더 깊은 오렌지 */
+      --accent-soft: rgba(255, 92, 0, 0.12);
+
+      --paper: rgba(255, 255, 255, 0.78);
+      --paper-2: rgba(255, 250, 246, 0.62);
+
+      --shadow: 0 14px 42px rgba(0,0,0,0.12);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    body{
+      color: var(--ink);
+    }
+
+    .enote{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 18px 78px;
+    }
+
+    /* TOP STRIP */
+    .enote-top{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 4px 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .enote-top .tag{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .enote-dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--accent-soft);
+      flex: 0 0 auto;
+    }
+
+    /* HERO TITLE */
+    .enote-hero{
+      margin: 14px 0 22px;
+      position: relative;
+    }
+    .enote-hero h1{
+      font-size: clamp(34px, 5.2vw, 62px);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+    }
+    .enote-hero h1 .accent{
+      display:inline-block;
+      background:
+        linear-gradient(90deg,
+          rgba(255, 92, 0, 0.0) 0%,
+          rgba(255, 92, 0, 0.22) 16%,
+          rgba(255, 92, 0, 0.0) 100%);
+      padding: 0 .12em;
+      border-radius: 10px;
+    }
+    .enote-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 14px;
+      align-items:center;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      margin-top: 10px;
+    }
+    .enote-badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+      backdrop-filter: blur(4px);
+    }
+    .enote-badge strong{
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    /* LEAD, ORANGE FULL SENTENCE DESIGN */
+    .enote-lead{
+      margin: 22px 0 34px;
+      padding: 24px 22px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(1200px 220px at 10% 10%, rgba(255,255,255,0.22), rgba(255,255,255,0) 60%),
+        linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+      color: rgba(255,255,255,0.96);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .enote-lead:before{
+      content:"";
+      position:absolute;
+      inset: -2px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 22%, rgba(255,255,255,0) 78%, rgba(255,255,255,0.16));
+      mix-blend-mode: overlay;
+      pointer-events:none;
+    }
+    .enote-lead p{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.95;
+      letter-spacing: -0.01em;
+      max-width: 72ch;
+    }
+    .enote-lead p strong{
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    /* BODY */
+    .enote-body{
+      font-size: 16px;
+      line-height: 2.05;
+    }
+    .enote-body p{
+      margin: 0 0 22px;
+    }
+
+    /* “EDIT DEVICE” : ORANGE RULE + DROP CAP */
+    .enote-body p:first-of-type{
+      position: relative;
+      padding-top: 18px;
+    }
+    .enote-body p:first-of-type:before{
+      content:"";
+      position:absolute;
+      left: 0;
+      top: 0;
+      width: 84px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 99px;
+    }
+    .enote-body .dropcap:first-letter{
+      float:left;
+      font-size: 3.2em;
+      line-height: 0.92;
+      padding: 6px 10px 0 0;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--accent-deep);
+    }
+
+    /* SECTION TITLE */
+    .enote-section{
+      margin: 54px 0 28px;
+      padding: 0 0 0 14px;
+      border-left: 5px solid var(--accent);
+    }
+    .enote-section h3{
+      margin: 0 0 12px;
+      font-size: 21px;
+      letter-spacing: -0.01em;
+    }
+    .enote-section .hint{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+      max-width: 90ch;
+    }
+
+    /* PULL QUOTE BLOCK */
+    .enote-quote{
+      margin: 42px 0;
+      padding: 28px 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      border: 1px solid rgba(255, 92, 0, 0.22);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      overflow:hidden;
+    }
+    .enote-quote:before{
+      content:"";
+      position:absolute;
+      left:-40px;
+      top:-40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      background: rgba(255, 92, 0, 0.12);
+      filter: blur(0.5px);
+    }
+    .enote-quote p{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.95;
+      letter-spacing: -0.01em;
+    }
+    .enote-quote em{
+      font-style: normal;
+      font-weight: 800;
+      color: var(--accent-deep);
+    }
+
+    /* LIST AS “CARD STRIPS” */
+    .enote-grid{
+      margin: 34px 0 8px;
+      display:grid;
+      gap: 14px;
+    }
+    .enote-card{
+      padding: 18px 18px 16px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(18,20,26,0.10);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+      position: relative;
+      overflow:hidden;
+    }
+    .enote-card:before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,92,0,0.10), rgba(255,92,0,0) 40%, rgba(255,92,0,0) 60%, rgba(255,92,0,0.06));
+      pointer-events:none;
+    }
+    .enote-card h4{
+      margin: 0 0 8px;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(18,20,26,0.70);
+    }
+    .enote-card p{
+      margin: 0;
+      line-height: 1.95;
+    }
+
+    /* SIGN + NAV */
+    .enote-sign{
+      margin-top: 60px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+    .enote-nav{
+      margin-top: 16px;
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .enote-nav a{
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid rgba(255,92,0,0.28);
+      padding-bottom: 2px;
+    }
+    .enote-nav a:hover{
+      border-bottom-color: rgba(18,20,26,0.70);
+    }
+
+    /* MOBILE TUNING */
+    @media (max-width: 520px){
+      .enote{
+        padding: 22px 14px 70px;
+      }
+      .enote-lead{
+        padding: 22px 18px;
+        border-radius: 24px;
+      }
+      .enote-quote{
+        padding: 22px 18px;
+      }
+      .enote-top{
+        align-items:flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav">
+      <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+      <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+      <a class="btn-space" href="../editor.html"><span class="ico"></span>편집자 노트</a>
+      <a class="btn-space" href="../books.html"><span class="ico"></span>책 소개</a>
+      <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+    </nav>
+  </div>
+</header>
+
+<main class="enote">
+
+  <div class="enote-top">
+    <div class="tag">
+      <span class="enote-dot"></span>
+      <span>EDITORIAL NOTE · YEAR-END</span>
+    </div>
+    <div>2025.11.13</div>
+  </div>
+
+  <section class="enote-hero">
+    <h1><span class="accent">2026년을 기대하며</span></h1>
+    <div class="enote-meta">
+      <span class="enote-badge"><strong>작성자</strong> 책읽는귀족</span>
+      <span class="enote-badge"><strong>키워드</strong> 기말고사, 실행, 제2막</span>
+      <span class="enote-badge"><strong>톤</strong> 연말, 출항 선언</span>
+    </div>
+  </section>
+
+  <!-- 리더문, 문장 전체를 “진한 오렌지”로 처리 -->
+  <section class="enote-lead">
+    <p>
+      <strong>2026년은 ‘기대’가 아니라 ‘실행’의 해다.</strong>
+      올해가 문을 여는 해였다면, 내년은 본격적으로 출항하는 해가 될 것이다.
+    </p>
+  </section>
+
+  <section class="enote-body">
+
+    <p class="dropcap">이제 한 해가 다 저물어가고 있다.</p>
+    <p>우리 건물에는 벌써 크리스마스 트리가 설치되어 있다.</p>
+    <p>그래서 연말 분위기가 물씬 풍긴다.</p>
+
+    <p>나의 일정도 이제 방송대 기말고사만 무사히 치르고 나면 한 해가 멋지게 마무리된다.</p>
+    <p>올해는 개인적으로 아주 뜻깊은 해였다.</p>
+    <p>출판 인생 20년에 편집자상도 받고.</p>
+    <p>멋지게 마무리하였다.</p>
+
+    <p>또 여러 가지 일들도 잘 마무리하였다.</p>
+    <p>기억에 남는 건, EPUB3 제작 도전에 성공했다는 것.</p>
+    <p>미래와 연결된 일이라 기억에 남는다.</p>
+    <p>큰 의미가 있다.</p>
+
+    <div class="enote-section">
+      <h3>올해의 매듭, 다음 단계의 문</h3>
+      <p class="hint">연말은 정리의 시간이면서, 동시에 다음 장으로 넘어가는 문턱이다.</p>
+    </div>
+
+    <p>그리고 여러 중요한 일들이 매듭지어졌다.</p>
+    <p>방송대 졸업도 이제 남은 기말고사만 잘 마무리하면 다된 밥이다. 올해 내가 한 일로 역시 큰 의미가 있다. 다음 단계로 나아갈 마무리이기 때문이다.</p>
+
+    <p>기말고사 시험 일정이 나왔다.</p>
+    <p>12월 중순으로 잡았다.</p>
+    <p>최대한 늦게 날짜를 선택했다.</p>
+    <p>그래야 공부할 시간을 더 많이 버는 거니까.</p>
+    <p>늘 그래왔지만, 마지막 학기도 마찬가지다.</p>
+
+    <div class="enote-quote">
+      <p>
+        올해가 문을 여는 정도였다면, 내년은 실질적으로 <em>‘실행’</em>의 단계다.<br>
+        2026년은 내 인생 제2막의 시작이 될 것이다.
+      </p>
+    </div>
+
+    <p>이제 올해는 기말고사 공부에만 전력을 다해야겠다.</p>
+    <p>남은 일정 중에 제일 중요한 일이다.</p>
+    <p>이게 마무리되어야 내 다음 일정이 앞으로 나아간다.</p>
+
+    <p>내년, 그러니까 2026년은 기대가 된다.</p>
+    <p>2026년은 여러 가지로 기대가 된다.</p>
+    <p>내년은 뭔가 큰 문이 열리는 해가 될 것이다.</p>
+
+    <p>올해가 내 인생 제1장의 마무리였다면, 내년은 내 인생 제2장의 시작이 될 테니까.</p>
+
+    <p>2026년이 기대된다.</p>
+    <p>2025년도 좋았다.</p>
+    <p>여러 가지 매듭을 짓고, 좋은 일, 빅 이벤트, 즉 편집자상까지 무척 좋은 한 해였다.</p>
+
+    <div class="enote-section">
+      <h3>2026, 출항 선언</h3>
+      <p class="hint">준비의 해가 끝나면, 이제 실행이 남는다. 계획이 아니라 실제 제작, 실제 론칭.</p>
+    </div>
+
+    <p>자, 이제 2026년이다.</p>
+    <p>할 일이 많다.</p>
+    <p>당장 기말고사 끝나고부터 좀 마음을 가다듬고 나서 ‘디오니소스 논술’, 그 대망의 작업을 시작해야 한다.</p>
+    <p>늘 벼르고 있던 프로젝트인데, 이제 그 출항을 앞두고 있다.</p>
+
+    <p>내 프랑스어 번역 실력, 불문과 학사 학위라는 틀, 바칼로레아를 대하는 나의 기본적 위치, 그 기반을 마련하고 나서 이제 본격적으로 대항해를 나서는 것이다.</p>
+    <p>논술, 우리나라 논술 교육에 대한 정면 도전장이자, 확립의 선언이다.</p>
+
+    <p>10권이 일단 목표인데, 일단 출항을 선언한다.</p>
+    <p>내년 봄까지 마무리되어야 할 작업이다.</p>
+
+    <div class="enote-grid">
+      <div class="enote-card">
+        <h4>Project 1</h4>
+        <p>‘디오니소스 논술’ 10권 체계, 봄까지 1차 완성, 플랫폼의 첫 엔진을 가동한다.</p>
+      </div>
+      <div class="enote-card">
+        <h4>Project 2</h4>
+        <p>장르 소설 1편, 시나리오까지 염두에 둔 “확장 가능한 이야기”를 봄에 완성한다.</p>
+      </div>
+      <div class="enote-card">
+        <h4>Project 3</h4>
+        <p>한국어 강사 자격 루트, 사이버외대 3학년 편입으로 파리 체류의 안전장치를 만든다.</p>
+      </div>
+    </div>
+
+    <p>그리고 빅 아이디어, 장르 소설 하나를 쓴다.</p>
+    <p>시나리오까지 염두에 둔 소설이다.</p>
+    <p>아주 기가 막히게 멋진 작품이 될 것이다.</p>
+    <p>작업 자체도 너무 기대가 된다.</p>
+
+    <p>내가 누구냐.</p>
+    <p>나랏돈으로 다 명품 오디오북도 22종 만든 사람인데, 영화? 그것 역시 프랑스 정부 돈으로 만들 생각이다.</p>
+    <p>프랑스는 문화 예산이 엄청 나서, 영화 산업 분야 예산이 한국 돈으로 1조 원이 넘는 수준이다.</p>
+
+    <p>어쨌든 2026년이 너무 기대가 된다.</p>
+    <p>내년에는 뭔가 와르르 쏟아져 들어올 것이다.</p>
+    <p>아니, 시작의 해가 될 것이다.</p>
+
+    <p>자, 남은 2025년을 잘 마무리하고, 2026년을 기다리자.</p>
+    <p>우선, 기말고사 단추를 마지막으로 닫는 것이 가장 큰일이다.</p>
+
+    <p>그걸 마무리지어야, 내년 봄에 사이버외대 한국어학과 3학년에 편입을 하고, 그래야 내가 파리에서 안전하게 지낼 한국어강사 자격을 얻게 된다.</p>
+    <p>2년만 시간이 지나면 거의 자동으로 자격을 얻는다.</p>
+
+    <p>또한 한국의 자산, 한글을 세계에 퍼뜨리는 역사적 사명도 달성하는 것이다.</p>
+    <p>물론 나 말고, 많은 사람들이 그 일을 하겠지만, 나는 그들과 다르지 않는가.</p>
+    <p>일반 강의만 하는 강사들과 달리, 나는 한국어 교재 개발이라는 중대한 임무를 완성할 것이다.</p>
+
+    <p>2026년은 내 인생 제2막의 포문을 여는 해이다.</p>
+    <p>이제 한국이라는 지역적 한계를 넘어 파리라는 유럽의 중심에서 나의 꿈을 외치리라.</p>
+
+    <p>한국어, 포에버~!!</p>
+    <p>그리고 프랑스어, 사랑해!!</p>
+    <p>이 두 가지 언어로 내 꿈을 모두 이룰 것이다.</p>
+
+    <p><strong>2026년, 기대된다!</strong></p>
+
+  </section>
+
+  <p class="enote-sign">
+    — Étoile Bleue Créations / 푸른별창작소<br>
+    Editorial Note · Orange Edition
+  </p>
+
+  <div class="enote-nav">
+    <a href="../editor.html">← 편집자 노트 목록으로</a>
+    <a href="../index.html">Home</a>
+  </div>
+
+</main>
+
+</body>
+</html>
