@@ -1457,3 +1457,95 @@ main > p{
   margin-top: 12px;
   margin-bottom: 18px;
 }
+/* === PARISIEN JOURNAL BLOCK === */
+
+.archive-section{
+  max-width: 860px;
+  margin: 0 auto 18px;
+  padding: 0 0 0 56px; /* timeline과 동일 리듬 */
+}
+
+.archive-section__k{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: rgba(24,34,44,0.95);
+}
+
+.archive-section__f{
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(24,34,44,0.68);
+}
+
+.archive-divider{
+  max-width: 860px;
+  margin: 26px auto 18px;
+  height: 1px;
+  background:
+    linear-gradient(90deg,
+      rgba(210,160,60,0.00),
+      rgba(210,160,60,0.42),
+      rgba(24,34,44,0.12),
+      rgba(210,160,60,0.28),
+      rgba(210,160,60,0.00)
+    );
+}
+
+.journal-grid{
+  max-width: 860px;
+  margin: 0 auto 80px;
+  padding-left: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.journal-card{
+  border: 1px solid rgba(210,160,60,0.22);
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  background: rgba(255,255,255,0.52);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.journal-card__title{
+  margin: 0;
+  font-size: 16px;
+  color: rgba(24,34,44,0.95);
+}
+
+.journal-card__sub{
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(24,34,44,0.68);
+}
+
+.journal-card__desc{
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(24,34,44,0.86);
+}
+
+.journal-card a{
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: rgba(24,34,44,0.95);
+  border-bottom: 1px solid rgba(210,160,60,0.28);
+  padding-bottom: 2px;
+}
+
+.journal-card a:hover{
+  border-bottom-color: rgba(24,34,44,0.95);
+}
+
+@media (max-width: 720px){
+  .journal-grid{
+    grid-template-columns: 1fr;
+  }
+}
