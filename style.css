@@ -1819,3 +1819,111 @@ main > p{
     padding: 20px 16px 16px;
   }
 }
+/* =========================
+   CINEMA BOX, FILM CUTS
+   ========================= */
+
+.cinema-box{
+  width: min(980px, 92vw);
+  margin: 56px auto 18px;
+}
+
+.cinema-strip{
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 필름 컷(카드) */
+.film-cut{
+  position: relative;
+  display: inline-block;
+  width: 220px;
+  height: 140px;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+
+  border: 1px solid rgba(0,0,0,0.22);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+
+  transform: translateZ(0);
+}
+
+/* 중앙 '컷' 면: 밝게(안은 검게 채우지 않음) */
+.film-body{
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 28px;
+  bottom: 28px;
+
+  border-radius: 4px;
+
+  /* 기본 톤: 샘플처럼 밝은 면 */
+  background: rgba(255,255,255,0.86);
+
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 상/하 스트립(검정 + 구멍) */
+.film-cut::before,
+.film-cut::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  height: 24px;
+  background: #0f1413; /* 거의 블랙에 가까운 딥 차콜 */
+
+  /* 구멍 패턴 */
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.82) 0 12px,
+      rgba(255,255,255,0.00) 12px 22px
+    );
+  background-size: 22px 100%;
+  background-position: 12px 0;
+}
+
+.film-cut::before{ top: 0; }
+.film-cut::after{ bottom: 0; }
+
+/* 텍스트 위계: 영어(위) / 한글(아래) */
+.film-en{
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  color: rgba(0,0,0,0.62);
+  margin-bottom: 10px;
+}
+
+.film-ko{
+  font-size: 1.18rem;
+  font-weight: 650;
+  color: rgba(0,0,0,0.84);
+  line-height: 1.2;
+}
+
+/* 호버: 아주 미세하게만 (필름은 과한 인터랙션 금지) */
+.film-cut:hover{
+  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+  transform: translateY(-1px);
+}
+
+.film-cut:hover .film-body{
+  background: rgba(255,255,255,0.90);
+}
+
+/* 모바일 */
+@media (max-width: 520px){
+  .film-cut{
+    width: 260px;
+    height: 150px;
+  }
+}
