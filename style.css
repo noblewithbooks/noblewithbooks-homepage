@@ -1965,3 +1965,132 @@ main > p{
     bottom: 32px;
   }
 }
+/* =========================
+   OVERRIDE: FILM-FRAME -> premium sprocket (top+bottom)
+   put this at the VERY END of style.css
+========================= */
+
+.film-strip{ margin: 30px 0 70px; }
+
+.film-track{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* outer: soft premium card */
+.film-frame{
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(0,0,0,0.10);
+
+  box-shadow:
+    0 18px 30px rgba(0,0,0,0.10),
+    0 2px 0 rgba(255,255,255,0.25) inset;
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  /* wave 변수 유지(있으면 그대로 먹음) */
+  transform: translateY(var(--waveY, 0px));
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* TOP sprocket strip */
+.film-frame::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height: 22px;
+
+  background: rgba(12,16,15,0.88);
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.85) 0 10px,
+      rgba(255,255,255,0.00) 10px 20px
+    );
+  background-size: 20px 100%;
+  background-position: 12px 0;
+
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* BOTTOM sprocket strip (새로 만듦: 기존 after를 중앙 면으로 전환) */
+.film-frame::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  bottom:0;
+  height: 22px;
+
+  background: rgba(12,16,15,0.88);
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.85) 0 10px,
+      rgba(255,255,255,0.00) 10px 20px
+    );
+  background-size: 20px 100%;
+  background-position: 12px 0;
+
+  pointer-events: none;
+}
+
+/* 중앙 면(밝은 종이/유리톤): frame-inner를 패널처럼 */
+.film-frame .frame-inner{
+  position: relative;
+  margin: 30px 14px; /* 위/아래 스트립 피하기 */
+  border-radius: 12px;
+  padding: 18px 14px 16px;
+
+  background:
+    linear-gradient(to bottom,
+      rgba(255,255,255,0.92),
+      rgba(255,255,255,0.80)
+    );
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.55) inset,
+    0 0 0 1px rgba(0,0,0,0.08) inset,
+    0 10px 18px rgba(0,0,0,0.08);
+
+  text-align: center;
+  z-index: 2;
+}
+
+/* 카피: 영어(위) / 한글(아래) 딱 2줄 */
+.film-frame .frame-no{
+  display: block;
+  font-size: 0.86rem;
+  letter-spacing: 0.07em;
+  color: rgba(0,0,0,0.62);
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.film-frame .frame-title{
+  display: block;
+  font-size: 1.14rem;
+  font-weight: 750;
+  color: rgba(0,0,0,0.86);
+  line-height: 1.18;
+  margin: 0;
+}
+
+/* hover: wave 유지 + 미세 상승 */
+.film-frame:hover{
+  transform: translateY(calc(var(--waveY, 0px) - 10px));
+  box-shadow:
+    0 22px 38px rgba(0,0,0,0.13),
+    0 2px 0 rgba(255,255,255,0.28) inset;
+}
