@@ -1630,3 +1630,10 @@ main > p{
   font-size: 14px;
   color: rgba(24,34,44,0.75);
 }
+/* Journal – Korean subtle translation */
+.essay-ko{
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(24,34,44,0.45);
+}
