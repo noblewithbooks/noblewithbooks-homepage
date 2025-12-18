@@ -3,134 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>볼로냐에서 칸까지, 생활권이 바뀌면 인생이 바뀐다 | Noblewithbooks</title>
-  <link rel="stylesheet" href="../style.css?v=20251218-purple-note" />
+  <title>볼로냐에서 칸까지, 생활권이 바뀌면 인생이 바뀐다</title>
+  <link rel="stylesheet" href="../style.css?v=20251218-purple-006" />
 
   <style>
     :root{
-      --p-ink: rgba(24, 20, 40, 0.96);
-      --p-muted: rgba(24, 20, 40, 0.62);
-      --p-line: rgba(24, 20, 40, 0.14);
-
-      --p-accent: rgba(124, 92, 220, 0.95);
-      --p-accent-deep: rgba(78, 54, 160, 0.95);
-      --p-glow: rgba(124, 92, 220, 0.22);
-
-      --p-paper: rgba(255,255,255,0.82);
-      --p-paper-soft: rgba(248,246,255,0.65);
-
-      --radius-lg: 26px;
-      --radius-md: 18px;
-
-      --shadow-soft: 0 14px 36px rgba(0,0,0,0.10);
+      --violet-ink: rgba(28,18,48,0.96);
+      --violet-muted: rgba(28,18,48,0.65);
+      --violet-accent: rgba(118,82,190,0.95);
+      --violet-line: rgba(118,82,190,0.22);
+      --violet-paper: rgba(248,246,255,0.7);
     }
 
-    .p-note{
+    .note-wrap{
       max-width: 920px;
       margin: 0 auto;
-      padding: 60px 18px 90px;
-      color: var(--p-ink);
+      padding: 32px 18px 80px;
+      color: var(--violet-ink);
     }
 
-    /* TITLE */
-    .p-title{
-      text-align: center;
-      margin-bottom: 64px;
-    }
-    .p-title h1{
-      font-size: clamp(34px, 5.2vw, 62px);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
-    }
-    .p-title .meta{
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--p-muted);
-    }
-
-    /* BODY */
-    .p-body{
-      font-size: 16px;
-      line-height: 2.05;
-    }
-    .p-body p{
-      margin: 0 0 24px;
-    }
-
-    /* LEFT BAR SECTION */
-    .p-bar{
-      position: relative;
-      padding-left: 20px;
-      margin: 44px 0;
-    }
-    .p-bar:before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:0;
-      bottom:0;
-      width: 4px;
-      border-radius: 99px;
-      background: linear-gradient(180deg, var(--p-accent), var(--p-accent-deep));
-      box-shadow: 0 0 20px var(--p-glow);
-    }
-
-    /* QUOTE */
-    .p-quote{
-      margin: 48px 0;
-      padding: 34px 30px;
-      background: var(--p-paper);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      font-size: 18px;
-      line-height: 1.95;
-      text-align: center;
-    }
-    .p-quote em{
-      font-style: normal;
-      font-weight: 900;
-      color: var(--p-accent-deep);
-    }
-
-    /* SIGN */
-    .p-sign{
-      margin-top: 70px;
-      padding-top: 22px;
-      border-top: 1px solid var(--p-line);
-      font-size: 13px;
-      line-height: 1.9;
-      color: var(--p-muted);
-      text-align: right;
-    }
-
-    .p-nav{
-      margin-top: 16px;
+    .note-meta{
       display:flex;
-      gap: 14px;
-      justify-content:flex-end;
-      font-size: 13px;
-      color: var(--p-muted);
-    }
-    .p-nav a{
-      text-decoration:none;
-      color: inherit;
-      border-bottom: 1px solid rgba(124,92,220,0.38);
-      padding-bottom: 2px;
-    }
-    .p-nav a:hover{
-      border-bottom-color: rgba(24,20,40,0.7);
+      justify-content:space-between;
+      align-items:center;
+      font-size:13px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--violet-muted);
+      border-bottom:1px solid var(--violet-line);
+      padding-bottom:14px;
+      margin-bottom:40px;
     }
 
-    @media (max-width: 520px){
-      .p-note{ padding: 48px 14px 80px; }
-      .p-title{ margin-bottom: 52px; }
+    .note-title{
+      font-size:clamp(32px,4.6vw,52px);
+      line-height:1.18;
+      letter-spacing:-0.02em;
+      margin-bottom:22px;
+    }
+
+    .note-title span{
+      color: var(--violet-accent);
+    }
+
+    .note-body{
+      font-size:16px;
+      line-height:2.05;
+    }
+
+    .note-body p{
+      margin:0 0 22px;
+    }
+
+    .note-quote{
+      margin:60px 0;
+      padding:36px 30px;
+      background: var(--violet-paper);
+      border-left:6px solid var(--violet-accent);
+      font-size:18px;
+      line-height:1.9;
+    }
+
+    .note-sign{
+      margin-top:70px;
+      padding-top:22px;
+      border-top:1px solid var(--violet-line);
+      font-size:13px;
+      color:var(--violet-muted);
+      line-height:1.9;
+    }
+
+    .note-nav{
+      margin-top:22px;
+      font-size:13px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .note-nav a{
+      text-decoration:none;
+      color:var(--violet-muted);
+      border-bottom:1px solid var(--violet-line);
+      padding-bottom:2px;
+    }
+
+    .note-nav a:hover{
+      color:var(--violet-ink);
+      border-bottom-color:var(--violet-ink);
     }
   </style>
 </head>
 
 <body>
+
 <header class="header">
   <div class="header-inner">
     <div class="brand">
@@ -141,7 +107,6 @@
 
     <nav class="nav">
       <a class="btn-space" href="../index.html">Home</a>
-      <a class="btn-space" href="../notice.html">공지사항</a>
       <a class="btn-space" href="../editor.html">편집자 노트</a>
       <a class="btn-space" href="../books.html">책 소개</a>
       <a class="btn-space" href="../press.html">언론의 시선</a>
@@ -149,51 +114,103 @@
   </div>
 </header>
 
-<main class="p-note">
+<main class="note-wrap">
 
-  <section class="p-title">
-    <h1>볼로냐에서 칸까지,<br>생활권이 바뀌면 인생이 바뀐다</h1>
-    <div class="meta">2025.11.14 · Editorial Note</div>
-  </section>
+  <div class="note-meta">
+    <div>EDITORIAL NOTE</div>
+    <div>2025.11.14</div>
+  </div>
 
-  <section class="p-body">
+  <h1 class="note-title">
+    <span>볼로냐에서 칸까지,</span><br>
+    생활권이 바뀌면 인생이 바뀐다
+  </h1>
+
+  <section class="note-body">
 
     <p>볼로냐 도서전에 참가 신청하라는 메일을 받았다.</p>
 
-    <p>매년 이맘때가 되면 출판진흥원에서 어김없이 보내오는 안내지만, 올해는 그 메일이 조금 다르게 와닿았다. 이제는 ‘한국에서 출발하는 먼 국제 행사’가 아니라, 곧 내가 살아갈 파리라는 새 생활권에서 펼쳐질 일상적인 장면처럼 느껴졌기 때문이다.</p>
+    <p>매년 이맘때가 되면 출판진흥원에서 어김없이 보내오는 안내지만, 올해는 그 메일이 조금 다르게 와닿았다.</p>
 
-    <div class="p-bar">
-      <p>한국에서 살 때, 볼로냐 도서전은 비행시간 12시간 넘게 들고, 수백만 원의 비용을 감당해야 하는 큰 행사다. 대한항공 독점 구조가 만들어 놓은 비싼 항공권, 국제선 프리미엄이 붙어버린 모든 비용들. 한국에서 해외에 나가는 것은 늘 “마음 단단히 먹고 떠나야 하는 사건”에 가깝다.</p>
-    </div>
+    <p>이제는 ‘한국에서 출발하는 먼 국제 행사’가 아니라, 곧 내가 살아갈 파리라는 새 생활권에서 펼쳐질 일상적인 장면처럼 느껴졌기 때문이다.</p>
+
+    <p>한국에서 살 때, 볼로냐 도서전은 비행시간 12시간 넘게 들고, 수백만 원의 비용을 감당해야 하는 큰 행사다.</p>
+
+    <p>대한항공 독점 구조가 만들어 놓은 비싼 항공권, 국제선 프리미엄이 붙어버린 모든 비용들.</p>
+
+    <p>한국에서 해외에 나가는 것은 늘 “마음 단단히 먹고 떠나야 하는 사건”에 가깝다.</p>
 
     <p>그런데 파리에 살게 되면 모든 지도가 완전히 바뀐다.</p>
 
-    <p>볼로냐는 더 이상 ‘해외 출국’이 아니라 유럽 내부 이동, 말 그대로 생활권 내 여행이 된다. 파리에서 볼로냐까지 비행기로 한 시간 남짓. 왕복 항공권도 한국 돈으로 20만~30만 원대. 대한항공 타고 제주도 한 번 갔다 오는 비용과 비슷한 수준이다.</p>
+    <p>볼로냐는 더 이상 ‘해외 출국’이 아니라 유럽 내부 이동, 말 그대로 생활권 내 여행이 된다.</p>
+
+    <p>파리에서 볼로냐까지 비행기로 한 시간 남짓.</p>
+
+    <p>왕복 항공권도 한국 돈으로 20만~30만 원대.</p>
+
+    <p>대한항공 타고 제주도 한 번 갔다 오는 비용과 비슷한 수준이다.</p>
 
     <p>유럽에 살면 이런 일이 벌어진다.</p>
 
-    <p>이탈리아는 제주도가 되고, 스페인은 대구처럼 느껴지고, 독일은 부산을 다녀오는 감각이 된다. 국가라는 경계가 사실상 흐려지고, 이동은 하나의 거대한 생활권 안에서 이루어진다.</p>
+    <p>이탈리아는 제주도가 되고, 스페인은 대구처럼 느껴지고, 독일은 부산을 다녀오는 감각이 된다.</p>
 
-    <div class="p-quote">
-      ‘어디에 사느냐’는 결국 인생의 방향을 바꾼다.<br>
-      <em>삶 전체의 지형을 바꾸는 선택</em>이다.
-    </div>
+    <p>국가라는 경계가 사실상 흐려지고, 이동은 하나의 거대한 생활권 안에서 이루어진다.</p>
 
-    <p>볼로냐 도서전, 프랑크푸르트 도서전, 런던북페어, 파리 북페어. 모두가 항공 1~2시간, 기차 3~5시간 거리. 심지어 칸 영화제도 기차 타고 남쪽으로 내려가면 된다.</p>
+    <p>그래서 생각하게 된다.</p>
+
+    <p>파리에 살면 내가 갈 수 있는 무대가 얼마나 넓어질까?</p>
+
+    <p>볼로냐 도서전, 프랑크푸르트 도서전, 런던북페어, 파리 북페어.</p>
+
+    <p>모두가 항공 1~2시간, 기차 3~5시간 거리.</p>
+
+    <p>심지어 칸 영화제도 기차 타고 남쪽으로 내려가면 된다.</p>
 
     <p>한국에서라면 큰 결심이 필요한 일정들이 파리에서는 주말 일정으로 바뀌어버린다.</p>
 
-    <p>출판사 대표로서, 또 창작자로서 이 변화는 내 삶의 움직임을 완전히 다른 결로 이끈다. 기회의 크기 자체가 변하는 일이다.</p>
+    <p>출판사 대표로서, 또 창작자로서 이 변화는 내 삶의 움직임을 완전히 다른 결로 이끈다.</p>
 
-    <p>그래서 볼로냐 도서전 메일이 오늘따라 다르게 느껴졌다. 한국에서 보던 그 ‘먼 행사’가 아니라, 곧 내가 일상 속에서 오갈 수 있는 새로운 세계의 문턱처럼 보였기 때문이다.</p>
+    <p>기회의 크기 자체가 변하는 일이다.</p>
+
+    <p>문화, 예술, 출판, 영화.</p>
+
+    <p>이 모든 유럽의 중심 무대들이 이제는 수십만 원, 몇 시간의 이동만으로 닿는 거리에 놓인다.</p>
+
+    <p>‘어디에 사느냐’는 결국 인생의 방향을 바꾼다.</p>
+
+    <p>삶 전체의 지형을 바꾸는 선택이다.</p>
+
+    <p>그래서 볼로냐 도서전 메일이 오늘따라 다르게 느껴졌다.</p>
+
+    <p>한국에서 보던 그 ‘먼 행사’가 아니라, 곧 내가 일상 속에서 오갈 수 있는 새로운 세계의 문턱처럼 보였기 때문이다.</p>
+
+    <p>이 변화가 얼마나 큰 건지 오늘 이 순간, 새삼 실감하고 있다.</p>
+
+    <div class="note-quote">
+      생활권이 바뀌면,  
+      인생의 무대가 달라진다.
+    </div>
+
+    <p>역사는 그렇게 시작이 되나 보다.</p>
+
+    <p>오늘은 역사적 순간이다.</p>
+
+    <p>오래전에 싹을 틔운 비전이 어느 순간 구체적 형태를 찾아 올라오는 그 순간이 역사다.</p>
+
+    <p>오늘, 내 인생 2막의 사업 비전을 완전히 구조화했다.</p>
+
+    <p>설계도가 나왔고, 즉시 실행 가능한 버전이다.</p>
+
+    <p>“착수가 곧 성공이다.”</p>
 
   </section>
 
-  <div class="p-sign">
-    — Étoile Bleue Créations / 푸른별창작소
+  <div class="note-sign">
+    — Étoile Bleue Créations / 푸른별창작소<br>
+    Editorial Archive · Paris
   </div>
 
-  <div class="p-nav">
+  <div class="note-nav">
     <a href="../editor.html">← 편집자 노트 목록</a>
     <a href="../index.html">Home</a>
   </div>
