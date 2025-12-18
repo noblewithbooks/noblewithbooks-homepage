@@ -1549,3 +1549,57 @@ main > p{
     grid-template-columns: 1fr;
   }
 }
+/* === JOURNAL COLOR (hero palette inspired) === */
+
+.journal-avant{
+  background: rgba(215, 232, 240, 0.88); /* washed space blue */
+  border: 1px solid rgba(120, 160, 180, 0.35);
+}
+
+.journal-apres{
+  background: rgba(250, 236, 214, 0.90); /* dusty ochre / paris stone */
+  border: 1px solid rgba(200, 165, 110, 0.40);
+}
+/* === 1px editorial bar next to card titles === */
+
+.journal-card__title{
+  position: relative;
+  padding-left: 10px; /* 바 자리 */
+}
+
+.journal-avant .journal-card__title::before,
+.journal-apres .journal-card__title::before{
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 1px;
+  border-radius: 99px;
+  opacity: 0.95;
+}
+
+.journal-avant .journal-card__title::before{
+  background: rgba(120, 160, 180, 0.95); /* blue cue */
+}
+
+.journal-apres .journal-card__title::before{
+  background: rgba(200, 165, 110, 0.95); /* ochre cue */
+}
+/* === link underline tuned per journal palette === */
+
+.journal-avant a{
+  border-bottom-color: rgba(120, 160, 180, 0.35);
+}
+
+.journal-avant a:hover{
+  border-bottom-color: rgba(120, 160, 180, 0.95);
+}
+
+.journal-apres a{
+  border-bottom-color: rgba(200, 165, 110, 0.35);
+}
+
+.journal-apres a:hover{
+  border-bottom-color: rgba(200, 165, 110, 0.95);
+}
