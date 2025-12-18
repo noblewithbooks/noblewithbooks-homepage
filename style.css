@@ -1625,3 +1625,8 @@ main > p{
     padding-right: 16px;
   }
 }
+.archive-section__desc{
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: rgba(24,34,44,0.75);
+}
