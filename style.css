@@ -2592,3 +2592,45 @@ main > p{
     width: 140px;
   }
 }
+/* ===== Books: category pills (nav 버튼과 구분) ===== */
+.books-page .books-catnav .cat-pill{
+  /* 상단 메뉴보다 확실히 작게 */
+  padding: .42rem .75rem;
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  border-radius: 999px;
+
+  /* nav 버튼과 차별: 더 얇은 테두리 + 살짝 반투명 */
+  border: 1px solid rgba(24,34,44,0.16);
+  background: rgba(255,255,255,0.55);
+  box-shadow: none;
+
+  /* 작은 컬러 포인트(점)용 */
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.books-page .books-catnav .cat-pill::before{
+  content:"";
+  position:absolute;
+  left: .55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cat, rgba(24,34,44,0.35));
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.55);
+}
+
+.books-page .books-catnav .cat-pill:hover{
+  border-color: rgba(24,34,44,0.28);
+  background: rgba(255,255,255,0.72);
+}
+
+/* 장르별 컬러(은은하게) — 필요하면 색은 언제든 바꾸자 */
+.books-page .books-catnav .cat-featured{ --cat: rgba(240,90,40,0.65); }   /* 오렌지 신호 */
+.books-page .books-catnav .cat-humanities{ --cat: rgba(80,120,220,0.55); }
+.books-page .books-catnav .cat-literature{ --cat: rgba(160,90,180,0.55); }
+.books-page .books-catnav .cat-ya{ --cat: rgba(40,160,120,0.55); }
+.books-page .books-catnav .cat-children{ --cat: rgba(220,170,40,0.65); }
