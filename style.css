@@ -2649,8 +2649,10 @@ main > p{
 
 /* 장르별 '면적' 색 — 아주 연하게 */
 .books-page .books-catnav .cat-featured{
-  --cat-bg: rgba(240,90,40,0.12);   /* 오렌지 */
+  --cat-bg: rgba(240,90,40,0.22); /* 대표 도서 오렌지 */
 }
+
+
 .books-page .books-catnav .cat-humanities{
   --cat-bg: rgba(80,120,220,0.12);  /* 블루 */
 }
