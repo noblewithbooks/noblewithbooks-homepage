@@ -1,137 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contents / Books</title>
+  <title>Books | Noblewithbooks</title>
 
-  <!-- 너 사이트가 루트의 style.css를 쓰는 구조라면 이게 맞음 -->
-  <link rel="stylesheet" href="../style.css" />
+  <!-- books 폴더 안이므로 ../ -->
+  <link rel="stylesheet" href="../style.css?v=20251219-books01" />
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NPRRLQZM70');
+  </script>
 </head>
 
-<body class="books-page">
+<body>
 
-  <main class="wrap">
-    <header class="books-header">
-      <h1 class="books-title">Contents / Books</h1>
-    </header>
-
-    <!-- Featured -->
-    <section id="featured-books" class="books-section">
-      <h2 class="books-h2">Featured Books</h2>
-
-      <div class="book-grid">
-        <!-- Card 1 -->
-        <article class="book-card">
-          <div class="book-cover">
-            <img src="../assets/covers/sample.jpg" alt="Book cover" />
-          </div>
-
-          <div class="book-meta">
-            <h3 class="book-title">Sample Title</h3>
-            <p class="book-author">Alix</p>
-
-            <dl class="book-spec">
-              <div><dt>Published</dt><dd>2025-12</dd></div>
-              <div><dt>Format</dt><dd>eBook</dd></div>
-              <div><dt>Price</dt><dd>₩10,000</dd></div>
-            </dl>
-
-            <div class="book-actions">
-              <a class="btn btn-primary" href="#">Read eBook</a>
-              <a class="btn btn-ghost" href="#">Listen</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 2 (샘플 복제) -->
-        <article class="book-card">
-          <div class="book-cover">
-            <img src="../assets/covers/sample.jpg" alt="Book cover" />
-          </div>
-
-          <div class="book-meta">
-            <h3 class="book-title">Another Sample Title</h3>
-            <p class="book-author">Alix</p>
-
-            <dl class="book-spec">
-              <div><dt>Published</dt><dd>2024-06</dd></div>
-              <div><dt>Format</dt><dd>Print</dd></div>
-              <div><dt>Price</dt><dd>₩15,000</dd></div>
-            </dl>
-
-            <div class="book-actions">
-              <a class="btn" href="#">Buy Print</a>
-            </div>
-          </div>
-        </article>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+        <p class="tagline">책 소개</p>
+        <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
       </div>
+
+      <nav class="nav">
+        <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+        <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+        <a class="btn-space" href="../editor.html"><span class="ico"></span>편집자 노트</a>
+        <!-- Books landing -->
+        <a class="btn-space" href="./" aria-current="page"><span class="ico"></span>책 소개</a>
+        <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container books-page">
+
+    <!-- Intro / Title -->
+    <section class="card books-head">
+      <h2 class="books-title">Contents / Books</h2>
+      <p class="books-note">
+        우선은 핵심 정보만 먼저 올립니다.<br>
+        표지·차례·저자 소개·구매 링크는 순차 업데이트합니다.
+      </p>
     </section>
 
-    <!-- Categories -->
-    <section id="book-categories" class="books-section">
+    <!-- Categories (앵커 점프: 파일 분기 없이 오늘은 한 페이지로 끝) -->
+    <section class="card books-cats" id="categories">
       <h2 class="books-h2">Categories</h2>
-
-      <nav class="book-cats" aria-label="Book categories">
-        <a class="cat is-active" href="index.html">Featured Books</a>
-        <a class="cat" href="humanities.html">Humanities</a>
-        <a class="cat" href="literature.html">Literature</a>
-        <a class="cat" href="ya.html">Young Adult</a>
-        <a class="cat" href="children.html">Children’s Books</a>
+      <nav class="books-catnav" aria-label="Book categories">
+        <a class="btn-space" href="#featured"><span class="ico"></span>Featured Books</a>
+        <a class="btn-space" href="#humanities"><span class="ico"></span>Humanities</a>
+        <a class="btn-space" href="#literature"><span class="ico"></span>Literature</a>
+        <a class="btn-space" href="#ya"><span class="ico"></span>Young Adult</a>
+        <a class="btn-space" href="#children"><span class="ico"></span>Children’s Books</a>
       </nav>
     </section>
 
-    <!-- All books list -->
-    <section id="book-list" class="books-section">
-      <h2 class="books-h2">All Books</h2>
+    <!-- Featured -->
+    <section class="card books-section" id="featured">
+      <h2 class="books-h2">Featured Books</h2>
+      <p class="books-korhint">대표 도서</p>
+    </section>
 
-      <div class="book-list">
-        <article class="book-row">
-          <div class="book-cover">
-            <img src="../assets/covers/sample.jpg" alt="Book cover" />
-          </div>
+    <section class="projects-grid">
+      <!-- BOOK 01 (예전 파일 카드 스타일 유지) -->
+      <article class="project-card book-card">
 
-          <div class="book-meta">
-            <h3 class="book-title">Sample Title</h3>
-            <p class="book-author">Alix</p>
+        <img
+          class="book-cover"
+          src="../asset/covers/cover_01.jpg"
+          alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
+          loading="lazy"
+        >
 
-            <dl class="book-spec">
-              <div><dt>Published</dt><dd>2025-12</dd></div>
-              <div><dt>Format</dt><dd>eBook</dd></div>
-              <div><dt>Price</dt><dd>₩10,000</dd></div>
-            </dl>
+        <p class="book-kicker">BOOK 01</p>
 
-            <div class="book-actions">
-              <a class="btn btn-primary" href="#">Read eBook</a>
-              <a class="btn btn-ghost" href="#">Listen</a>
-            </div>
-          </div>
-        </article>
+        <h3>『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
 
-        <article class="book-row">
-          <div class="book-cover">
-            <img src="../assets/covers/sample.jpg" alt="Book cover" />
-          </div>
+        <p class="book-teaser">
+          인간은 어디에서 시작되었고,<br>
+          무엇을 거쳐 지금에 이르렀으며,
+          어디로 향하고 있는가.
+        </p>
 
-          <div class="book-meta">
-            <h3 class="book-title">Another Sample Title</h3>
-            <p class="book-author">Alix</p>
+        <p class="book-promise">
+          이 책은 종교나 신화를 설명하지 않는다.<br>
+          인류가 반복해온 질문의 궤적을 따라,
+          사유의 지도를 다시 펼친다.
+        </p>
 
-            <dl class="book-spec">
-              <div><dt>Published</dt><dd>2024-06</dd></div>
-              <div><dt>Format</dt><dd>Print</dd></div>
-              <div><dt>Price</dt><dd>₩15,000</dd></div>
-            </dl>
+        <!-- 포맷 버튼(전자책/오디오북 분리) -->
+        <div class="book-format-actions">
+          <a class="btn-space" href="#" aria-disabled="true"><span class="ico"></span>Read eBook</a>
+          <a class="btn-space" href="#" aria-disabled="true"><span class="ico"></span>Listen</a>
+        </div>
 
-            <div class="book-actions">
-              <a class="btn" href="#">Buy Print</a>
-            </div>
-          </div>
-        </article>
-      </div>
+        <!-- 스토어 버튼(기존 유지) -->
+        <div class="actions">
+          <a class="btn-space" href="#" aria-disabled="true"><span class="ico"></span>교보</a>
+          <a class="btn-space" href="#" aria-disabled="true"><span class="ico"></span>예스24</a>
+          <a class="btn-space" href="#" aria-disabled="true"><span class="ico"></span>알라딘</a>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- Humanities -->
+    <section class="card books-section" id="humanities">
+      <h2 class="books-h2">Humanities</h2>
+      <p class="books-empty">Add titles here.</p>
+    </section>
+
+    <!-- Literature -->
+    <section class="card books-section" id="literature">
+      <h2 class="books-h2">Literature</h2>
+      <p class="books-empty">Add titles here.</p>
+    </section>
+
+    <!-- Young Adult -->
+    <section class="card books-section" id="ya">
+      <h2 class="books-h2">Young Adult</h2>
+      <p class="books-empty">Add titles here.</p>
+    </section>
+
+    <!-- Children -->
+    <section class="card books-section" id="children">
+      <h2 class="books-h2">Children’s Books</h2>
+      <p class="books-empty">Add titles here.</p>
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <p>
+      Noblewithbooks (책읽는귀족, est. 2012) ·
+      Étoile Bleue Créations (푸른별창작소, Imprint, est. 2025) ·
+      © All rights reserved by Noblewithbooks / 본 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
+    </p>
+    <p>
+      (10388) 경기도 고양시 일산서구 대산로 123, 현대프라자 K-ILSAN Business Center 342호(주엽동) ·
+      전화 070-7613-8491 ·
+      이메일 idea444@naver.com
+    </p>
+  </footer>
 
 </body>
 </html>

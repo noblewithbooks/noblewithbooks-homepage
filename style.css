@@ -2400,3 +2400,43 @@ main > p{
 @media (max-width: 820px){
   .book-grid{ grid-template-columns: 1fr; }
 }
+/* ===== Books folder (/books/) page patch ===== */
+.books-page .books-title{
+  margin: 0 0 .5rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.books-page .books-note{
+  margin: 0;
+  opacity: .72;
+}
+
+.books-page .books-h2{
+  margin: 0 0 .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.books-page .books-korhint{
+  margin: .15rem 0 0;
+  opacity: .65;
+}
+
+.books-catnav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.book-format-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: .85rem 0 0;
+}
+
+.books-empty{
+  margin: 0;
+  opacity: .65;
+}
