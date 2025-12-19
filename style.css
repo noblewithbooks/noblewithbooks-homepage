@@ -2439,65 +2439,19 @@ main > p{
 .books-empty{
   margin: 0;
   opacity: .65;
-}
-/* =========================
-   BOOK STORE LABELS (Option A)
-   - text color only
-   - no pill / no button look
-========================= */
-
-/* 컨테이너 */
-.book-format-actions{
-  display: flex;
-  gap: .6rem;
-  flex-wrap: wrap;
-}
-
-/* 공통 라벨 */
-.book-format-actions a{
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-
-  padding: .35rem .6rem;
-  border-radius: 4px;                 /* 직사각형 */
-  background: rgba(255,255,255,0.55); /* 공통 박스 */
-
-  font-size: .85rem;
-  line-height: 1.2;
-  text-decoration: none;
-
-  transition: opacity .15s ease, transform .15s ease;
-}
-
-.book-format-actions a:hover{
-  opacity: .85;
-  transform: translateY(-1px);
-}
-
-/* 별 */
-.book-format-actions .star{
-  font-size: .9em;
-}
-
-/* 서점별 색 (텍스트만) */
-.store-kyobo   { color: #4b6b86; } /* 더스티 블루 */
-.store-yes24   { color: #c97a4a; } /* 소프트 피치 */
-.store-aladin  { color: #5f7f6b; } /* 세이지 */
-/* =========================================================
+}/* =========================================================
    BOOKS: Format/Store labels (Option A — small, not buttons)
-   Put this at the VERY END of style.css
+   FINAL — no dependency on .books-page
 ========================================================= */
 
-.books-page .book-format-actions{
+.book-format-actions{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 12px;
 }
 
-/* 공통: 벽돌 방지(크기/줄바꿈/늘어남 강제 차단) */
-.books-page .book-format-actions a{
+.book-format-actions a{
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -2520,29 +2474,26 @@ main > p{
   transition: transform 140ms ease, opacity 140ms ease, background 140ms ease;
 }
 
-.books-page .book-format-actions a:hover{
+.book-format-actions a:hover{
   transform: translateY(-1px);
   opacity: 0.88;
   background: rgba(255,255,255,0.46);
 }
 
-.books-page .book-format-actions .star{
+.book-format-actions .star{
   font-size: 0.95em;
   opacity: 0.85;
 }
 
-/* 포맷(전자책/오디오) — 중립 잉크 */
-.books-page .book-format-actions a.fmt{
+.book-format-actions a.fmt{
   color: rgba(24,34,44,0.92);
 }
 
-/* 서점 — 색은 텍스트만(옵션A 핵심) */
-.books-page .book-format-actions a.store-kyobo  { color: #4b6b86; }
-.books-page .book-format-actions a.store-yes24  { color: #c97a4a; }
-.books-page .book-format-actions a.store-aladin { color: #5f7f6b; }
+.book-format-actions a.store-kyobo  { color: #4b6b86; }
+.book-format-actions a.store-yes24  { color: #c97a4a; }
+.book-format-actions a.store-aladin { color: #5f7f6b; }
 
-/* disabled처럼 보이게(클릭 막는 건 HTML에서 href/#라 별도지만, 시각만) */
-.books-page .book-format-actions a[aria-disabled="true"]{
+.book-format-actions a[aria-disabled="true"]{
   cursor: default;
   opacity: 0.78;
 }
