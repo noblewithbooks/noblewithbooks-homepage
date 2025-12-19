@@ -68,51 +68,44 @@
       <p class="books-korhint">대표 도서</p>
     </section>
 
-    <section class="projects-grid">
-      <!-- BOOK 01 (예전 파일 카드 스타일 유지) -->
-      <article class="project-card book-card">
+    <section class="books-list">
 
-        <img
-          class="book-cover"
-          src="../asset/covers/cover_01.jpg"
-          alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
-          loading="lazy"
-        >
+  <article class="book-card" aria-label="BOOK 01">
+    <img
+      class="book-cover"
+      src="../asset/covers/cover_01.jpg"
+      alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
+      loading="lazy"
+    >
 
-        <p class="book-kicker">BOOK 01</p>
+    <div class="book-body">
+      <p class="book-kicker">BOOK 01</p>
 
-        <h3>『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
+      <h3 class="book-title">『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
 
-        <p class="book-teaser">
-          인간은 어디에서 시작되었고,<br>
-          무엇을 거쳐 지금에 이르렀으며,
-          어디로 향하고 있는가.
-        </p>
+      <p class="book-teaser">
+        인간은 어디에서 시작되었고, 무엇을 거쳐 지금에 이르렀으며, 어디로 향하고 있는가.
+      </p>
 
-        <p class="book-promise">
-          이 책은 종교나 신화를 설명하지 않는다.<br>
-          인류가 반복해온 질문의 궤적을 따라,
-          사유의 지도를 다시 펼친다.
-        </p>
+      <p class="book-promise">
+        이 책은 종교나 신화를 설명하지 않는다. 인류가 반복해온 질문의 궤적을 따라, 사유의 지도를 다시 펼친다.
+      </p>
 
- <div class="book-format-actions">
+      <div class="book-actions" aria-label="구매처">
+        <a class="btn-space btn-mini store" href="#" aria-disabled="true">
+          <span class="star">★</span> 교보
+        </a>
+        <a class="btn-space btn-mini store" href="#" aria-disabled="true">
+          <span class="star">★</span> 예스24
+        </a>
+        <a class="btn-space btn-mini store" href="#" aria-disabled="true">
+          <span class="star">★</span> 알라딘
+        </a>
+      </div>
+    </div>
+  </article>
 
-  <!-- stores -->
-  <a class="btn-space btn-mini store store-kyobo" href="#" aria-disabled="true">
-    <span class="star">★</span> 교보
-  </a>
-  <a class="btn-space btn-mini store store-yes24" href="#" aria-disabled="true">
-    <span class="star">★</span> 예스24
-  </a>
-  <a class="btn-space btn-mini store store-aladin" href="#" aria-disabled="true">
-    <span class="star">★</span> 알라딘
-  </a>
-</div>
-
-
-
-      </article>
-    </section>
+</section>
 
     <!-- Humanities -->
     <section class="card books-section" id="humanities">

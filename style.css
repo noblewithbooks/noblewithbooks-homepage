@@ -2520,3 +2520,75 @@ main > p{
   border: 1px solid rgba(18,24,38,0.14);
   box-shadow: none;        /* 메뉴 버튼과 구분 */
 }
+/* ===== Books: card rebuild (override old project-card layout) ===== */
+
+.books-page .books-list{
+  display: grid;
+  gap: 18px;
+}
+
+.books-page .book-card{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 18px;
+}
+
+.books-page .book-cover{
+  width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+.books-page .book-body{
+  min-width: 0; /* 긴 텍스트 밀림 방지 */
+}
+
+.books-page .book-kicker{
+  margin: 0 0 8px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .65;
+  font-size: 12px;
+}
+
+.books-page .book-title{
+  margin: 0 0 10px;
+}
+
+.books-page .book-teaser,
+.books-page .book-promise{
+  margin: 0 0 10px;
+  line-height: 1.8;
+}
+
+.books-page .book-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* 버튼이 '벽돌'처럼 커지는 원인: 기존 .btn-space / .btn-mini에 min-width/height가 있으면 이걸로 눌러버림 */
+.books-page .btn-mini{
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+/* 모바일: 표지 위, 텍스트 아래 */
+@media (max-width: 640px){
+  .books-page .book-card{
+    grid-template-columns: 1fr;
+  }
+  .books-page .book-cover{
+    width: 140px;
+  }
+}
