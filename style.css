@@ -2699,3 +2699,41 @@ main > p{
   font-size: 14px;
   line-height: 1.6;
 }
+/* Aladin POD (단한권 인쇄소) — 강조 버튼 */
+.books-page .btn-mini.store-pod{
+  background: rgba(240, 90, 40, 0.14);
+  border-color: rgba(240, 90, 40, 0.35);
+  color: rgba(24,34,44,0.95);
+  font-weight: 650;
+}
+.books-page .btn-mini.store-pod:hover{
+  background: rgba(240, 90, 40, 0.20);
+  border-color: rgba(240, 90, 40, 0.50);
+}
+/* ===== Cover Lightbox (CSS only) ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(24,34,44,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox:target{
+  display: flex;
+}
+
+.lightbox img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.lightbox-close{
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}

@@ -68,12 +68,36 @@
     <section class="books-list">
 
   <article class="book-card" aria-label="BOOK 01">
-    <img
-      class="book-cover"
-      src="../asset/covers/cover_01.jpg"
-      alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
-      loading="lazy"
-    >
+  <a href="#cover-book01" class="book-cover-link">
+  <a href="#cover-book01" class="book-cover-link">
+  <img
+    class="book-cover"
+    src="../asset/covers/cover_01.jpg"
+    alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
+    loading="lazy"
+  >
+</a>
+
+<!-- Cover lightbox -->
+<div id="cover-book01" class="lightbox">
+  <a href="#" class="lightbox-close" aria-label="닫기"></a>
+  <img
+    src="../asset/covers/cover_01.jpg"
+    alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지 크게 보기"
+  >
+</div>
+
+</a>
+
+<!-- Cover lightbox -->
+<div id="cover-book01" class="lightbox">
+  <a href="#" class="lightbox-close" aria-label="닫기"></a>
+  <img
+    src="../asset/covers/cover_01.jpg"
+    alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지 크게 보기"
+  >
+</div>
+
 
     <div class="book-body">
       <p class="book-kicker">BOOK 01</p>
@@ -84,7 +108,7 @@
         인간은 어디에서 시작되었고, 무엇을 거쳐 지금에 이르렀으며, 어디로 향하고 있는가.
       </p>
 
-      <<p class="book-promise">
+      <p class="book-promise">
   이 책은 종교나 신화를 설명하지 않는다.<br>
   인류가 반복해온 질문의 궤적을 따라,
   사유의 지도를 다시 펼친다.
@@ -93,7 +117,7 @@
 <!-- press-release style meta -->
 <dl class="book-meta" aria-label="도서 정보">
   <div class="book-meta__row">
-    <dt>판형</dt><dd>150 × 210</dd>
+    <dt>판형</dt><dd>150×210</dd>
   </div>
   <div class="book-meta__row">
     <dt>쪽수</dt><dd>448쪽</dd>
@@ -114,15 +138,19 @@
 
 
       <div class="book-actions" aria-label="구매처">
-        <a class="btn-space btn-mini store" href="#" aria-disabled="true">
-          <span class="star">★</span> 교보
-        </a>
-        <a class="btn-space btn-mini store" href="#" aria-disabled="true">
-          <span class="star">★</span> 예스24
-        </a>
-        <a class="btn-space btn-mini store" href="#" aria-disabled="true">
-          <span class="star">★</span> 알라딘
-        </a>
+        <a class="btn-space btn-mini store store-pod" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=365272879" target="_blank" rel="noopener" aria-label="알라딘 단한권 인쇄소(POD)로 이동"><span class="star">★</span> 알라딘 · POD</a>
+
+
+      <a class="btn-space btn-mini store store-kyobo" href="https://product.kyobobook.co.kr/detail/S000001623733" target="_blank" rel="noopener">
+  <span class="star">★</span>교보
+</a>
+<a class="btn-space btn-mini store store-yes24" href="https://www.yes24.com/product/goods/23767154" target="_blank" rel="noopener">
+  <span class="star">★</span>예스24
+</a>
+<a class="btn-space btn-mini store store-aladin" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=74294820" target="_blank" rel="noopener">
+  <span class="star">★</span>알라딘
+</a>
+
       </div>
     </div>
   </article>
