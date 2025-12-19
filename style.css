@@ -2439,9 +2439,13 @@ main > p{
 .books-empty{
   margin: 0;
   opacity: .65;
-}/* =========================================================
-   BOOKS: Format/Store labels (Option A — small, not buttons)
-   FINAL — no dependency on .books-page
+}
+/* =========================================================
+   BOOKS — Format/Store mini capsules (FINAL, single source)
+   - brick 방지 (가로 캡슐 유지)
+   - 메인 네비 버튼과 구분 (shadow 제거 + 톤 다운)
+   - .books-page 유무 상관없이 동작
+   Put this at the VERY END of style.css
 ========================================================= */
 
 .book-format-actions{
@@ -2451,33 +2455,34 @@ main > p{
   margin-top: 12px;
 }
 
-.book-format-actions a{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+/* 핵심: btn-space를 재사용하되, 여기선 mini로 강제 축소/가로 유지 */
+.book-format-actions a.btn-space.btn-mini{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
 
-  padding: 6px 10px;
-  border-radius: 8px;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  white-space: nowrap !important;
 
-  background: rgba(255,255,255,0.34);
-  border: 1px solid rgba(18,24,38,0.14);
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
 
-  font-size: 13px;
-  line-height: 1.15;
-  text-decoration: none;
+  /* 메인 버튼과 차별 */
+  box-shadow: none !important;
+  background: rgba(255,255,255,0.60) !important;
+  border: 1px solid rgba(18,24,38,0.14) !important;
 
-  width: auto;
-  flex: 0 0 auto;
-  white-space: nowrap;
-
-  box-shadow: none;
-  transition: transform 140ms ease, opacity 140ms ease, background 140ms ease;
+  font-size: 13px !important;
+  line-height: 1.15 !important;
+  text-decoration: none !important;
 }
 
-.book-format-actions a:hover{
+.book-format-actions a.btn-space.btn-mini:hover{
   transform: translateY(-1px);
-  opacity: 0.88;
-  background: rgba(255,255,255,0.46);
+  background: rgba(255,255,255,0.78) !important;
 }
 
 .book-format-actions .star{
@@ -2485,69 +2490,11 @@ main > p{
   opacity: 0.85;
 }
 
-.book-format-actions a.fmt{
-  color: rgba(24,34,44,0.92);
-}
-
+/* 텍스트 컬러만 다르게(옵션 A 정신 유지) */
+.book-format-actions a.fmt{ color: rgba(24,34,44,0.92); }
 .book-format-actions a.store-kyobo  { color: #4b6b86; }
 .book-format-actions a.store-yes24  { color: #c97a4a; }
 .book-format-actions a.store-aladin { color: #5f7f6b; }
-
-.book-format-actions a[aria-disabled="true"]{
-  cursor: default;
-  opacity: 0.78;
-}
-/* =========================================================
-   BOOKS: use existing capsule buttons + mini variant
-   (prevents brick sizing)
-   Put this at the VERY END of style.css
-========================================================= */
-
-.book-format-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:12px;
-}
-
-/* mini capsule: reuse .btn-space look but smaller + calmer */
-.book-format-actions a.btn-space.btn-mini{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-
-  padding:6px 10px;
-  border-radius:999px;
-
-  width:auto;
-  flex:0 0 auto;
-  white-space:nowrap;
-
-  box-shadow:none;                 /* 상단 메인 버튼이랑 구분 */
-  background:rgba(255,255,255,0.60);
-  border:1px solid rgba(18,24,38,0.14);
-
-  font-size:13px;
-  line-height:1.15;
-  text-decoration:none;
-}
-
-.book-format-actions a.btn-space.btn-mini:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.78);
-}
-
-.book-format-actions .star{
-  font-size:0.95em;
-  opacity:0.85;
-}
-
-/* text colors only */
-.book-format-actions a.fmt{ color: rgba(24,34,44,0.92); }
-.book-format-actions a.store-kyobo  { color:#4b6b86; }
-.book-format-actions a.store-yes24  { color:#c97a4a; }
-.book-format-actions a.store-aladin { color:#5f7f6b; }
 
 .book-format-actions a[aria-disabled="true"]{
   cursor: default;
