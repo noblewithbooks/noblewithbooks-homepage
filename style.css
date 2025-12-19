@@ -2232,15 +2232,15 @@ main > p{
   border-color: #1f6f8b;
   color: #ffffff;
 }
-
-/* Home 배너 – 순수 오렌지, 민트와 완전 분리 */
+/* Home 배너 – 히어로 오렌지와 동일한 광원 톤 */
 .dionysos-home-banner {
   background: linear-gradient(
     180deg,
-    rgba(255, 122, 0, 0.22),
-    rgba(255, 122, 0, 0.10)
+    rgba(255,255,255,0.00),
+    rgba(255,255,255,0.00)
   );
-  border: 1px solid rgba(255, 122, 0, 0.35);
+  box-shadow:
+    inset 0 80px 120px rgba(255,140,0,0.18);
 }
 
 
