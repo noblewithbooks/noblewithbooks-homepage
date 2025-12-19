@@ -2665,3 +2665,37 @@ main > p{
 .books-page .books-catnav .cat-children{
   --cat-bg: rgba(220,170,40,0.14);  /* 옐로 */
 }
+/* ===== Book meta (press-release style) ===== */
+.books-page .book-meta{
+  margin: .95rem 0 1.05rem;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(24,34,44,0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+}
+
+.books-page .book-meta__row{
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: .6rem;
+  padding: .35rem 0;
+  border-top: 1px dashed rgba(24,34,44,0.12);
+}
+
+.books-page .book-meta__row:first-child{
+  border-top: 0;
+}
+
+.books-page .book-meta dt{
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+.books-page .book-meta dd{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
