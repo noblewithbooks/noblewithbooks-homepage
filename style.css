@@ -2497,3 +2497,59 @@ main > p{
   cursor: default;
   opacity: 0.78;
 }
+/* =========================================================
+   BOOKS: use existing capsule buttons + mini variant
+   (prevents brick sizing)
+   Put this at the VERY END of style.css
+========================================================= */
+
+.book-format-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+
+/* mini capsule: reuse .btn-space look but smaller + calmer */
+.book-format-actions a.btn-space.btn-mini{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+
+  padding:6px 10px;
+  border-radius:999px;
+
+  width:auto;
+  flex:0 0 auto;
+  white-space:nowrap;
+
+  box-shadow:none;                 /* 상단 메인 버튼이랑 구분 */
+  background:rgba(255,255,255,0.60);
+  border:1px solid rgba(18,24,38,0.14);
+
+  font-size:13px;
+  line-height:1.15;
+  text-decoration:none;
+}
+
+.book-format-actions a.btn-space.btn-mini:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.78);
+}
+
+.book-format-actions .star{
+  font-size:0.95em;
+  opacity:0.85;
+}
+
+/* text colors only */
+.book-format-actions a.fmt{ color: rgba(24,34,44,0.92); }
+.book-format-actions a.store-kyobo  { color:#4b6b86; }
+.book-format-actions a.store-yes24  { color:#c97a4a; }
+.book-format-actions a.store-aladin { color:#5f7f6b; }
+
+.book-format-actions a[aria-disabled="true"]{
+  cursor: default;
+  opacity: 0.78;
+}
