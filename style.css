@@ -2726,11 +2726,14 @@ main > p{
 }
 
 .lightbox img{
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.45);
 }
+
 
 .lightbox-close{
   position: absolute;
