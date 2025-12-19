@@ -2484,3 +2484,65 @@ main > p{
 .store-kyobo   { color: #4b6b86; } /* 더스티 블루 */
 .store-yes24   { color: #c97a4a; } /* 소프트 피치 */
 .store-aladin  { color: #5f7f6b; } /* 세이지 */
+/* =========================================================
+   BOOKS: Format/Store labels (Option A — small, not buttons)
+   Put this at the VERY END of style.css
+========================================================= */
+
+.books-page .book-format-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* 공통: 벽돌 방지(크기/줄바꿈/늘어남 강제 차단) */
+.books-page .book-format-actions a{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.34);
+  border: 1px solid rgba(18,24,38,0.14);
+
+  font-size: 13px;
+  line-height: 1.15;
+  text-decoration: none;
+
+  width: auto;
+  flex: 0 0 auto;
+  white-space: nowrap;
+
+  box-shadow: none;
+  transition: transform 140ms ease, opacity 140ms ease, background 140ms ease;
+}
+
+.books-page .book-format-actions a:hover{
+  transform: translateY(-1px);
+  opacity: 0.88;
+  background: rgba(255,255,255,0.46);
+}
+
+.books-page .book-format-actions .star{
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+/* 포맷(전자책/오디오) — 중립 잉크 */
+.books-page .book-format-actions a.fmt{
+  color: rgba(24,34,44,0.92);
+}
+
+/* 서점 — 색은 텍스트만(옵션A 핵심) */
+.books-page .book-format-actions a.store-kyobo  { color: #4b6b86; }
+.books-page .book-format-actions a.store-yes24  { color: #c97a4a; }
+.books-page .book-format-actions a.store-aladin { color: #5f7f6b; }
+
+/* disabled처럼 보이게(클릭 막는 건 HTML에서 href/#라 별도지만, 시각만) */
+.books-page .book-format-actions a[aria-disabled="true"]{
+  cursor: default;
+  opacity: 0.78;
+}
