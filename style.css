@@ -2500,3 +2500,23 @@ main > p{
   cursor: default;
   opacity: 0.78;
 }
+/* ===== Books page: kill brick buttons ===== */
+.books-page .book-format-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.books-page .book-format-actions a{
+  flex: 0 0 auto;          /* 🔴 이 한 줄이 핵심 */
+  width: auto;
+  min-width: 0;
+  padding: 6px 10px;       /* 상단 메뉴 버튼과 동일 계열 */
+  font-size: 13px;
+  line-height: 1.1;
+
+  border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(18,24,38,0.14);
+  box-shadow: none;        /* 메뉴 버튼과 구분 */
+}
