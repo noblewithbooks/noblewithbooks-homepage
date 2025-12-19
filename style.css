@@ -2740,3 +2740,12 @@ main > p{
   inset: 0;
   cursor: zoom-out;
 }
+/* ===== Selected Books menu highlight ===== */
+.nav a[href="selected.html"] {
+  color: #f05a28; /* 기존 오렌지 포인트와 동일 */
+  border-color: rgba(240,90,40,0.45);
+}
+
+.nav a[href="selected.html"] .ico {
+  opacity: 0.85;
+}
