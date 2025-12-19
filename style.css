@@ -2749,3 +2749,8 @@ main > p{
 .nav a[href$="selected.html"] .ico {
   opacity: 0.85;
 }
+/* ===== Color anchors (do not change visuals unless referenced) ===== */
+:root {
+  --accent-orange: #f05a28;
+  --accent-blue: #1f4fd8;
+}
