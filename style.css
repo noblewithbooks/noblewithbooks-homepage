@@ -2192,3 +2192,53 @@ main > p{
 .cinema-insert p{
   color: rgba(18,24,38,0.78);
 }
+/* ===== Dionysos Essay Gate ===== */
+
+.dionysos-banner {
+  text-align: center;
+  padding: 3.5rem 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.dionysos-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: #f05a28; /* 오렌지 신호색 */
+  margin-bottom: 0.6rem;
+}
+
+.dionysos-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.dionysos-lede {
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  color: rgba(24, 34, 44, 0.9);
+}
+
+.dionysos-cta {
+  border: 1.5px solid #f05a28;
+  color: #f05a28;
+  padding: 0.6rem 1.4rem;
+}
+
+.dionysos-cta:hover {
+  background: #f05a28;
+  color: #fff;
+}
+
+/* 모바일 보정 */
+@media (max-width: 640px) {
+  .dionysos-banner {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .dionysos-title {
+    font-size: 1.6rem;
+  }
+}
