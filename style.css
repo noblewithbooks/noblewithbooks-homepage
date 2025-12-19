@@ -2233,10 +2233,16 @@ main > p{
   color: #ffffff;
 }
 
-.dionysos-home-banner .dionysos-cta:hover {
-  background: #17566a;
-  border-color: #17566a;
+/* Home 배너 – 순수 오렌지, 민트와 완전 분리 */
+.dionysos-home-banner {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 122, 0, 0.22),
+    rgba(255, 122, 0, 0.10)
+  );
+  border: 1px solid rgba(255, 122, 0, 0.35);
 }
+
 
 /* 모바일 보정 */
 @media (max-width: 640px) {
