@@ -2214,15 +2214,28 @@ main > p{
   color: inherit;
 }
 
+/* 기본 CTA: 중립 (페이지 공통) */
 .dionysos-cta {
-  border: 1.5px solid #f05a28;
-  color: #f05a28;
+  background: transparent;
+  border: 1.5px solid currentColor;
+  color: inherit;
   padding: 0.6rem 1.4rem;
 }
 
 .dionysos-cta:hover {
-  background: #f05a28;
-  color: #fff;
+  background: rgba(0,0,0,0.06);
+}
+
+/* Home 배너 전용 CTA – 오렌지 보색(딥 틸 블루) */
+.dionysos-home-banner .dionysos-cta {
+  background: #1f6f8b;
+  border-color: #1f6f8b;
+  color: #ffffff;
+}
+
+.dionysos-home-banner .dionysos-cta:hover {
+  background: #17566a;
+  border-color: #17566a;
 }
 
 /* 모바일 보정 */
@@ -2243,14 +2256,15 @@ main > p{
 }
 
 /* Home 전용: 오렌지 지구 톤을 '옅게' 입히는 배너 */
-.dionysos-home-banner {
+..dionysos-home-banner {
   background: linear-gradient(
     180deg,
-    rgba(208,142,47,0.18),
-    rgba(208,142,47,0.08)
+    rgba(242,140,40,0.22),
+    rgba(242,140,40,0.10)
   );
-  border: 1px solid rgba(208,142,47,0.22);
+  border: 1px solid rgba(242,140,40,0.35);
 }
+
 .dionysos-home-banner .dionysos-title { color: rgba(24,34,44,0.95); }
 .dionysos-home-banner .dionysos-lede  { color: rgba(24,34,44,0.78); }
 .dionysos-home-banner .dionysos-note  { color: rgba(24,34,44,0.62); opacity: 1; }
