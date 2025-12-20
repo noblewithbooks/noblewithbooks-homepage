@@ -2232,10 +2232,16 @@ main > p{
   border-color: #1f6f8b;
   color: #ffffff;
 }
-/* Home 배너 – 히어로 오렌지 고정 */
+/* Home 전용: 오렌지 지구 톤 배너 (옅게) */
 .dionysos-home-banner {
-  background: #f39200;
+  background: linear-gradient(
+    180deg,
+    rgba(242,140,40,0.22),
+    rgba(242,140,40,0.10)
+  );
+  border: 1px solid rgba(242,140,40,0.35);
 }
+
 
 
 /* 모바일 보정 */
@@ -2256,7 +2262,7 @@ main > p{
 }
 
 /* Home 전용: 오렌지 지구 톤을 '옅게' 입히는 배너 */
-..dionysos-home-banner {
+.dionysos-home-banner {
   background: linear-gradient(
     180deg,
     rgba(242,140,40,0.22),
@@ -2726,7 +2732,7 @@ main > p{
   display: flex;
 }
 
-..lightbox img{
+.lightbox img{
   position: relative;
   z-index: 1;
   max-width: 92vw;
@@ -2809,4 +2815,20 @@ main > p{
 
   z-index:-1;
   opacity:.97;
+}
+/* ===== BOOKS PAGE: cover thumbnail lock (fix giant covers) ===== */
+.books-page img.book-cover{
+  width: 120px !important;
+  height: 160px !important;
+  object-fit: cover !important;
+  border-radius: 12px;
+  display: block;
+}
+
+/* 모바일에서만 살짝 크게 */
+@media (max-width: 640px){
+  .books-page img.book-cover{
+    width: 140px !important;
+    height: 186px !important;
+  }
 }
