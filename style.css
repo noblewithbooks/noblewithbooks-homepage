@@ -2882,16 +2882,56 @@ body .dionysos-banner.dionysos-home-banner{
   background: #F29200 !important;
   border-color: rgba(0,0,0,0.16) !important;
 }
-/* ===== HOTFIX: Golden Footprints size lock (NO MORE GIANT) ===== */
-.history-grid img,
+/* =========================================================
+   HISTORY — Golden Footprints (FINAL SINGLE SOURCE)
+   다른 섹션 영향 없음 / FILM·CINEMA 절대 미접촉
+========================================================= */
+
+.history-grid{
+  max-width: 1200px;
+  margin: 64px auto 72px;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.history-card,
+.history-card-link{
+  display: block;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
 .history-card img,
-.history-card-link img,
-.golden-img{
-  width: 170px !important;
-  height: 170px !important;
-  max-width: 170px !important;
-  max-height: 170px !important;
-  object-fit: cover !important;
-  display: block !important;
-  margin: 0 auto !important;
+.history-card-link img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+/* hover */
+.history-card:hover,
+.history-card-link:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+}
+
+/* mobile */
+@media (max-width: 520px){
+  .history-grid{
+    padding: 0 16px;
+    gap: 16px;
+  }
+  .history-card img,
+  .history-card-link img{
+    border-radius: 14px;
+  }
 }
