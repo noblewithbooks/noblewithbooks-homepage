@@ -2906,3 +2906,52 @@ body .dionysos-banner.dionysos-home-banner{
     border-radius: 14px;
   }
 }
+/* ===== Lightbox overlay ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(24,34,44,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000; /* 헤더/네비보다 위 */
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+/* 이미지 크기 제한 */
+.lightbox img {
+  max-width: 50vw;   /* 화면의 절반 크기 */
+  max-height: 50vh;  /* 화면의 절반 높이 */
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  position: relative;
+  z-index: 1;
+}
+
+/* 닫기 버튼 */
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2.5rem;
+  z-index: 20001;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0,0,0,0.75);
+}
