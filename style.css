@@ -2780,11 +2780,20 @@ main > p{
   line-height:1.1;
 }
 
-/* 검정 바 1개 + 글자 70% 걸침 (강화 버전) */
+
+/* ===== GAME STRIP : word + single bar (FINAL) ===== */
+
+.game-strip__inner{
+  max-width:980px;
+  margin:0 auto;
+  text-align:center; /* 문장/바를 붉은 박스 정중앙으로 */
+}
+
 .game-strip__word{
   position:relative;
   display:inline-block;
   padding:.4rem .9rem;
+
   font-weight:900;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -2792,22 +2801,23 @@ main > p{
   font-size:clamp(1.3rem,2.3vw,2.2rem);
   line-height:1.1;
 
-  isolation:isolate; /* ★ 핵심: 이 span 안에서만 레이어 싸움하게 봉인 */
-  z-index:0;         /* ★ 기준점 */
+  isolation:isolate; /* 스택 컨텍스트 봉인 */
+  z-index:0;         /* 기준 레이어 */
 }
 
 .game-strip__word--single::before{
   content:"";
   position:absolute;
+
   left:-0.6rem;
   right:-0.6rem;
 
-  height:1.15em;     /* 필요하면 1.10~1.25 사이로 미세조정 */
+  height:1.10em;     /* 글자 덮지 않는 안전 높이 */
   background:#000;
-  top:66%;           /* 걸침 느낌은 top으로 잡고 */
+
+  top:72%;           /* ↓ 70% 걸침 체감 포인트 */
   transform:translateY(-50%);
 
-  z-index:-1;        /* ★ 글자 뒤로(하지만 빨간 박스 뒤로는 안 감) */
+  z-index:-1;        /* 글자 뒤, 빨간 박스 앞 */
   opacity:.97;
 }
-
