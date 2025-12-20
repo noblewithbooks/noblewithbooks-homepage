@@ -2754,3 +2754,56 @@ main > p{
   --accent-orange: #f05a28;
   --accent-blue: #1f4fd8;
 }
+/* ===== GAME STRIP (Platform Changes the Game) ===== */
+.game-strip{
+  background:#d11414;
+  padding:1.2rem 1.25rem;
+  margin:0 0 1.25rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.game-strip__inner{
+  max-width:980px;
+  margin:0 auto;
+}
+
+.game-strip__line{
+  width:100%;
+  margin-bottom:.55rem;
+}
+
+.game-strip__word{
+  position:relative;
+  display:inline-block;
+  padding:.35rem .7rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#fff;
+  font-size:clamp(1.25rem,2.2vw,2.1rem);
+  line-height:1.05;
+}
+
+.game-strip__word::before{
+  content:"";
+  position:absolute;
+  left:-999px;
+  right:-999px;
+  top:50%;
+  height:1.05em;
+  background:#000;
+  transform:translateY(-60%);
+  z-index:-1;
+  opacity:.96;
+}
+
+.game-strip__line--bottom .game-strip__word::before{
+  transform:translateY(-45%);
+}
+
+@media (min-width:780px){
+  .game-strip__line--bottom{
+    padding-left:2.2rem;
+  }
+}
