@@ -2703,7 +2703,7 @@ main > p{
   margin: 0 auto;    /* 중앙 정렬 */
 }
 
-..lightbox-close{
+.lightbox-close{
   position: absolute;
   top: 1rem;       /* 화면 상단 위치 */
   right: 1rem;     /* 화면 우측 */
