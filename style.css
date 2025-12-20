@@ -2877,3 +2877,8 @@ main > p{
 .dionysos-home-banner .dionysos-cta:hover{
   background: rgba(255,255,255,0.88) !important;
 }
+/* ===== HOTFIX: Dionysos banner orange lock (do not touch) ===== */
+body .dionysos-banner.dionysos-home-banner{
+  background: #F29200 !important;
+  border-color: rgba(0,0,0,0.16) !important;
+}
