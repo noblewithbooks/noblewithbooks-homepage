@@ -2882,3 +2882,16 @@ body .dionysos-banner.dionysos-home-banner{
   background: #F29200 !important;
   border-color: rgba(0,0,0,0.16) !important;
 }
+/* ===== HOTFIX: Golden Footprints size lock (NO MORE GIANT) ===== */
+.history-grid img,
+.history-card img,
+.history-card-link img,
+.golden-img{
+  width: 170px !important;
+  height: 170px !important;
+  max-width: 170px !important;
+  max-height: 170px !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
