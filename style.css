@@ -2781,15 +2781,21 @@ main > p{
 }
 
 /* 검정 바 1개 + 글자 70% 걸침 (강화 버전) */
+..game-strip__word{
+  position:relative;
+  z-index:1; /* 글자를 검은 바 위로 */
+}
+
 .game-strip__word--single::before{
   content:"";
   position:absolute;
-  left:-0.6rem;     /* ← 덩어리감 */
-  right:-0.6rem;    /* ← 덩어리감 */
-  height:1.35em;    /* ← 존재감 */
+  left:-0.6rem;
+  right:-0.6rem;
+  height:1.35em;
   background:#000;
-  top:62%;          /* ← 70% 걸침 체감 */
+  top:62%;
   transform:translateY(-50%);
-  z-index:-1;
+  z-index:0; /* 부모 내부에서만 뒤로 */
   opacity:.97;
 }
+
