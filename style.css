@@ -2718,14 +2718,17 @@ main > p{
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 20000; /* ✅ 헤더/네비보다 무조건 위로 */
 }
+
 
 .lightbox:target{
   display: flex;
 }
 
-.lightbox img{
+..lightbox img{
+  position: relative;
+  z-index: 1;
   max-width: 92vw;
   max-height: 92vh;
   width: auto;
@@ -2734,12 +2737,13 @@ main > p{
   box-shadow: 0 20px 60px rgba(0,0,0,0.45);
 }
 
-
 .lightbox-close{
   position: absolute;
   inset: 0;
+  z-index: 0;
   cursor: zoom-out;
 }
+
 /* ===== Selected Books menu highlight (all pages) ===== */
 .nav a[href$="selected.html"] {
   color: #f05a28;
