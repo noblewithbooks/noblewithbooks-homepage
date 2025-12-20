@@ -32,12 +32,10 @@
         <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
         <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
         <a class="btn-space" href="../editor.html"><span class="ico"></span>편집자 노트</a>
-        <!-- Books landing -->
-    <a class="btn-space" href="./books.html" aria-current="page"><span class="ico"></span>책 소개</a>
-
+        <a class="btn-space" href="./books.html" aria-current="page"><span class="ico"></span>책 소개</a>
         <a class="btn-space" href="../selected.html"><span class="ico"></span>선정 도서</a>
-         <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
-       </nav>
+        <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+      </nav>
     </div>
   </header>
 
@@ -46,274 +44,238 @@
     <!-- Intro / Title -->
     <section class="card books-head">
       <h2 class="books-title">Contents / Books</h2>
-      <p class="books-note">
- <p class="books-note">
-  책 소개는 순차적으로 업데이트합니다.
-</p>
-
+      <p class="books-note">책 소개는 순차적으로 업데이트합니다.</p>
     </section>
 
-    <!-- Categories (앵커 점프: 파일 분기 없이 오늘은 한 페이지로 끝) -->
- <nav class="books-catnav" aria-label="Book categories">
-  <a class="btn-space cat-pill cat-featured" href="#featured"><span class="ico"></span>Featured Books</a>
-  <a class="btn-space cat-pill cat-humanities" href="#humanities"><span class="ico"></span>Humanities</a>
-  <a class="btn-space cat-pill cat-literature" href="#literature"><span class="ico"></span>Literature</a>
-  <a class="btn-space cat-pill cat-ya" href="#ya"><span class="ico"></span>Young Adult</a>
-  <a class="btn-space cat-pill cat-children" href="#children"><span class="ico"></span>Children’s Books</a>
-</nav>
+    <!-- Categories -->
+    <nav class="books-catnav" aria-label="Book categories">
+      <a class="btn-space cat-pill cat-featured" href="#featured"><span class="ico"></span>Featured Books</a>
+      <a class="btn-space cat-pill cat-humanities" href="#humanities"><span class="ico"></span>Humanities</a>
+      <a class="btn-space cat-pill cat-literature" href="#literature"><span class="ico"></span>Literature</a>
+      <a class="btn-space cat-pill cat-ya" href="#ya"><span class="ico"></span>Young Adult</a>
+      <a class="btn-space cat-pill cat-children" href="#children"><span class="ico"></span>Children’s Books</a>
+    </nav>
 
-    <!-- Featured -->
+    <!-- Featured Section -->
     <section class="card books-section" id="featured">
       <h2 class="books-h2">Featured Books</h2>
       <p class="books-korhint">대표 도서</p>
     </section>
 
-  <section class="books-list">
+    <section class="books-list">
 
-  <article class="book-card" aria-label="BOOK 01">
-
-    <!-- cover (단 하나의 a만) -->
-    <a href="#featured_001" class="book-cover-link" aria-label="표지 크게 보기">
-      <img
-  class="book-cover"
-  src="../asset/covers/featured_001.jpg"
-  alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
-  loading="lazy"
->
-
-    </a>
-
-    <!-- Cover lightbox (단 하나만, a 바깥에) -->
-   
-    <div id="featured_001" class="lightbox" aria-label="표지 크게 보기">
-  <a href="#featured" class="lightbox-close" aria-label="닫기">−</a>
-  <img src="../asset/covers/featured_001.jpg" alt="...">
-</div>
-
-  src="../asset/covers/featured_001.jpg"
-  alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지 크게 보기"
->
-
-    </div>
-
-    <div class="book-body">
-      <p class="book-kicker">BOOK 01</p>
-
-      <h3 class="book-title">『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
-
-      <p class="book-teaser">
-        인간은 어디에서 시작되었고, 무엇을 거쳐 지금에 이르렀으며, 어디로 향하고 있는가.
-      </p>
-
-      <p class="book-promise">
-        이 책은 종교나 신화를 설명하지 않는다.<br>
-        인류가 반복해온 질문의 궤적을 따라,
-        사유의 지도를 다시 펼친다.
-      </p>
-
-      <dl class="book-meta" aria-label="도서 정보">
-        <div class="book-meta__row"><dt>저자</dt><dd>애니 베전트</dd></div>
-<div class="book-meta__row"><dt>번역</dt><dd>황미영</dd></div>
-
-        <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
-        <div class="book-meta__row"><dt>쪽수</dt><dd>448쪽</dd></div>
-        <div class="book-meta__row"><dt>값</dt><dd>18,000원</dd></div>
-        <div class="book-meta__row"><dt>발행일</dt><dd>2016년 1월 11일</dd></div>
-        <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-38-9 (03210)</dd></div>
-        <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
-      </dl>
-
-      <div class="book-actions" aria-label="구매처">
-        <a class="btn-space btn-mini store store-pod"
-           href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=365272879"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 알라딘·단한권(POD)
+      <article class="book-card" aria-label="BOOK 01">
+        <a href="#featured_001" class="book-cover-link" aria-label="표지 크게 보기">
+          <img
+            class="book-cover"
+            src="../asset/covers/featured_001.jpg"
+            alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
+            loading="lazy"
+          >
         </a>
 
-        <a class="btn-space btn-mini store store-kyobo"
-           href="https://product.kyobobook.co.kr/detail/S000001623733"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 교보
+        <div id="featured_001" class="lightbox" aria-label="표지 크게 보기">
+          <a href="#featured" class="lightbox-close" aria-label="닫기">−</a>
+          <img
+            src="../asset/covers/featured_001.jpg"
+            alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지 크게 보기"
+          >
+        </div>
+
+        <div class="book-body">
+          <p class="book-kicker">BOOK 01</p>
+          <h3 class="book-title">『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
+
+          <p class="book-teaser">
+            인간은 어디에서 시작되었고, 무엇을 거쳐 지금에 이르렀으며, 어디로 향하고 있는가.
+          </p>
+
+          <p class="book-promise">
+            이 책은 종교나 신화를 설명하지 않는다.<br>
+            인류가 반복해온 질문의 궤적을 따라,
+            사유의 지도를 다시 펼친다.
+          </p>
+
+          <dl class="book-meta" aria-label="도서 정보">
+            <div class="book-meta__row"><dt>저자</dt><dd>애니 베전트</dd></div>
+            <div class="book-meta__row"><dt>번역</dt><dd>황미영</dd></div>
+            <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
+            <div class="book-meta__row"><dt>쪽수</dt><dd>448쪽</dd></div>
+            <div class="book-meta__row"><dt>값</dt><dd>18,000원</dd></div>
+            <div class="book-meta__row"><dt>발행일</dt><dd>2016년 1월 11일</dd></div>
+            <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-38-9 (03210)</dd></div>
+            <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
+          </dl>
+
+          <div class="book-actions" aria-label="구매처">
+            <a class="btn-space btn-mini store store-pod"
+               href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=365272879"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 알라딘·단한권(POD)
+            </a>
+
+            <a class="btn-space btn-mini store store-kyobo"
+               href="https://product.kyobobook.co.kr/detail/S000001623733"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 교보
+            </a>
+
+            <a class="btn-space btn-mini store store-yes24"
+               href="https://www.yes24.com/product/goods/23767154"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 예스24
+            </a>
+
+            <a class="btn-space btn-mini store store-aladin"
+               href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=74294820"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 알라딘
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Humanities Section -->
+    <section class="card books-section" id="humanities">
+      <h2 class="books-h2">Humanities</h2>
+      <p class="books-korhint">인문학</p>
+    </section>
+
+    <a id="humanities_list"></a>
+    <section class="books-list">
+
+      <article class="book-card" aria-label="BOOK 01">
+        <a href="#humanities_001" class="book-cover-link" aria-label="표지 크게 보기">
+          <img
+            class="book-cover"
+            src="../asset/covers/humanities_001.jpg"
+            alt="『우리는 어떻게 북소믈리에가 될까』 표지"
+            loading="lazy"
+          >
         </a>
 
-        <a class="btn-space btn-mini store store-yes24"
-           href="https://www.yes24.com/product/goods/23767154"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 예스24
+        <div id="humanities_001" class="lightbox" aria-label="표지 크게 보기">
+          <a href="#humanities_list" class="lightbox-close" aria-label="닫기">−</a>
+          <img
+            src="../asset/covers/humanities_001.jpg"
+            alt="『우리는 어떻게 북소믈리에가 될까』 표지 크게 보기"
+          >
+        </div>
+
+        <div class="book-body">
+          <p class="book-kicker">BOOK 01</p>
+          <h3 class="book-title">『우리는 어떻게 북소믈리에가 될까』</h3>
+
+          <p class="book-teaser">
+            책의 내용을 소비하는 독서에서,
+            책의 흐름과 맛을 감별하는 독서로.
+          </p>
+
+          <p class="book-promise">
+            이 책은 많이 읽는 법을 말하지 않는다.<br>
+            대신 책의 패턴을 읽고,
+            자신만의 독서 감각을 기르는 방법을 제시한다.
+          </p>
+
+          <dl class="book-meta" aria-label="도서 정보">
+            <div class="book-meta__row"><dt>저자</dt><dd>조선우</dd></div>
+            <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
+            <div class="book-meta__row"><dt>쪽수</dt><dd>256쪽</dd></div>
+            <div class="book-meta__row"><dt>값</dt><dd>12,000원</dd></div>
+            <div class="book-meta__row"><dt>발행일</dt><dd>2015년 8월 8일</dd></div>
+            <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-32-7 (03100)</dd></div>
+            <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
+          </dl>
+
+          <div class="book-actions" aria-label="구매처">
+            <a class="btn-space btn-mini store store-kyobo"
+               href="https://product.kyobobook.co.kr/detail/S000001623727"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 교보
+            </a>
+            <a class="btn-space btn-mini store store-yes24"
+               href="https://www.yes24.com/product/goods/19097083"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 예스24
+            </a>
+            <a class="btn-space btn-mini store store-aladin"
+               href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=62843357"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 알라딘
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BOOK 02 Humanities -->
+      <article class="book-card" aria-label="HUMANITIES BOOK 02">
+        <a href="#humanities_002" class="book-cover-link" aria-label="표지 크게 보기">
+          <img
+            class="book-cover"
+            src="../asset/covers/humanities_002.jpg"
+            alt="『패턴 인식 독서법』 표지"
+            loading="lazy"
+          >
         </a>
 
-        <a class="btn-space btn-mini store store-aladin"
-           href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=74294820"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 알라딘
-        </a>
-      </div>
+        <div id="humanities_002" class="lightbox" aria-label="표지 크게 보기">
+          <a href="#humanities_list" class="lightbox-close" aria-label="닫기">−</a>
+          <img
+            src="../asset/covers/humanities_002.jpg"
+            alt="『패턴 인식 독서법』 표지 크게 보기"
+          >
+        </div>
 
-    </div>
-  </article>
+        <div class="book-body">
+          <p class="book-kicker">HUMANITIES 02</p>
+          <h3 class="book-title">『(서양 철학사와 함께하는) 패턴 인식 독서법』</h3>
 
-</section>
+          <p class="book-teaser">
+            독서도 패턴을 인식하면, 어려운 책도 쉽게 읽을 수 있다.
+          </p>
 
+          <p class="book-promise">
+            『우리는 어떻게 북소믈리에가 될까』가 독서법의 총론이었다면,
+            『(서양 철학사와 함께하는) 패턴 인식 독서법』은 서양 철학사의 ‘이성과 감성’ 흐름을 따라
+            실제 적용 사례로 들어가는 각론이다.<br>
+            10강 구성으로 ‘Thinking–Text–Reading–Pattern’ 4단계를 따라가며,
+            각 강의 말미에는 ‘독서 10계명’이 하나씩 이어진다.
+          </p>
 
-  <!-- Humanities -->
-<section class="card books-section" id="humanities">
-  <h2 class="books-h2">Humanities</h2>
-  <p class="books-korhint">인문학</p>
-</section>
+          <dl class="book-meta" aria-label="도서 정보">
+            <div class="book-meta__row"><dt>저자</dt><dd>조선우</dd></div>
+            <div class="book-meta__row"><dt>발행</dt><dd>책읽는귀족</dd></div>
+            <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
+            <div class="book-meta__row"><dt>쪽수</dt><dd>400쪽</dd></div>
+            <div class="book-meta__row"><dt>값</dt><dd>16,000원</dd></div>
+            <div class="book-meta__row"><dt>발행일</dt><dd>2017년 4월 10일</dd></div>
+            <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-75-4 (03100)</dd></div>
+            <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
+          </dl>
 
-<!-- Humanities LIST -->
-<a id="humanities_list"></a>
-<section class="books-list">
+          <div class="book-actions" aria-label="구매처">
+            <a class="btn-space btn-mini store store-kyobo"
+               href="https://product.kyobobook.co.kr/detail/S000001623744"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 교보
+            </a>
+            <a class="btn-space btn-mini store store-yes24"
+               href="https://www.yes24.com/product/goods/38127430"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 예스24
+            </a>
+            <a class="btn-space btn-mini store store-aladin"
+               href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=100442262"
+               target="_blank" rel="noopener">
+              <span class="star">★</span> 알라딘
+            </a>
+          </div>
+        </div>
+      </article>
 
-  <article class="book-card" aria-label="BOOK 01">
-
-    <!-- cover -->
-    <a href="#humanities_001" class="book-cover-link" aria-label="표지 크게 보기">
-      <img
-        class="book-cover"
-        src="../asset/covers/humanities_001.jpg"
-        alt="『우리는 어떻게 북소믈리에가 될까』 표지"
-        loading="lazy"
-      >
-    </a>
-
-    <!-- Cover lightbox -->
-    <div id="humanities_001" class="lightbox" aria-label="표지 크게 보기">
-      <a href="#humanities_list" class="lightbox-close" aria-label="닫기">−</a>
-
-      <img
-        src="../asset/covers/humanities_001.jpg"
-        alt="『우리는 어떻게 북소믈리에가 될까』 표지 크게 보기"
-      >
-    </div>
-
-    <div class="book-body">
-      <p class="book-kicker">BOOK 01</p>
-
-      <h3 class="book-title">『우리는 어떻게 북소믈리에가 될까』</h3>
-
-      <p class="book-teaser">
-        책의 내용을 소비하는 독서에서,
-        책의 흐름과 맛을 감별하는 독서로.
-      </p>
-
-      <p class="book-promise">
-        이 책은 많이 읽는 법을 말하지 않는다.<br>
-        대신 책의 패턴을 읽고,
-        자신만의 독서 감각을 기르는 방법을 제시한다.
-      </p>
-
-      <dl class="book-meta" aria-label="도서 정보">
-        <div class="book-meta__row"><dt>저자</dt><dd>조선우</dd></div>
-        <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
-        <div class="book-meta__row"><dt>쪽수</dt><dd>256쪽</dd></div>
-        <div class="book-meta__row"><dt>값</dt><dd>12,000원</dd></div>
-        <div class="book-meta__row"><dt>발행일</dt><dd>2015년 8월 8일</dd></div>
-        <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-32-7 (03100)</dd></div>
-        <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
-      </dl>
-
-      <div class="book-actions" aria-label="구매처">
-
-        <a class="btn-space btn-mini store store-kyobo"
-           href="https://product.kyobobook.co.kr/detail/S000001623727"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 교보
-        </a>
-
-        <a class="btn-space btn-mini store store-yes24"
-           href="https://www.yes24.com/product/goods/19097083"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 예스24
-        </a>
-
-        <a class="btn-space btn-mini store store-aladin"
-           href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=62843357"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 알라딘
-        </a>
-      </div>
-
-    </div>
-  </article>
-
-  <article class="book-card" aria-label="HUMANITIES BOOK 02">
-
-    <!-- cover (단 하나의 a만) -->
-    <a href="#humanities_002" class="book-cover-link" aria-label="표지 크게 보기">
-      <img
-        class="book-cover"
-        src="../asset/covers/humanities_002.jpg"
-        alt="『패턴 인식 독서법』 표지"
-        loading="lazy"
-      >
-    </a>
-
-    <!-- Cover lightbox (단 하나만, a 바깥에) -->
-    <div id="humanities_002" class="lightbox" aria-label="표지 크게 보기">
-<a href="#humanities_list" class="lightbox-close" aria-label="닫기">−</a>
-      <img
-        src="../asset/covers/humanities_002.jpg"
-        alt="『패턴 인식 독서법』 표지 크게 보기"
-      >
-    </div>
-
-    <div class="book-body">
-      <p class="book-kicker">HUMANITIES 02</p>
-
-      <h3 class="book-title">『(서양 철학사와 함께하는) 패턴 인식 독서법』</h3>
-
-      <p class="book-teaser">
-        독서도 패턴을 인식하면, 어려운 책도 쉽게 읽을 수 있다.
-      </p>
-
-      <p class="book-promise">
-        『우리는 어떻게 북소믈리에가 될까』가 독서법의 총론이었다면,
-        『(서양 철학사와 함께하는) 패턴 인식 독서법』은 서양 철학사의 ‘이성과 감성’ 흐름을 따라
-        실제 적용 사례로 들어가는 각론이다.<br>
-        10강 구성으로 ‘Thinking–Text–Reading–Pattern’ 4단계를 따라가며,
-        각 강의 말미에는 ‘독서 10계명’이 하나씩 이어진다.
-      </p>
-
-      <dl class="book-meta" aria-label="도서 정보">
-        <div class="book-meta__row"><dt>저자</dt><dd>조선우</dd></div>
-        <div class="book-meta__row"><dt>발행</dt><dd>책읽는귀족</dd></div>
-        <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
-        <div class="book-meta__row"><dt>쪽수</dt><dd>400쪽</dd></div>
-        <div class="book-meta__row"><dt>값</dt><dd>16,000원</dd></div>
-        <div class="book-meta__row"><dt>발행일</dt><dd>2017년 4월 10일</dd></div>
-        <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-75-4 (03100)</dd></div>
-        <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
-      </dl>
-
-      <div class="book-actions" aria-label="구매처">
-
-        <a class="btn-space btn-mini store store-kyobo"
-           href="https://product.kyobobook.co.kr/detail/S000001623744"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 교보
-        </a>
-
-        <a class="btn-space btn-mini store store-yes24"
-           href="https://www.yes24.com/product/goods/38127430"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 예스24
-        </a>
-
-        <a class="btn-space btn-mini store store-aladin"
-           href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=100442262"
-           target="_blank" rel="noopener">
-          <span class="star">★</span> 알라딘
-        </a>
-      </div>
-
-    </div>
-  </article>
-
-  <!-- BOOK 03부터는 여기 아래에 <article> 계속 추가 -->
-
-</section>
-
+    </section>
 
   </main>
 
