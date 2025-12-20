@@ -2801,8 +2801,10 @@ main > p{
   font-size:clamp(1.3rem,2.3vw,2.2rem);
   line-height:1.1;
 
-  isolation:isolate; /* 스택 컨텍스트 봉인 */
-  z-index:0;         /* 기준 레이어 */
+  isolation:isolate;
+  z-index:0;
+
+  transform: translateY(0.18em); /* ← 글자만 아래로 내려 70% 걸침 체감 */
 }
 
 .game-strip__word--single::before{
