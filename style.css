@@ -2766,26 +2766,6 @@ main > p{
 .game-strip__inner{
   max-width:980px;
   margin:0 auto;
-}
-
-.game-strip__word{
-  position:relative;
-  display:inline-block;
-  padding:.4rem .9rem;
-  font-weight:900;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#fff;
-  font-size:clamp(1.3rem,2.3vw,2.2rem);
-  line-height:1.1;
-}
-
-
-/* ===== GAME STRIP : word + single bar (FINAL) ===== */
-
-.game-strip__inner{
-  max-width:980px;
-  margin:0 auto;
   text-align:center; /* 문장/바를 붉은 박스 정중앙으로 */
 }
 
@@ -2803,23 +2783,26 @@ main > p{
 
   isolation:isolate;
   z-index:0;
+}
 
-  transform: translateY(0.18em); /* ← 글자만 아래로 내려 70% 걸침 체감 */
+/* 글자만 아래로 내려서 ‘70% 걸침’ 만들기 */
+.game-strip__text{
+  display:inline-block;
+  transform: translateY(0.14em);
 }
 
 .game-strip__word--single::before{
   content:"";
   position:absolute;
-
   left:-0.6rem;
   right:-0.6rem;
 
-  height:1.10em;     /* 글자 덮지 않는 안전 높이 */
+  height:1.10em;
   background:#000;
 
-  top:72%;           /* ↓ 70% 걸침 체감 포인트 */
+  top:72%;
   transform:translateY(-50%);
 
-  z-index:-1;        /* 글자 뒤, 빨간 박스 앞 */
+  z-index:-1;
   opacity:.97;
 }
