@@ -2780,15 +2780,15 @@ main > p{
   line-height:1.1;
 }
 
-/* 검정 바 1개 + 글자 70% 걸침 */
+/* 검정 바 1개 + 글자 70% 걸침 (강화 버전) */
 .game-strip__word--single::before{
   content:"";
   position:absolute;
-  left:-1.2rem;
-  right:-1.2rem;
-  height:1.1em;
+  left:-0.6rem;     /* ← 덩어리감 */
+  right:-0.6rem;    /* ← 덩어리감 */
+  height:1.35em;    /* ← 존재감 */
   background:#000;
-  top:55%;
+  top:62%;          /* ← 70% 걸침 체감 */
   transform:translateY(-50%);
   z-index:-1;
   opacity:.97;
