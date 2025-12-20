@@ -2781,9 +2781,9 @@ main > p{
 }
 
 /* 검정 바 1개 + 글자 70% 걸침 (강화 버전) */
-..game-strip__word{
+.game-strip__word{
   position:relative;
-  z-index:1; /* 글자를 검은 바 위로 */
+  z-index:2;          /* 글자를 최상단으로 고정 */
 }
 
 .game-strip__word--single::before{
@@ -2791,11 +2791,11 @@ main > p{
   position:absolute;
   left:-0.6rem;
   right:-0.6rem;
-  height:1.35em;
+  height:1.15em;      /* ← 글자 덮지 않게 살짝 감소 */
   background:#000;
-  top:62%;
+  top:68%;            /* ← ‘걸친 느낌’은 위치로 해결 */
   transform:translateY(-50%);
-  z-index:0; /* 부모 내부에서만 뒤로 */
+  z-index:1;          /* 글자 바로 아래 */
   opacity:.97;
 }
 
