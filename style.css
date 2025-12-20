@@ -20,6 +20,10 @@
 
   /* white highlight */
   --pearl-white: rgba(255,255,255,0.42);
+
+  /* anchors */
+  --accent-orange: #f05a28;
+  --accent-blue: #1f4fd8;
 }
 
 *{ box-sizing: border-box; }
@@ -158,6 +162,13 @@ body{
   border-color: rgba(18,24,38,0.20);
 }
 
+/* highlight: Selected Books */
+.nav a[href$="selected.html"]{
+  color: var(--accent-orange);
+  border-color: rgba(240,90,40,0.45);
+}
+.nav a[href$="selected.html"] .ico{ opacity: 0.85; }
+
 /* =========================
    HERO
 ========================= */
@@ -192,7 +203,6 @@ body{
   height: 100%;
   object-fit: cover;
 }
-
 
 /* =========================
    CARDS / CONTENT
@@ -379,119 +389,7 @@ body{
   color: var(--text);
   font-weight: 700;
 }
-
 .notice__cta:hover{ transform: translateY(-1px); }
-
-/* =========================
-   FILM STRIP (fix: no clipping + stable hover)
-========================= */
-.film-strip{
-  margin: 120px auto;
-  padding: 80px 0 120px; /* ✅ 아래 여유를 크게 (wave 내려가도 안 잘림) */
-  overflow-x: hidden;
-  overflow-y: visible;   /* ✅ 세로 잘림 방지 */
-}
-
-.film-track{
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-}
-
-/* Film frame as a link-safe block */
-.film-frame{
-  width: 220px;
-  height: 140px;
-  border-radius: 22px;
-  position: relative;
-  overflow: hidden;
-
-  display: block;
-  text-decoration: none;
-  color: inherit;
-
-  cursor: pointer;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(0,0,0,0.06);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.85),
-      rgba(230,245,238,0.75)
-    );
-
-  /* ✅ 웨이브 오프셋을 변수로 관리 (hover가 덮어쓰지 않게) */
-  --waveY: 0px;
-
-  transition: transform .35s ease, box-shadow .35s ease;
-  transform-style: preserve-3d;
-}
-
-/* Wave offset */
-.film-frame:nth-child(1){ --waveY: 10px; }
-.film-frame:nth-child(2){ --waveY: 55px; }
-.film-frame:nth-child(3){ --waveY: -40px; }
-.film-frame:nth-child(4){ --waveY: 30px; }
-
-/* Apply wave */
-.film-frame{
-  transform: translateY(var(--waveY));
-}
-
-/* Perforation */
-.film-frame::before,
-.film-frame::after{
-  content:"";
-  position:absolute;
-  left:10px;
-  right:10px;
-  height:10px;
-  background:
-    repeating-linear-gradient(
-      to right,
-      rgba(0,0,0,0.35) 0 6px,
-      transparent 6px 16px
-    );
-  opacity:0.45;
-}
-
-.film-frame::before{ top: 8px; }
-.film-frame::after{ bottom: 8px; }
-
-/* Inner */
-.frame-inner{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 16px;
-  z-index: 2;
-}
-
-.frame-no{
-  font-size: 0.75rem;
-  letter-spacing: .12em;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.frame-title{
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-/* Hover – keep wave + lift */
-.film-frame:hover{
-  transform:
-    translateY(calc(var(--waveY) - 12px))
-    scale(1.04)
-    rotateZ(-0.3deg);
-  box-shadow: var(--shadow);
-}
 
 /* =========================
    CONTACT (Editorial Layout)
@@ -605,308 +503,18 @@ body{
 }
 
 /* =========================
-   RESPONSIVE
+   TYPO
 ========================= */
-@media (max-width: 860px){
-  .header-inner{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav{ margin-top: 10px; }
-}
+h1, h2, h3{ margin-top: 0; }
+h1{ margin-bottom: 0.6em; }
+h2{ margin-bottom: 0.7em; }
+h3{ margin-bottom: 0.8em; }
 
-@media (max-width: 760px){
-  .grid{ grid-template-columns: 1fr; }
+.accent{ color: rgba(168, 64, 110, 0.95); /* 잉크 핑크 */ }
 
-  .hero{
-    height: 420px;
-    margin: 18px auto 24px;
-    border-radius: 18px;
-  }
-
-  .nav{ gap: 8px; }
-  .nav a.btn-space{ padding: 8px 10px; }
-
-  /* film strip on mobile */
-  .film-track{
-    gap: 18px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 0 18px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .film-frame{
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-  }
-}
-/* =========================
-   OVERRIDE: Manifesto block on Home
-   - fix: .card rules overriding .card-manifesto
-   - position: right under hero, centered, no white panel
-========================= */
-.card.card-manifesto{
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-
-  max-width: 760px;
-  margin: 18px auto 0;     /* ✅ 히어로 바로 아래로 붙임 */
-  padding: 26px 18px 28px; /* ✅ 과한 여백 줄임 */
-  text-align: center;      /* ✅ 전체 중앙 정렬 */
-}
-
-.card.card-manifesto .film-quote{
-  margin: 0 0 16px;
-}
-
-.card.card-manifesto .lead{
-  margin: 12px 0 0;
-}
-
-.manifesto-film{
-  margin: 14px auto 10px;  /* ✅ 140px 같은 큰 간격 제거 */
-  text-align: center;
-}
-/* =========================
-   HOME MANIFESTO (Under Hero)
-========================= */
-.home-manifesto{
-  max-width: 760px;
-  margin: 22px auto 48px;   /* hero 바로 아래 */
-  padding: 12px 18px 0;
-  text-align: center;
-}
-
-.home-quote{
-  margin: 0 0 18px;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: rgba(18,24,38,0.78);
-}
-
-.home-quote-source{
-  display: block;
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: rgba(18,24,38,0.55);
-}
-
-.home-line{
-  margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: rgba(18,24,38,0.80);
-}
-
-.home-line + .home-line{
-  margin-top: 14px;
-}
-
-.home-line.strong{
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-/* =========================
-   LOCKED MANIFESTO PANEL
-   - stable center
-   - not affected by other sections/cards
-   - visually “special”
-========================= */
-#home-manifesto{
-  width: min(860px, calc(100vw - 36px));
-  margin: -36px auto 34px;     /* ✅ hero 아래에 살짝 겹쳐 “장치감” */
-  position: relative;
-  z-index: 5;
-  text-align: center;
-}
-
-#home-manifesto .manifesto-panel{
-  padding: 22px 18px 20px;
-  border-radius: 20px;
-
-  /* glass panel */
-  background: rgba(255,255,255,0.62);
-  border: 1px solid rgba(18,24,38,0.14);
-  box-shadow: 0 18px 55px rgba(2,10,20,0.12);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* subtle mint/purple reflection */
-  background-image:
-    radial-gradient(700px 260px at 20% 0%, rgba(80,220,190,0.18), transparent 62%),
-    radial-gradient(760px 280px at 86% 12%, rgba(205,190,255,0.14), transparent 66%);
-}
-
-#home-manifesto .manifesto-panel::before{
-  content:"";
-  display:block;
-  width: 72px;
-  height: 3px;
-  margin: 0 auto 14px;
-  border-radius: 999px;
-  background: rgba(18,24,38,0.18);
-}
-
-/* quote */
-#home-manifesto .manifesto-quote{
-  margin: 0 0 14px;
-  font-size: 1.02rem;
-  line-height: 1.55;
-  color: rgba(18,24,38,0.78);
-}
-
-#home-manifesto .manifesto-source{
-  display:block;
-  margin-top: 6px;
-  font-size: 0.86rem;
-  color: rgba(18,24,38,0.55);
-}
-
-/* 핵심 선언(포스터처럼) */
-#home-manifesto .manifesto-core{
-  margin: 0;
-  font-size: clamp(1.35rem, 2.6vw, 1.72rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-  color: rgba(18,24,38,0.92);
-}
-
-/* 형광펄 한 번만 */
-#home-manifesto .manifesto-core{
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: rgba(80,220,190,0.18);
-}
-
-/* 서사 문단 */
-#home-manifesto .manifesto-body{
-  margin: 12px 0 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(18,24,38,0.74);
-}
-
-/* 모바일: 겹침 줄이기 */
-@media (max-width: 760px){
-  #home-manifesto{
-    margin: -18px auto 26px;
-  }
-  #home-manifesto .manifesto-panel{
-    padding: 18px 14px 16px;
-    border-radius: 18px;
-  }
-}
-/* =========================
-   LOCKED MANIFESTO PANEL
-   - stable center
-   - not affected by other sections/cards
-   - visually “special”
-========================= */
-#home-manifesto{
-  width: min(860px, calc(100vw - 36px));
-  margin: -36px auto 34px;     /* ✅ hero 아래에 살짝 겹쳐 “장치감” */
-  position: relative;
-  z-index: 5;
-  text-align: center;
-}
-
-#home-manifesto .manifesto-panel{
-  padding: 22px 18px 20px;
-  border-radius: 20px;
-
-  /* glass panel */
-  background: rgba(255,255,255,0.62);
-  border: 1px solid rgba(18,24,38,0.14);
-  box-shadow: 0 18px 55px rgba(2,10,20,0.12);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* subtle mint/purple reflection */
-  background-image:
-    radial-gradient(700px 260px at 20% 0%, rgba(80,220,190,0.18), transparent 62%),
-    radial-gradient(760px 280px at 86% 12%, rgba(205,190,255,0.14), transparent 66%);
-}
-
-#home-manifesto .manifesto-panel::before{
-  content:"";
-  display:block;
-  width: 72px;
-  height: 3px;
-  margin: 0 auto 14px;
-  border-radius: 999px;
-  background: rgba(18,24,38,0.18);
-}
-
-/* quote */
-#home-manifesto .manifesto-quote{
-  margin: 0 0 14px;
-  font-size: 1.02rem;
-  line-height: 1.55;
-  color: rgba(18,24,38,0.78);
-}
-
-#home-manifesto .manifesto-source{
-  display:block;
-  margin-top: 6px;
-  font-size: 0.86rem;
-  color: rgba(18,24,38,0.55);
-}
-
-/* 핵심 선언(포스터처럼) */
-#home-manifesto .manifesto-core{
-  margin: 0;
-  font-size: clamp(1.35rem, 2.6vw, 1.72rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-  color: rgba(18,24,38,0.92);
-}
-
-/* 형광펄 한 번만 */
-#home-manifesto .manifesto-core{
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: rgba(80,220,190,0.18);
-}
-
-/* 서사 문단 */
-#home-manifesto .manifesto-body{
-  margin: 12px 0 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(18,24,38,0.74);
-}
-
-/* 모바일: 겹침 줄이기 */
-@media (max-width: 760px){
-  #home-manifesto{
-    margin: -18px auto 26px;
-  }
-  #home-manifesto .manifesto-panel{
-    padding: 18px 14px 16px;
-    border-radius: 18px;
-  }
-}
-/* =========================
-   Option 3 + Sequence Motion (CSS only)
-========================= */
 /* =========================================================
-   HOME MANIFESTO — CLEAN FINAL (only this block)
-   - one line at a time (no overlap)
-   - text never permanently disappears
-   - green ray stays UNDER text
-   - no transparent text / no clip tricks
+   HOME MANIFESTO — CLEAN FINAL (single source)
 ========================================================= */
-
-/* container */
 #home-manifesto{
   width: min(860px, calc(100vw - 36px));
   margin: 18px auto 34px;
@@ -915,7 +523,6 @@ body{
   text-align: center;
 }
 
-/* strip (투명 패널 버전 유지: 박스 없애고 싶다 했으니 기본은 투명) */
 #home-manifesto .manifesto-strip{
   position: relative;
   padding: 12px 18px 0;
@@ -926,7 +533,6 @@ body{
   -webkit-backdrop-filter: none;
 }
 
-/* quote */
 #home-manifesto .m-quote{
   margin: 0 0 10px;
   font-size: 0.98rem;
@@ -940,18 +546,14 @@ body{
   color: rgba(18,24,38,0.52);
 }
 
-/* stage */
 #home-manifesto .m-seq{
   position: relative;
   width: min(760px, calc(100vw - 48px));
   margin: 8px auto 0;
-
-  /* 문장 영역 고정: 흔들림/겹침 방지 */
   min-height: 3.8em;
-  padding-bottom: 26px; /* 아래 광선 자리 */
+  padding-bottom: 26px;
 }
 
-/* lines: 절대 투명 텍스트 금지 (clip/shimmer 전부 안 씀) */
 #home-manifesto .m-line{
   position: absolute;
   left: 50%;
@@ -968,24 +570,19 @@ body{
   letter-spacing: -0.01em;
   line-height: 1.55;
 
-  /* ✅ 항상 "색이 있는 글자" */
   color: rgba(56, 40, 92, 0.98);
--webkit-text-fill-color: rgba(56, 40, 92, 0.98);
-
+  -webkit-text-fill-color: rgba(56, 40, 92, 0.98);
 
   text-shadow:
-  0 1px 0 rgba(0,0,0,0.22),
-  0 0 6px rgba(80,220,190,0.22);
+    0 1px 0 rgba(0,0,0,0.22),
+    0 0 6px rgba(80,220,190,0.22);
 
-
-  /* 기본은 숨김(하지만 !important 금지: 영구 실종 원인) */
   opacity: 0;
   transform: translateX(-50%) translateY(8px);
   z-index: 2;
   pointer-events: none;
 }
 
-/* one-line-at-a-time: 12s cycle */
 #home-manifesto .m1{ animation: mLine1 12s infinite; }
 #home-manifesto .m2{ animation: mLine2 12s infinite; }
 #home-manifesto .m3{ animation: mLine3 12s infinite; }
@@ -1006,7 +603,7 @@ body{
   100%      { opacity: 0; transform: translateX(-50%) translateY(-6px); }
 }
 
-/* green ray UNDER text (attached to m-seq) */
+/* green ray UNDER text */
 #home-manifesto .m-seq::before{
   content:"";
   position:absolute;
@@ -1033,7 +630,6 @@ body{
   filter: blur(0.35px);
   z-index: 0;
   pointer-events: none;
-
   animation: greenRay6 12s infinite;
 }
 
@@ -1060,11 +656,9 @@ body{
   mix-blend-mode: screen;
   z-index: 0;
   pointer-events: none;
-
   animation: greenRay6Glow 12s infinite;
 }
 
-/* same timing as lines: multiple flashes per cycle */
 @keyframes greenRay6{
   0% { opacity:0; transform: translateX(-50%) scaleX(0.80); }
 
@@ -1121,58 +715,65 @@ body{
   100%{ opacity:0; }
 }
 
-/* mobile */
 @media (max-width: 760px){
   #home-manifesto{ margin: 14px auto 26px; }
   #home-manifesto .m-seq{ min-height: 4.2em; padding-bottom: 24px; }
   #home-manifesto .m-line{ font-size: 1.05rem; }
 }
-.accent{
-  color: rgba(168, 64, 110, 0.95); /* 잉크 핑크 */
-}
-/* ========== HISTORY (Golden Footprints) ========== */
+
+/* =========================================================
+   HISTORY — Golden Footprints (FINAL SINGLE SOURCE)
+   다른 섹션 영향 없음 / FILM·CINEMA 절대 미접촉
+========================================================= */
 .history-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
-  gap:24px;
-  margin:64px auto 72px;
-  padding:0 24px;
-  max-width:1200px;
+  max-width: 1200px;
+  margin: 64px auto 72px;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
 }
 
-.history-card{
-  display:block;
-  transition:transform .25s ease, box-shadow .25s ease;
+.history-card,
+.history-card-link{
+  display: block;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.history-card img{
-  width:100%;
-  aspect-ratio:1 / 1;
-  object-fit:cover;
-  display:block;
-  border-radius:14px;
+.history-card img,
+.history-card-link img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
 }
 
-.history-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 28px rgba(0,0,0,.15);
+.history-card:hover,
+.history-card-link:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
 }
 
-/* mobile spacing tweak */
 @media (max-width: 520px){
   .history-grid{
-    gap:16px;
-    margin:48px auto 56px;
-    padding:0 16px;
+    padding: 0 16px;
+    gap: 16px;
   }
-  .history-card img{
-    border-radius:12px;
+  .history-card img,
+  .history-card-link img{
+    border-radius: 14px;
   }
 }
-/* ===== History pages ===== */
-.history-page { }
 
-.history-header {
+/* ===== History pages ===== */
+.history-header{
   max-width: 1100px;
   margin: 0 auto;
   padding: 22px 18px 10px;
@@ -1206,7 +807,8 @@ body{
   margin: 0 auto;
   padding: 0 18px 40px;
 }
-/* ===== History detail page layout ===== */
+
+/* detail layout */
 .history-detail{
   display: grid;
   grid-template-columns: 420px 1fr;
@@ -1214,11 +816,9 @@ body{
   border-radius: 18px;
   padding: 18px;
 }
-
 @media (max-width: 900px){
   .history-detail{ grid-template-columns: 1fr; }
 }
-
 
 .history-section-title{
   margin: 0 0 10px;
@@ -1291,117 +891,12 @@ body{
   background: rgba(255,255,255,0.55);
 }
 
-@media (max-width: 900px){
-  .history-card{ grid-template-columns: 1fr; }
-}
+/* fallback image fixes */
+body.history-page .history-detail{ display: block; }
+body.history-page .history-detail__media img{ width: 100%; height: auto; display: block; }
 
-/* --- HISTORY GRID LINK FIX --- */
-.history-grid{
-  position: relative;
-  z-index: 5;               /* 다른 섹션 위로 */
-}
-
-.history-card{
-  display: block;
-  position: relative;
-  z-index: 6;
-  cursor: pointer;
-}
-
-.history-card img{
-  display: block;
-  width: 100%;
-  height: auto;
-  pointer-events: auto;     /* 클릭 허용 */
-}
-body.history-page .history-detail { display: block; }
-body.history-page .history-detail__media img { width: 100%; height: auto; display: block; }
-.golden-strip { position: relative; z-index: 10; }
-.golden-strip .golden-card { display: block; position: relative; z-index: 11; pointer-events: auto; }
-.golden-strip .golden-img { display: block; width: 100%; height: auto; }
-/* Force history cards to be clickable (override overlays / pointer-events) */
-.history-grid { position: relative; z-index: 1; }
-.history-grid .history-card {
-  position: relative;
-  z-index: 5;
-  display: block;
-  pointer-events: auto;
-}
-.history-grid .history-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  pointer-events: auto;
-}
-/* =========================
-   HISTORY GRID (HOME) — BIG
-========================= */
-.history-grid{
-  max-width: 1200px;
-  margin: 64px auto 72px;
-  padding: 0 24px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-.history-grid .history-card{
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  max-width: none;          /* ✅ 170px 같은 제한 제거 */
-  justify-self: stretch;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.history-grid .history-card img{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: 16px;
-}
-
-.history-grid .history-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.15);
-}
-
-@media (max-width: 520px){
-  .history-grid{
-    padding: 0 16px;
-    gap: 16px;
-  }
-  .history-grid .history-card img{
-    border-radius: 14px;
-  }
-}
-/* history grid link: safe click */
-.history-card-link{
-  display:block;
-  position:relative;
-  z-index:5;
-  cursor:pointer;
-  pointer-events:auto;
-}
-.history-card-link img{
-  width:100%;
-  display:block;
-  pointer-events:auto;
-}
-
-h1, h2, h3{
-  margin-top: 0;
-}
-h1{ margin-bottom: 0.6em; }
-h2{ margin-bottom: 0.7em; }
-h3{ margin-bottom: 0.8em; }
 /* === GOLD TIMELINE === */
-
-.timeline{
-  position: relative;
-}
+.timeline{ position: relative; }
 
 .timeline::before{
   content:"";
@@ -1424,7 +919,6 @@ h3{ margin-bottom: 0.8em; }
   background-blend-mode: multiply;
 }
 
-/* 연도 점 */
 .timeline .dot{
   position: relative;
   z-index: 2;
@@ -1443,26 +937,30 @@ h3{ margin-bottom: 0.8em; }
     );
   background-blend-mode: multiply;
 }
+
 main > h2,
 main > p{
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .archive-intro{
+  max-width: 860px;
+  margin: 0 auto 24px;
+  padding-left: 56px;
+  padding-right: 16px;
   font-size: 13px;
   line-height: 1.9;
   letter-spacing: 0.02em;
-   color: rgba(170, 140, 90, 0.85);
-  margin-top: 12px;
-  margin-bottom: 18px;
+  color: rgba(170, 140, 90, 0.85);
 }
-/* === PARISIEN JOURNAL BLOCK === */
 
+/* === PARISIEN JOURNAL BLOCK === */
 .archive-section{
   max-width: 860px;
   margin: 0 auto 18px;
-  padding: 0 0 0 56px; /* timeline과 동일 리듬 */
+  padding: 0 0 0 56px;
 }
 
 .archive-section__k{
@@ -1477,6 +975,12 @@ main > p{
   font-size: 14px;
   font-style: italic;
   color: rgba(24,34,44,0.68);
+}
+
+.archive-section__desc{
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: rgba(24,34,44,0.75);
 }
 
 .archive-divider{
@@ -1497,12 +1001,11 @@ main > p{
   max-width: 860px;
   margin: 0 auto 80px;
   padding-left: 56px;
-  padding-right: 16px; /* 모바일 숨 쉴 공간 */
+  padding-right: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
-
 
 .journal-card{
   border: 1px solid rgba(210,160,60,0.22);
@@ -1516,6 +1019,8 @@ main > p{
   margin: 0;
   font-size: 16px;
   color: rgba(24,34,44,0.95);
+  position: relative;
+  padding-left: 10px;
 }
 
 .journal-card__sub{
@@ -1541,34 +1046,19 @@ main > p{
   border-bottom: 1px solid rgba(210,160,60,0.28);
   padding-bottom: 2px;
 }
+.journal-card a:hover{ border-bottom-color: rgba(24,34,44,0.95); }
 
-.journal-card a:hover{
-  border-bottom-color: rgba(24,34,44,0.95);
-}
-
-@media (max-width: 720px){
-  .journal-grid{
-    grid-template-columns: 1fr;
-  }
-}
-/* === JOURNAL COLOR (hero palette inspired) === */
-
+/* palette */
 .journal-avant{
-  background: rgba(215, 232, 240, 0.88); /* washed space blue */
+  background: rgba(215, 232, 240, 0.88);
   border: 1px solid rgba(120, 160, 180, 0.35);
 }
-
 .journal-apres{
-  background: rgba(250, 236, 214, 0.90); /* dusty ochre / paris stone */
+  background: rgba(250, 236, 214, 0.90);
   border: 1px solid rgba(200, 165, 110, 0.40);
 }
-/* === 1px editorial bar next to card titles === */
 
-.journal-card__title{
-  position: relative;
-  padding-left: 10px; /* 바 자리 */
-}
-
+/* 1px editorial bar */
 .journal-avant .journal-card__title::before,
 .journal-apres .journal-card__title::before{
   content:"";
@@ -1580,56 +1070,15 @@ main > p{
   border-radius: 99px;
   opacity: 0.95;
 }
+.journal-avant .journal-card__title::before{ background: rgba(120, 160, 180, 0.95); }
+.journal-apres .journal-card__title::before{ background: rgba(200, 165, 110, 0.95); }
 
-.journal-avant .journal-card__title::before{
-  background: rgba(120, 160, 180, 0.95); /* blue cue */
-}
+/* link underline tuned */
+.journal-avant a{ border-bottom-color: rgba(120, 160, 180, 0.35); }
+.journal-avant a:hover{ border-bottom-color: rgba(120, 160, 180, 0.95); }
+.journal-apres a{ border-bottom-color: rgba(200, 165, 110, 0.35); }
+.journal-apres a:hover{ border-bottom-color: rgba(200, 165, 110, 0.95); }
 
-.journal-apres .journal-card__title::before{
-  background: rgba(200, 165, 110, 0.95); /* ochre cue */
-}
-/* === link underline tuned per journal palette === */
-
-.journal-avant a{
-  border-bottom-color: rgba(120, 160, 180, 0.35);
-}
-
-.journal-avant a:hover{
-  border-bottom-color: rgba(120, 160, 180, 0.95);
-}
-
-.journal-apres a{
-  border-bottom-color: rgba(200, 165, 110, 0.35);
-}
-
-.journal-apres a:hover{
-  border-bottom-color: rgba(200, 165, 110, 0.95);
-}
-/* archive intro alignment fix */
-
-.archive-intro{
-  max-width: 860px;
-  margin: 0 auto 24px;
-  padding-left: 56px; /* timeline 기준선과 정렬 */
-  padding-right: 16px;
-}
-@media (max-width: 720px){
-  .journal-grid{
-    grid-template-columns: 1fr;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .archive-intro{
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-.archive-section__desc{
-  margin: 6px 0 0;
-  font-size: 14px;
-  color: rgba(24,34,44,0.75);
-}
 /* Journal – Korean subtle translation */
 .essay-ko{
   margin-top: 18px;
@@ -1637,339 +1086,26 @@ main > p{
   line-height: 1.7;
   color: rgba(24,34,44,0.45);
 }
-.essay-fr{
-  margin-bottom: 28px;
-}
-/* ===== Cinema Film Strip: stronger frame look ===== */
+.essay-fr{ margin-bottom: 28px; }
 
-.film-strip{
-  margin: 28px 0 64px;
-}
-
-.film-track{
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.film-frame{
-  display: block;
-  text-decoration: none;
-  border-radius: 18px;
-  position: relative;
-  overflow: hidden;
-  background: rgba(24,34,44,0.10);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
-}
-
-.film-frame::before{
-  content:"";
-  position:absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: linear-gradient(180deg,
-    rgba(255,185,110,0.95),
-    rgba(210,160,60,0.95),
-    rgba(90,190,230,0.75)
-  );
-  opacity: 0.95;
-}
-
-.film-frame::after{
-  content:"";
-  position:absolute;
-  inset: 0;
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 18px;
-  pointer-events: none;
-}
-
-.film-frame:hover{
-  transform: translateY(-2px);
-  transition: transform 160ms ease;
-}
-
-.frame-inner{
-  padding: 18px 16px 16px 18px;
-}
-
-.frame-no{
-  display: inline-block;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  color: rgba(210,160,60,0.9);
-  margin-bottom: 6px;
-}
-
-.frame-title{
-  display: block;
-  font-size: 18px;
-  line-height: 1.25;
-  color: rgba(24,34,44,0.95);
-  margin-bottom: 10px;
-}
-
-.frame-sub{
-  display: block;
-  font-size: 13px;
-  line-height: 1.65;
-  color: rgba(24,34,44,0.72);
-}
-
-/* Mobile */
 @media (max-width: 720px){
-  .film-track{
+  .journal-grid{
     grid-template-columns: 1fr;
-    gap: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  .frame-title{
-    font-size: 17px;
+  .archive-intro{
+    padding-left: 16px;
+    padding-right: 16px;
   }
-}
-/* ===== Film strip (real film look) ===== */
-
-.film-strip{
-  margin: 30px 0 70px;
-}
-
-.film-track{
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.film-frame{
-  display: block;
-  text-decoration: none;
-  border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-
-  /* film body */
-  background: rgba(10,12,14,0.92);
-  box-shadow:
-    0 14px 34px rgba(0,0,0,0.22),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.film-frame::after{
-  content:"";
-  position:absolute;
-  inset: 0;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  pointer-events: none;
-}
-
-/* perforations: top + bottom */
-.film-frame::before{
-  content:"";
-  position:absolute;
-  left: 12px;
-  right: 12px;
-  top: 10px;
-  bottom: 10px;
-  background:
-    repeating-linear-gradient(90deg,
-      rgba(255,255,255,0.32) 0 6px,
-      rgba(255,255,255,0.00) 6px 16px
-    ) top / 100% 2px no-repeat,
-    repeating-linear-gradient(90deg,
-      rgba(255,255,255,0.32) 0 6px,
-      rgba(255,255,255,0.00) 6px 16px
-    ) bottom / 100% 2px no-repeat;
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-.film-frame:hover{
-  transform: translateY(-2px);
-  transition: transform 160ms ease;
-}
-
-.frame-inner{
-  padding: 22px 16px 18px 16px;
-  text-align: center;
-}
-
-.frame-no{
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: rgba(210,160,60,0.92);
-  margin-bottom: 10px;
-}
-
-.frame-title{
-  display: block;
-  font-size: 16px;
-  line-height: 1.35;
-  color: rgba(255,255,255,0.88);
-}
-
-/* mobile */
-@media (max-width: 720px){
-  .film-track{
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .frame-inner{
-    padding: 20px 16px 16px;
+  .archive-section{
+    padding-left: 16px;
   }
 }
-/* =========================
-   CINEMA BOX, FILM CUTS (soft premium)
-   - sprocket top+bottom
-   - center is "paper/glass" (not black)
-   - copy is 2 lines only
-   ========================= */
 
-.cinema-box{
-  width: min(980px, 92vw);
-  margin: 56px auto 18px;
-}
-
-.cinema-strip{
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* 1) 전체 박스: 두 번째처럼 '연하고 고급' */
-.film-cut{
-  position: relative;
-  display: inline-block;
-  width: 220px;
-  height: 140px;
-  text-decoration: none;
-  border-radius: 10px;
-  overflow: hidden;
-
-  /* 둔탁한 박스감 줄이고, 지면에 얹힌 느낌 */
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(0,0,0,0.10);
-
-  box-shadow:
-    0 18px 30px rgba(0,0,0,0.10),
-    0 2px 0 rgba(255,255,255,0.25) inset;
-
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-
-  transform: translateZ(0);
-}
-
-/* 2) 중앙 면: '의도된 재질' (유리/종이 중간) */
-/* 애매한 회색 제거: 민트가 아주 은은히 비치되, 화이트 쪽으로 정리 */
-.film-body{
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  top: 30px;
-  bottom: 30px;
-
-  border-radius: 8px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.92),
-      rgba(255,255,255,0.80)
-    );
-
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.55) inset,
-    0 0 0 1px rgba(0,0,0,0.08) inset,
-    0 10px 18px rgba(0,0,0,0.08);
-
-  display: grid;
-  place-content: center;
-  text-align: center;
-  padding: 10px;
-}
-
-/* 3) 상/하 스트립: 구멍은 위+아래 모두 (필름 문법) */
-/* '검정 덩어리'로 보이지 않게: 아주 짙은 차콜 + 소프트 */
-.film-cut::before,
-.film-cut::after{
-  content:"";
-  position:absolute;
-  left:0; right:0;
-  height: 22px;
-  background: rgba(12,16,15,0.88);
-
-  /* 구멍(스프로킷) */
-  background-image:
-    repeating-linear-gradient(
-      to right,
-      rgba(255,255,255,0.85) 0 10px,
-      rgba(255,255,255,0.00) 10px 20px
-    );
-  background-size: 20px 100%;
-  background-position: 12px 0;
-
-  /* 스트립을 기계적으로 딱딱하게 만들지 않기 */
-  filter: blur(0.0px);
-}
-
-.film-cut::before{ top: 0; }
-.film-cut::after{ bottom: 0; }
-
-/* 4) 텍스트: 첫 번째의 '명확함'을 여기로 이식 */
-.film-en{
-  font-size: 0.86rem;
-  letter-spacing: 0.07em;
-  color: rgba(0,0,0,0.62);
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.film-ko{
-  font-size: 1.14rem;
-  font-weight: 750;
-  color: rgba(0,0,0,0.86);
-  line-height: 1.18;
-}
-
-/* 5) hover: 고급스럽게 아주 약하게 */
-.film-cut:hover{
-  box-shadow:
-    0 22px 38px rgba(0,0,0,0.13),
-    0 2px 0 rgba(255,255,255,0.28) inset;
-  transform: translateY(-1px);
-}
-
-.film-cut:hover .film-body{
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.94),
-      rgba(255,255,255,0.84)
-    );
-}
-
-/* 모바일 */
-@media (max-width: 520px){
-  .film-cut{
-    width: 260px;
-    height: 150px;
-  }
-  .film-body{
-    left: 16px;
-    right: 16px;
-    top: 32px;
-    bottom: 32px;
-  }
-}
-/* =========================
-   OVERRIDE: FILM-FRAME -> premium sprocket (top+bottom)
-   put this at the VERY END of style.css
-========================= */
-
+/* =========================================================
+   FILM STRIP — premium sprocket (single source)
+========================================================= */
 .film-strip{ margin: 30px 0 70px; }
 
 .film-track{
@@ -1978,7 +1114,6 @@ main > p{
   gap: 16px;
 }
 
-/* outer: soft premium card */
 .film-frame{
   position: relative;
   display: block;
@@ -1998,7 +1133,6 @@ main > p{
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 
-  /* wave 변수 유지(있으면 그대로 먹음) */
   transform: translateY(var(--waveY, 0px));
   transition: transform .35s ease, box-shadow .35s ease;
 }
@@ -2020,12 +1154,10 @@ main > p{
     );
   background-size: 20px 100%;
   background-position: 12px 0;
-
-  opacity: 1;
   pointer-events: none;
 }
 
-/* BOTTOM sprocket strip (새로 만듦: 기존 after를 중앙 면으로 전환) */
+/* BOTTOM sprocket strip */
 .film-frame::after{
   content:"";
   position:absolute;
@@ -2042,14 +1174,13 @@ main > p{
     );
   background-size: 20px 100%;
   background-position: 12px 0;
-
   pointer-events: none;
 }
 
-/* 중앙 면(밝은 종이/유리톤): frame-inner를 패널처럼 */
+/* center panel */
 .film-frame .frame-inner{
   position: relative;
-  margin: 30px 14px; /* 위/아래 스트립 피하기 */
+  margin: 30px 14px;
   border-radius: 12px;
   padding: 18px 14px 16px;
 
@@ -2068,7 +1199,7 @@ main > p{
   z-index: 2;
 }
 
-/* 카피: 영어(위) / 한글(아래) 딱 2줄 */
+/* copy: EN / KO (2 lines) */
 .film-frame .frame-no{
   display: block;
   font-size: 0.86rem;
@@ -2087,13 +1218,21 @@ main > p{
   margin: 0;
 }
 
-/* hover: wave 유지 + 미세 상승 */
 .film-frame:hover{
   transform: translateY(calc(var(--waveY, 0px) - 10px));
   box-shadow:
     0 22px 38px rgba(0,0,0,0.13),
     0 2px 0 rgba(255,255,255,0.28) inset;
 }
+
+/* film grid mobile */
+@media (max-width: 720px){
+  .film-track{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
 /* =========================
    CINEMA ARTICLE (page)
 ========================= */
@@ -2179,103 +1318,75 @@ main > p{
   justify-content: flex-end;
 }
 
+.cinema-insert{
+  margin: 22px 0;
+  padding-top: 6px;
+}
+.cinema-insert p{ color: rgba(18,24,38,0.78); }
+
 @media (max-width: 760px){
   .cinema-title{ font-size: 26px; }
   .cinema-body{ padding: 18px 14px 16px; }
   .cinema-body p{ line-height: 1.8; }
 }
-.cinema-insert{
-  margin: 22px 0;
-  padding-top: 6px;
-}
 
-.cinema-insert p{
-  color: rgba(18,24,38,0.78);
-}
-/* ===== Dionysos Essay Gate ===== */
-
-.dionysos-banner {
+/* =========================
+   DIONYSOS (Home banner lock)
+========================= */
+.dionysos-banner{
   background: transparent;
   color: inherit;
   text-align: center;
   padding: 4rem 2.5rem;
   margin-bottom: 4rem;
 }
+.dionysos-kicker{ color: #f05a28; }
+.dionysos-title{ color: inherit; }
+.dionysos-lede{ color: inherit; }
 
-.dionysos-kicker {
-  color: #f05a28; /* 오렌지 신호 */
-}
-
-.dionysos-title {
-  color: inherit;
-}
-
-.dionysos-lede {
-  color: inherit;
-}
-
-/* 기본 CTA: 중립 (페이지 공통) */
-.dionysos-cta {
+.dionysos-cta{
   background: transparent;
   border: 1.5px solid currentColor;
   color: inherit;
   padding: 0.6rem 1.4rem;
 }
+.dionysos-cta:hover{ background: rgba(0,0,0,0.06); }
 
-.dionysos-cta:hover {
-  background: rgba(0,0,0,0.06);
-}
-
-/* Home 배너 전용 CTA – 오렌지 보색(딥 틸 블루) */
-.dionysos-home-banner .dionysos-cta {
-  background: #1f6f8b;
-  border-color: #1f6f8b;
-  color: #ffffff;
-}
-/* Home 전용: 오렌지 지구 톤 배너 (옅게) */
-.dionysos-home-banner {
-  background: linear-gradient(
-    180deg,
-    rgba(242,140,40,0.22),
-    rgba(242,140,40,0.10)
-  );
-  border: 1px solid rgba(242,140,40,0.35);
-}
-
-
-
-/* 모바일 보정 */
-@media (max-width: 640px) {
-  .dionysos-banner {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .dionysos-title {
-    font-size: 1.6rem;
-  }
-}
-
-.dionysos-note {
+.dionysos-note{
   margin-top: 3rem;
   font-size: 0.9rem;
   opacity: 0.7;
 }
 
-/* Home 전용: 오렌지 지구 톤을 '옅게' 입히는 배너 */
-.dionysos-home-banner {
-  background: linear-gradient(
-    180deg,
-    rgba(242,140,40,0.22),
-    rgba(242,140,40,0.10)
-  );
-  border: 1px solid rgba(242,140,40,0.35);
+/* ✅ HOTFIX LOCK (final) */
+body .dionysos-banner.dionysos-home-banner{
+  background: #F29200 !important;
+  border-color: rgba(0,0,0,0.16) !important;
+}
+body .dionysos-banner.dionysos-home-banner .dionysos-kicker,
+body .dionysos-banner.dionysos-home-banner .dionysos-title,
+body .dionysos-banner.dionysos-home-banner .dionysos-lede,
+body .dionysos-banner.dionysos-home-banner .dionysos-note{
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+body .dionysos-banner.dionysos-home-banner .dionysos-cta{
+  background: #ffffff !important;
+  color: #F29200 !important;
+  border-color: #ffffff !important;
+}
+body .dionysos-banner.dionysos-home-banner .dionysos-cta:hover{
+  background: rgba(255,255,255,0.88) !important;
 }
 
-.dionysos-home-banner .dionysos-title { color: rgba(24,34,44,0.95); }
-.dionysos-home-banner .dionysos-lede  { color: rgba(24,34,44,0.78); }
-.dionysos-home-banner .dionysos-note  { color: rgba(24,34,44,0.62); opacity: 1; }
-.dionysos-home-banner .dionysos-cta   { border-color: rgba(24,34,44,0.55); color: rgba(24,34,44,0.9); }
-/* ===== Books Page (Contents / Books) ===== */
+@media (max-width: 640px){
+  .dionysos-banner{ padding: 2.5rem 1.5rem; }
+  .dionysos-title{ font-size: 1.6rem; }
+}
+
+/* =========================
+   BOOKS (page)
+========================= */
 .books-page .wrap{
   width: min(980px, 92vw);
   margin: 0 auto;
@@ -2289,8 +1400,8 @@ main > p{
   letter-spacing: .12em;
   margin: 0 0 .25rem;
 }
+.books-note{ margin: 0; opacity: .72; }
 
-/* Section */
 .books-section{ margin: 2.75rem 0; }
 
 .books-h2{
@@ -2301,159 +1412,128 @@ main > p{
   opacity: .9;
 }
 
-/* Featured grid */
+.books-korhint{ margin: .15rem 0 0; opacity: .65; }
+
 .book-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
+@media (max-width: 820px){
+  .book-grid{ grid-template-columns: 1fr; }
+}
 
-/* Card base */
-.book-card,
-.book-row{
+.books-page .books-list{
+  display: grid;
+  gap: 18px;
+}
+
+.books-page .book-card{
   display: grid;
   grid-template-columns: 120px 1fr;
-  gap: 1.15rem;
-  padding: 1.15rem;
+  gap: 18px;
+  align-items: start;
+  padding: 18px;
   border: 1px solid rgba(0,0,0,.14);
   border-radius: 18px;
   background: rgba(255,255,255,.30);
   backdrop-filter: blur(10px);
 }
 
-.book-cover img{
+.books-page .book-cover{
   width: 120px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
+  height: auto;
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
 }
 
-.book-title{ margin: 0; font-size: 1.05rem; }
-.book-author{ margin: .25rem 0 1rem; opacity: .75; }
+.books-page .book-body{ min-width: 0; }
 
-.book-spec{
-  margin: 0 0 1rem;
-  display: grid;
-  gap: .35rem;
-}
-.book-spec > div{ line-height: 1.25; }
-.book-spec dt{
-  display: inline;
-  font-size: .78rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  opacity: .7;
-  margin-right: .5rem;
-}
-.book-spec dd{
-  display: inline;
-  margin: 0;
-}
-
-/* Buttons */
-.book-actions{
-  display: flex;
-  gap: .6rem;
-  flex-wrap: wrap;
-}
-
-.btn{
-  display: inline-block;
-  padding: .55rem .85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.25);
-  text-decoration: none;
-}
-
-.btn-primary{
-  border-color: rgba(0,0,0,.4);
-}
-
-.btn-ghost{
-  background: transparent;
-  opacity: .9;
-}
-
-/* Categories */
-.book-cats{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-}
-
-.cat{
-  display: inline-block;
-  padding: .55rem .85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.22);
-  text-decoration: none;
-  opacity: .85;
-}
-
-.cat.is-active{
-  opacity: 1;
-  border-color: rgba(0,0,0,.45);
-}
-
-/* All books list */
-.book-list{
-  display: grid;
-  gap: 1rem;
-}
-
-/* Mobile */
-@media (max-width: 820px){
-  .book-grid{ grid-template-columns: 1fr; }
-}
-/* ===== Books folder (/books/) page patch ===== */
-.books-page .books-title{
-  margin: 0 0 .5rem;
+.books-page .book-kicker{
+  margin: 0 0 8px;
   letter-spacing: .14em;
   text-transform: uppercase;
+  opacity: .65;
+  font-size: 12px;
 }
 
-.books-page .books-note{
+.books-page .book-title{ margin: 0 0 10px; }
+
+.books-page .book-teaser,
+.books-page .book-promise{
+  margin: 0 0 10px;
+  line-height: 1.8;
+}
+
+.books-page .book-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* meta block */
+.books-page .book-meta{
+  margin: .95rem 0 1.05rem;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(24,34,44,0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+}
+
+.books-page .book-meta__row{
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: .6rem;
+  padding: .35rem 0;
+  border-top: 1px dashed rgba(24,34,44,0.12);
+}
+.books-page .book-meta__row:first-child{ border-top: 0; }
+
+.books-page .book-meta dt{
   margin: 0;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   opacity: .72;
 }
-
-.books-page .books-h2{
-  margin: 0 0 .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+.books-page .book-meta dd{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-.books-page .books-korhint{
-  margin: .15rem 0 0;
-  opacity: .65;
-}
-
+/* category pills */
 .books-catnav{
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
 }
 
-.book-format-actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  margin: .85rem 0 0;
+.books-page .books-catnav .cat-pill{
+  padding: .45rem .85rem;
+  font-size: 12.5px;
+  letter-spacing: .04em;
+  border-radius: 999px;
+  border: 1px solid rgba(24,34,44,0.18);
+  background: var(--cat-bg, rgba(255,255,255,0.55));
+  box-shadow: none;
+  text-decoration: none;
+  color: rgba(24,34,44,0.92);
+  opacity: .9;
 }
-
-.books-empty{
-  margin: 0;
-  opacity: .65;
+.books-page .books-catnav .cat-pill:hover{
+  border-color: rgba(24,34,44,0.32);
+  filter: brightness(0.98);
 }
-/* =========================================================
-   BOOKS — Format/Store mini capsules (FINAL, single source)
-   - brick 방지 (가로 캡슐 유지)
-   - 메인 네비 버튼과 구분 (shadow 제거 + 톤 다운)
-   - .books-page 유무 상관없이 동작
-   Put this at the VERY END of style.css
-========================================================= */
+.books-page .books-catnav .cat-featured{ --cat-bg: rgba(240,90,40,0.22); }
+.books-page .books-catnav .cat-humanities{ --cat-bg: rgba(80,120,220,0.12); }
+.books-page .books-catnav .cat-literature{ --cat-bg: rgba(160,90,180,0.12); }
+.books-page .books-catnav .cat-ya{ --cat-bg: rgba(40,160,120,0.12); }
+.books-page .books-catnav .cat-children{ --cat-bg: rgba(220,170,40,0.14); }
 
+/* ===== BOOKS — Format/Store mini capsules (FINAL, single source) ===== */
 .book-format-actions{
   display: flex;
   flex-wrap: wrap;
@@ -2461,7 +1541,6 @@ main > p{
   margin-top: 12px;
 }
 
-/* 핵심: btn-space를 재사용하되, 여기선 mini로 강제 축소/가로 유지 */
 .book-format-actions a.btn-space.btn-mini{
   display: inline-flex !important;
   align-items: center !important;
@@ -2476,7 +1555,6 @@ main > p{
   padding: 6px 10px !important;
   border-radius: 999px !important;
 
-  /* 메인 버튼과 차별 */
   box-shadow: none !important;
   background: rgba(255,255,255,0.60) !important;
   border: 1px solid rgba(18,24,38,0.14) !important;
@@ -2496,216 +1574,17 @@ main > p{
   opacity: 0.85;
 }
 
-/* 텍스트 컬러만 다르게(옵션 A 정신 유지) */
 .book-format-actions a.fmt{ color: rgba(24,34,44,0.92); }
-.book-format-actions a.store-kyobo  { color: #4b6b86; }
-.book-format-actions a.store-yes24  { color: #c97a4a; }
-.book-format-actions a.store-aladin { color: #5f7f6b; }
+.book-format-actions a.store-kyobo{ color: #4b6b86; }
+.book-format-actions a.store-yes24{ color: #c97a4a; }
+.book-format-actions a.store-aladin{ color: #5f7f6b; }
 
 .book-format-actions a[aria-disabled="true"]{
   cursor: default;
   opacity: 0.78;
 }
-/* ===== Books page: kill brick buttons ===== */
-.books-page .book-format-actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-}
 
-.books-page .book-format-actions a{
-  flex: 0 0 auto;          /* 🔴 이 한 줄이 핵심 */
-  width: auto;
-  min-width: 0;
-  padding: 6px 10px;       /* 상단 메뉴 버튼과 동일 계열 */
-  font-size: 13px;
-  line-height: 1.1;
-
-  border-radius: 999px;
-  background: rgba(255,255,255,0.55);
-  border: 1px solid rgba(18,24,38,0.14);
-  box-shadow: none;        /* 메뉴 버튼과 구분 */
-}
-/* ===== Books: card rebuild (override old project-card layout) ===== */
-
-.books-page .books-list{
-  display: grid;
-  gap: 18px;
-}
-
-.books-page .book-card{
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 18px;
-  align-items: start;
-  padding: 18px;
-}
-
-.books-page .book-cover{
-  width: 120px;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
-}
-
-.books-page .book-body{
-  min-width: 0; /* 긴 텍스트 밀림 방지 */
-}
-
-.books-page .book-kicker{
-  margin: 0 0 8px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  opacity: .65;
-  font-size: 12px;
-}
-
-.books-page .book-title{
-  margin: 0 0 10px;
-}
-
-.books-page .book-teaser,
-.books-page .book-promise{
-  margin: 0 0 10px;
-  line-height: 1.8;
-}
-
-.books-page .book-actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-/* 버튼이 '벽돌'처럼 커지는 원인: 기존 .btn-space / .btn-mini에 min-width/height가 있으면 이걸로 눌러버림 */
-.books-page .btn-mini{
-  padding: .45rem .75rem;
-  border-radius: 999px;
-  width: auto !important;
-  min-width: 0 !important;
-  height: auto !important;
-  line-height: 1.2;
-  font-size: 13px;
-}
-
-/* 모바일: 표지 위, 텍스트 아래 */
-@media (max-width: 640px){
-  .books-page .book-card{
-    grid-template-columns: 1fr;
-  }
-  .books-page .book-cover{
-    width: 140px;
-  }
-}
-/* ===== Books: category pills (nav 버튼과 구분) ===== */
-.books-page .books-catnav .cat-pill{
-  /* 상단 메뉴보다 확실히 작게 */
-  padding: .42rem .75rem;
-  font-size: 12.5px;
-  letter-spacing: .06em;
-  border-radius: 999px;
-
-  /* nav 버튼과 차별: 더 얇은 테두리 + 살짝 반투명 */
-  border: 1px solid rgba(24,34,44,0.16);
-  background: rgba(255,255,255,0.55);
-  box-shadow: none;
-
-  /* 작은 컬러 포인트(점)용 */
-  position: relative;
-  padding-left: 1.15rem;
-}
-
-.books-page .books-catnav .cat-pill::before{
-  content:"";
-  position:absolute;
-  left: .55rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--cat, rgba(24,34,44,0.35));
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.55);
-}
-
-.books-page .books-catnav .cat-pill:hover{
-  border-color: rgba(24,34,44,0.28);
-  background: rgba(255,255,255,0.72);
-}
-
-/* ===== Books: category pills (tinted background, no dots) ===== */
-.books-page .books-catnav .cat-pill{
-  padding: .45rem .85rem;
-  font-size: 12.5px;
-  letter-spacing: .04em;
-  border-radius: 999px;
-
-  /* 공통 */
-  border: 1px solid rgba(24,34,44,0.18);
-  background: var(--cat-bg, rgba(255,255,255,0.55));
-  box-shadow: none;
-}
-
-/* hover는 살짝만 */
-.books-page .books-catnav .cat-pill:hover{
-  border-color: rgba(24,34,44,0.32);
-  filter: brightness(0.98);
-}
-
-/* 장르별 '면적' 색 — 아주 연하게 */
-.books-page .books-catnav .cat-featured{
-  --cat-bg: rgba(240,90,40,0.22); /* 대표 도서 오렌지 */
-}
-
-
-.books-page .books-catnav .cat-humanities{
-  --cat-bg: rgba(80,120,220,0.12);  /* 블루 */
-}
-.books-page .books-catnav .cat-literature{
-  --cat-bg: rgba(160,90,180,0.12);  /* 퍼플 */
-}
-.books-page .books-catnav .cat-ya{
-  --cat-bg: rgba(40,160,120,0.12);  /* 그린 */
-}
-.books-page .books-catnav .cat-children{
-  --cat-bg: rgba(220,170,40,0.14);  /* 옐로 */
-}
-/* ===== Book meta (press-release style) ===== */
-.books-page .book-meta{
-  margin: .95rem 0 1.05rem;
-  padding: .9rem 1rem;
-  border: 1px solid rgba(24,34,44,0.12);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.55);
-}
-
-.books-page .book-meta__row{
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: .6rem;
-  padding: .35rem 0;
-  border-top: 1px dashed rgba(24,34,44,0.12);
-}
-
-.books-page .book-meta__row:first-child{
-  border-top: 0;
-}
-
-.books-page .book-meta dt{
-  margin: 0;
-  font-size: 13px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  opacity: .72;
-}
-
-.books-page .book-meta dd{
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-}
-/* Aladin POD (단한권 인쇄소) — 강조 버튼 */
+/* Aladin POD 강조 */
 .books-page .btn-mini.store-pod{
   background: rgba(240, 90, 40, 0.14);
   border-color: rgba(240, 90, 40, 0.35);
@@ -2716,7 +1595,27 @@ main > p{
   background: rgba(240, 90, 40, 0.20);
   border-color: rgba(240, 90, 40, 0.50);
 }
-/* ===== Cover Lightbox (CSS only) ===== */
+
+/* cover thumbnail lock (giant cover fix) */
+.books-page img.book-cover{
+  width: 120px !important;
+  height: 160px !important;
+  object-fit: cover !important;
+  border-radius: 12px;
+  display: block;
+}
+@media (max-width: 640px){
+  .books-page .book-card{ grid-template-columns: 1fr; }
+  .books-page .book-cover{ width: 140px; }
+  .books-page img.book-cover{
+    width: 140px !important;
+    height: 186px !important;
+  }
+}
+
+/* =========================
+   LIGHTBOX (CSS only)
+========================= */
 .lightbox{
   position: fixed;
   inset: 0;
@@ -2724,13 +1623,10 @@ main > p{
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 20000; /* ✅ 헤더/네비보다 무조건 위로 */
+  z-index: 20000;
 }
 
-
-.lightbox:target{
-  display: flex;
-}
+.lightbox:target{ display: flex; }
 
 .lightbox img{
   position: relative;
@@ -2750,21 +1646,9 @@ main > p{
   cursor: zoom-out;
 }
 
-/* ===== Selected Books menu highlight (all pages) ===== */
-.nav a[href$="selected.html"] {
-  color: #f05a28;
-  border-color: rgba(240,90,40,0.45);
-}
-
-.nav a[href$="selected.html"] .ico {
-  opacity: 0.85;
-}
-/* ===== Color anchors (do not change visuals unless referenced) ===== */
-:root {
-  --accent-orange: #f05a28;
-  --accent-blue: #1f4fd8;
-}
-/* ===== GAME STRIP (Platform Changes the Game) : single bar ===== */
+/* =========================
+   GAME STRIP (Platform Changes the Game) : single bar
+========================= */
 .game-strip{
   background:#d11414;
   padding:1.4rem 1.25rem;
@@ -2776,7 +1660,7 @@ main > p{
 .game-strip__inner{
   max-width:980px;
   margin:0 auto;
-  text-align:center; /* 문장/바를 붉은 박스 정중앙으로 */
+  text-align:center;
 }
 
 .game-strip__word{
@@ -2795,7 +1679,6 @@ main > p{
   z-index:0;
 }
 
-/* 글자만 아래로 내려서 ‘70% 걸침’ 만들기 */
 .game-strip__text{
   display:inline-block;
   transform: translateY(0.14em);
@@ -2806,132 +1689,34 @@ main > p{
   position:absolute;
   left:-0.6rem;
   right:-0.6rem;
-
   height:1.10em;
   background:#000;
-
   top:22%;
   transform:translateY(-50%);
-
   z-index:-1;
   opacity:.97;
 }
-/* ===== BOOKS PAGE: cover thumbnail lock (fix giant covers) ===== */
-.books-page img.book-cover{
-  width: 120px !important;
-  height: 160px !important;
-  object-fit: cover !important;
-  border-radius: 12px;
-  display: block;
-}
 
-/* 모바일에서만 살짝 크게 */
-@media (max-width: 640px){
-  .books-page img.book-cover{
-    width: 140px !important;
-    height: 186px !important;
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 860px){
+  .header-inner{
+    flex-direction: column;
+    align-items: flex-start;
   }
-}
-/* ===== FIX 1: Dionysos Home banner — keep orange crisp (no muddy wash) ===== */
-.dionysos-home-banner{
-  background: transparent !important;
-  border: 1px solid rgba(240,90,40,0.55) !important;
+  .nav{ margin-top: 10px; }
 }
 
-.dionysos-home-banner .dionysos-kicker{
-  color: #f05a28 !important;
-}
+@media (max-width: 760px){
+  .grid{ grid-template-columns: 1fr; }
 
-.dionysos-home-banner .dionysos-cta{
-  border-color: #f05a28 !important;
-  color: #f05a28 !important;
-  background: rgba(255,255,255,0.62) !important;
-}
-.dionysos-home-banner .dionysos-cta:hover{
-  background: rgba(240,90,40,0.10) !important;
-}
-/* ===== HOTFIX: Dionysos Home banner — solid clean orange ===== */
-.dionysos-home-banner{
-  background: linear-gradient(
-    180deg,
-    #f05a28 0%,
-    #f26a3a 100%
-  ) !important;
-
-  border: none !important;
-}
-
-.dionysos-home-banner .dionysos-kicker,
-.dionysos-home-banner .dionysos-title,
-.dionysos-home-banner .dionysos-lede,
-.dionysos-home-banner .dionysos-note{
-  color: #ffffff !important;
-}
-
-.dionysos-home-banner .dionysos-cta{
-  background: #ffffff !important;
-  color: #f05a28 !important;
-  border-color: #ffffff !important;
-}
-
-.dionysos-home-banner .dionysos-cta:hover{
-  background: rgba(255,255,255,0.88) !important;
-}
-/* ===== HOTFIX: Dionysos banner orange lock (do not touch) ===== */
-body .dionysos-banner.dionysos-home-banner{
-  background: #F29200 !important;
-  border-color: rgba(0,0,0,0.16) !important;
-}
-/* =========================================================
-   HISTORY — Golden Footprints (FINAL SINGLE SOURCE)
-   다른 섹션 영향 없음 / FILM·CINEMA 절대 미접촉
-========================================================= */
-
-.history-grid{
-  max-width: 1200px;
-  margin: 64px auto 72px;
-  padding: 0 24px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.history-card,
-.history-card-link{
-  display: block;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.history-card img,
-.history-card-link img{
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: 16px;
-}
-
-/* hover */
-.history-card:hover,
-.history-card-link:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.15);
-}
-
-/* mobile */
-@media (max-width: 520px){
-  .history-grid{
-    padding: 0 16px;
-    gap: 16px;
+  .hero{
+    height: 420px;
+    margin: 18px auto 24px;
+    border-radius: 18px;
   }
-  .history-card img,
-  .history-card-link img{
-    border-radius: 14px;
-  }
+
+  .nav{ gap: 8px; }
+  .nav a.btn-space{ padding: 8px 10px; }
 }
