@@ -63,87 +63,94 @@
 
   <section class="books-list">
 
-    <!-- BOOK 01 Featured -->
-    <article class="book-card" aria-label="FEATURED BOOK 01">
-      <a href="#featured_001" class="book-cover-link" aria-label="표지 크게 보기">
-        <span class="cover-zoom" aria-hidden="true"></span>
-        <img
-          class="book-cover"
-          src="../asset/covers/featured_001.jpg"
-          alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
-          loading="lazy"
-        >
+  <!-- BOOK 01 Featured -->
+<article class="book-card" aria-label="FEATURED BOOK 01">
+  <a href="#featured_001" class="book-cover-link" aria-label="표지 크게 보기">
+    <span class="cover-zoom" aria-hidden="true"></span>
+    <img
+      class="book-cover"
+      src="../asset/covers/featured_001.jpg"
+      alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지"
+      loading="lazy"
+    >
+  </a>
+
+  <!-- Lightbox -->
+  <div id="featured_001" class="lightbox" aria-label="표지 크게 보기">
+    <img
+      src="../asset/covers/featured_001.jpg"
+      alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지 크게 보기"
+    >
+    <a href="#featured" class="lightbox-close" aria-label="닫기">−</a>
+  </div>
+
+  <div class="book-body">
+    <p class="book-kicker">BOOK 01</p>
+    <h3 class="book-title">『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
+
+    <p class="book-teaser">
+      인간은 어디에서 시작되었고, 무엇을 거쳐 지금에 이르렀으며, 어디로 향하고 있는가.
+    </p>
+
+    <p class="book-promise">
+      이 책은 종교나 신화를 설명하지 않는다.<br>
+      인류가 반복해온 질문의 궤적을 따라, 사유의 지도를 다시 펼친다.
+    </p>
+
+    <!-- 북소믈리에 기준 메타 -->
+    <dl class="book-meta" aria-label="도서 정보">
+      <div class="book-meta__row"><dt>저자</dt><dd>애니 베전트(Annie Besant, 1847-1933)</dd></div>
+      <div class="book-meta__row"><dt>역자</dt><dd>황미영</dd></div>
+      <div class="book-meta__row"><dt>발행</dt><dd>책읽는귀족</dd></div>
+      <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
+      <div class="book-meta__row"><dt>쪽수</dt><dd>448쪽</dd></div>
+      <div class="book-meta__row"><dt>값</dt><dd>18,000원</dd></div>
+      <div class="book-meta__row"><dt>발행일</dt><dd>2016년 1월 11일</dd></div>
+      <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-38-9 (03210)</dd></div>
+      <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
+    </dl>
+
+    <!-- 구매처 -->
+    <div class="book-actions" aria-label="구매처">
+      <a
+        class="btn-space btn-mini store store-aladin"
+        href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=365272879&start=pcsearch_auto"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="star">★</span> 알라딘 단한권(POD)
       </a>
 
-      <!-- Lightbox -->
-      <div id="featured_001" class="lightbox" aria-label="표지 크게 보기">
-        <img
-          src="../asset/covers/featured_001.jpg"
-          alt="『우리는 어디에서 와서 누구이고 어디로 가는가』 표지 크게 보기"
-        >
-        <a href="#featured" class="lightbox-close" aria-label="닫기">−</a>
-      </div>
+      <a
+        class="btn-space btn-mini store store-kyobo"
+        href="https://product.kyobobook.co.kr/detail/S000001623733"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="star">★</span> 교보
+      </a>
 
-      <div class="book-body">
-        <p class="book-kicker">BOOK 01</p>
-        <h3 class="book-title">『우리는 어디에서 와서 누구이고 어디로 가는가』</h3>
+      <a
+        class="btn-space btn-mini store store-yes24"
+        href="https://www.yes24.com/product/goods/23767154"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="star">★</span> 예스24
+      </a>
 
-        <p class="book-teaser">
-          인간은 어디에서 시작되었고, 무엇을 거쳐 지금에 이르렀으며, 어디로 향하고 있는가.
-        </p>
+      <a
+        class="btn-space btn-mini store store-aladin"
+        href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=74294820&start=pcsearch_auto"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="star">★</span> 알라딘
+      </a>
+    </div>
+  </div>
+</article>
 
-        <p class="book-promise">
-          이 책은 종교나 신화를 설명하지 않는다.<br>
-          인류가 반복해온 질문의 궤적을 따라, 사유의 지도를 다시 펼친다.
-        </p>
-
-        <!-- 상세 정보 (제공한 원문 그대로 정리) -->
-        <dl class="book-meta" aria-label="도서 정보">
-          <div class="book-meta__row"><dt>판형</dt><dd>150×210</dd></div>
-          <div class="book-meta__row"><dt>쪽수</dt><dd>448쪽</dd></div>
-          <div class="book-meta__row"><dt>값</dt><dd>18,000원</dd></div>
-         <div class="book-meta__row"><dt>발행일</dt><dd>2016년 1월 11일</dd></div>
-          <div class="book-meta__row"><dt>ISBN</dt><dd>978-89-97863-38-9 (03210)</dd></div>
-          <div class="book-meta__row"><dt>분야</dt><dd>인문</dd></div>
-          <div class="book-meta__row"><dt>발행</dt><dd>책읽는귀족</dd></div>
-          <div class="book-meta__row"><dt>지은이</dt><dd>애니 베전트(Annie Besant, 1847-1933)</dd></div>
-          <div class="book-meta__row"><dt>옮긴이</dt><dd>황미영</dd></div>
-        </dl>
-
-        <div class="book-bio" aria-label="저자 소개">
-          <p class="book-promise">
-            영국의 신지학자이자 사회주의자, 여성운동가, 작가, 인도자치 옹호자.<br>
-            1847년 런던에서 출생했으며, 1873년 여성해방운동에 참여하면서 버나드 쇼의 영향을 받아 페이비언 사회주의자가 되었고,
-            사회개혁가 C. 브래들로와 함께 맬서스 인구론을 선전하면서 신맬서스주의자로 유명해졌다.<br>
-            1889년 종교적 신비주의자 헬레나 블라바츠키의 학설에 심취하여 신지학협회에 가입한 후,
-            신지학 관련 연설과 저술 활동에 몰두했다. 1907년 신지학협회 2대 회장을 맡아 인도에 거주하면서 인도 자치운동에 참여했고,
-            20세기 최고의 영적 지성으로 일컬어지는 지두 크리슈나무르티를 발견하여 ‘세계의 스승’으로 키우고자 했다.
-          </p>
-        </div>
-
-        <!-- 구매처 (샵 표시만 / 링크는 네가 채움) -->
-         
-        <div class="book-actions" aria-label="구매처">
-          <a class="btn-space btn-mini store store-aladin"
-               href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=365272879&start=pcsearch_auto"
-        target="_blank" rel="noopener">
-           <span class="star">★</span> 알라딘 단한권(POD)
-         </a>
-
-          <a class="btn-space btn-mini store store-kyobo" href="https://product.kyobobook.co.kr/detail/S000001623733" target="_blank" rel="noopener">
-            <span class="star">★</span> 교보
-          </a>
-          <a class="btn-space btn-mini store store-yes24" href="https://www.yes24.com/product/goods/23767154" target="_blank" rel="noopener">
-            <span class="star">★</span> 예스24
-          </a>
-          <a class="btn-space btn-mini store store-aladin" href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=74294820&start=pcsearch_auto" target="_blank" rel="noopener">
-            <span class="star">★</span> 알라딘
-          </a>
-        </div>
-      </div>
-    </article>
-
-  </section>
 
   <!-- Humanities Section -->
   <section class="card books-section" id="humanities">
