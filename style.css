@@ -2958,3 +2958,80 @@ body .dionysos-banner.dionysos-home-banner{
 .card-notice-outline{
   border:1.5px solid #F29200;
 }
+/* =========================================================
+   BOOKS: cover zoom icon on thumbnail (magnifier overlay)
+   Put at VERY END of style.css
+========================================================= */
+
+/* 썸네일 링크를 기준 좌표로 */
+.book-cover-link{
+  position: relative;
+  display: inline-block;
+}
+
+/* 돋보기: 표지 오른쪽 위에 붙는 서점 스타일 */
+.book-cover-link .cover-zoom{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+
+  background: rgba(24,34,44,0.62);
+  border: 1px solid rgba(255,255,255,0.72);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+
+  z-index: 3;
+  pointer-events: none; /* 클릭은 링크가 받게 */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* 돋보기 렌즈 */
+.book-cover-link .cover-zoom::before{
+  content:"";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.95);
+  transform: translate(-58%, -58%);
+  opacity: 0.95;
+}
+
+/* 돋보기 손잡이 */
+.book-cover-link .cover-zoom::after{
+  content:"";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 2px;
+  background: rgba(255,255,255,0.95);
+  transform: translate(15%, 15%) rotate(45deg);
+  transform-origin: left center;
+  border-radius: 2px;
+  opacity: 0.95;
+}
+
+/* 마우스 올리면 아이콘만 살짝 살아남 */
+.book-cover-link:hover .cover-zoom{
+  background: rgba(24,34,44,0.72);
+  transform: translateY(-1px);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+/* 모바일에서 터치 대비로 조금 크게 */
+@media (max-width: 640px){
+  .book-cover-link .cover-zoom{
+    width: 38px;
+    height: 38px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+Fix books cover zoom UI: add magnifier overlay on thumbnails
