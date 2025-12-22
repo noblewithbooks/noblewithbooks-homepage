@@ -3054,3 +3054,34 @@ body .dionysos-banner.dionysos-home-banner{
   margin: 0 0 1rem;
   color: rgba(18, 24, 38, 0.9);
 }
+/* =========================================================
+   FIX: 유리감은 유지하되, 이미지/텍스트는 선명하게
+   - 방법: 카드에 pseudo-element 배경 레이어를 만들고
+           블러는 그 레이어에만 적용
+========================================================= */
+.books-page .book-card,
+.books-page .book-row{
+  position: relative;
+  background: transparent !important;   /* 기존 유리 배경은 레이어로 옮김 */
+}
+
+.books-page .book-card::before,
+.books-page .book-row::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: rgba(255,255,255,.30);   /* 기존 카드 배경 톤 유지 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  z-index: 0;
+}
+
+/* 카드 내용은 레이어 위로 */
+.books-page .book-card > *,
+.books-page .book-row  > *{
+  position: relative;
+  z-index: 1;
+}
