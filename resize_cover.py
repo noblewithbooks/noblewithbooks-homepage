@@ -2,11 +2,11 @@ from PIL import Image
 from pathlib import Path
 
 # 1) 여기만 네 표지 파일명으로 바꿔줘 (원본 파일을 프로젝트 루트에 잠깐 두자)
-SRC = Path("asset/covers/originals/humanities_009_original.jpg")
+SRC = Path("asset/covers/originals/humanities_010_original.jpg")
 
 
 # 2) 결과 파일명 (asset/covers/ 아래로 저장)
-DST = Path("asset/covers/humanities_009.jpg")
+DST = Path("asset/covers/humanities_010.jpg")
 
 
 
