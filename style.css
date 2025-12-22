@@ -3054,3 +3054,30 @@ body .dionysos-banner.dionysos-home-banner{
   margin: 0 0 1rem;
   color: rgba(18, 24, 38, 0.9);
 }
+/* ===== Notice: Contact (Purple Outline) ===== */
+.card-contact-purple{
+  border: 2px solid #6b4eff; /* 보라 포인트 */
+  background: rgba(107,78,255,.03);
+}
+
+.card-contact-purple h2{
+  margin: 0 0 .6rem;
+  color: #4a3ad1;
+  font-weight: 700;
+}
+
+.card-contact-purple .contact-line{
+  margin: 0;
+  line-height: 1.7;
+  font-size: .95rem;
+}
+
+.card-contact-purple a{
+  color: #4a3ad1;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(74,58,209,.5);
+}
+
+.card-contact-purple a:hover{
+  border-bottom-style: solid;
+}
