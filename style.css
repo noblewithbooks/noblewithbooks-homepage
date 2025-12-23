@@ -3082,3 +3082,7 @@ body .dionysos-banner.dionysos-home-banner{
 .card-contact-purple a:hover{
   border-bottom-style: solid;
 }
+/* BOOKS PAGE: disable home manifesto completely */
+.books-page #home-manifesto{
+  display: none !important;
+}
