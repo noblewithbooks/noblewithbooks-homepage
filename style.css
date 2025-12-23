@@ -3086,3 +3086,7 @@ body .dionysos-banner.dionysos-home-banner{
 .books-page #home-manifesto{
   display: none !important;
 }
+/* DEBUG: mobile lightbox overlay check (remove after test) */
+@media (max-width: 520px){
+  .lightbox{ background: rgba(255,0,0,.35) !important; }
+}
