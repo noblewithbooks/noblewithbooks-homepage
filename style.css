@@ -3090,3 +3090,10 @@ body .dionysos-banner.dionysos-home-banner{
 @media (max-width: 520px){
   .lightbox{ background: rgba(255,0,0,.35) !important; }
 }
+/* MOBILE: hide magnifier overlay (touch devices) */
+@media (hover:none) and (pointer:coarse){
+  .cover-zoom,
+  .zoom-badge{
+    display: none !important;
+  }
+}
