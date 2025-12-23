@@ -53,15 +53,17 @@
     <a class="btn-space cat-pill cat-literature" href="#literature"><span class="ico"></span>Literature</a>
     <a class="btn-space cat-pill cat-ya" href="#ya"><span class="ico"></span>Young Adult</a>
     <a class="btn-space cat-pill cat-children" href="#children"><span class="ico"></span>Children’s Books</a>
+    <a class="btn-space cat-pill cat-archive" href="#archive"><span class="ico"></span>Archive</a>
   </nav>
 
   <!-- Featured Section -->
   <section class="card books-section" id="featured">
     <h2 class="books-h2">Featured Books</h2>
     <p class="books-korhint">대표 도서</p>
-  </section>
+ 
+ 
+    <div class="books-list">
 
-  <section class="books-list">
 
   <!-- BOOK 01 Featured -->
 <article class="book-card" aria-label="FEATURED BOOK 01">
@@ -1070,15 +1072,16 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
   </div>
 </article>
 
+  </div>
+</section>
 
   <!-- Humanities Section -->
   <section class="card books-section" id="humanities">
     <h2 class="books-h2">Humanities</h2>
-    <p class="books-korhint">인문학</p>
-  </section>
+    <p class="books-korhint">인문</p>
 
-  <a id="humanities_list"></a>
-  <section class="books-list">
+    <div class="books-list">
+
 
     <!-- BOOK 01 Humanities -->
     <article class="book-card" aria-label="HUMANITIES BOOK 01">
@@ -1092,12 +1095,14 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
         >
       </a>
 
+        <!-- Lightbox -->
+
       <div id="humanities_001" class="lightbox" aria-label="표지 크게 보기">
         <img
           src="../asset/covers/humanities_001.jpg"
           alt="『우리는 어떻게 북소믈리에가 될까』 표지 크게 보기"
         >
-        <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+        <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
       </div>
 
       <div class="book-body">
@@ -1146,6 +1151,7 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
     </article>
 
     <!-- BOOK 02 Humanities -->
+
     <article class="book-card" aria-label="HUMANITIES BOOK 02">
       <a href="#humanities_002" class="book-cover-link" aria-label="표지 크게 보기">
         <span class="cover-zoom" aria-hidden="true"></span>
@@ -1157,12 +1163,14 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
         >
       </a>
 
+        <!-- Lightbox -->
+
       <div id="humanities_002" class="lightbox" aria-label="표지 크게 보기">
         <img
           src="../asset/covers/humanities_002.jpg"
           alt="『패턴 인식 독서법』 표지 크게 보기"
         >
-        <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+        <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
       </div>
 
       <div class="book-body">
@@ -1218,13 +1226,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_003" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_003.jpg"
       alt="『생각의 방법을 바꾸면 삶이 달라진다』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1287,13 +1295,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_004" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_004.jpg"
       alt="『인생의 서른 가지 질문에 대한 해답』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1352,13 +1360,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_005" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_005.jpg"
       alt="『신화와 미신, 그 끝없는 이야기』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1416,13 +1424,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_006" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_006.jpg"
       alt="『어서 와, 이런 이야기는 처음이지?』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1487,12 +1495,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
     >
   </a>
 
+    <!-- Lightbox -->
   <div id="humanities_007" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_007.jpg"
       alt="『미쳤거나 천재거나』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1556,13 +1565,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_008" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_008.jpg"
       alt="『보이지 않는 세계로의 여행』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1626,13 +1635,14 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
+    <!-- Lightbox -->
 
   <div id="humanities_009" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_009.jpg"
       alt="『하우스보트에서의 인문학 게임』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1700,12 +1710,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
     >
   </a>
 
+    <!-- Lightbox -->
   <div id="humanities_010" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_010.jpg"
       alt="『출판하고 싶은 너에게』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1774,13 +1785,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_011" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_011.jpg"
       alt="『꿈을 읽다』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1847,13 +1858,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+  <!-- Lightbox -->
   <div id="humanities_012" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_012.jpg"
       alt="『블루오션, 꿈의 심리학』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -1925,13 +1936,14 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
+    <!-- Lightbox -->
 
   <div id="humanities_013" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_013.jpg"
       alt="『발칙한 꿈해몽』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -2006,12 +2018,14 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
     >
   </a>
 
+    <!-- Lightbox -->
+
   <div id="humanities_014" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_014.jpg"
       alt="『꿈은 말한다』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -2079,12 +2093,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
     >
   </a>
 
+    <!-- Lightbox -->
   <div id="humanities_015" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_015.jpg"
       alt="『인문학, 공항을 읽다』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -2151,12 +2166,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
     >
   </a>
 
+    <!-- Lightbox -->
   <div id="humanities_016" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_016.jpg"
       alt="『나는 대한민국 역사다』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -2224,13 +2240,13 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
       loading="lazy"
     >
   </a>
-
+   <!-- Lightbox -->
   <div id="humanities_017" class="lightbox" aria-label="표지 크게 보기">
     <img
       src="../asset/covers/humanities_017.jpg"
       alt="『우리 신화로 풀어보는 글쓰기』 표지 크게 보기"
     >
-    <a href="#humanities_list" class="lightbox-close" aria-label="닫기">×</a>
+    <a href="#humanities" class="lightbox-close" aria-label="닫기">×</a>
   </div>
 
   <div class="book-body">
@@ -2277,7 +2293,10 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
   </div>
 </article>
 
-  </section>
+</div>      <!-- books-list 닫기 -->
+</section>  <!-- humanities 섹션 닫기 -->
+
+
 
 </main>
 
