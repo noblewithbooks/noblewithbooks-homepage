@@ -3086,7 +3086,60 @@ body .dionysos-banner.dionysos-home-banner{
 .books-page #home-manifesto{
   display: none !important;
 }
-/* DEBUG: mobile lightbox overlay check (remove after test) */
-@media (max-width: 520px){
-  .lightbox{ background: rgba(255,0,0,.35) !important; }
+/* =========================================================
+   LIGHTBOX — mobile overlay fix (DREAM-safe, hash target)
+   - default: completely removed from layout
+   - open only when :target
+========================================================= */
+
+/* default (closed) */
+.lightbox{
+  display: none;
+}
+
+/* open */
+.lightbox:target{
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.72);
+}
+
+/* image */
+.lightbox:target img{
+  max-width: min(92vw, 980px);
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 22px 70px rgba(0,0,0,.35);
+}
+
+/* ===== LIGHTBOX: force true viewport overlay (fix tall/elongated dim background) ===== */
+.lightbox{
+  position: fixed !important;
+  inset: 0 !important;          /* top/right/bottom/left = 0 */
+  width: 100vw !important;
+  height: 100vh !important;     /* fallback */
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* modern mobile viewport units (prevents iOS/Android address-bar weirdness) */
+@supports (height: 100dvh){
+  .lightbox{
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+  }
+}
+
+/* center the image without making overlay taller */
+.lightbox:target{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
