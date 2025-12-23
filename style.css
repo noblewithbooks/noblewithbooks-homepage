@@ -3087,12 +3087,13 @@ body .dionysos-banner.dionysos-home-banner{
   display: none !important;
 }
 /* =========================================================
-   LIGHTBOX — mobile overlay fix (DREAM-safe, hash target)
-   - default: completely removed from layout
-   - open only when :target
+   LIGHTBOX (FINAL) — hash target modal
+   - closed: display none
+   - open: :target fixed overlay (true viewport)
+   - close button always visible/clickable
 ========================================================= */
 
-/* default (closed) */
+/* closed */
 .lightbox{
   display: none;
 }
@@ -3102,6 +3103,9 @@ body .dionysos-banner.dionysos-home-banner{
   display: flex;
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   z-index: 9999;
   align-items: center;
   justify-content: center;
@@ -3109,37 +3113,43 @@ body .dionysos-banner.dionysos-home-banner{
   background: rgba(0,0,0,.72);
 }
 
+/* mobile address-bar safe */
+@supports (height: 100dvh){
+  .lightbox:target{
+    height: 100dvh;
+  }
+}
+
 /* image */
 .lightbox:target img{
   max-width: min(92vw, 980px);
-  max-height: 82vh;
+  max-height: 88vh;
   width: auto;
   height: auto;
   border-radius: 14px;
   box-shadow: 0 22px 70px rgba(0,0,0,.35);
 }
 
-/* ===== LIGHTBOX: force true viewport overlay (fix tall/elongated dim background) ===== */
-.lightbox{
-  position: fixed !important;
-  inset: 0 !important;          /* top/right/bottom/left = 0 */
-  width: 100vw !important;
-  height: 100vh !important;     /* fallback */
-  max-height: 100vh !important;
-  overflow: hidden !important;
+/* close button */
+.lightbox-close{
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10001;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  background: rgba(255,255,255,.92);
+  color: #111;
+  font-size: 28px;
+  line-height: 1;
 }
 
-/* modern mobile viewport units (prevents iOS/Android address-bar weirdness) */
-@supports (height: 100dvh){
-  .lightbox{
-    height: 100dvh !important;
-    max-height: 100dvh !important;
-  }
-}
-
-/* center the image without making overlay taller */
-.lightbox:target{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+/* magnifier overlay must not steal taps */
+.cover-zoom,
+.zoom-badge{
+  pointer-events: none !important;
 }
