@@ -2995,69 +2995,71 @@ body .dionysos-banner.dionysos-home-banner{
   display: none !important;
 }
 /* =========================================================
-   LIGHTBOX (FINAL) — hash target modal
-   - closed: display none
-   - open: :target fixed overlay (true viewport)
-   - close button always visible/clickable
+   LIGHTBOX (DESKTOP ONLY) — hash target modal
+   - mobile: lightbox disabled (fallback to normal image/pinch)
+   - desktop: :target fixed overlay
 ========================================================= */
 
-/* closed */
-.lightbox{
-  display: none;
-}
+/* default = OFF (so mobile doesn't enter modal system) */
+.lightbox{ display:none; }
 
-/* open */
-.lightbox:target{
-  display: flex;
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  background: rgba(0,0,0,.72);
-}
-
-/* mobile address-bar safe */
-@supports (height: 100dvh){
-  .lightbox:target{
-    height: 100dvh;
-  }
-}
-
-/* image */
-.lightbox:target img{
-  max-width: min(92vw, 980px);
-  max-height: 88vh;
-  width: auto;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 22px 70px rgba(0,0,0,.35);
-}
-
-/* close button */
-.lightbox-close{
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 10001;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  background: rgba(255,255,255,.92);
-  color: #111;
-  font-size: 28px;
-  line-height: 1;
-}
+/* close button default hidden (since lightbox off) */
+.lightbox-close{ display:none; }
 
 /* magnifier overlay must not steal taps */
 .cover-zoom,
 .zoom-badge{
-  pointer-events: none !important;
+  pointer-events:none !important;
+}
+
+/* DESKTOP only: devices with hover + fine pointer (mouse/trackpad) */
+@media (hover:hover) and (pointer:fine){
+
+  /* open */
+  .lightbox:target{
+    display:flex;
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    background:rgba(0,0,0,.72);
+  }
+
+  /* desktop safe */
+  @supports (height:100dvh){
+    .lightbox:target{ height:100dvh; }
+  }
+
+  /* image */
+  .lightbox:target img{
+    max-width:min(92vw, 980px);
+    max-height:88vh;
+    width:auto;
+    height:auto;
+    border-radius:14px;
+    box-shadow:0 22px 70px rgba(0,0,0,.35);
+  }
+
+  /* close button */
+  .lightbox-close{
+    display:grid;
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10001;
+    width:44px;
+    height:44px;
+    border-radius:999px;
+    place-items:center;
+    text-decoration:none;
+    background:rgba(255,255,255,.92);
+    color:#111;
+    font-size:28px;
+    line-height:1;
+  }
 }
