@@ -2354,3 +2354,54 @@ main > p{
 @media (max-width: 520px){
   .lightbox{ background: rgba(255,0,0,.35) !important; }
 }
+/* ===== GAME STRIP (Platform Changes the Game) ===== */
+.game-strip{
+  background:#d11414;
+  padding:1.2rem 1.25rem;
+  margin:0 0 1.25rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.game-strip__inner{
+  max-width:980px;
+  margin:0 auto;
+}
+
+.game-strip__line{
+  width:100%;
+  margin-bottom:.55rem;
+}
+
+.game-strip__word{
+  position:relative;
+  display:inline-block;
+  font-weight:800;
+  letter-spacing:-0.01em;
+  color:#fff;
+}
+
+/* 글자만 아래로 내려서 ‘70% 걸침’ */
+.game-strip__text{
+  display:inline-block;
+  transform: translateY(0.14em);
+}
+
+.game-strip__word--single::before{
+  content:"";
+  position:absolute;
+  left:-0.6rem;
+  right:-0.6rem;
+  height:1.10em;
+  background:#000;
+  top:22%;
+  transform:translateY(-50%);
+  z-index:-1;
+  opacity:.97;
+}
+
+/* ===== HOTFIX: Dionysos banner orange lock (do not touch) ===== */
+body .dionysos-banner.dionysos-home-banner{
+  background:#F29200 !important;
+  border-color:rgba(0,0,0,0.16) !important;
+}
