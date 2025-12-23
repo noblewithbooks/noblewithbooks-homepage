@@ -2674,6 +2674,52 @@ main > p{
   background: rgba(240, 90, 40, 0.20);
   border-color: rgba(240, 90, 40, 0.50);
 }
+/* ===== Cover Lightbox (CSS only) ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(24,34,44,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000; /* ✅ 헤더/네비보다 무조건 위로 */
+}
+
+
+.lightbox:target{
+  display: flex;
+}
+
+.lightbox img{
+  position: relative;
+  z-index: 1;
+  max-width: 50vw;   /* 화면 절반 */
+  max-height: 50vh;  /* 화면 절반 */
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  display: block;
+  margin: 0 auto;    /* 중앙 정렬 */
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 1rem;       /* 화면 상단 위치 */
+  right: 1rem;     /* 화면 우측 */
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2.5rem;
+  z-index: 20001;   /* lightbox img보다 위 */
+  cursor: pointer;
+  text-decoration: none;
+}
+
 
 /* ===== Selected Books menu highlight (all pages) ===== */
 .nav a[href$="selected.html"] {
@@ -2860,9 +2906,55 @@ body .dionysos-banner.dionysos-home-banner{
     border-radius: 14px;
   }
 }
+/* ===== Lightbox overlay ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(24,34,44,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000; /* 헤더/네비보다 위 */
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+/* 이미지 크기 제한 */
+.lightbox img {
+  max-width: 50vw;   /* 화면의 절반 크기 */
+  max-height: 50vh;  /* 화면의 절반 높이 */
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  position: relative;
+  z-index: 1;
+}
 
 /* 닫기 버튼 */
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2.5rem;
+  z-index: 20001;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
 
+.lightbox-close:hover {
+  background: rgba(0,0,0,0.75);
+}
 .card-notice-outline{
   border:1.5px solid #F29200;
 }
@@ -2994,72 +3086,7 @@ body .dionysos-banner.dionysos-home-banner{
 .books-page #home-manifesto{
   display: none !important;
 }
-/* =========================================================
-   LIGHTBOX (DESKTOP ONLY) — hash target modal
-   - mobile: lightbox disabled (fallback to normal image/pinch)
-   - desktop: :target fixed overlay
-========================================================= */
-
-/* default = OFF (so mobile doesn't enter modal system) */
-.lightbox{ display:none; }
-
-/* close button default hidden (since lightbox off) */
-.lightbox-close{ display:none; }
-
-/* magnifier overlay must not steal taps */
-.cover-zoom,
-.zoom-badge{
-  pointer-events:none !important;
-}
-
-/* DESKTOP only: devices with hover + fine pointer (mouse/trackpad) */
-@media (hover:hover) and (pointer:fine){
-
-  /* open */
-  .lightbox:target{
-    display:flex;
-    position:fixed;
-    inset:0;
-    width:100vw;
-    height:100vh;
-    overflow:hidden;
-    z-index:9999;
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-    background:rgba(0,0,0,.72);
-  }
-
-  /* desktop safe */
-  @supports (height:100dvh){
-    .lightbox:target{ height:100dvh; }
-  }
-
-  /* image */
-  .lightbox:target img{
-    max-width:min(92vw, 980px);
-    max-height:88vh;
-    width:auto;
-    height:auto;
-    border-radius:14px;
-    box-shadow:0 22px 70px rgba(0,0,0,.35);
-  }
-
-  /* close button */
-  .lightbox-close{
-    display:grid;
-    position:fixed;
-    top:14px;
-    right:14px;
-    z-index:10001;
-    width:44px;
-    height:44px;
-    border-radius:999px;
-    place-items:center;
-    text-decoration:none;
-    background:rgba(255,255,255,.92);
-    color:#111;
-    font-size:28px;
-    line-height:1;
-  }
+/* DEBUG: mobile lightbox overlay check (remove after test) */
+@media (max-width: 520px){
+  .lightbox{ background: rgba(255,0,0,.35) !important; }
 }
