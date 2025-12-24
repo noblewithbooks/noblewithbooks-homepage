@@ -3113,3 +3113,44 @@ body .dionysos-banner.dionysos-home-banner{
   border-color: #f29200;
 }
 
+/* =========================
+   NOTICE COLOR PRESETS
+   ========================= */
+
+/* 공통 아웃라인 구조 */
+.card-notice-outline{
+  border: 1.5px solid;
+  border-radius: 14px;
+}
+
+/* 정기 / 안내 */
+.notice-green{
+  border-color: #1f8f5f;
+}
+
+/* 중요 / 선언 */
+.notice-orange{
+  border-color: #f29200;
+}
+
+/* 실험 / 에디토리얼 */
+.notice-purple{
+  border-color: #6b5cff;
+}
+
+/* 기록 / 아카이브 */
+.notice-blue{
+  border-color: #2f6fd6;
+}
+
+/* 중립 / 시스템 */
+.notice-gray{
+  border-color: #9aa0a6;
+}
+
+/* 경고 / 변경사항 */
+.notice-red{
+  border-color: #d94841;
+}
+
+
