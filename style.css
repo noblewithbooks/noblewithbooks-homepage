@@ -3153,4 +3153,33 @@ body .dionysos-banner.dionysos-home-banner{
   border-color: #d94841;
 }
 
+/* Date – subtle meta tone (trial) */
+.card .date{
+  font-size: 0.75rem;
+  color: rgba(18,24,38,0.45);
+  margin-bottom: 6px;
+}
+/* CTA button – subtle emphasis (trial) */
+.card .btn-space{
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card .btn-space:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.16);
+}
+
+/* External / interview label */
+.card-label{
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: rgba(18,24,38,0.45);
+  margin-bottom: 6px;
+}
+
+/* External card tone-down (trial) */
+.card.external{
+  opacity: 0.92;
+}
 
