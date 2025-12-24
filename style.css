@@ -3096,3 +3096,6 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 @media (hover:none) and (pointer:coarse){ .book-cover-link{ pointer-events:none; } }
+.card-notice-outline{
+  border-color: #1f8f5f; /* green */
+}
