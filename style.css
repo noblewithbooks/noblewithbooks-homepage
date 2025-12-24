@@ -3096,6 +3096,20 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 @media (hover:none) and (pointer:coarse){ .book-cover-link{ pointer-events:none; } }
+
+/* 공통 아웃라인 구조 */
 .card-notice-outline{
-  border-color: #1f8f5f; /* green */
+  border: 1.5px solid;
+  border-radius: 14px;
 }
+
+/* 초록 공지 */
+.notice-green{
+  border-color: #1f8f5f;
+}
+
+/* 오렌지 공지 */
+.notice-orange{
+  border-color: #f29200;
+}
+
