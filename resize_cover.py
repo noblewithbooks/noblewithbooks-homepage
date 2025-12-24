@@ -10,8 +10,6 @@ SRC = Path("asset/covers/originals/youth_009_original.jpg")
 DST = Path("asset/covers/youth_009.jpg")
 
 
-
-
 TARGET_W = 900  # 웹용 가로폭(픽셀). 800~1000 사이면 충분히 선명함
 
 img = Image.open(SRC).convert("RGB")
