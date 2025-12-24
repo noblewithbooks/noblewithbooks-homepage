@@ -3096,25 +3096,8 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 @media (hover:none) and (pointer:coarse){ .book-cover-link{ pointer-events:none; } }
-
-/* 공통 아웃라인 구조 */
-.card-notice-outline{
-  border: 1.5px solid;
-  border-radius: 14px;
-}
-
-/* 초록 공지 */
-.notice-green{
-  border-color: #1f8f5f;
-}
-
-/* 오렌지 공지 */
-.notice-orange{
-  border-color: #f29200;
-}
-
 /* =========================
-   NOTICE COLOR PRESETS
+   NOTICE OUTLINE SYSTEM
    ========================= */
 
 /* 공통 아웃라인 구조 */
@@ -3133,12 +3116,12 @@ body .dionysos-banner.dionysos-home-banner{
   border-color: #f29200;
 }
 
-/* 실험 / 에디토리얼 */
+/* 에디토리얼 / 인터뷰 */
 .notice-purple{
   border-color: #6b5cff;
 }
 
-/* 기록 / 아카이브 */
+/* 기록 / 정보 */
 .notice-blue{
   border-color: #2f6fd6;
 }
@@ -3148,38 +3131,8 @@ body .dionysos-banner.dionysos-home-banner{
   border-color: #9aa0a6;
 }
 
-/* 경고 / 변경사항 */
+/* 경고 / 변경 / 품절 */
 .notice-red{
   border-color: #d94841;
-}
-
-/* Date – subtle meta tone (trial) */
-.card .date{
-  font-size: 0.75rem;
-  color: rgba(18,24,38,0.45);
-  margin-bottom: 6px;
-}
-/* CTA button – subtle emphasis (trial) */
-.card .btn-space{
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.card .btn-space:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.16);
-}
-
-/* External / interview label */
-.card-label{
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
-  color: rgba(18,24,38,0.45);
-  margin-bottom: 6px;
-}
-
-/* External card tone-down (trial) */
-.card.external{
-  opacity: 0.92;
 }
 
