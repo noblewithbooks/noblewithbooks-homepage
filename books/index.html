@@ -4133,95 +4133,268 @@ W. B. 예이츠가 편집한 아일랜드의 요정담과 민담 가운데
 </div>      <!-- books-list 닫기 -->
 
 </section>  <!-- youth 섹션 닫기 -->
-
 <!-- Archive Section -->
-<section class="card books-section" id="archive">
+<section class="card books-section archive-section" id="archive">
   <h2 class="books-h2">Archive</h2>
   <p class="books-korhint">아카이브</p>
+
+  <!-- Archive – local style (page-scoped) -->
+  <style>
+    /* =========================================================
+       ARCHIVE — Magwangsoo (page-scoped)
+       - editorial two-column card
+       - year groups have breathing space ("br 느낌")
+       ========================================================= */
+
+    .archive-section .archive-card{
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.62);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 14px 44px rgba(2,10,20,0.10);
+    }
+
+    .archive-section .archive-kicker{
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+
+    .archive-section .archive-title{
+      margin: 6px 0 0;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ===== layout: left editorial / right list ===== */
+    .archive-section .archive-grid{
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .archive-section .archive-note{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+      max-width: 32ch;
+      position: relative;
+      padding-left: 12px;
+    }
+
+    /* editorial spine */
+    .archive-section .archive-note::before{
+      content:"";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 2px;
+      width: 2px;
+      border-radius: 2px;
+      background: rgba(18,24,38,0.12);
+    }
+
+    .archive-section .archive-note strong{
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .archive-section .archive-note::after{
+      content:"";
+      display:block;
+      width: 44px;
+      height: 1px;
+      background: var(--line);
+      margin: 16px 0 0;
+    }
+
+    .archive-section .archive-subnote{
+      margin: 10px 0 0;
+      color: rgba(18,24,38,0.72);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    /* ===== list ===== */
+    .archive-section .archive-list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    /* Year divider */
+    .archive-section .archive-year{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      opacity: 0.70;
+    }
+    .archive-section .archive-year:first-child{
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    /* ✅ 연도 아래 "br 느낌" (숨 쉬는 여백) */
+    .archive-section .archive-year::after{
+      content:"";
+      display:block;
+      height: 8px;
+    }
+
+    .archive-section .archive-item{
+      line-height: 1.62;
+      color: var(--text);
+      padding: 2px 0;
+    }
+
+    .archive-section .archive-item strong{
+      font-weight: 800;
+    }
+
+    .archive-section .a-genre{
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 8px 3px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: rgba(18,24,38,0.78);
+      background: rgba(255,255,255,0.55);
+      font-size: 12px;
+      line-height: 1;
+      vertical-align: 1px;
+    }
+
+    .archive-section .a-meta{
+      display: inline;
+      color: rgba(18,24,38,0.78);
+      show: block;
+    }
+
+    /* Small screens: stack */
+    @media (max-width: 820px){
+      .archive-section .archive-grid{
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .archive-section .archive-note{
+        max-width: 64ch;
+      }
+    }
+
+    @media (max-width: 560px){
+      .archive-section .archive-card{ padding: 16px 14px 14px; }
+      .archive-section .archive-title{ font-size: 18px; }
+      .archive-section .archive-list{ gap: 7px; }
+      .archive-section .archive-year{ margin-top: 12px; padding-top: 12px; }
+      .archive-section .archive-year::after{ height: 7px; }
+    }
+  </style>
 
   <div class="books-list">
 
     <!-- ARCHIVE : Magwangsoo -->
-    <article class="book-card" aria-label="Magwangsoo Archive">
-      <p class="book-kicker">ARCHIVE</p>
-      <h3 class="book-title">Magwangsoo Archive</h3>
+    <article class="archive-card" aria-label="Magwangsoo Archive">
+      <p class="archive-kicker">ARCHIVE</p>
+      <h3 class="archive-title">Magwangsoo Archive</h3>
 
-      <p class="book-desc">
-        이 목록은 책읽는귀족이 출발하던 시기에
-        마광수 작가와 함께했던 작업을
-        출판 아카이브로 기록하기 위한 공간이다.
-      </p>
+      <div class="archive-grid">
+        <!-- left editorial -->
+        <div>
+          <p class="archive-note">
+            이 목록은 <strong>책읽는귀족</strong>이 출발하던 시기에
+            마광수 작가와 함께했던 작업을
+            출판 아카이브로 기록하기 위한 공간이다.
+          </p>
+          <p class="archive-subnote">
+            현재는 판매/표지/서점 링크를 붙이지 않고,
+            “기록”으로만 남긴다.
+          </p>
+        </div>
 
-      <ul class="archive-list">
-        <li class="archive-year">2012</li>
+        <!-- right list -->
+        <ul class="archive-list">
+          <li class="archive-year">2012</li>
 
-        <li class="archive-item">
-          <strong>멘토를 읽다</strong><span class="a-genre">에세이</span>
-          <span class="a-meta"> · 120×186 · 208쪽 · 12,000원 · 2012.09.10</span>
-        </li>
-        <li class="archive-item">
-          <strong>별것도 아닌 인생</strong><span class="a-genre">장편소설</span>
-          <span class="a-meta"> · 135×195 · 544쪽 · 13,800원 · 2012.11.20</span>
-        </li>
-        <li class="archive-item">
-          <strong>모든 것은 슬프게 간다</strong><span class="a-genre">시집</span>
-          <span class="a-meta"> · 128×205 · 192쪽 · 10,000원 · 2012.12.30</span>
-        </li>
+          <li class="archive-item">
+            <strong>멘토를 읽다</strong><span class="a-genre">에세이</span>
+            <span class="a-meta"> · 120×186 · 208쪽 · 12,000원 · 2012.09.10</span>
+          </li>
+          <li class="archive-item">
+            <strong>별것도 아닌 인생</strong><span class="a-genre">장편소설</span>
+            <span class="a-meta"> · 135×195 · 544쪽 · 13,800원 · 2012.11.20</span>
+          </li>
+          <li class="archive-item">
+            <strong>모든 것은 슬프게 간다</strong><span class="a-genre">시집</span>
+            <span class="a-meta"> · 128×205 · 192쪽 · 10,000원 · 2012.12.30</span>
+          </li>
 
-        <li class="archive-year">2013</li>
+          <li class="archive-year">2013</li>
 
-        <li class="archive-item">
-          <strong>청춘</strong><span class="a-genre">소설</span>
-          <span class="a-meta"> · 135×195 · 208쪽 · 10,000원 · 2013.01.30</span>
-        </li>
-        <li class="archive-item">
-          <strong>나의 이력서</strong><span class="a-genre">에세이</span>
-          <span class="a-meta"> · 150×220 · 296쪽 · 13,000원 · 2013.03.20</span>
-        </li>
-        <li class="archive-item">
-          <strong>상상놀이</strong><span class="a-genre">단편소설집</span>
-          <span class="a-meta"> · 135×195 · 224쪽 · 11,000원 · 2013.04.20</span>
-        </li>
-        <li class="archive-item">
-          <strong>육체의 민주화 선언</strong><span class="a-genre">인문</span>
-          <span class="a-meta"> · 150×220 · 248쪽 · 13,000원 · 2013.05.30</span>
-        </li>
-        <li class="archive-item">
-          <strong>2013 즐거운 사라</strong><span class="a-genre">소설</span>
-          <span class="a-meta"> · 135×195 · 200쪽 · 11,000원 · 2013.06.30</span>
-        </li>
-        <li class="archive-item">
-          <strong>가자, 장미여관으로 (개정판)</strong><span class="a-genre">시집</span>
-          <span class="a-meta"> · 150×210 · 248쪽 · 12,000원 · 2013.09.24</span>
-        </li>
-        <li class="archive-item">
-          <strong>마광수의 유쾌한 소설 읽기</strong><span class="a-genre">인문</span>
-          <span class="a-meta"> · 150×210 · 280쪽 · 15,000원 · 2013.11.20</span>
-        </li>
+          <li class="archive-item">
+            <strong>청춘</strong><span class="a-genre">소설</span>
+            <span class="a-meta"> · 135×195 · 208쪽 · 10,000원 · 2013.01.30</span>
+          </li>
+          <li class="archive-item">
+            <strong>나의 이력서</strong><span class="a-genre">에세이</span>
+            <span class="a-meta"> · 150×220 · 296쪽 · 13,000원 · 2013.03.20</span>
+          </li>
+          <li class="archive-item">
+            <strong>상상놀이</strong><span class="a-genre">단편소설집</span>
+            <span class="a-meta"> · 135×195 · 224쪽 · 11,000원 · 2013.04.20</span>
+          </li>
+          <li class="archive-item">
+            <strong>육체의 민주화 선언</strong><span class="a-genre">인문</span>
+            <span class="a-meta"> · 150×220 · 248쪽 · 13,000원 · 2013.05.30</span>
+          </li>
+          <li class="archive-item">
+            <strong>2013 즐거운 사라</strong><span class="a-genre">소설</span>
+            <span class="a-meta"> · 135×195 · 200쪽 · 11,000원 · 2013.06.30</span>
+          </li>
+          <li class="archive-item">
+            <strong>가자, 장미여관으로 (개정판)</strong><span class="a-genre">시집</span>
+            <span class="a-meta"> · 150×210 · 248쪽 · 12,000원 · 2013.09.24</span>
+          </li>
+          <li class="archive-item">
+            <strong>마광수의 유쾌한 소설 읽기</strong><span class="a-genre">인문</span>
+            <span class="a-meta"> · 150×210 · 280쪽 · 15,000원 · 2013.11.20</span>
+          </li>
 
-        <li class="archive-year">2014</li>
+          <li class="archive-year">2014</li>
 
-        <li class="archive-item">
-          <strong>생각</strong><span class="a-genre">인문</span>
-          <span class="a-meta"> · 150×210 · 344쪽 · 20,000원 · 2014.01.20</span>
-        </li>
-        <li class="archive-item">
-          <strong>아라베스크</strong><span class="a-genre">소설</span>
-          <span class="a-meta"> · 150×210 · 368쪽 · 18,000원 · 2014.03.10</span>
-        </li>
-        <li class="archive-item">
-          <strong>행복 철학</strong><span class="a-genre">인문</span>
-          <span class="a-meta"> · 150×210 · 288쪽 · 16,000원 · 2014.05.20</span>
-        </li>
-        <li class="archive-item">
-          <strong>스물 즈음</strong><span class="a-genre">에세이</span>
-          <span class="a-meta"> · 135×195 · 216쪽 · 12,000원 · 2014.07.10</span>
-        </li>
-        <li class="archive-item">
-          <strong>마광수의 인문학 비틀기</strong><span class="a-genre">인문</span>
-          <span class="a-meta"> · 150×210 · 240쪽 · 13,000원 · 2014.10.10</span>
-        </li>
-      </ul>
+          <li class="archive-item">
+            <strong>생각</strong><span class="a-genre">인문</span>
+            <span class="a-meta"> · 150×210 · 344쪽 · 20,000원 · 2014.01.20</span>
+          </li>
+          <li class="archive-item">
+            <strong>아라베스크</strong><span class="a-genre">소설</span>
+            <span class="a-meta"> · 150×210 · 368쪽 · 18,000원 · 2014.03.10</span>
+          </li>
+          <li class="archive-item">
+            <strong>행복 철학</strong><span class="a-genre">인문</span>
+            <span class="a-meta"> · 150×210 · 288쪽 · 16,000원 · 2014.05.20</span>
+          </li>
+          <li class="archive-item">
+            <strong>스물 즈음</strong><span class="a-genre">에세이</span>
+            <span class="a-meta"> · 135×195 · 216쪽 · 12,000원 · 2014.07.10</span>
+          </li>
+          <li class="archive-item">
+            <strong>마광수의 인문학 비틀기</strong><span class="a-genre">인문</span>
+            <span class="a-meta"> · 150×210 · 240쪽 · 13,000원 · 2014.10.10</span>
+          </li>
+        </ul>
+      </div>
     </article>
 
   </div>
