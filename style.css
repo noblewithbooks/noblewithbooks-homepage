@@ -3089,13 +3089,12 @@ body .dionysos-banner.dionysos-home-banner{
 
 
 /* MOBILE: hide magnifier overlay (touch devices) */
-@media (hover:none) and (pointer:coarse){
-  .cover-zoom,
-  .zoom-badge{
+@media (hover: none) and (pointer: coarse){
+  .book-cover-link .cover-zoom{
     display: none !important;
   }
 }
-@media (hover:none) and (pointer:coarse){ .book-cover-link{ pointer-events:none; } }
+
 /* =========================
    NOTICE OUTLINE SYSTEM
    ========================= */
