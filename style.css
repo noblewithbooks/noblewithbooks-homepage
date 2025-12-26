@@ -3231,3 +3231,6 @@ body .dionysos-banner.dionysos-home-banner{
 .ebook-meta{
   margin-top: 8px;              /* 제목 ↔ 메타 간격 */
 }
+.ebook-selected.year-2021{
+  color: #2F5F5B;
+}
