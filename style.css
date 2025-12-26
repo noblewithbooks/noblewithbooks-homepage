@@ -3135,3 +3135,39 @@ body .dionysos-banner.dionysos-home-banner{
   border-color: #d94841;
 }
 
+/* =========================
+   Selected Books (selected.html)
+========================= */
+
+.selected-cover{
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;
+}
+
+.selected-book .book-author,
+.selected-book .book-translator,
+.selected-book .book-genre,
+.selected-book .book-year{
+  font-size: 13px;
+  color: var(--muted);
+  margin: 2px 0;
+}
+
+.selected-meta{
+  margin-top: 10px;
+}
+
+.selected-meta p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.selected-note{
+  margin-top: 40px;
+  text-align: center;
+}
