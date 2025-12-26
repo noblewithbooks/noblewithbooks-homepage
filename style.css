@@ -3202,9 +3202,12 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .ebook-list li{
-  padding: 10px 0;
+  padding: 12px 0;              /* 세로 리듬 정리 */
   border-top: 1px solid rgba(18,24,38,0.10);
+
+  text-indent: 0;               /* 혹시 남아있는 들여쓰기 제거 */
 }
+
 
 .ebook-list li:first-child{
   border-top: 0;
@@ -3219,7 +3222,12 @@ body .dionysos-banner.dionysos-home-banner{
 
 .ebook-meta{
   display: block;
-  margin-top: 4px;
+  margin-top: 8px;        /* ✅ 제목-메타 간격 확보 */
   opacity: 0.82;
   font-size: 0.95rem;
+  padding-left: 0;        /* ✅ 왼쪽 튀어나옴 방지 */
+}
+
+.ebook-meta{
+  margin-top: 8px;              /* 제목 ↔ 메타 간격 */
 }
