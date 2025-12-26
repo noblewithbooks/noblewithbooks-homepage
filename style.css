@@ -3179,3 +3179,47 @@ body .dionysos-banner.dionysos-home-banner{
   color: #7A4A2E;   /* warm brown */
   font-weight: 500;
 }
+/* =========================================
+   E-BOOK SUPPORT — clean list panel
+========================================= */
+.ebook-panel{
+  margin-top: 12px;
+  padding: 14px 14px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(18,24,38,0.12);
+}
+
+.ebook-batch{
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.ebook-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ebook-list li{
+  padding: 10px 0;
+  border-top: 1px solid rgba(18,24,38,0.10);
+}
+
+.ebook-list li:first-child{
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ebook-title{
+  display: block;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ebook-meta{
+  display: block;
+  margin-top: 4px;
+  opacity: 0.82;
+  font-size: 0.95rem;
+}
