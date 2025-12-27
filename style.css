@@ -3256,3 +3256,10 @@ body .dionysos-banner.dionysos-home-banner{
 .honors-page .book-card.selected-book {
   overflow: hidden;
 }
+.book-meta .meta-sub{
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(0,0,0,0.2);
+  font-size: 0.9em;
+  opacity: 0.85;
+}
