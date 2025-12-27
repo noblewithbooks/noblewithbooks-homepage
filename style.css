@@ -3232,3 +3232,19 @@ body .dionysos-banner.dionysos-home-banner{
 .ebook-selected.year-2021{
   color: #2F5F5B;
 }
+/* Honors nav accent (green) */
+.nav a[href$="honors.html"]{
+  border-bottom: 3px solid var(--accent-green);
+}
+/* ===== Honors menu highlight (green) ===== */
+.nav a[href$="honors.html"]{
+  color: #2DBE7A;
+  border-color: rgba(45,190,122,0.45);
+}
+
+.nav a[href$="honors.html"] .ico{
+  background: rgba(18,24,38,0.65);
+  box-shadow:
+    0 0 0 4px rgba(45,190,122,0.22),
+    0 0 0 7px rgba(210,200,255,0.10);
+}
