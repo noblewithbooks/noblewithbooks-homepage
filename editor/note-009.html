@@ -1,4 +1,4 @@
-<!-- 교체 -->
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -84,16 +84,19 @@
 
     /* subtle “army tone” paragraph box */
     .en-box{
-      margin: 18px 0 22px;
-      padding: 14px 14px;
-      border-radius: 12px;
-    .ami-box{
-   background: rgba(122, 74, 46, 0.08);
-   }
+  margin: 18px 0 22px;
+  padding: 14px 14px;
+  border-radius: 12px;
+}
 
-    .ami-box.soft{
-      background: rgba(110, 116, 99, 0.035);
-    }
+.ami-box{
+  background: rgba(122, 74, 46, 0.08);
+}
+
+.ami-box.soft{
+  background: rgba(110, 116, 99, 0.035);
+}
+
   </style>
 </head>
 
@@ -115,16 +118,25 @@
     </nav>
   </div>
 </header>
+<main class="vision-note">
+  <div class="vision-top">
+    <div>EDITOR’S NOTE</div>
+    <div>2025.12.29</div>
+  </div>
 
-<main>
-  <article class="en-note" aria-label="편집자 노트">
+  <section class="vision-hero">
+    <h1>
+      여권과 캐리어
+    </h1>
+    <p class="vision-lead">
+      <!-- lead-1 문장을 여기로 -->
+      여권과 캐리어는 ‘떠날 준비’의 상징이고, 이 글은 그 준비가 실제로 진행되는 기록이다.
+    </p>
+  </section>
 
-    <div class="vision-top">
-      <div>EDITOR’S NOTE</div>
-      <div>2025.12.29</div>
-    </div>
+  <section class="vision-body">
+    <!-- 여기부터 본문(파트들) -->
 
-    <h1 class="en-title">여권과 캐리어</h1>
 
     <!-- PART I -->
     <section class="en-part" id="en-part-1">
@@ -223,7 +235,8 @@
       </div>
     </section>
 
-  </article>
+  </section> <!-- vision-body 닫기 -->
+
   
   <p class="vision-sign">
     — Étoile Bleue Créations / 푸른별창작소<br>
