@@ -3292,131 +3292,107 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 /* =========================================================
-   EDITORIAL BANNER (Columns — 2 essays)
-   - 가로 배너 + 중앙 세로선 + 좌/우 칼럼
-   - 편집 지면(광고 바) 느낌
+   PRESS STRIP BANNER (2 essays) — Mediterranean Blue
+   HTML:
+   <section class="press-strip">
+     <a class="press-strip__slot">...</a>
+     <span class="press-strip__divider"></span>
+     <a class="press-strip__slot">...</a>
+   </section>
 ========================================================= */
 
-.editorial-banner{
+.press-strip{
+  position: relative;
   max-width: 860px;
   margin: 22px auto 22px;
-  padding-left: 56px; /* 파리지앙/타임라인 리듬 맞춤 */
+  padding-left: 56px;
   padding-right: 16px;
-}
 
-/* 배너 띠(색 바) */
-.editorial-banner__bar{
-  position: relative;
-  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  align-items: stretch;
+  gap: 0;
+
+  border-radius: 18px;
   overflow: hidden;
 
-  /* ✅ “광고 지면” 느낌: 색 + 얇은 하이라이트 */
   background: linear-gradient(
     180deg,
-    rgba(240,90,40,0.16),
-    rgba(240,90,40,0.10)
+    rgba(30,110,140,0.22),
+    rgba(30,110,140,0.14)
   );
-  border: 1px solid rgba(240,90,40,0.28);
+  border: 1px solid rgba(30,110,140,0.34);
   box-shadow: 0 12px 26px rgba(0,0,0,0.08);
 }
 
-/* 위/아래 얇은 광택 라인(인쇄물 가공감) */
-.editorial-banner__bar::before{
+/* 상단 미세 광택 */
+.press-strip::before{
   content:"";
   position:absolute;
-  left:0; right:0;
-  top:0;
-  height: 1px;
+  left:0; right:0; top:0;
+  height:1px;
   background: rgba(255,255,255,0.42);
   opacity: 0.9;
   pointer-events:none;
 }
 
-/* 중앙 세로선 */
-.editorial-banner__bar::after{
-  content:"";
-  position:absolute;
-  top: 14px;
-  bottom: 14px;
-  left: 50%;
+/* 중앙 분할선 */
+.press-strip__divider{
   width: 1px;
   background: rgba(24,34,44,0.22);
-  transform: translateX(-0.5px);
-  pointer-events:none;
+  align-self: stretch;
 }
 
-/* 내부 2칼럼 */
-.editorial-banner__inner{
+/* 좌/우 슬롯 */
+.press-strip__slot{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-}
+  gap: 6px;
 
-.editorial-col{
   padding: 16px 18px 14px;
-}
-
-.editorial-col--left{ padding-right: 22px; }
-.editorial-col--right{ padding-left: 22px; }
-
-/* 제목/메타/한줄 */
-.editorial-title{
-  margin: 0 0 6px;
-  font-size: 15px;
-  font-weight: 750;
-  color: rgba(24,34,44,0.95);
-  letter-spacing: -0.01em;
-}
-
-.editorial-meta{
-  margin: 0 0 10px;
-  font-size: 12.5px;
-  color: rgba(24,34,44,0.62);
-  letter-spacing: 0.02em;
-}
-
-.editorial-desc{
-  margin: 0;
-  font-size: 13.5px;
-  line-height: 1.75;
-  color: rgba(24,34,44,0.82);
-}
-
-/* 링크 문법: 밑줄 대신 ‘편집자식 밑줄’ */
-.editorial-link{
-  display: inline-block;
-  margin-top: 10px;
   text-decoration: none;
-  color: rgba(24,34,44,0.95);
-  border-bottom: 1px solid rgba(240,90,40,0.35);
-  padding-bottom: 2px;
+  color: rgba(24,34,44,0.96);
+
+  background: rgba(255,255,255,0.18);
 }
 
-.editorial-link:hover{
-  border-bottom-color: rgba(24,34,44,0.95);
+.press-strip__slot:hover{
+  background: rgba(255,255,255,0.28);
 }
 
-/* 모바일: 1열로 쌓고 중앙선 제거 */
+/* 텍스트 */
+.press-strip__paper{
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: rgba(24,34,44,0.72);
+}
+
+.press-strip__title{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 760;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: rgba(24,34,44,0.96);
+}
+
+.press-strip__meta{
+  font-size: 11.5px;
+  color: rgba(24,34,44,0.60);
+}
+
+/* 모바일 */
 @media (max-width: 720px){
-  .editorial-banner{
+  .press-strip{
     padding-left: 16px;
     padding-right: 16px;
-  }
-
-  .editorial-banner__bar::after{
-    display: none;
-  }
-
-  .editorial-banner__inner{
     grid-template-columns: 1fr;
   }
-
-  .editorial-col--left,
-  .editorial-col--right{
-    padding: 16px 16px 14px;
+  .press-strip__divider{
+    width: 100%;
+    height: 1px;
+    background: rgba(24,34,44,0.14);
   }
-
-  .editorial-col + .editorial-col{
-    border-top: 1px solid rgba(24,34,44,0.14);
+  .press-strip__slot{
+    padding: 16px 16px 14px;
   }
 }
