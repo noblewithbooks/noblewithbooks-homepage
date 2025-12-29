@@ -3290,3 +3290,133 @@ body .dionysos-banner.dionysos-home-banner{
 .card.notice p{
   color: rgba(18,24,38,0.75);
 }
+
+/* =========================================================
+   EDITORIAL BANNER (Columns — 2 essays)
+   - 가로 배너 + 중앙 세로선 + 좌/우 칼럼
+   - 편집 지면(광고 바) 느낌
+========================================================= */
+
+.editorial-banner{
+  max-width: 860px;
+  margin: 22px auto 22px;
+  padding-left: 56px; /* 파리지앙/타임라인 리듬 맞춤 */
+  padding-right: 16px;
+}
+
+/* 배너 띠(색 바) */
+.editorial-banner__bar{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* ✅ “광고 지면” 느낌: 색 + 얇은 하이라이트 */
+  background: linear-gradient(
+    180deg,
+    rgba(240,90,40,0.16),
+    rgba(240,90,40,0.10)
+  );
+  border: 1px solid rgba(240,90,40,0.28);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.08);
+}
+
+/* 위/아래 얇은 광택 라인(인쇄물 가공감) */
+.editorial-banner__bar::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height: 1px;
+  background: rgba(255,255,255,0.42);
+  opacity: 0.9;
+  pointer-events:none;
+}
+
+/* 중앙 세로선 */
+.editorial-banner__bar::after{
+  content:"";
+  position:absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 50%;
+  width: 1px;
+  background: rgba(24,34,44,0.22);
+  transform: translateX(-0.5px);
+  pointer-events:none;
+}
+
+/* 내부 2칼럼 */
+.editorial-banner__inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.editorial-col{
+  padding: 16px 18px 14px;
+}
+
+.editorial-col--left{ padding-right: 22px; }
+.editorial-col--right{ padding-left: 22px; }
+
+/* 제목/메타/한줄 */
+.editorial-title{
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 750;
+  color: rgba(24,34,44,0.95);
+  letter-spacing: -0.01em;
+}
+
+.editorial-meta{
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: rgba(24,34,44,0.62);
+  letter-spacing: 0.02em;
+}
+
+.editorial-desc{
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(24,34,44,0.82);
+}
+
+/* 링크 문법: 밑줄 대신 ‘편집자식 밑줄’ */
+.editorial-link{
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: rgba(24,34,44,0.95);
+  border-bottom: 1px solid rgba(240,90,40,0.35);
+  padding-bottom: 2px;
+}
+
+.editorial-link:hover{
+  border-bottom-color: rgba(24,34,44,0.95);
+}
+
+/* 모바일: 1열로 쌓고 중앙선 제거 */
+@media (max-width: 720px){
+  .editorial-banner{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .editorial-banner__bar::after{
+    display: none;
+  }
+
+  .editorial-banner__inner{
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-col--left,
+  .editorial-col--right{
+    padding: 16px 16px 14px;
+  }
+
+  .editorial-col + .editorial-col{
+    border-top: 1px solid rgba(24,34,44,0.14);
+  }
+}
