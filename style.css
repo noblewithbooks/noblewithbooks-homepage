@@ -3281,3 +3281,12 @@ body .dionysos-banner.dionysos-home-banner{
   color: rgba(122, 74, 46, 0.9);
   margin-bottom: 6px;
 }
+.card.notice{
+  border-top: 3px solid rgba(217, 125, 42, 0.8); /* 세피아 오렌지 */
+}
+.card.notice h2{
+  font-size: 1.05rem;
+}
+.card.notice p{
+  color: rgba(18,24,38,0.75);
+}
