@@ -3263,3 +3263,9 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 0.9em;
   opacity: 0.85;
 }
+/* E-book archive header divider */
+#ebooks-records .books-korhint {
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(122, 74, 46, 0.45);
+}
