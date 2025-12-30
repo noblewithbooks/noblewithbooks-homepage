@@ -3311,13 +3311,14 @@ body .dionysos-banner.dionysos-home-banner{
   overflow: hidden;
 
   /* 지중해 네이비(딥) */
-  background: linear-gradient(
-    180deg,
-    rgba(12, 33, 58, 0.92),
-    rgba(10, 26, 48, 0.92)
-  );
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 14px 34px rgba(2, 10, 20, 0.16);
+background: linear-gradient(
+  180deg,
+  rgba(40, 110, 160, 0.26),
+  rgba(40, 110, 160, 0.16)
+);
+
+border: 1px solid rgba(40, 110, 160, 0.32);
+box-shadow: 0 14px 34px rgba(2, 10, 20, 0.16);
 }
 
 /* 상단 얇은 하이라이트 라인 */
@@ -3327,14 +3328,15 @@ body .dionysos-banner.dionysos-home-banner{
   left:0; right:0;
   top:0;
   height: 1px;
-  background: rgba(255,255,255,0.22);
+background: rgba(255,255,255,0.20);
   pointer-events:none;
 }
 
 /* 중앙 디바이더 */
 .press-strip__divider{
   width: 1px;
-  background: rgba(255,255,255,0.16);
+  background: rgba(18, 28, 44, 0.22);
+
 }
 
 /* 좌/우 슬롯(각 칼럼 전체가 링크) */
