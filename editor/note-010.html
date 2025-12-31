@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>어쩌다 사고였을 뿐</title>
+  <link rel="stylesheet" href="../style.css?v=20251231-editor-note-10" />
+
+  <style>
+    /* Editor's Note — per-file style (minimal, safe) */
+    .en-note{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+      color: rgba(18,24,38,0.96);
+    }
+
+    .vision-top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(18,24,38,0.18);
+      padding-bottom: 14px;
+      margin-bottom: 36px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    .vision-hero h1{ color: #7A4A2E; }
+
+    .en-title{
+      margin: 0 0 18px;
+      font-size: 36px;
+      line-height: 1.12;
+    }
+
+    .en-body p{
+      margin: 0 0 14px;
+      font-size: 15.5px;
+      line-height: 1.9;
+    }
+
+    .en-quote{
+      margin: 18px 0 20px;
+      padding: 10px 14px;
+      border-left: 3px solid rgba(18,24,38,0.18);
+      opacity: 0.98;
+    }
+
+    .en-box{
+      margin: 18px 0 22px;
+      padding: 14px 14px;
+      border-radius: 12px;
+    }
+    .ami-box{ background: rgba(122, 74, 46, 0.08); }
+    .ami-box.soft{ background: rgba(110, 116, 99, 0.035); }
+
+    /* ===== Magazine-style: ENTRY + EXIT only (swap-safe) ===== */
+    .en-entry{
+      position: relative;
+      margin: 10px 0 26px;
+      padding: 18px 16px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.62);
+      box-shadow: 0 10px 26px rgba(2, 10, 20, 0.08);
+      border: 1px solid rgba(18,24,38,0.10);
+      overflow: hidden;
+    }
+    .en-entry::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(1200px 240px at 12% 0%, rgba(122,74,46,0.12), transparent 60%),
+        radial-gradient(900px 220px at 90% 20%, rgba(18,24,38,0.08), transparent 58%);
+      pointer-events: none;
+    }
+    .en-entry .en-kicker{
+      position: relative;
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+    .en-entry .en-subject{
+      position: relative;
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.85;
+      opacity: 0.95;
+    }
+    .en-entry .en-subject strong{
+      font-weight: 600;
+      color: rgba(122,74,46,0.92);
+    }
+
+    /* Dropcap for the very first body paragraph only */
+    .en-open::first-letter{
+      float: left;
+      font-size: 48px;
+      line-height: 0.9;
+      padding: 6px 10px 0 0;
+      font-weight: 650;
+      color: rgba(122,74,46,0.92);
+    }
+
+    .en-exit{
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(18,24,38,0.14);
+    }
+    .en-exit .en-exitline{
+      margin: 0 0 8px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    .en-exit .en-close{
+      margin: 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(122, 74, 46, 0.07);
+      border: 1px solid rgba(122, 74, 46, 0.16);
+    }
+
+    /* Small screens */
+    @media (max-width: 560px){
+      .en-note{ padding: 22px 14px 48px; }
+      .vision-top{ margin-bottom: 28px; }
+      .vision-hero h1{ font-size: 32px; }
+      .en-open::first-letter{ font-size: 44px; }
+    }
+    /* ===== ENTRY: magazine opener (replace-safe) ===== */
+.en-entry-mag{
+  position: relative;
+  margin: 8px 0 28px;
+  padding: 22px 18px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.56);
+  border: 1px solid rgba(18,24,38,0.10);
+  box-shadow: 0 18px 44px rgba(2, 10, 20, 0.10);
+  overflow: hidden;
+}
+
+.en-entry-mag::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    linear-gradient(90deg, rgba(122,74,46,0.26), rgba(122,74,46,0.00) 38%),
+    radial-gradient(900px 260px at 100% 0%, rgba(18,24,38,0.10), transparent 60%);
+  pointer-events:none;
+  opacity: 0.9;
+}
+
+.en-kicker-mag{
+  position: relative;
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.en-deck{
+  position: relative;
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.en-deck-sub{
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  opacity: 0.76;
+}
+
+.en-stand{
+  position: relative;
+  margin: 14px 0 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(122, 74, 46, 0.07);
+  border: 1px solid rgba(122, 74, 46, 0.14);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.en-blurb{
+  position: relative;
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(18,24,38,0.10);
+}
+
+.en-blurb p{
+  margin: 0;
+  font-size: 14.8px;
+  line-height: 1.85;
+  opacity: 0.95;
+}
+
+@media (max-width: 560px){
+  .en-entry-mag{ padding: 18px 14px 14px; }
+  .en-deck{ font-size: 20px; }
+}
+
+/* ===== Mid block #1: Pull quote (magazine) ===== */
+.en-pull{
+  position: relative;
+  margin: 22px 0 26px;
+  padding: 18px 16px 14px;
+  border-radius: 18px;
+  background: rgba(122,74,46,0.06);
+  border: 1px solid rgba(122,74,46,0.16);
+  box-shadow: 0 10px 26px rgba(2, 10, 20, 0.08);
+}
+.en-pull::before{
+  content: "“";
+  position: absolute;
+  top: -22px;
+  left: 14px;
+  font-size: 72px;
+  line-height: 1;
+  color: rgba(122,74,46,0.35);
+  font-weight: 700;
+}
+.en-pull blockquote{ margin: 0; }
+.en-pull p{
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+}
+.en-pull figcaption{
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+/* ===== Mid block #2: Note box (magazine) ===== */
+.en-notegrid{
+  margin: 22px 0 26px;
+  padding: 16px 16px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(18,24,38,0.10);
+}
+.en-boxcap{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+.en-boxbody p{
+  margin: 0 0 12px;
+  font-size: 15.2px;
+  line-height: 1.88;
+}
+.en-boxbody p:last-child{ margin-bottom: 0; }
+
+.ami-box{
+  background: rgba(35, 64, 98, 0.08);
+  border: 1px solid rgba(35, 64, 98, 0.16);
+}
+
+/* ===== Finale: last page 느낌 ===== */
+.en-finale{
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(18,24,38,0.12);
+}
+.en-finale-kicker{
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+.en-finale-body{
+  position: relative;
+  padding: 16px 16px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.54);
+  border: 1px solid rgba(18,24,38,0.10);
+  box-shadow: 0 14px 38px rgba(2, 10, 20, 0.08);
+}
+.en-finale-body p{
+  margin: 0 0 14px;
+  font-size: 15.2px;
+  line-height: 1.9;
+}
+.en-finale-body p:last-child{ margin-bottom: 0; }
+
+/* ===== Exit stamp card ===== */
+.en-exit-stamp{
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(18,24,38,0.20);
+}
+.en-close-stamp{
+  margin: 0;
+  padding: 14px 14px;
+  border-radius: 16px;
+  background: rgba(122,74,46,0.07);
+  border: 1px solid rgba(122,74,46,0.18);
+  font-size: 15.2px;
+  line-height: 1.85;
+}
+.en-stamp{
+  margin: 10px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.70;
+  text-align: right;
+}
+
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav">
+      <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+      <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+      <a class="btn-space" href="../editor.html"><span class="ico"></span>편집자 노트</a>
+      <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+      <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+      <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+      <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+      <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+    </nav>
+  </div>
+</header>
+
+<main class="vision-note">
+  <div class="en-note">
+
+    <div class="vision-top">
+      <div>EDITOR’S NOTE</div>
+      <div>2025.12.31</div>
+    </div>
+
+    <section class="vision-hero">
+      <h1>어쩌다 사고였을 뿐</h1>
+
+      <!-- [교체] ENTRY BLOCK (magazine, bold) -->
+<div class="en-entry en-entry-mag" aria-label="Entry Block">
+  <p class="en-kicker en-kicker-mag">EDITOR’S NOTE · 4</p>
+
+  <h2 class="en-deck">
+    어쩌다 사고였을 뿐
+    <span class="en-deck-sub">— 자파르 파나히, 그리고 내가 따라가기로 한 길</span>
+  </h2>
+
+  <p class="en-stand">
+    좋은 영화는 언제나 ‘철학 수업’이다.
+  </p>
+
+  <div class="en-blurb">
+    <p>
+      오늘의 기록은 영화에서 시작해 감독을 따라가고,
+      결국 내 인생의 다음 스텝을 정리하는 쪽으로 흘러간다.
+      요란하지 않게, 담백하게, 그러나 날카롭게.
+    </p>
+  </div>
+</div>
+
+    </section>
+
+    <section class="vision-body">
+      <div class="en-body">
+
+        <p class="en-open">최근에 ‘어쩌다가’ 자파르 파나히 감독을 알게 되었다. 요즘 통 신작 영화가 볼만한 작품들이 안 나와서 리모컨은 언제나 헤매고 있었다. 코로나 19 시기 여파로 영화 제작이 엄청 줄어든 것 같고, 그러다 보니 명작을 발견할 확률도 낮아졌나 보다. 그래도 리모컨으로 이리저리 메뉴를 찾다가 문득 2025년 칸영화제 황금종려상을 받은 작품이 눈에 띄었다. 바로 자파르 파나히 감독 작품. 처음 보는 감독이다. 물론 내가 몰랐을 뿐이지, 이전부터 유명한 감독이었다. 모국인 이란으로부터 출국 금지까지 당하는 감독. 이란의 정치와 사회의 모순을 비판하는 영화를 만들어 왔기 때문에.</p>
+
+        <p>내가 이란 영화를 처음으로 본 게 1996년쯤 국내에서 개봉했던 &lt;내 친구의 집은 어디인가&gt;였을 것이다. 압바스 키아로스타미 감독의 이 작품을 보고 나서 이란 영화의 묘한 매력을 알기 시작했다. 이후에 후속작으로 2부 〈그리고 삶은 계속된다〉와 3부 〈올리브 나무 사이로〉도 나오자마자 다 찾아볼 정도로 이 감독의 매력에 푹 빠졌다. 아마도 충격적이고 특별한 사건 없이 담담하고 담백하게 흘러가는 분위기가 내 영화 취향과 맞았나 보다.</p>
+
+        <p>이번에 자파르 파나히 감독도 그런 분위기를 크게 벗어나는 것은 아니다. 다만, 좀 더 날카로운 비판과 사회 문제 의식을 더 품고 있고, 교묘하게 아무렇지 않은 듯 그 문제를 드러내고 있다는 것뿐. 나는 처음에는 &lt;노 베어스&gt;부터 봤다. 왜 올해 칸 영화제 황금종려상까지 받은 최고의 작품, &lt;어쩌다 사고였을 뿐&gt;부터 먼저 선택하지 않은 게 의문스러울 것이다. 신작이라 7,700원. 그것도 시간이 좀 더 지나 있어서 완전 최신작 11,000원보다 내려가 있었다.</p>
+
+        <p>그런데 난 이 감독의 정체를 알지 못해서, 굳이 처음부터 모험을 할 필요는 없었다. 왜냐하면 나는 SK브로드밴드의 프리미어 월정액 서비스에 가입해 있어서 다른 두 작품을 그냥 무료로 볼 수 있었기 때문이다. 그리고 한 작품을 완벽하게 이해하려면 그 감독의 과거 작품부터 추적을 해야 한다. 그래서 나는 SK브로드밴드에 올라와 있던 다른 두 작품 중에서 좀 더 끌리는 &lt;노 베어스&gt;를 픽했다. 하지만 두 작품 모두 언뜻 봐선 굉장히 끌리진 않았다. 그리고 정치와 사회적 문제를 비판해서 출국 금지까지 당했다는 배경 지식을 언뜻 떠올리면서 혹시 굉장히 정치적인 영화이면 어쩌나 하는 우려가 있었다. 그래서 선뜻 최신작에 투자하고 싶지 않았다.</p>
+
+        <p>그러나 &lt;노 베어스&gt;를 보고 나서 나의 이 걱정이 기우였음이 증명되었다. 자파르 파나히 감독은 자신이 이 작품에서 주인공으로 직접 출연까지 했다. 그런데도 영화는 아주 자연스럽고 담담한 일상을 보여주었다. 이란 사회의 풍속과 그 이면에 담긴 여성 억압과 모순, 집단의 통제, 등등 크게 보자면 대부분의 나라가 교묘하게 품고 있는 집단주의의 폭력을 상징적으로 잘 드러냈다. 그리고 이 대사가 많이 남았다. 영화 속 마을 사람들은 말한다.</p>
+
+       <!-- [교체] pull-quote card -->
+<figure class="en-quote en-pull" aria-label="Pull Quote">
+  <blockquote>
+    <p>“곰은 없다고, 다만 사람들을 겁주기 위해 곰이 있다고 말해질 뿐이라고.”</p>
+  </blockquote>
+  <figcaption>— &lt;노 베어스&gt;</figcaption>
+</figure>
+
+        <p>따라서 이 영화 제목인 &lt;노 베어스(No Bears)&gt;는 권력과 관습이 어떤 방식으로 사람들에게 공포를 주면서 작동하는지를 상징한다. 나는 이 작품을 보면서 꼭 이란만의 문제가 아니고, 권력이나 관습의 강제성은 집단주의가 만연한 어느 나라에든 적용할 수 있는 상징성이라고 보았다. 그래서 이 영화가 베니스 국제영화제(2022)에서 심사위원특별상을 왜 수상했는지 알 수 있었다. 또 내가 이어서 본 &lt;세 개의 얼굴들&gt; 작품 역시 칸 영화제(2018) 각본상을 수상했는지 감이 왔다. 자파르 파나히 감독은 본인이 주인공으로 출연하기도 하고, 시나리오도 쓴다.</p>
+
+        <p>&lt;세 개의 얼굴들&gt;은 서로 다른 시대를 살아온 세 여성 배우의 얼굴을 통해, 누가 말할 수 있고 누가 침묵해야 했는지를 묻는 영화다. 역시 자파르 파나히 감독의 영화 분위기를 그대로 담고 있다. 그런데 자파르 파나히는 &lt;노 베어스&gt;, &lt;세 개의 얼굴들&gt;만 만든 감독이 아니다. &lt;오프사이드&gt;, &lt;택시&gt;, &lt;This Is Not a Film&gt; 같은 작품들을 통해 ‘보이지 않는 금지’가 일상에 스며드는 방식을 꾸준히 찍어온 감독이다. 하지만 내가 본 작품은 SK브로드밴드에 올라온 세 작품뿐이다.</p>
+
+        <p>나는 &lt;노 베어스&gt;와 &lt;세 개의 얼굴들&gt;을 먼저 보고 나서야, 아무 망설임 없이 &lt;어쩌다 사고였을 뿐&gt;의 최신작을 볼 수 있었다. 이젠 어떤 비용을 지불하고서라도 자파르 파나히 감독 작품은 다 보고 싶을 만큼 내가 애정하는 감독의 리스트에 올랐다. 나는 거장의 작품을 보고는 왜 이 영화들이 칸 영화제나 베니스 영화제 같은 큰 영화제에서 수상할 수밖에 없는지 너무 잘 알았다. 이견을 달 수 없었다. 그만큼 영화는 깊고 날카로운 비수를 담고 있지만, 아주 담백하고 일상적이다. 큰 사건도 없이 잔잔하게 흘러간다. 또 어느 사회, 어느 나라에서나 들이대도 적용되는 인간 사회의 통찰을 담고 있다. 집단과 권력의 강압성, 인간 자유에 대한 침해, 관습이 얼마나 악습으로 변할 수 있는지, 아니 악습이 관습의 선한 가면을 쓰고 인간의 자유를 얼마나 구속하고 파괴하는지 잘 보여준다.</p>
+
+        <p>나는 앞으로 자파르 파나히 감독을 내가 가장 애정하는 감독들 리스트에 올릴 것이다. 신작이 눈에 띄면 바로 클릭하는 나의 최애 감독들. 우선 생각나는 감독들만 정리해 보자. 국내에선 홍상수 감독, 미국에는 코엔 형제 감독, 영국과 미국의 복수 국적을 가진 크리스토퍼 놀란 감독, 스페인의 페드로 알모도바르 감독, 그리고 프랑스어권의 캐나다(퀘벡) 감독인 자비에 돌란. 자비에 돌란은 배우 출신이다. 이 감독들은 내가 최고로 좋아하는 감독이다. 물론 그다음으로 좋아하는 감독들도 많은데, 이 감독들은 정말 내가 죽었다 깨어나도 신작을 꼭 챙겨보는 편이다.</p>
+
+        <p>이번에 쉬면서 또 아주 잘 건진 영화로는 &lt;여덟 개의 산&gt;이 있다. 이 작품은 너무 유명해서 자주 언급되었는데, 어쩌다가 이제야 봤다. 이 작품은 펠릭스 판 흐로이닝언과 샤를로트 판데르메르쉬가 공동 연출했으며, 2022년 칸 영화제에서 심사위원상을 받았다. &lt;여덟 개의 산&gt;은 친구이자 서로 다른 삶의 방향을 택한 두 남자의 시간을 따라가는 영화다. 한 사람은 산에 남고, 다른 한 사람은 세계를 떠돌며 살아간다. 영화는 누가 더 넓은 삶을 살았는지 묻지 않는다. 대신 한곳에 깊게 머무는 삶과 끊임없이 이동하는 삶이 각자 어떤 고독과 충실함을 만들어내는지를 조용히 보여준다. 티베트 불교의 수미산 비유처럼, 세상을 도는 사람과 중심에 남는 사람은 다른 궤적을 그리지만 결국 같은 질문 앞에 선다. 무엇을 소유했는지가 아니라, 어디에 자신을 두고 살아왔는가를. 이 영화 역시 큰 사건이나 시끄러운 내용은 없다. 그냥 담담하게 역시 흘러간다. 내가 좋아하는 영화 분위기다. 그러면서 통찰을 안겨 준다. 나는 이 영화를 보면서 대자연의 풍경도 좋았지만, 내가 어디에 속해 있는가를 다시 한번 알았다. 나는 이 영화의 비유에서 말하는 세상의 중심에 있는 수미산에만 머무는 것이 아니라, 그 주변에 있는 ‘여덟 개의 산’을 오르면서 인생 수업을 하고 있는 존재라는 것을.</p>
+
+        <p>좋은 영화는 언제나 ‘철학 수업’이기도 하다. 그래서 나는 시끄럽고 야단스러운 영화보다는 이렇게 담담하고 잔잔하지만, 인생의 의미를 반추해 보는 영화를 참 좋아한다. 거장의 작품들을 마주하면 내가 참 갈 길이 멀다는 걸 느낀다. 어떤 영화를 보면 자신감이 생기다가도, 이렇게 거장의 명작들을 보면 앞으로 내가 가는 길에서 더 많은 것들을 채워나가야 한다는 채무 의식이 생긴다. 큰 무게감으로 다가온다. 하지만 그런 작품을 감상하고 나서 나를 채우는 크나큰 희열감이 영화에 대한 사랑을 더 깊게 한다.</p>
+
+        <p>그런데 넷플릭스도 좋고, 디즈니 플러스도 좋지만, 다 가입해서 인기 있는 작품들도 봤지만, 모두 끊고 다시 SK브로드밴드로 내가 돌아온 이유는 이런 대작들, 명작들을 쉽사리 볼 수 있다는 사실이다. SK브로드밴드에는 유명세를 떨치는 요란스러운 작품들도 있지만, 이렇게 아주 깊이 있는 유기농 장국 같은 작품들을 많이 품고 있다는 사실.</p>
+
+        <p>그 이유로 나는 이번에 다시 프리미엄 월정액에 가입했다. 물론 이 서비스 이름이 요즘 바뀌었나 모르겠는데, 어쨌든 내게 익숙한 서비스. 극장에 가서 영화 한 편 볼 비용으로 한 달 내내 좋은 영화들을 볼 수 있다는 것. 물론 간혹 신작을 보자면, 비용을 지불해야 하지만. 나는 거의 숨겨진 명작을 다 보아서 이제 더 볼 게 없을 것도 같고, 또 그동안 기말고사 기간에다가 이것저것 일이 바빠서 잠시 끊고 있다가 이제 다시 좀 마음의 여유가 생겨서 이번에 가입했다. 덕분에 좋은 영화들을 다시 실컷 볼 수 있다. 꽁꽁 숨겨진 좋은 영화들을 발굴해서 쉬는 날에는 다시 영화로 힐링해야겠다.</p>
+
+        <p>영화를 보는 것은 어차피 내게는 다 공부다. 앞으로 파리에서 시테대학교 영화학 석사 과정을 목표로 준비하고 있으니까. 좋은 영화 감상은 내게 힐링 포인트이자, 학습의 시간이기도 하다. 내 취향의 영화를 찾는 스킬은 바로 감독 중심으로 찾는 것. 그리고 요즘 AI가 다 적용되어져서 ‘좋아요’를 그런 영화에 자주 누르면, 알아서 잘 리스트로 뜬다. 그걸 활용하면 된다. 이젠 아주 급한 업무도 다 끝냈으니까, 영화도 이제 좀 즐겨야지. 이제 방송대도 일정이 다 끝났고, 2월 말에 졸업장(불문학 학사 학위가 담긴)만 받아 오면 되고, 홈페이지도 다 구축이 되어서 자잘한 항목들(예를 들어 ‘언론의 시선’에 예전 기사 리스트를 찾아 링크를 연결하는 작업)만 더 채워나가면 된다. 그건 매일 조금씩 시간을 할애해서 작업해 나갈 생각이다.</p>
+<!-- NOTE BOX START -->
+<div class="en-box en-notegrid">
+  <p class="en-boxcap">NOTE</p>
+
+  <div class="en-boxbody">
+        <p>이제 급한 업무들은 다 처리되었고, 일상으로 돌아가면 된다. 출판 작업으로는 ‘디오니소스 논술’ 교재를 집필하고, 프랑스어 공부로는 매일 한두 꼭지씩 &lt;르몽드&gt; 기사 해석, 라디오프랑스로 듣기 공부, 또 편집자 노트에 마련된 작문 노트에서 작문 훈련(물론 다른 방식으로도 많이 하겠지만, 작문 훈련에 대해 나 자신에게 압박감 내지는 상징성을 주기 위해 설치했다.), 말하기는 곧 3월이 오면 학원에 나가서 수업 듣고. 이런 일상이 이제 기다린다. 물이 넘어갈 듯 아주 급한 일은 없다. 매일 꾸준하게 처리하면 될 일이다. &lt;디오니소스 논술&gt; 교재도 3월 말을 목표로 매일 일정하게 작업하면 된다. 한꺼번에 한다고 될 일이 아니다. 기획과 집필은 분량으로 승부하는 게 아니라, 퀄리티로 끝장을 봐야 하는 것. 그러려면 매일 조금씩 해야 효력이 있다.</p>
+
+        <p>&lt;디오니소스 논술&gt; 교재 집필이 제일 중요한 일이긴 한데, 내가 이렇게 마음적으로 여유로운 이유는 이미 모든 기획이 머릿속에 있기 때문이다. 교재 구성을 아직 표면적으로는 안 했지만, 어떤 식으로 갈 것인지 벌써 다 완성되었다. 또 어떤 식으로 그 아이디어의 아이템을 길어올릴 것인지도 여러 갈래로 다 파악해놓았다. 그래서 그냥 평소 작업처럼 시간을 들여서 집필하면 된다. 내 머릿속에는 이미 ‘디오니소스 논술’ 교재의 네비게이션 루트는 다 설정이 되었다. ‘디오니소스 논술’ 집필 작업의 자동차는 그냥 달리기만 하면 된다.</p>
+
+        <p>그리고 파리행을 향한 첫 스텝인 방송대 프랑스언어문화학과도 이제 졸업이고, 그다음 스텝인 사이버대 한국외국어대학교 한국어학과 편입학도 서류 절차를 마치고 결과를 기다리고 있다. 1월 말쯤에 발표된다.  </p>
+
+        </div>
+</div>
+<!-- NOTE BOX END -->
+ 
+
+
+온라인으로 진행하는 입시 설명회에 참여해 보니, 유명 대학교 졸업생들도 불합격되는 사례가 있다고 하니, 그 절차도 ‘끝나야 끝나는’ 일인가 보다. 아주 쉬운 절차일 것 같았는데, 물론 그럴 수도 있지만, 그래도 의외로 ‘쫄깃한’ 맛이 있었다.</p>
+
+        <p>세상만사 모든 일은 아주 쉬운 일이라 할지라도 방심하면 안 되고, ‘끝나야 끝난다’라는 사실을 항상 명심해야 한다. 자기소개서 제출과 시험도 있었다. 방송대 편입학할 때와는 느낌이 달랐다. 방송대는 들어가긴 쉬웠다. 누구에게나 문이 활짝 열려 있다. 그런데 졸업하기가 힘든 편이라고 할까. 그런데 사이버대 한국외대는 편입학할 때 사람을 쫄깃하게 하는 구석이 있었다. 왜냐하면 방송대는 내가 알기로 정원이라는 게 없는 걸로 아는데, 사이버대는 정원이 딱 정해져 있기 때문이다. 특히 인기 있는 학과는 경쟁이 치열하다고 한다. 요즘 K콘텐츠가 세계적으로 상승세를 타고 있기 때문에, 외국 사람들을 가르칠 수 있는 공식 자격증인 한국어 교원자격증을 따려는 인재들이 몰려들고 있어서 더욱 그럴 듯하다. 이 자격증은 졸업만 하면 주어진다. 마지막 실습을 거쳐서. 마치 한국에서 중고등 교사를 하려면 마지막 단계인 교생 실습을 나가듯이, 그런 절차를 한번 가지는 것이다.</p>
+
+        <p>국내 교원자격증은 보통 한 달 교생 실습을 나가는데, 다행히도 이 수업은 1회만 그 과정을 거치면 된다. 나도 대학교 때 각 과에 30%인가 배정되는 그 등수에 도달해서 겸사겸사 신청해서 교직을 듣고 철학 중등교원자격 2급을 갖고 있다. 교생 실습도 4학년 때 모교에 도덕 과목으로 나갔던 경험이 있다. 어쨌든 사이버외대는 편입학 할 때 정원이 정해져 있어서 쫄깃한 마음을 갖게 하지만, 난 자기소개서를 작성하는 데 최선을 다했다. 70%라고 한다. 비중이. 정말 파리에서 한국어를 가르치고 싶고, 또 그 경험을 바탕으로 한국어 교재도 개발하고 싶어서 진정성 있게 나의 진심을 담아서 작성했다.</p>
+
+        <p>그리고 시험도 그리 나쁘지 않게 치렀다. 온라인으로 제한된 시간에 시험을 치르는 방식이라 좀 처음엔 당황스러웠다. 숫자 계산도 나오고, 여러 상황의 문제들이 나와서 마치 문제 방식이 아이큐 테스트 같았다. 그리고 심리 검사 방식도 섞인 형식이었다. 그러니 일관성 있게 대답하지 않으면 감점을 받는 그런 시험 유형이라 좀 긴장이 되긴 했다. 자칫 ‘함정’이랄까, 어쨌든 감점 요인에 의도치 않게 걸릴 수 있기 때문이다. 그렇다고 너무 솔직하게 다 내질러도 사회성과 인성의 요인에 감점이 될 수 있다. 그러니 왜 유명 대학교 졸업생도 탈락을 했는지 좀 이해가 갈 듯하다. 자기가 대답하고 싶은 대로 마구 답을 달다 보면, 일관성에 문제가 생길 수도 있고(왜냐하면 사람은 잠재적 성격에서 양면성이 있기 때문에), 또 그것까지 계산해서 답하다 보면 자칫 역시나 인위적 일관성으로 엇박자가 날 수도 있는 시험 방식이었다.</p>
+
+        <p>하여튼, 자기소개서가 중요하다고 하니, 어느 정도만 통과해도 괜찮을 것 같다. 그런데 내가 왜 이 시험에 긴장하느냐 하면, 단지 사이버대 편입학의 의미에 그치지 않기 때문이다. 내 파리행 프로젝트의 두 번째 스텝이기 때문에, 이 과정이 제대로 실행되지 않으면 큰 프로젝트의 진행이 꼬이기 때문에 그렇다. 그래서 다른 사람들보다 더 쫄깃하다. 그래서 나는 정말 최선을 다해서 시험에 응했고, 자기소개서도 진심과 진정성을 담고, 내 미래 계획도 구체적으로 담았다.</p>
+
+        <p>이럴 때는 정말 내가 글을 쓰는 직업을 가져서 참 다행이라고 생각했다. 내 진심을 아주 괜찮은 그릇에 담아 보낼 수 있기 때문이다. 1월 말에 발표가 나는데, 혹자는 별거 아닐 수도 있는 일에 왜 그렇게까지 초조해하는지 이해할 수 없을지도 모르지만, 나에겐 파리행이 걸려 있는 일이다. 별거가 아닌 게 절대로 아니다. 한국어 교원자격증이 있어야 파리에서 공식된 기관에 내 자리를 둘 수 있고, 향후 영주권도 바라볼 수 있기 때문이다. 매년 파리에서 비자를 새로 발급받고 사는 인생이 아니라, 10년이나 이런 주기로, 혹은 그 이상의 안전한 거주를 위해서는 꼭 필요한 과정이다. 그리고 유로화를 직접 안정적으로 갖고 올 수 있는 구조라서 사이버 한국외대 편입학은 나의 파리행을 위해 마지막 남은 관문이라고 해도 과언이 아니다.</p>
+
+        <p>일단 편입학만 하면 한국어 교원자격증은 수업을 충실히 이해하고 따라가면 자동으로 오는 절차이기 때문에, 들어가는 게 제일 문제다. 일단 합격해야 한다. 파리행을 위한 두 번째 스텝인 사이버 한국외대 편입학. 이제 이 과정이 마무리되면 정말 남은 것은 프랑스어 능력 시험인 델프 시험에 올인하면 된다. 물론 한국어 수업은 잘 따라가고. 델프 시험을 위해서 방송대에서 기본 실력은 닦아 놓았기에 별로 걱정은 안 되지만, 학원에서 말하기 훈련과 시험 스킬을 더 익히면 된다. 왜냐하면 나의 목표는 DELF B1이 아니라, 최소 B2는 가야 해서 좀 더 높은 목표를 향해서 준비해야 한다.</p>
+
+        <p>델프 B1 정도는 그리 어렵지 않게 합격할 수 있다고는 하는데, B2는 그 격차가 심하다고 한다. 그래서 거기까지 포함해서 준비를 이어나가야 한다. 따로따로 준비하는 건 비효율적이다. 나는 파리에 가기 전에 시기적으로 B1을 한번 정도는 칠 수 있다고 본다. 그런데 그 결과는 늦게 나오고, 몇 달 뒤인가. 그래서 전 과정을 다 마치고 가게 될지, 어떨지는 모르겠다. 내게는 B1이 B2를 위한 시험장 적응 훈련 정도 된다고 보면 된다. 어쨌든 2026년에 한 번 치르고 갈 것 같다. 결과는 파리에서 듣게 될지, 더 늦게 파리에 가면 한국에서 합격증을 찾을지 모르겠지만.</p>
+
+        <p>사이버 한국외대 한국어학과에 편입학하는 최종 절차(합격과 수업료 납부)만 끝나면 이제 안전지대에 들어서게 된다. 그 과정만 마치면 이제 남은 것은 일상에서의 꾸준한 준비다. 그리고 내가 기다리고 있는 마지막 퍼즐 한 조각. 그게 OK 되면 파리행 비행기에 오르게 된다. 그건 시간 문제다. 그래서 기다리면 된다. 언젠가는 OK 되니까. 빠르면 2026년 상반기, 늦으면 하반기. 그래서 사이버 외대 편입학 합격 발표만 나면, 이제 내 의지 밖의 일은 다 퍼즐이 완성된다. 내가 통제할 수 없는 구역은 이제 다 지나온 셈이 될 거다. 나머지 남은 일은 그저 ‘열심히’, 그리고 ‘꾸준하게’ 교재 집필하고, 건강을 위해 산책하고, 프랑스어 공부하고 그렇게 지내면 된다. 파리 가는 날까지. 그뿐이다. 아주 심플한 인생이라 마음이 편하다. 그리고 3월부터 사이버대 수업 듣고, 시험 치고, 동네 프랑스어 학원에 나가고. 그러면 되는 거다. 내가 이제야 그 학원에 가는구나. 광교라는 동네에 온 것도 다 그 학원에 가기 위해서 이곳에 자리를 잡은 거고, 방송대 프문과에 편입학한 것도 다 그 학원 수업을 잘 따라가기 위해서다. 거기서는 말하기, 듣기 위주로 수업 내용이 구성되어서, 방송대에서 문법이나 그 밖의 프랑스의 역사나 문화에 대한 교양을 배운 것이다.</p>
+
+        <!-- [추가] FINALE START -->
+<section class="en-finale" aria-label="Finale">
+  <p class="en-finale-kicker">FINALE</p>
+
+  <div class="en-finale-body">
+        <p>오늘이 2025년 올해, 마지막 날이라, 좀 여러 가지로 정리해 보았다. &lt;어쩌다 사고였을 뿐&gt; 영화 제목처럼 인생은 ‘어쩌다’ 일어난 일로 인생의 모습은 달라진다. 내가 ‘어쩌다’ 프랑스 영화에 끌렸을 뿐인데, 결국 내 인생의 행로를 여기까지 데리고 왔다. 그리고 결국 파리지앙으로 사는 걸로. 인생에서는 사소한 것도 중요하다. 그 의미가 어디까지 퍼질지 모를 일. 그리고 매 순간 사람은 진실해야 한다는 것, 진정성이 있어야 한다는 것. 작은 일 하나를 할 때도 최선을 다하고 진실하고 진정성을 담아야 한다. 그래야 인생 전체에 좋은 영향을 미치고 의미도 있고, 결과도 좋다. 왜 명품도 ‘디테일’이 결정한다고 하질 않나. 사람도 역시 사소한 것에 많은 의미를 둬야 한다. 진심을 담아야 한다. 나는 그렇게 생각한다. 사소한 것이 모여 큰 의미가 되고, 인생을 이룬다. 사소한 것에 거짓이 섞이면 결국 그 인생은 거짓이다. 그러니 사소한 것이 지니는 가치는 크고, 항상 진심이어야 한다. 적어도 매번 진심을 다할 수 없다 하더라도 그런 방향으로 노력해야 한다. 마음가짐은 그러해야 한다. 그래야 그 인생도 의미가 있다.</p>
+ </div>
+</section>
+<!-- [추가] FINALE END -->
+
+       <!-- [교체] EXIT BLOCK (stamp ending) -->
+<div class="en-exit en-exit-stamp" aria-label="Exit Block">
+  <p class="en-exitline">END NOTE</p>
+
+  <p class="en-close en-close-stamp">
+    세상은 단순하게 보이지만, 결정은 항상 디테일이 판가름해.
+  </p>
+
+  <p class="en-stamp">2025 · 12 · 31</p>
+</div>
+
+      </div>
+    </section>
+
+    <p class="vision-sign">
+      — Étoile Bleue Créations / 푸른별창작소<br>
+      Editor’s Note · Digital Magazine Platform
+    </p>
+
+    <div class="vision-nav">
+      <a href="../editor.html">← 편집자 노트 목록으로</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </div><!-- /.en-note -->
+</main>
+
+</body>
+</html>
