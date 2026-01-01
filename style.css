@@ -3433,3 +3433,52 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 0.9em;
 }
 
+/* About page polish */
+.container.contact.about .card{
+  max-width: 920px;           /* 카드가 너무 작아 답답한 문제 해결 */
+  padding: 28px 30px;
+}
+
+.container.contact.about .contact-grid{
+  gap: 18px;                  /* 블록 간 숨 */
+}
+
+.container.contact.about .contact-block{
+  padding: 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.55);
+}
+
+.container.contact.about .contact-block h3{
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.container.contact.about .contact-item{
+  padding: 10px 0;
+}
+
+.container.contact.about .contact-label{
+  min-width: 88px;            /* 라벨 폭 통일, 표가 정돈돼 보임 */
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.container.contact.about .contact-value{
+  line-height: 1.75;          /* 선언문 숨, 리듬 */
+}
+
+.container.contact.about .contact-item:last-child .contact-value{
+  font-size: 15px;            /* 선언문만 살짝 키우기 */
+}
+
+.container.contact.about .contact-item:last-child .contact-value strong{
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;       /* 시선 정지 포인트(하이라이트) */
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 8px 18px rgba(2,10,20,0.08);
+}
