@@ -3402,79 +3402,58 @@ body .dionysos-banner.dionysos-home-banner{
   color: #c26a2e; /* 톤 다운된 오렌지/브라운 */
   font-size: 0.9em;
 }
-
 /* =========================================================
-   ABOUT — v3 (clean manifesto, no speech-bubble)
+   ABOUT — v4 (centered manifesto, editorial clean)
    requires: <body class="about-page"> and <main class="container about">
 ========================================================= */
 
+:root{
+  --brand-brown: #7A4A2E; /* 고동 브라운 포인트 */
+}
+
+/* 레이아웃 */
 .about-page .container.about{
   max-width: 980px;
   margin: 0 auto;
-  padding: 32px 16px 56px;
+  padding: 36px 16px 64px;
 }
 
-/* 카드: 말풍선 느낌(과한 내부 박스/테두리) 제거, 지면감 강화 */
+/* 카드: 장식 제거, 지면감만 */
 .about-page .container.about .about-card{
-  position: relative;
   max-width: 860px;
   margin: 0 auto;
 
-  padding: 34px 36px 26px;
-  border-radius: 22px;
+  /* 중앙 정렬 핵심 */
+  min-height: 340px;                 /* "정중앙" 느낌 확보(필요시 조절) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;           /* 세로 중앙 */
+  align-items: center;               /* 가로 중앙 */
+  text-align: center;
 
-  background: rgba(255,255,255,0.66);
+  padding: 40px 44px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.74);
   border: 1px solid rgba(18,24,38,0.12);
-  box-shadow: 0 18px 44px rgba(2,10,20,0.10);
+  box-shadow: 0 16px 42px rgba(2,10,20,0.10);
 
   overflow: hidden;
 }
 
-/* 상단 얇은 하이라이트 라인만 */
-.about-page .container.about .about-card::before{
-  content:"";
-  position:absolute;
-  left:0; right:0; top:0;
-  height:3px;
-  background: linear-gradient(
-    90deg,
-    rgba(45,190,122,0.0),
-    rgba(45,190,122,0.78),
-    rgba(30,110,140,0.62),
-    rgba(45,190,122,0.0)
-  );
-  opacity: 0.95;
-}
-
-/* 우측 상단 흐릿한 원형 ‘인쇄판’ 느낌(과하지 않게) */
+/* 혹시 기존 장식이 남아있으면 강제로 제거 */
+.about-page .container.about .about-card::before,
 .about-page .container.about .about-card::after{
-  content:"";
-  position:absolute;
-  right:-140px;
-  top:-150px;
-  width: 360px;
-  height: 360px;
-  border-radius: 999px;
-  background: radial-gradient(
-    circle at 35% 35%,
-    rgba(45,190,122,0.18),
-    rgba(30,110,140,0.10),
-    rgba(255,255,255,0.0) 66%
-  );
-  pointer-events:none;
+  content: none !important;
 }
 
-/* 헤더 */
+/* 헤더: 위계 정리 */
 .about-page .about-head{
+  width: 100%;
+  max-width: 560px; /* 중앙에서 과도한 폭 방지 */
   display: grid;
   gap: 6px;
-  margin-bottom: 10px;
-}
-
-.about-page .about-title{
-  margin: 0;
-  font-size: 22px;
-  letter-spacing: 0.01em;
+  margin: 0 0 16px;
 }
 
 .about-page .about-kicker{
@@ -3482,114 +3461,102 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(18,24,38,0.58);
+  color: rgba(18,24,38,0.56);
 }
 
-/* 얇은 규칙선(지면 정리) */
+.about-page .about-title{
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  color: rgba(18,24,38,0.92);
+}
+
+/* 규칙선: 깔끔한 지면 장치 */
 .about-page .about-rule{
+  width: 56px;
   height: 1px;
-  background: rgba(18,24,38,0.12);
-  margin: 14px 0 18px;
+  background: rgba(18,24,38,0.16);
+  margin: 16px auto 22px;
 }
 
-/* 본문 */
+/* 본문: 폭 제한 + 리듬 */
 .about-page .about-body{
+  width: 100%;
+  max-width: 560px;  /* 중앙 선언문 느낌(중요) */
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .about-page .about-paragraph{
   margin: 0;
   font-size: 15px;
   line-height: 1.9;
-  color: rgba(18,24,38,0.92);
 }
 
-.about-page .about-paragraph strong{
+/* 한글 선언부: 브라운 포인트 */
+.about-page .about-paragraph--ko{
+  color: var(--brand-brown);
+}
+
+/* 강조 문장: 더 진한 브라운으로 결론 무게 */
+.about-page .about-paragraph--ko strong{
+  color: rgba(62,36,20,0.98);
   font-weight: 800;
 }
 
-/* KR/EN 리드 라벨(박스 분리X, 글 안에서만 정리) */
+/* 영어는 톤 다운 (보조 레이어) */
+.about-page .about-paragraph--en{
+  color: rgba(18,24,38,0.72);
+}
+
+/* 리드(첫 줄) — pill/칩 금지, “글자”로만 정리 */
 .about-page .about-lead{
   display: inline-block;
-  margin-bottom: 6px;
-  padding: 2px 8px;
-  border-radius: 999px;
+  margin-bottom: 8px;
 
   font-size: 12px;
   letter-spacing: 0.12em;
+  font-weight: 650;
 
-  color: rgba(24,34,44,0.78);
-  background: rgba(255,255,255,0.78);
-  border: 1px solid rgba(18,24,38,0.10);
+  /* 한글/영문 모두 기본은 중립색 */
+  color: rgba(18,24,38,0.62);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
-/* 영어 문단은 살짝 톤 다운 */
-.about-page .about-paragraph--en{
-  color: rgba(18,24,38,0.78);
+/* KR 리드만 브라운 쪽으로 살짝 당기기(과하지 않게) */
+.about-page .about-paragraph--ko .about-lead{
+  color: rgba(122,74,46,0.78);
 }
 
-/* 하단 시그니처 칩 */
+/* (선택) footer가 HTML에 남아있어도 ‘장식’ 안 보이게 최소화 */
 .about-page .about-foot{
-  margin-top: 18px;
+  display: none;
 }
 
-.about-page .about-chip{
-  display: inline-block;
-  padding: 7px 12px;
-  border-radius: 999px;
-
-  font-size: 12.5px;
-  letter-spacing: 0.02em;
-
-  background: rgba(255,255,255,0.82);
-  border: 1px solid rgba(18,24,38,0.12);
-  box-shadow: 0 10px 22px rgba(2,10,20,0.08);
-  color: rgba(18,24,38,0.70);
-}
-
-/* 카드 아래 빈 공간 “완성”시키는 리본 */
+/* (선택) ribbon이 HTML에 남아있어도 안 보이게 처리 */
 .about-page .about-ribbon{
-  max-width: 860px;
-  margin: 16px auto 0;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  padding: 12px 14px;
-  border-radius: 16px;
-
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(18,24,38,0.10);
-}
-
-.about-page .about-pill{
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
-
-  font-size: 12px;
-  letter-spacing: 0.06em;
-
-  background: rgba(255,255,255,0.62);
-  border: 1px solid rgba(18,24,38,0.10);
-  color: rgba(18,24,38,0.66);
+  display: none;
 }
 
 /* 모바일 */
 @media (max-width: 720px){
   .about-page .container.about{
-    padding: 18px 14px 46px;
+    padding: 20px 14px 54px;
   }
 
   .about-page .container.about .about-card{
-    padding: 24px 18px 18px;
-    border-radius: 18px;
+    min-height: 300px;
+    padding: 28px 18px;
+    border-radius: 12px;
   }
 
   .about-page .about-title{
     font-size: 20px;
+  }
+
+  .about-page .about-body{
+    max-width: 520px;
   }
 }
