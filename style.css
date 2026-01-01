@@ -496,7 +496,7 @@ body{
 }
 
 /* =====CONTACT ======= */
-
+/* CONTACT / ABOUT shared blocks (scoped) */
 .container.contact .contact-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3462,3 +3462,6 @@ body .dionysos-banner.dionysos-home-banner{
   min-height: 0;
   display: block;
 }
+
+/* ABOUT: stop global card height/flex rules from breaking layout */
+.container.contact.about .card{ min-height: 0; height: auto; display: block; }
