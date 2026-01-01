@@ -3407,3 +3407,9 @@ body .dionysos-banner.dionysos-home-banner{
   margin-top: 48px;
 }
 
+.press-note{
+  margin-left: .4rem;
+  font-weight: 600;
+  color: #c26a2e; /* 톤 다운된 오렌지/브라운 */
+  font-size: 0.9em;
+}
