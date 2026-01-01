@@ -497,66 +497,41 @@ body{
 
 
 /* =========================
-   CONTACT (Editorial Layout) — Card 2up + Footer Note
+   CONTACT — Same as ABOUT (single card)
+   Replace ALL previous contact CSS with this block.
 ========================= */
-.page.contact{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 76px 32px 88px;
+
+/* 컨택트 페이지는 About처럼 .container + .card를 그대로 씀.
+   그래서 contact 전용 레이아웃/보더(위 선) 전부 제거. */
+
+.container.contact{
+  /* About의 .container와 동일하게 두고 싶으면 아예 비워도 됨 */
 }
 
+/* 혹시 예전 contact-section이 남아 있으면 선/패딩을 죽임 */
 .contact-section{
-  border-top: 1px solid var(--line);
-  padding-top: 44px;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.contact-header{
-  margin-bottom: 42px;
-}
-
-.contact-header h2{
-  margin: 0 0 12px;
-  font-size: 34px;
-  font-weight: 650;
-  letter-spacing: -0.45px;
-  line-height: 1.18;
-}
-
-.contact-intro{
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--muted);
-  max-width: 68ch;
-}
-
-/* 2 cards */
+/* About 카드 안에서만 쓰는 내부 정렬 */
 .contact-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: start;
-}
-
-/* card */
-.contact-block{
-  padding: 22px 22px 18px;
-  border: 1px solid rgba(18,24,38,0.12);
-  border-radius: 18px;
-  background: var(--panel);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(10px);
+  margin-top: 16px;
 }
 
 .contact-block h3{
-  margin: 0 0 14px;
-  font-size: 18px;
-  font-weight: 650;
-  letter-spacing: -0.2px;
-  line-height: 1.25;
+  margin: 0 0 12px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-/* list inside card */
 .contact-item{
   display: grid;
   grid-template-columns: 92px 1fr;
@@ -565,13 +540,15 @@ body{
   border-top: 1px solid rgba(18,24,38,0.10);
 }
 
-.contact-item:first-of-type{ border-top: 0; }
+.contact-item:first-of-type{
+  border-top: 0;
+  padding-top: 0;
+}
 
 .contact-label{
   font-size: 13.5px;
   line-height: 1.6;
-  opacity: 0.74;
-  color: var(--text);
+  color: var(--muted);
 }
 
 .contact-value{
@@ -587,23 +564,15 @@ body{
   text-decoration-thickness: 1px;
 }
 
-/* outside footer note (below the 2 cards) */
-.contact-note{
-  margin: 22px 2px 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(18,24,38,0.10);
-  font-size: 13.5px;
-  line-height: 1.7;
-  color: var(--muted);
-}
-
-/* responsive */
 @media (max-width: 860px){
-  .page.contact{ padding: 64px 20px 76px; }
-  .contact-grid{ grid-template-columns: 1fr; gap: 18px; }
-  .contact-header h2{ font-size: 30px; }
+  .contact-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .contact-item{
+    grid-template-columns: 78px 1fr;
+  }
 }
-
 
 /* =========================
    EDITOR NOTE
