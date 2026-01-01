@@ -495,41 +495,20 @@ body{
   box-shadow: var(--shadow);
 }
 
+/* =====CONTACT ======= */
 
-/* =========================
-   CONTACT — Same as ABOUT (single card)
-   Replace ALL previous contact CSS with this block.
-========================= */
-
-/* 컨택트 페이지는 About처럼 .container + .card를 그대로 씀.
-   그래서 contact 전용 레이아웃/보더(위 선) 전부 제거. */
-
-.container.contact{
-  /* About의 .container와 동일하게 두고 싶으면 아예 비워도 됨 */
-}
-
-/* 혹시 예전 contact-section이 남아 있으면 선/패딩을 죽임 */
-.contact-section{
-  border: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* About 카드 안에서만 쓰는 내부 정렬 */
-
-.contact-grid{
+.container.contact .contact-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: start;
 
-  /* 안내문구(위)와 내용(아래) 분리 */
   margin-top: 18px;
   padding-top: 18px;
   border-top: 1px solid rgba(18,24,38,0.10);
 }
 
-.contact-block h3{
+.container.contact .contact-block h3{
   margin: 0 0 12px;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -537,7 +516,7 @@ body{
   color: var(--muted);
 }
 
-.contact-item{
+.container.contact .contact-item{
   display: grid;
   grid-template-columns: 92px 1fr;
   gap: 14px;
@@ -545,24 +524,24 @@ body{
   border-top: 1px solid rgba(18,24,38,0.10);
 }
 
-.contact-item:first-of-type{
+.container.contact .contact-item:first-of-type{
   border-top: 0;
   padding-top: 0;
 }
 
-.contact-label{
+.container.contact .contact-label{
   font-size: 13.5px;
   line-height: 1.6;
   color: var(--muted);
 }
 
-.contact-value{
+.container.contact .contact-value{
   font-size: 15px;
   line-height: 1.75;
   color: var(--text);
 }
 
-.contact-link{
+.container.contact .contact-link{
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -570,22 +549,13 @@ body{
 }
 
 @media (max-width: 860px){
-  .contact-grid{
+  .container.contact .contact-grid{
     grid-template-columns: 1fr;
     gap: 18px;
   }
-  .contact-item{
+  .container.contact .contact-item{
     grid-template-columns: 78px 1fr;
   }
-}
-
-@media (max-width: 860px){
-  .container{ padding-bottom: 64px; }
-  .contact-grid{ margin-top: 14px; padding-top: 14px; }
-}
-
-.container .card > .muted{
-  margin-bottom: 10px;
 }
 
 /* =========================
@@ -3481,4 +3451,14 @@ body .dionysos-banner.dionysos-home-banner{
   border-radius: 999px;       /* 시선 정지 포인트(하이라이트) */
   background: rgba(255,255,255,0.9);
   box-shadow: 0 8px 18px rgba(2,10,20,0.08);
+}
+
+/* About-only tuning */
+.container.contact.about .contact-grid{
+  margin-top: 14px;
+  padding-top: 14px;
+}
+.container.contact.about .card{
+  min-height: 0;
+  display: block;
 }
