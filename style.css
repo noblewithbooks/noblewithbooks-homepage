@@ -516,12 +516,17 @@ body{
 }
 
 /* About 카드 안에서만 쓰는 내부 정렬 */
+
 .contact-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: start;
-  margin-top: 16px;
+
+  /* 안내문구(위)와 내용(아래) 분리 */
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(18,24,38,0.10);
 }
 
 .contact-block h3{
@@ -572,6 +577,15 @@ body{
   .contact-item{
     grid-template-columns: 78px 1fr;
   }
+}
+
+@media (max-width: 860px){
+  .container{ padding-bottom: 64px; }
+  .contact-grid{ margin-top: 14px; padding-top: 14px; }
+}
+
+.container .card > .muted{
+  margin-bottom: 10px;
 }
 
 /* =========================
