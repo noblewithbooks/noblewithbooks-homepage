@@ -495,57 +495,74 @@ body{
   box-shadow: var(--shadow);
 }
 
+
 /* =========================
-   CONTACT (Editorial Layout)
+   CONTACT (Editorial Layout) — Card 2up + Footer Note
 ========================= */
 .page.contact{
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 72px 32px;
+  padding: 76px 32px 88px;
 }
 
 .contact-section{
   border-top: 1px solid var(--line);
-  padding-top: 40px;
+  padding-top: 44px;
 }
 
 .contact-header{
-  margin-bottom: 44px;
+  margin-bottom: 42px;
 }
 
 .contact-header h2{
-  margin: 0 0 14px;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.4px;
+  margin: 0 0 12px;
+  font-size: 34px;
+  font-weight: 650;
+  letter-spacing: -0.45px;
+  line-height: 1.18;
 }
 
 .contact-intro{
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--muted);
+  max-width: 68ch;
 }
 
+/* 2 cards */
 .contact-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 52px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* card */
+.contact-block{
+  padding: 22px 22px 18px;
+  border: 1px solid rgba(18,24,38,0.12);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
 }
 
 .contact-block h3{
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.2px;
+  line-height: 1.25;
 }
 
+/* list inside card */
 .contact-item{
   display: grid;
-  grid-template-columns: 86px 1fr;
+  grid-template-columns: 92px 1fr;
   gap: 14px;
   padding: 12px 0;
-  border-top: 1px solid rgba(18,24,38,0.08);
+  border-top: 1px solid rgba(18,24,38,0.10);
 }
 
 .contact-item:first-of-type{ border-top: 0; }
@@ -553,21 +570,40 @@ body{
 .contact-label{
   font-size: 13.5px;
   line-height: 1.6;
-  opacity: 0.72;
+  opacity: 0.74;
+  color: var(--text);
 }
 
 .contact-value{
   font-size: 15px;
   line-height: 1.75;
+  color: var(--text);
 }
 
 .contact-link{
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
-.contact-block{ padding-left: 6px; }
+/* outside footer note (below the 2 cards) */
+.contact-note{
+  margin: 22px 2px 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(18,24,38,0.10);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* responsive */
+@media (max-width: 860px){
+  .page.contact{ padding: 64px 20px 76px; }
+  .contact-grid{ grid-template-columns: 1fr; gap: 18px; }
+  .contact-header h2{ font-size: 30px; }
+}
+
 
 /* =========================
    EDITOR NOTE
@@ -3412,113 +3448,4 @@ body .dionysos-banner.dionysos-home-banner{
   font-weight: 600;
   color: #c26a2e; /* 톤 다운된 오렌지/브라운 */
   font-size: 0.9em;
-}
-
-/* ===== Contact page card refresh (append at end) ===== */
-
-.container.contact{
-  padding-top: 110px;
-  padding-bottom: 120px;
-}
-
-.contact-section{
-  display: flex;
-  justify-content: center;
-}
-
-.contact-card{
-  width: min(920px, 100%);
-  background: var(--panel, rgba(255,255,255,0.65));
-  border: 1px solid var(--line, rgba(18,24,38,0.14));
-  border-radius: 14px;
-  padding: 44px 56px;
-  box-shadow: var(--shadow, 0 14px 38px rgba(2, 10, 20, 0.10));
-  backdrop-filter: blur(10px);
-}
-
-.contact-header h2{
-  margin: 0 0 10px 0;
-  letter-spacing: -0.02em;
-}
-
-.contact-intro{
-  margin: 0;
-  color: var(--muted, rgba(18,24,38,0.70));
-}
-
-.contact-divider{
-  height: 1px;
-  background: var(--line, rgba(18,24,38,0.14));
-  margin: 26px 0 30px;
-}
-
-.contact-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 46px;
-}
-
-/* KR/EN blocks (inside the card) */
-.contact-block{
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-.contact-block h3{
-  margin: 0 0 14px 0;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted, rgba(18,24,38,0.70));
-}
-
-.contact-item{
-  display: grid;
-  grid-template-columns: 86px 1fr;
-  gap: 14px;
-  padding: 12px 0;
-  border-top: 1px solid var(--line, rgba(18,24,38,0.14));
-}
-
-.contact-item:first-of-type{
-  border-top: 0;
-  padding-top: 0;
-}
-
-.contact-label{
-  font-size: 12px;
-  color: var(--muted, rgba(18,24,38,0.70));
-  letter-spacing: 0.02em;
-}
-
-.contact-value{
-  line-height: 1.7;
-}
-
-.contact-link{
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Mobile */
-@media (max-width: 860px){
-  .container.contact{
-    padding-top: 96px;
-    padding-bottom: 92px;
-  }
-
-  .contact-card{
-    padding: 28px 22px;
-    border-radius: 12px;
-  }
-
-  .contact-grid{
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-
-  .contact-item{
-    grid-template-columns: 78px 1fr;
-  }
 }
