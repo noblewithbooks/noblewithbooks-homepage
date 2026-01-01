@@ -3403,65 +3403,139 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 0.9em;
 }
 
-/* About page polish */
-.container.contact.about .card{
-  max-width: 920px;           /* 카드가 너무 작아 답답한 문제 해결 */
-  padding: 28px 30px;
+/* =========================================================
+   ABOUT — fresh design (scoped)
+   requires: <body class="about-page"> and <main class="container about">
+========================================================= */
+
+.about-page .container.about{
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px 16px 8px;
 }
 
-.container.contact.about .contact-grid{
-  gap: 18px;                  /* 블록 간 숨 */
+/* 카드 자체를 “선언문 패널”로 */
+.about-page .container.about .card{
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+
+  padding: 34px 34px 30px;
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(18,24,38,0.12);
+  box-shadow: 0 18px 44px rgba(2,10,20,0.10);
+
+  overflow: hidden;
 }
 
-.container.contact.about .contact-block{
-  padding: 18px 18px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255,255,255,0.55);
+/* 상단 얇은 라인 + 미세 광택 */
+.about-page .container.about .card::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:3px;
+  background: linear-gradient(
+    90deg,
+    rgba(45,190,122,0.0),
+    rgba(45,190,122,0.80),
+    rgba(30,110,140,0.65),
+    rgba(45,190,122,0.0)
+  );
+  opacity: 0.9;
 }
 
-.container.contact.about .contact-block h3{
-  letter-spacing: 0.14em;
-  font-size: 12px;
-  opacity: 0.85;
-  margin-bottom: 12px;
+/* 우측 상단에 흐릿한 “판” 느낌 */
+.about-page .container.about .card::after{
+  content:"";
+  position:absolute;
+  right:-120px;
+  top:-140px;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(45,190,122,0.20),
+    rgba(30,110,140,0.12),
+    rgba(255,255,255,0.0) 65%
+  );
+  pointer-events:none;
 }
 
-.container.contact.about .contact-item{
-  padding: 10px 0;
-}
-
-.container.contact.about .contact-label{
-  min-width: 88px;            /* 라벨 폭 통일, 표가 정돈돼 보임 */
-  font-weight: 650;
+/* 타이틀 */
+.about-page .container.about .card h2{
+  margin: 0 0 6px;
+  font-size: 22px;
   letter-spacing: 0.02em;
 }
 
-.container.contact.about .contact-value{
-  line-height: 1.75;          /* 선언문 숨, 리듬 */
-}
-
-.container.contact.about .contact-item:last-child .contact-value{
-  font-size: 15px;            /* 선언문만 살짝 키우기 */
-}
-
-.container.contact.about .contact-item:last-child .contact-value strong{
+/* Manifesto 라벨을 “스탬프”로 */
+.about-page .container.about .card .muted{
   display: inline-block;
+  margin: 0 0 18px;
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(18,24,38,0.70);
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(18,24,38,0.12);
+}
+
+/* 히어로 문장: 크게, 숨 멈추게 */
+.about-page .container.about .card .hero{
+  margin: 14px 0 22px;
+  padding: 18px 18px;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(18,24,38,0.10);
+
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+/* 본문 리듬 */
+.about-page .container.about .card p{
+  margin: 0 0 16px;
+  line-height: 1.85;
+}
+
+/* KR/EN을 “두 단락”처럼 보이게 (박스 분리 X) */
+.about-page .container.about .card p strong:first-child{
+  display: inline-block;
+  margin-right: 8px;
   padding: 2px 8px;
-  border-radius: 999px;       /* 시선 정지 포인트(하이라이트) */
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 8px 18px rgba(2,10,20,0.08);
+  border-radius: 999px;
+
+  font-size: 12px;
+  letter-spacing: 0.12em;
+
+  color: rgba(24,34,44,0.78);
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(18,24,38,0.10);
 }
 
-/* About-only tuning */
-.container.contact.about .contact-grid{
-  margin-top: 14px;
-  padding-top: 14px;
-}
-.container.contact.about .card{
-  min-height: 0;
-  display: block;
-}
+/* 모바일 */
+@media (max-width: 720px){
+  .about-page .container.about{
+    padding: 18px 14px 4px;
+  }
 
-/* ABOUT: stop global card height/flex rules from breaking layout */
-.container.contact.about .card{ min-height: 0; height: auto; display: block; }
+  .about-page .container.about .card{
+    padding: 24px 18px 20px;
+    border-radius: 18px;
+  }
+
+  .about-page .container.about .card .hero{
+    padding: 14px 14px;
+    font-size: 16px;
+  }
+}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About, Noblewithbooks</title>
 
-  <link rel="stylesheet" href="style.css?v=20260102-about" />
+  <link rel="stylesheet" href="style.css?v=20260102-about-v2" />
 
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
@@ -17,7 +17,7 @@
   </script>
 </head>
 
-<body>
+<body class="about-page">
 
 <header class="header">
   <div class="header-inner">
@@ -44,30 +44,38 @@
   </div>
 </header>
 
-<main class="container">
+<main class="container contact about">
 
-  <article class="card">
-    <h2>About</h2>
-    <p class="muted">Manifesto.</p>
+  <article class="card about-card">
+    <header class="about-head">
+      <h2 class="about-title">About</h2>
+      <p class="about-kicker muted">Manifesto.</p>
+    </header>
 
-    <p class="hero">
-      <strong>Whatever form books may take, we keep making them.</strong>
-    </p>
+    <section class="about-hero" aria-label="Manifesto headline">
+      <p class="about-hero__line">
+        <strong>Whatever form books may take, we keep making them.</strong>
+      </p>
+    </section>
 
-    <p>
-      <strong>KR</strong><br><br>
-      Noblewithbooks(책읽는귀족)은<br>
-      책이라는 형태가 어떤 모습으로 바뀌더라도,<br>
-      미래의 언제 어느 순간에도<br>
-      <strong>‘책’을 만드는 일을 멈추지 않는다.</strong>
-    </p>
+    <section class="about-body" aria-label="Manifesto text">
+      <p class="about-paragraph">
+        <span class="about-lead">Noblewithbooks(책읽는귀족)은</span>
+        책이라는 형태가 어떤 모습으로 바뀌더라도,
+        미래의 언제 어느 순간에도
+        <strong>‘책’을 만드는 일을 멈추지 않는다.</strong>
+      </p>
 
-    <p>
-      <strong>EN</strong><br><br>
-      Whatever form books may take in the future,<br>
-      Noblewithbooks will keep making books,<br>
-      in one way or another, at any time.
-    </p>
+      <p class="about-paragraph">
+        <span class="about-lead">Whatever form books may take in the future,</span>
+        Noblewithbooks will keep making books,
+        in one way or another, at any time.
+      </p>
+    </section>
+
+    <footer class="about-foot">
+      <span class="about-chip">Noblewithbooks · Étoile Bleue Créations</span>
+    </footer>
   </article>
 
 </main>
