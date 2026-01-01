@@ -3413,3 +3413,112 @@ body .dionysos-banner.dionysos-home-banner{
   color: #c26a2e; /* 톤 다운된 오렌지/브라운 */
   font-size: 0.9em;
 }
+
+/* ===== Contact page card refresh (append at end) ===== */
+
+.container.contact{
+  padding-top: 110px;
+  padding-bottom: 120px;
+}
+
+.contact-section{
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card{
+  width: min(920px, 100%);
+  background: var(--panel, rgba(255,255,255,0.65));
+  border: 1px solid var(--line, rgba(18,24,38,0.14));
+  border-radius: 14px;
+  padding: 44px 56px;
+  box-shadow: var(--shadow, 0 14px 38px rgba(2, 10, 20, 0.10));
+  backdrop-filter: blur(10px);
+}
+
+.contact-header h2{
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.contact-intro{
+  margin: 0;
+  color: var(--muted, rgba(18,24,38,0.70));
+}
+
+.contact-divider{
+  height: 1px;
+  background: var(--line, rgba(18,24,38,0.14));
+  margin: 26px 0 30px;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+}
+
+/* KR/EN blocks (inside the card) */
+.contact-block{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.contact-block h3{
+  margin: 0 0 14px 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, rgba(18,24,38,0.70));
+}
+
+.contact-item{
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line, rgba(18,24,38,0.14));
+}
+
+.contact-item:first-of-type{
+  border-top: 0;
+  padding-top: 0;
+}
+
+.contact-label{
+  font-size: 12px;
+  color: var(--muted, rgba(18,24,38,0.70));
+  letter-spacing: 0.02em;
+}
+
+.contact-value{
+  line-height: 1.7;
+}
+
+.contact-link{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  .container.contact{
+    padding-top: 96px;
+    padding-bottom: 92px;
+  }
+
+  .contact-card{
+    padding: 28px 22px;
+    border-radius: 12px;
+  }
+
+  .contact-grid{
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .contact-item{
+    grid-template-columns: 78px 1fr;
+  }
+}
