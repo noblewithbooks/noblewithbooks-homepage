@@ -3560,3 +3560,20 @@ body .dionysos-banner.dionysos-home-banner{
     max-width: 520px;
   }
 }
+
+.milestone-subtitle.publications {
+  margin-top: 1.2rem;
+  margin-left: 0.2rem;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(122, 74, 46, 0.75); /* 브론즈 계열 */
+  text-transform: uppercase;
+}
+
+.milestone-subtitle.publications::before {
+  content: "— ";
+  opacity: 0.5;
+}
