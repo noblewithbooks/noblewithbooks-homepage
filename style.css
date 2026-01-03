@@ -3577,3 +3577,23 @@ body .dionysos-banner.dionysos-home-banner{
   content: "— ";
   opacity: 0.5;
 }
+
+/* Honors: book-card without cover (fix narrow right column) */
+.book-card.no-cover{
+  display: grid;
+  grid-template-columns: 1fr !important; /* cover 칸 제거 */
+  column-gap: 0 !important;
+}
+
+.book-card.no-cover .book-body{
+  grid-column: 1 / -1 !important; /* 본문을 1열로 */
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0 !important; /* cover 자리 보정 제거 */
+  min-width: 0;               /* 긴 텍스트 줄바꿈 안정 */
+}
+
+.book-card.no-cover .milestone-publications li{
+  word-break: keep-all;   /* 한국어 단어 단위 유지 */
+  overflow-wrap: anywhere; /* 아주 긴 문자열만 예외적으로 끊기 */
+}
