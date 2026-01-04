@@ -3610,9 +3610,6 @@ body .dionysos-banner.dionysos-home-banner{
   color: #c96a2d;
 }
 
-.milestone-item.milestone-prologue .milestone-title{
-  margin-top: 0.25rem;
-}
 
 /* History – milestone year tone down (override safe) */
 .milestone-meta .milestone-year{
@@ -3665,4 +3662,20 @@ body .dionysos-banner.dionysos-home-banner{
   display: inline-flex;
   align-items: baseline;
   gap: 0; /* pair 내부는 gap 0 */
+}
+
+/* Prelude(Workspace eras) 헤더 3줄을 한 덩어리로, 본문(era-line)은 더 아래로 */
+
+.milestone-item.milestone-prologue .milestone-meta{
+  margin-bottom: 6px;   /* meta(Prelude/Workspace·Era) ↔ 한글제목 간격 줄이기 */
+}
+
+.milestone-item.milestone-prologue .milestone-title{
+  margin-top: 0;        /* p 기본 상단 여백 제거(여기가 핵심) */
+  margin-bottom: 18px;  /* 한글제목 ↔ 본문(era-line) 간격 늘리기 */
+}
+
+/* 혹시 다른 규칙에 의해 붙는 경우 대비(안전장치) */
+.milestone-item.milestone-prologue .milestone-note.milestone-era-line{
+  margin-top: 0;
 }
