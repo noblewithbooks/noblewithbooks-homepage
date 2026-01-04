@@ -3661,6 +3661,8 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 
-.milestone-era-line .era-period{
-  margin-left: 0.12rem;
+.milestone-era-line .era-pair{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0; /* pair 내부는 gap 0 */
 }
