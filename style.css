@@ -3667,7 +3667,7 @@ body .dionysos-banner.dionysos-home-banner{
 /* Prelude(Workspace eras) 헤더 3줄을 한 덩어리로, 본문(era-line)은 더 아래로 */
 
 .milestone-item.milestone-prologue .milestone-meta{
-  margin-bottom: 2px;   /* meta(Prelude/Workspace·Era) ↔ 한글제목 간격 줄이기 */
+  margin-bottom: 1px;   /* meta(Prelude/Workspace·Era) ↔ 한글제목 간격 줄이기 */
 }
 
 .milestone-item.milestone-prologue .milestone-title{
