@@ -3657,3 +3657,7 @@ body .dionysos-banner.dionysos-home-banner{
     margin-bottom: 0.35rem;
   }
 }
+
+.milestone-era-line .era-period{
+  margin-left: 0.12rem;
+}
