@@ -3625,12 +3625,15 @@ body .dionysos-banner.dionysos-home-banner{
 .milestone-era-line .era-place{
   color: #c96a2d;
   font-weight: 600;
+  margin-right: 0.08em; /* 지명–괄호 간격 축소 */
 }
 
 .milestone-era-line .era-period{
   color: rgba(18,24,38,0.60);
   font-size: 0.85em;
+  margin-left: 0; /* 혹시 남아 있을 기본 여백 제거 */
 }
+
 
 /* desktop: one-line flow */
 .milestone-era-line{
