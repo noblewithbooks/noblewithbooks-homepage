@@ -3597,3 +3597,13 @@ body .dionysos-banner.dionysos-home-banner{
   word-break: keep-all;   /* 한국어 단어 단위 유지 */
   overflow-wrap: anywhere; /* 아주 긴 문자열만 예외적으로 끊기 */
 }
+
+.milestone-era {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(18,24,38,0.55);
+  border-left: 2px solid rgba(18,24,38,0.18);
+  padding-left: 0.6rem;
+  margin-bottom: 0.6rem;
+}
