@@ -3598,3 +3598,17 @@ body .dionysos-banner.dionysos-home-banner{
   overflow-wrap: anywhere; /* 아주 긴 문자열만 예외적으로 끊기 */
 }
 
+/* History Prelude card (workspace era map) */
+.milestone-item.milestone-prologue{
+  border: 1px solid rgba(122, 74, 46, 0.28);
+  background: rgba(122, 74, 46, 0.06);
+}
+
+.milestone-item.milestone-prologue .milestone-year,
+.milestone-item.milestone-prologue .milestone-tag{
+  color: rgba(122, 74, 46, 0.82);
+}
+
+.milestone-item.milestone-prologue .milestone-title{
+  margin-top: 0.2rem;
+}
