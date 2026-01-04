@@ -3598,6 +3598,7 @@ body .dionysos-banner.dionysos-home-banner{
   overflow-wrap: anywhere; /* 아주 긴 문자열만 예외적으로 끊기 */
 }
 
+
 /* History Prelude card (workspace era map) — FINAL COLOR TUNED */
 .milestone-item.milestone-prologue{
   background: #fff;
@@ -3613,9 +3614,46 @@ body .dionysos-banner.dionysos-home-banner{
   margin-top: 0.25rem;
 }
 
-/* History – milestone year tone down */
-.milestone-item .milestone-year{
-  font-size: 0.72rem;
+/* History – milestone year tone down (override safe) */
+.milestone-meta .milestone-year{
+  font-size: 0.72rem !important;
   letter-spacing: 0.06em;
   opacity: 0.75;
+}
+
+/* Prelude era line: highlight place names only */
+.milestone-era-line .era-place{
+  color: #c96a2d;
+  font-weight: 600;
+}
+
+.milestone-era-line .era-period{
+  color: rgba(18,24,38,0.60);
+  font-size: 0.85em;
+}
+
+/* desktop: one-line flow */
+.milestone-era-line{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+}
+
+/* mobile: stack each era cleanly */
+@media (max-width: 520px){
+  .milestone-era-line{
+    display: block;
+  }
+
+  /* hide arrows on mobile */
+  .milestone-era-line .era-arrow{
+    display: none;
+  }
+
+  /* line break after each period */
+  .milestone-era-line .era-period::after{
+    content: "";
+    display: block;
+    margin-bottom: 0.35rem;
+  }
 }
