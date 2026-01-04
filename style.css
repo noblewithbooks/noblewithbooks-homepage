@@ -3613,3 +3613,9 @@ body .dionysos-banner.dionysos-home-banner{
   margin-top: 0.25rem;
 }
 
+/* History – milestone year tone down */
+.milestone-item .milestone-year{
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
