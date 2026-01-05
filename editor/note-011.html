@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>럭키 데이 인 파리</title>
+  <link rel="stylesheet" href="../style.css?v=20260105-editor-note-violet" />
+
+  <style>
+    /* =========================================================
+      Editor's Note — per-file style (minimal, safe)
+      2026.01.05 Violet Edition
+      (큰 틀/구조는 샘플 유지, 텍스트 지면 디자인만 실험)
+    ========================================================= */
+
+    :root{
+      --violet-ink: rgba(118, 90, 155, 0.92);
+      --violet-soft: rgba(118, 90, 155, 0.12);
+      --violet-line: rgba(118, 90, 155, 0.22);
+      --violet-quote: rgba(118, 90, 155, 0.34);
+      --paper-violet: rgba(246, 242, 252, 0.94);
+    }
+
+    .en-note{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+      color: rgba(18,24,38,0.96);
+    }
+
+    .vision-top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(18,24,38,0.18);
+      padding-bottom: 14px;
+      margin-bottom: 36px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    .vision-hero h1{
+      color: var(--violet-ink);
+    }
+
+    .en-title{
+      margin: 0 0 18px;
+      font-size: 36px;
+      line-height: 1.12;
+    }
+
+    .en-body p{
+      margin: 0 0 14px;
+      font-size: 15.5px;
+      line-height: 1.9;
+    }
+
+    /* Dropcap for the very first body paragraph only */
+    .en-open::first-letter{
+      float: left;
+      font-size: 48px;
+      line-height: 0.9;
+      padding: 6px 10px 0 0;
+      font-weight: 650;
+      color: var(--violet-ink);
+    }
+
+    .en-box{
+      margin: 18px 0 22px;
+      padding: 14px 14px;
+      border-radius: 12px;
+    }
+
+    /* ===== ENTRY: magazine opener (replace-safe) ===== */
+    .en-entry-mag{
+      position: relative;
+      margin: 8px 0 28px;
+      padding: 22px 18px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.56);
+      border: 1px solid rgba(18,24,38,0.10);
+      box-shadow: 0 18px 44px rgba(2, 10, 20, 0.10);
+      overflow: hidden;
+    }
+
+    .en-entry-mag::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        linear-gradient(90deg, var(--violet-soft), rgba(255,255,255,0) 38%),
+        radial-gradient(900px 260px at 100% 0%, rgba(18,24,38,0.10), transparent 60%);
+      pointer-events:none;
+      opacity: 0.9;
+    }
+
+    .en-kicker-mag{
+      position: relative;
+      margin: 0 0 12px;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .en-stand{
+      position: relative;
+      margin: 14px 0 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--violet-soft);
+      border: 1px solid var(--violet-line);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .en-blurb{
+      position: relative;
+      margin-top: 6px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(18,24,38,0.10);
+    }
+
+    .en-blurb p{
+      margin: 0;
+      font-size: 14.8px;
+      line-height: 1.85;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 560px){
+      .en-note{ padding: 22px 14px 48px; }
+      .vision-top{ margin-bottom: 28px; }
+      .vision-hero h1{ font-size: 32px; }
+      .en-open::first-letter{ font-size: 44px; }
+      .en-entry-mag{ padding: 18px 14px 14px; }
+    }
+
+    /* ===== Mid block #1: Pull quote (magazine) ===== */
+    .en-pull{
+      position: relative;
+      margin: 22px 0 26px;
+      padding: 18px 16px 14px;
+      border-radius: 18px;
+      background: var(--violet-soft);
+      border: 1px solid var(--violet-line);
+      box-shadow: 0 10px 26px rgba(2, 10, 20, 0.08);
+    }
+    .en-pull::before{
+      content: "“";
+      position: absolute;
+      top: -22px;
+      left: 14px;
+      font-size: 72px;
+      line-height: 1;
+      color: var(--violet-quote);
+      font-weight: 700;
+    }
+    .en-pull blockquote{ margin: 0; }
+    .en-pull p{
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.01em;
+    }
+    .en-pull figcaption{
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+
+    /* ===== Mid block #2: Note box (magazine) ===== */
+    .en-notegrid{
+      margin: 22px 0 26px;
+      padding: 16px 16px 14px;
+      border-radius: 18px;
+      background: var(--paper-violet);
+      border: 1px solid var(--violet-line);
+    }
+
+    .en-boxcap{
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    .en-boxbody p{
+      margin: 0 0 12px;
+      font-size: 15.2px;
+      line-height: 1.88;
+    }
+    .en-boxbody p:last-child{ margin-bottom: 0; }
+
+    /* ===== Finale: last page 느낌 ===== */
+    .en-finale{
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(18,24,38,0.12);
+    }
+    .en-finale-kicker{
+      margin: 0 0 12px;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    .en-finale-body{
+      position: relative;
+      padding: 16px 16px 14px;
+      border-radius: 18px;
+      background: var(--paper-violet);
+      border: 1px solid var(--violet-line);
+      box-shadow: 0 14px 38px rgba(2, 10, 20, 0.08);
+    }
+    .en-finale-body p{
+      margin: 0 0 14px;
+      font-size: 15.2px;
+      line-height: 1.9;
+    }
+    .en-finale-body p:last-child{ margin-bottom: 0; }
+
+    /* ===== Exit stamp card ===== */
+    .en-exit-stamp{
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(18,24,38,0.20);
+    }
+    .en-close-stamp{
+      margin: 0;
+      padding: 14px 14px;
+      border-radius: 16px;
+      background: var(--violet-soft);
+      border: 1px solid var(--violet-line);
+      font-size: 15.2px;
+      line-height: 1.85;
+    }
+    .en-stamp{
+      margin: 10px 0 0;
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      opacity: 0.70;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav">
+      <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+      <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+      <a class="btn-space" href="../editor.html"><span class="ico"></span>편집자 노트</a>
+      <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+      <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+      <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+      <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+      <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+    </nav>
+  </div>
+</header>
+
+<main class="vision-note">
+  <div class="en-note">
+
+    <div class="vision-top">
+      <div>EDITOR’S NOTE</div>
+      <div>2026.01.05 MON</div>
+    </div>
+
+    <section class="vision-hero">
+      <h1>럭키 데이 인 파리</h1>
+
+      <!-- ENTRY BLOCK (magazine opener) -->
+      <div class="en-entry-mag" aria-label="Entry Block">
+        <p class="en-kicker-mag">FILM NOTE</p>
+
+        <p class="en-stand">
+          배우와 대사는 외국어여도, 영화의 색은 마지막에 감독의 나라로 돌아온다.
+        </p>
+
+        <div class="en-blurb">
+          <p>
+            오늘의 기록은 한 편의 영화에서 시작해, 감독의 감각을 따라가다가,
+            결국 ‘우연’과 ‘운명’이라는 오래된 질문을 다시 꺼내는 쪽으로 흘러간다.
+            과연 '운명'은 존재하는 걸까? 
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 여기부터 본문 -->
+    <section class="vision-body">
+      <div class="en-body">
+
+        <p class="en-open">편집자 노트 2026. 1. 5. 월요일</p>
+
+        <p>우디 앨런 감독의 최신작, &lt;럭키 데이 인 파리&gt;를 이번 연휴 때 SK브로드밴드로 봤다. 원제는 Coup de Chance이며 2023년 베니스국제영화제에서 처음 공개된 그의 50번째 장편 연출작이다. 파리를 배경으로 프랑스어로 제작된 이 작품은 우연(coup de chance)이 인간의 삶과 관계를 어떻게 비틀어 놓는지를 탐구하는 드라마·스릴러로, 오랜 기간 ‘운’과 ‘선택’이라는 주제를 반복해 온 우디 앨런의 문제의식이 가장 응축된 형태로 드러난다.</p>
+
+        <p>우디 앨런 감독 작품은 공통점이 소재는 ‘불륜’이 자주 들어가 있고, 또 ‘운’을 존중한다는 점이다. 우디 앨런 감독의 사생활 논란에도 그의 작품이 영화적 의미에서는 아주 놀랍다는 사실은 부인할 수 없다. 소위 ‘천재적 감독’이라고 불리는 이유가 있다.</p>
+
+        <p>나는 우디 앨런 감독을 가장 좋아하는 감독들 대열에는 넣지 않지만, 그래도 나름 그의 영화를 좋아한다. 왜냐하면 보고 나서 거의 실패를 하지 않기 때문이다. 작품적으로는 완성도가 꽤 있다.</p>
+
+        <p>이번 영화도 깔끔한 구성과 빗나가지 않는 인물들의 대사들이 목적지를 향해서 잘 굴러간다. 그리고 스릴러물답게 쫄깃한 구석도 잠시 있다. 미국 할리우드 영화의 특성은 그대로 간직한 채.</p>
+
+        <p>그런데 영화의 국적은 종종 배우의 언어가 아니라 감독의 감각으로 귀착된다. 내가 그 사실을 목도한 영화는 우디 앨런 감독의 &lt;럭키 데이 인 파리&gt;뿐만 아니라, 일본의 고레에다 히로카즈가 프랑스 배우들과 프랑스어로 만든 &lt;파비안느에 관한 진실&gt;이다.</p>
+
+        <figure class="en-pull" aria-label="Pull Quote">
+          <blockquote>
+            <p>“영화의 국적은 종종 배우의 언어가 아니라 감독의 감각으로 귀착된다.”</p>
+          </blockquote>
+          <figcaption>— EDITOR’S NOTE, 2026.01.05</figcaption>
+        </figure>
+
+        <p>이 작품들은 표면만 보면 프랑스 영화지만, 관계를 바라보는 거리감과 윤리는 분명 미국 사람인 우디 앨런 감독과 고레에다의 일본적 리듬을 각각 따른다.</p>
+
+        <p>&lt;럭키 데이 인 파리&gt; 같은 경우, 배우들은 분명히 프랑스 사람들이고, 대사도 프랑스어이지만, 그 대사의 속도나 영화의 문법은 미국식이다. 프랑스 영화는 영어 대사처럼 그렇게 속사포처럼 빠른 대사를 넣지 않는다. 천천히 쉬어가는 식의 사유가 만드는 빈틈이 프랑스 영화에는 거의 들어 있는데, &lt;럭키 데이 인 파리&gt;는 그냥 미국 영화 문법대로 흘러간다.</p>
+
+        <p>또 내가 예전에 봤던 박찬욱 감독의 &lt;스토커&gt;는 영어권 배우와 대사를 쓰면서도, 응시의 집요함과 도덕의 균열을 파고드는 미학은 한국 영화의 긴장으로 수렴한다. 같은 맥락에서 우디 앨런의 &lt;럭키 데이 인 파리&gt; 역시 프랑스어와 파리의 풍경을 입었지만, 우연과 선택을 냉소적으로 배치하는 세계관은 그의 미국적 작가성으로 귀결된다.</p>
+
+        <p>결국 배우와 대사가 외국어여도, 영화의 색은 마지막에 감독의 나라로 돌아온다.</p>
+
+        <p>그런데 &lt;럭키 데이 인 파리&gt;를 보면서 내가 또 든 생각은 ‘우연’과 ‘운명’에 대한 문제였다. 우디 앨런 감독은 천재적 통찰력과 사유를 지닌 아주 노장이다. 지금은 인생의 끝자락에 도달한 시점인데도 여전히 ‘운’을 믿는 모양이다.</p>
+
+        <p>아인슈타인 역시 세계적 천재 과학자인데도 ‘운명’을 믿었다. &lt;운명의 바람 소리를 들어라&gt; 책에 보면 많은 위대한 과학자나 사상가들, 예술가들이 다 신지학을 믿고, ‘운명’이 있다고 생각한다. 그래서 ‘운명은 없다’거나, 운명 같은 게 있다는 걸 믿는 건 바보 같다고 생각하는 사람들은 그 중간치의 사람들인 것 같다. 아주 못 배운 사람들도 미신과 운명을 찰떡같이 믿고, 아주 위대한 천재들도 운명이 정해져 있다는 운명론을 신봉하니까 말이다.</p>
+
+        <p>극과 극은 통하는 걸까.</p>
+
+        <p>이제 새해가 밝았다. 새해가 되면 재미로라도 신년 운세를 본다. 나는 어느 쪽 사람인가. 나는 우디 앨런이나 아인슈타인처럼 운명론자 같다. 운을 믿고, 운명을 믿는다.</p>
+
+        <p>사실 생각해 보면, 부잣집에 태어나고 가난한 집에 태어나는 것 역시 자신의 노력이 아니라, 정해진 운명 혹은 우연에 의한 것이 아닐까. 우연일지라도 그게 운명이 된다. 자기가 선택한 결과가 아니라, 인간은 탄생한 순간부터 운명의 힘에 좌우되는 존재다.</p>
+
+        <p>그러니 무조건 인간의 노력만이 세상을 바꾼다, 라고만 부르짖을 수도 없고, 운명이 없다고도 말할 수 없다.</p>
+
+        <!-- NOTE BOX START -->
+        <div class="en-box en-notegrid">
+          <p class="en-boxcap">NOTE</p>
+
+          <div class="en-boxbody">
+            <p>나는 2025년부터 소위 삼재다. 그런데 이번 돼지띠 삼재는 첫해에 아주 전환점의 일이 생긴다고 했다. 난 그게 뭘까 하고, 작년에 신년 운세를 볼 때 생각했다. 그런데 정말 ‘편집자상 수상’이라는 획기적인 일이 생겼고, 그게 전환점이 된 건 사실이다.</p>
+
+            <p>또 올해 신년 운세를 봤다. 올해는 재물운이 확실히 큰 게 들어온다고 했다. 이제까지 미뤄왔던 재물이 제대로 들어온다는 것. 또 믿어볼까. 어쩐지 기대가 된다. 그런데 지금 내가 2026년 올해에 진행하는 여러 프로젝트를 보면, 그냥 지나칠 사안은 아니다. 아주 신빙성이 있는 내용이다. 올 한 해가 어떻게 흘러갈지 잘 지켜봐야겠다.</p>
+          </div>
+        </div>
+        <!-- NOTE BOX END -->
+
+        <p>아무것도 하지 않은 채 감나무에서 감이 떨어질 때까지 기다리는 식의 운 신봉자는 무식한 사람들의 태도지만, 자기대로 갈 길을 가면서 운이나 운명을 믿는 것은 개인의 선택이라고 생각한다. 어느 편이 진실인지는 아무도 모른다. 정말 운명이 존재하는지, 아니면 인간이 만들어낸 허상인지는.</p>
+
+        <p>그런데 내가 살아보니까, 운이 존재하는 것 같다. 나 역시 우디 앨런이나 아인슈타인처럼 그 의견에 동조한다. 인간의 세상에는 노력만으로는 설명이 안 되는 일들이 너무 많이 일어나고, 합리적 인과관계가 적용이 안 되는 사례가 너무 많다.</p>
+
+        <p>그래서 사람은 합리적인 사고방식으로 제 갈 길을 가면서도 살짝 곁눈질로 자신의 운명을 한번씩 체크해보는 것도 좋을 것 같다. 그래야 일이 안 풀리면 운명 핑계도 댈 수 있고, 일이 잘 풀릴 때도 자신의 능력만으로 되었다고 자만하지 않을 수 있기 때문이다.</p>
+
+        <p>&lt;럭키 데이 인 파리&gt; 이 영화에서도 정말 아주 좋은 우연한 사건이 결국 최악의 결과를 초래할 수도 있다. 이건 영화만의 이야기가 아니다. 실제로 우리 삶에서도 어떤 사람과의 만남과 선택이 최상의 행운처럼 다가오다가도 그 결말은 비극으로 끝날 때도 있기 때문이다.</p>
+
+        <p>또 어떤 사소한 사건이 도미노처럼 큰 행운으로 이어지기도 하고, 큰 불행으로 마감하기도 한다.</p>
+
+        <p>인간사는 끝나야 그 의미를 알 수 있다.</p>
+
+        <p>내가 늘 말하지만, 인생이란 관 뚜껑 덮을 때까지 아무도 모르는 일이고, 모든 일은 ‘끝나야 끝나는’ 법칙을 갖고 있다.</p>
+
+        <p>나는 이제 회사 홈페이지 제작을 기술적으로 다 완료했다. 처음에는 성공할지 확신은 100% 없었다. 왜냐하면 난 머리털 나고 홈페이지를 처음 만들기 때문이다. 그렇지만 늘 그렇듯이 ‘그냥 해보자!’라고 일단 시도했다. 실패하더라도 그 과정에서 또 얻는 테크닉이 생기겠지. 그렇게 생각했다. 그런데 성공했다.</p>
+
+        <p>홈페이지는 아주 만족스럽게 잘 만들어졌다. 한뜸한뜸 내 생각대로 만들어갔고, 정리가 잘됐다. 이번에 새로 구축한 홈페이지는 내 출판 인생과 책읽는귀족의 주요 스토리가 전부 응집해 있다고 해도 과언이 아니다.</p>
+
+        <p>이어서 나는 또 오랫동안 품고 있던 ‘디오니소스 논술’ 프로젝트도 진행할 것이다. 완성은 분명한데, 그 결과에 대해서는 ‘운’도 한 숟가락 보태어져야 할 것이다. 그 시기가 언제쯤일지는 모르지만, 행운이 함께하면 ‘소박’, ‘중박’, ‘대박’의 메뉴 중 어느 것이 선택할는지.</p>
+
+        <p>난 최선을 다해서 내 갈 길을 갈 것이고, 그 길에 하늘이 운명적으로 더 큰 그림을 그려줄지는 시간이 흐르면 알게 되겠지. 그러나 하다못해 최소한의 인간적 결과는 나오리라는 건 알고 있다. 하지만 나에게도 행운이 함께하길 바란다. 소위 ‘대박’이라는 걸 기대해 본다.</p>
+
+        <p>물론 그 시기는 론칭하자마자 올 것이라고 생각하지 않는다. 운명이 동전만 넣으면 바로 음악이 나오는 주크박스도 아니니까. 하지만 언제 어느 때나 한 번쯤은 행운이 함께해서 대박이 나길 바란다.</p>
+
+        <p>어느 유명인이 그랬다. 크게 성공하려면 누군가 한 사람쯤 유명한 리더가 끌어줘야 수면 위로 그 존재가 올라온다고. 그런 만남을 하는 게 인생의 ‘운’이 아닐까 하고 생각한다. 물론 자신이 갖고 있는 알맹이가 있어야 그 운은 오래 유지될 수 있다는 말도 잊으면 안 될 듯.</p>
+
+        <p>흙수저가 금수저처럼 금방 성공할 수는 없더라도, 금수저는 주변에 끌어 올려줄 사람도 많고, 벌써 수면 위에 떠 있는 셈이니까. 하지만 흙수저도 운이 좋으면 수면 위로 오를 수 있다. 그게 바로 ‘운명’이 아닐까. 정해진 운명.</p>
+
+        <p>올 한 해는 운명이 있는 건지, 없는 건지 가늠해 볼 수 있는 한 해가 될 수도 있겠다. 하지만 올해 대박이 안 터진다고 운명이 없는 건 아니겠지. 왜냐하면 늘 말하듯이 인생은 “끝나야 끝나는 법”이니까. 관 뚜껑 덮을 때까지만 터지면 된다.</p>
+
+        <p>하긴 고흐처럼, 눈 감고 나서 대박이 터진 사람도 있지만. 생전에는 단 한 점도 제대로 그림이 팔리지 않았는데, 지금은 세계적으로 사람들이 못 봐서 안달이 난 화가가 되었으니까. 그런데 고흐 역시 혼자 힘으로 그렇게 된 건 아니었다. 고흐를 끌어 올려준 존재가 있었다. 그게 죽고 나서 대박이 터진 거지만.</p>
+
+        <p>여튼 그럼 이제 좀 수정하도록 해보자. “인생이 끝나도 모른다.”</p>
+
+        <p>나는 운을 느끼는 ‘촉’이 좀 발달해 있다. 사실 편집자상을 받을 때도 그 한두 달 전부터 이상하게 느낌이 좋았다. 무슨 일이 일어날지는 전혀 몰랐지만, 그냥 좋은 일이 생길 것만 같았다. 예술가들이 보통 사람들보다 소위 감각의 ‘안테나’가 발달해 있다는 데, 그럴 수도.</p>
+
+        <p>올해는 그런 의미에서 어떤 느낌이 온다. 여러 의미로. 큰 흐름은 그렇지만, 자잘한 흐름은 좀 불편하기도 하고. 작은 변수가 생기면, 그것으로 지연이 될 수도 있겠지만 또 그것 역시 큰 흐름에서 볼 때 운명의 설계일 때도 많더라.</p>
+
+        <p>처음에 말했듯이, 시작은 좋은 일이었지만 결과는 나쁠 수도 있고, 반대로 시작은 불편한 변수일 수 있지만, 결과는 좋은 일로 연결될 수도 있다. 인생은 그렇게 알 수 없는 것이다.</p>
+
+        <p>크게 볼 때, 길게 볼 때 목적지에만 잘 도달하면 될 일이고, 그 과정에서 일어나는 다양한 일들은 ‘인생 수업’의 하나라고 보면 될 뿐이다. 많은 인생 수업을 쌓은 사람일수록 잘 버티고 앞으로 나아가면 더 위대한 업적을 남기는 법이다.</p>
+
+        <p>나는 어느 편에 설까. 물론 내가 제일 잘하는 일이 ‘버티는 것’이긴 한데, 나도 가끔은 멘탈이 흔들릴 때도 있다. 하지만 곧 다잡고 앞으로 나아가는 게 가능한 것은 ‘꿈’을 잃지 않는 이유에서다. 나에게는 갈 길이 있고, 할 일이 있고, 하고 싶은 일이 있기 때문이다.</p>
+
+        <!-- FINALE START -->
+        <section class="en-finale" aria-label="Finale">
+          <p class="en-finale-kicker">FINALE</p>
+
+          <div class="en-finale-body">
+            <p>올 한 해는 운명이 있는 건지, 없는 건지 가늠해 볼 수 있는 한 해가 될 수도 있겠다. 하지만 올해 대박이 안 터진다고 운명이 없는 건 아니겠지. 왜냐하면 늘 말하듯이 인생은 “끝나야 끝나는 법”이니까. 관 뚜껑 덮을 때까지만 터지면 된다.</p>
+          </div>
+        </section>
+        <!-- FINALE END -->
+
+        <!-- EXIT BLOCK (stamp ending) -->
+        <div class="en-exit-stamp" aria-label="Exit Block">
+          <p class="en-finale-kicker" style="margin-bottom:10px;">END NOTE</p>
+
+          <p class="en-close-stamp">
+            세상 일은 끝나야 끝난다.
+          </p>
+
+          <p class="en-stamp">2026 · 01 · 05</p>
+        </div>
+
+      </div>
+    </section>
+
+    <p class="vision-sign">
+      — Étoile Bleue Créations / 푸른별창작소<br>
+      Editor’s Note · Digital Magazine Platform
+    </p>
+
+    <div class="vision-nav">
+      <a href="../editor.html">← 편집자 노트 목록으로</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </div><!-- /.en-note -->
+</main>
+
+</body>
+</html>
