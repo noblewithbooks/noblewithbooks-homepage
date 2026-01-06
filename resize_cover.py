@@ -1,16 +1,13 @@
 from PIL import Image
 from pathlib import Path
 
-# 1) 여기만 네 표지 파일명으로 바꿔줘 (원본 파일을 프로젝트 루트에 잠깐 두자)
-SRC = Path("asset/covers/originals/honors_002_original.jpg")
+# 1) 원본 이미지 경로
+SRC = Path("asset/kpipa/kpipa-kbook-author-02_original.jpg")
 
+# 2) 결과 이미지 경로
+DST = Path("asset/kpipa/kpipa-kbook-author-02.jpg")
 
-
-# 2) 결과 파일명 (asset/covers/ 아래로 저장)
-DST = Path("asset/covers/honors_002.jpg")
-
-
-TARGET_W = 900  # 웹용 가로폭(픽셀). 800~1000 사이면 충분히 선명함
+TARGET_W = 900  # 웹용 가로폭(픽셀)
 
 img = Image.open(SRC).convert("RGB")
 w, h = img.size
@@ -19,6 +16,6 @@ if w > TARGET_W:
     img = img.resize((TARGET_W, new_h), Image.LANCZOS)
 
 DST.parent.mkdir(parents=True, exist_ok=True)
-img.save(DST, format="JPEG", quality=78, optimize=True, progressive=True)
+img.save(DST, format="JPEG", quality=85, optimize=True, progressive=True)
 
 print("Saved:", DST)

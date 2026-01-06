@@ -3679,3 +3679,33 @@ body .dionysos-banner.dionysos-home-banner{
 .milestone-item.milestone-prologue .milestone-note.milestone-era-line{
   margin-top: 0;
 }
+
+/* KPIPA / K-BOOK external listing */
+.kpipa-external__panel{
+  margin-top: 12px;
+  padding: 16px;
+}
+
+.kpipa-external__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.kpipa-external__shot{
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.kpipa-external__shot img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 720px){
+  .kpipa-external__grid{
+    grid-template-columns: 1fr;
+  }
+}
