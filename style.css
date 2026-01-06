@@ -3850,3 +3850,39 @@ body .dionysos-banner.dionysos-home-banner{
     0 0 0 4px rgba(107, 92, 255, 0.22),
     0 0 0 7px rgba(210,200,255,0.10);
 }
+
+/* Rights & Catalog — sample action buttons */
+.rights-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rights-links .btn-mini{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+
+  border: 1px solid rgba(18,24,38,0.18);
+  background: rgba(255,255,255,0.65);
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.rights-links .btn-mini:hover{
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(18,24,38,0.28);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
