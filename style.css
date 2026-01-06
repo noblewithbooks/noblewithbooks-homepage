@@ -3894,52 +3894,33 @@ body .dionysos-banner.dionysos-home-banner{
   flex-wrap: wrap;
   padding-top: 12px;
 }
+/* =========================
+   TEXTBOOK STRIP (aligned with cinema-box)
+   ========================= */
 
-/* 교재 배너 전용 스케일 조정 */
-.textbook-banner{
-  margin-top: 48px;
-  padding: 28px 24px;
-}
-
-/* 타이틀 크기 다운 */
-.textbook-banner .dionysos-title{
-  font-size: 1.4rem;
-}
-
-/* 키커는 더 작게 */
-.textbook-banner .dionysos-kicker{
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-}
-
-/* 설명 문단 압축 */
-.textbook-banner .dionysos-lede{
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* CTA 버튼도 톤 다운 */
-.textbook-banner .dionysos-cta{
-  margin-top: 16px;
-  font-size: 0.9rem;
-}
-
-
+/* 링크는 cinema-box 폭을 그대로 상속 */
 .textbook-strip-link{
   display: block;
+  width: 100%;
   text-decoration: none;
   color: inherit;
 }
 
-/* strip 스타일 */
+/* 스트립 자체 스타일 */
 .textbook-strip{
-  margin-top: 40px;
+  margin: 0;                /* 여백은 cinema-box가 담당 */
   padding: 14px 18px;
 
   border-radius: 12px;
 
-  background: #e6edf3; /* 그레이 섞인 밝은 블루 */
-  transition: background 160ms ease, transform 160ms ease;
+  background: #e6edf3;      /* 그레이 섞인 밝은 블루 */
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
 }
 
 .textbook-strip:hover{
@@ -3947,10 +3928,23 @@ body .dionysos-banner.dionysos-home-banner{
   transform: translateY(-1px);
 }
 
+/* 텍스트 */
 .textbook-strip__title{
   margin: 0;
   text-align: center;
+
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+
+  color: rgba(24,34,44,0.92);
 }
+
+/* =========================
+   (참고) cinema-box 기준 폭
+   이미 기존에 있음 — 수정 없음
+   .cinema-box{
+     width: min(980px, 92vw);
+     margin: 56px auto 18px;
+   }
+   ========================= */
