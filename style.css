@@ -3832,3 +3832,21 @@ body .dionysos-banner.dionysos-home-banner{
     0 0 0 4px rgba(107, 92, 255, 0.22),
     0 0 0 7px rgba(210,200,255,0.10);
 }
+
+/* NAV — Rights & Catalog (purple outline + text) */
+.nav a[href$="rights.html"]{
+  color: #6b5cff;
+  border-color: rgba(107, 92, 255, 0.45);
+}
+
+.nav a[href$="rights.html"]:hover{
+  color: #6b5cff;
+  border-color: rgba(107, 92, 255, 0.65);
+}
+
+.nav a[href$="rights.html"] .ico{
+  background: rgba(18,24,38,0.65);
+  box-shadow:
+    0 0 0 4px rgba(107, 92, 255, 0.22),
+    0 0 0 7px rgba(210,200,255,0.10);
+}
