@@ -4001,27 +4001,38 @@ body .dionysos-banner.dionysos-home-banner{
 .textbook-strip{
   margin: 0;
   padding: 14px 18px;
+
   border-radius: 12px;
-  background: #e6edf3;
+
+  /* 기본: 블루 정체성이 분명한 더스티 블루 */
+  background: #d3e1ee;
+
   box-shadow:
     0 10px 22px rgba(0,0,0,0.08),
     inset 0 1px 0 rgba(255,255,255,0.55);
-  transition: background 160ms ease, transform 160ms ease;
+
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
 }
 
 .textbook-strip:hover{
-  background: #dde6ee;
+  /* hover: 블루를 한 톤 더 강조 */
+  background: #c7d9ea;
   transform: translateY(-1px);
 }
 
 .textbook-strip__title{
   margin: 0;
   text-align: center;
+
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+
   color: rgba(24,34,44,0.92);
 }
+
 
 /* Mobile */
 @media (max-width: 720px){
