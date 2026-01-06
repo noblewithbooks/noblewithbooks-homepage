@@ -4004,8 +4004,8 @@ body .dionysos-banner.dionysos-home-banner{
 
   border-radius: 12px;
 
-  /* 기본: 블루 정체성이 분명한 더스티 블루 */
-  background: #d3e1ee;
+  /* 기본: 연한 더스티 퍼플 (회색 기운 있지만 보라 인식 확실) */
+  background: #e6e0f0;
 
   box-shadow:
     0 10px 22px rgba(0,0,0,0.08),
@@ -4017,8 +4017,8 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .textbook-strip:hover{
-  /* hover: 블루를 한 톤 더 강조 */
-  background: #c7d9ea;
+  /* hover: 보라 한 톤 강조 */
+  background: #dcd3ea;
   transform: translateY(-1px);
 }
 
@@ -4030,7 +4030,7 @@ body .dionysos-banner.dionysos-home-banner{
   font-weight: 500;
   letter-spacing: 0.02em;
 
-  color: rgba(24,34,44,0.92);
+  color: rgba(28,20,44,0.92); /* 블랙 대신 보라 계열 텍스트 */
 }
 
 
