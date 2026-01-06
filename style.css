@@ -3886,3 +3886,10 @@ body .dionysos-banner.dionysos-home-banner{
   box-shadow: var(--shadow);
   transform: translateY(-1px);
 }
+
+.rights-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
