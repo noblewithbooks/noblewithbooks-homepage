@@ -3782,3 +3782,36 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .kpipa-video__link { margin: 12px 0 0; }
+
+/* ==============================
+   GLOBAL INFRA SUPPORT (video)
+============================== */
+.kpipa-video .kpipa-video__panel { margin-top: 10px; }
+
+.kpipa-video .books-h2 { margin-bottom: 10px; }
+.kpipa-video .books-korhint { margin: 0 0 16px; }
+
+.kpipa-video__title,
+.kpipa-video__desc {
+  line-height: 1.65;
+}
+
+.kpipa-video__title { margin: 0 0 8px; }
+.kpipa-video__desc { margin: 0 0 14px; }
+
+.kpipa-video__embed { margin: 12px 0 12px; }
+
+.kpipa-video__link { margin: 10px 0 0; }
+
+.kpipa-video .selected-note {
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* 제목이 밋밋하면, 아주 얇게 ‘선’만 추가 */
+.kpipa-video .books-h2 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.kpipa-video__sub { margin: -6px 0 14px; opacity: .7; font-size: 0.95em; }
