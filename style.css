@@ -3709,3 +3709,46 @@ body .dionysos-banner.dionysos-home-banner{
     grid-template-columns: 1fr;
   }
 }
+
+/* === KPIPA Image Zoom === */
+
+.kpipa-zoom {
+  position: relative;
+  display: block;
+}
+
+.zoom-icon {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Lightbox */
+.kpipa-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpipa-lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+.kpipa-lightbox:target {
+  display: flex;
+  cursor: zoom-out;
+}
