@@ -3895,10 +3895,102 @@ body .dionysos-banner.dionysos-home-banner{
   padding-top: 12px;
 }
 /* =========================
-   TEXTBOOK STRIP (aligned with cinema-box)
+   TEXTBOOK PAGE, editorial clean
    ========================= */
 
-/* 링크는 cinema-box 폭을 그대로 상속 */
+.textbook-page{
+  padding-top: 6px;
+}
+
+/* 본문 카드만 교재용으로 정돈 */
+.textbook-article{
+  width: min(980px, 92vw);
+  margin: 14px auto 70px;
+  padding: 34px 34px 30px;
+}
+
+/* 헤더 정리 */
+.textbook-head{
+  margin-bottom: 18px;
+}
+
+.textbook-lede{
+  margin: 14px 0 0;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(24,34,44,0.72);
+}
+
+/* 2열 구성(데스크톱) */
+.textbook-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.textbook-card{
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  background: rgba(255,255,255,0.50);
+  border: 1px solid rgba(0,0,0,0.07);
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+}
+
+.textbook-h3{
+  margin: 0 0 12px;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(24,34,44,0.70);
+}
+
+/* 단계 리스트 */
+.textbook-steps{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.textbook-steps li{
+  margin: 10px 0;
+}
+
+.step-title{
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: rgba(24,34,44,0.92);
+  font-weight: 600;
+}
+
+.step-meta{
+  display: block;
+  margin-top: 4px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(24,34,44,0.68);
+}
+
+/* 본문 문단 */
+.textbook-p{
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(24,34,44,0.78);
+}
+.textbook-p:last-child{
+  margin-bottom: 0;
+}
+
+.textbook-foot{
+  margin-top: 16px;
+}
+
+/* =========================
+   TEXTBOOK STRIP (aligned with cinema-box)
+   ========================= */
 .textbook-strip-link{
   display: block;
   width: 100%;
@@ -3906,21 +3998,15 @@ body .dionysos-banner.dionysos-home-banner{
   color: inherit;
 }
 
-/* 스트립 자체 스타일 */
 .textbook-strip{
-  margin: 0;                /* 여백은 cinema-box가 담당 */
+  margin: 0;
   padding: 14px 18px;
-
   border-radius: 12px;
-
-  background: #e6edf3;      /* 그레이 섞인 밝은 블루 */
+  background: #e6edf3;
   box-shadow:
     0 10px 22px rgba(0,0,0,0.08),
     inset 0 1px 0 rgba(255,255,255,0.55);
-
-  transition:
-    background 160ms ease,
-    transform 160ms ease;
+  transition: background 160ms ease, transform 160ms ease;
 }
 
 .textbook-strip:hover{
@@ -3928,23 +4014,22 @@ body .dionysos-banner.dionysos-home-banner{
   transform: translateY(-1px);
 }
 
-/* 텍스트 */
 .textbook-strip__title{
   margin: 0;
   text-align: center;
-
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-
   color: rgba(24,34,44,0.92);
 }
 
-/* =========================
-   (참고) cinema-box 기준 폭
-   이미 기존에 있음 — 수정 없음
-   .cinema-box{
-     width: min(980px, 92vw);
-     margin: 56px auto 18px;
-   }
-   ========================= */
+/* Mobile */
+@media (max-width: 720px){
+  .textbook-article{
+    padding: 26px 18px 22px;
+  }
+  .textbook-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
