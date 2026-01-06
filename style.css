@@ -3887,9 +3887,10 @@ body .dionysos-banner.dionysos-home-banner{
   transform: translateY(-1px);
 }
 
+
 .rights-links{
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 14px;
+  padding-top: 12px;
 }
