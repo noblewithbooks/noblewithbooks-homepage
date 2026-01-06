@@ -3744,9 +3744,12 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .kpipa-lightbox img {
-  max-width: 95vw;
-  max-height: 95vh;
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100vh;
 }
+
 
 .kpipa-lightbox:target {
   display: flex;
