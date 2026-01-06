@@ -3759,3 +3759,26 @@ body .dionysos-banner.dionysos-home-banner{
 .kpipa-note {
   margin-top: 16px;
 }
+
+.kpipa-video__panel { margin-top: 8px; }
+
+.kpipa-video__title { margin: 0 0 10px; }
+.kpipa-video__desc { margin: 0 0 14px; }
+
+.kpipa-video__embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.kpipa-video__embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.kpipa-video__link { margin: 12px 0 0; }
