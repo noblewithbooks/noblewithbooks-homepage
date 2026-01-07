@@ -4376,4 +4376,84 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 
+/* =========================
+   AUDIOBOOK GALLERY
+========================= */
+
+/* grid */
+.ab-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* card */
+.ab-card{
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+
+  padding: 18px;
+}
+
+/* cover */
+.ab-cover{
+  flex: 0 0 140px;
+}
+
+.ab-cover img{
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* body */
+.ab-body{
+  flex: 1;
+}
+
+.ab-title{
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.ab-author,
+.ab-narrator{
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* actions */
+.ab-actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ab-actions .btn-space{
+  padding: 7px 12px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 640px){
+  .ab-card{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ab-cover{
+    width: 100%;
+    max-width: 220px;
+  }
+}
 

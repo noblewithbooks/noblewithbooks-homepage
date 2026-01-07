@@ -74,59 +74,74 @@
     </div>
   </header>
 
-    <main class="container audiobook-page">
+   <main class="container audiobook-page">
 
-    <!-- Audiobook intro -->
-    <section class="card">
-      <h2 class="ab-headline">
-        오디오북 갤러리
-        <span class="ab-headset" aria-hidden="true">
-          <!-- dotted headphone motif (orange, thick dashed) -->
-          <svg class="ab-headset-svg" viewBox="0 0 120 56" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 30 C18 14, 34 4, 60 4 C86 4, 102 14, 102 30" fill="none"/>
-            <path d="M18 30 L18 46" fill="none"/>
-            <path d="M102 30 L102 46" fill="none"/>
-            <path d="M12 46 C18 46, 24 46, 30 46" fill="none"/>
-            <path d="M90 46 C96 46, 102 46, 108 46" fill="none"/>
-          </svg>
-        </span>
-      </h2>
-      <p class="muted">출간 오디오북을 한 눈에 모아 보는 공간입니다.</p>
-    </section>
+  <!-- INTRO -->
+  <section class="card">
+    <h2 class="ab-headline">
+      오디오북 갤러리
+      <span class="ab-headset" aria-hidden="true">
+        <svg class="ab-headset-svg" viewBox="0 0 120 56" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 30 C18 14, 34 4, 60 4 C86 4, 102 14, 102 30" fill="none"/>
+          <path d="M18 30 L18 46" fill="none"/>
+          <path d="M102 30 L102 46" fill="none"/>
+          <path d="M12 46 C18 46, 24 46, 30 46" fill="none"/>
+          <path d="M90 46 C96 46, 102 46, 108 46" fill="none"/>
+        </svg>
+      </span>
+    </h2>
+    <p class="muted">출간 오디오북을 한 눈에 모아 보는 공간입니다.</p>
+  </section>
 
-    <!-- Audiobook grid -->
-    <section class="ab-grid" aria-label="오디오북 목록">
+  <!-- AUDIOBOOK GRID -->
+  <section class="ab-grid" aria-label="오디오북 목록">
 
-      <!-- AUDIOBOOK CARD (sample) -->
-      <article class="card ab-card">
-        <div class="ab-cover" aria-hidden="true"></div>
-        <div class="ab-body">
-          <h3 class="ab-title">『내 손 안의 인문학, 꿈의 문』</h3>
-          <p class="ab-meta">오디오북 · 미리 듣기</p>
+    <!-- AUDIOBOOK CARD -->
+    <article class="card ab-card">
 
-          <div class="ab-actions">
-            <a class="btn-space" href="#" target="_blank" rel="noopener">미리 듣기</a>
-            <a class="btn-space" href="#" target="_blank" rel="noopener">판매/플랫폼</a>
-          </div>
+      <!-- Cover -->
+      <div class="ab-cover">
+        <img
+          src="asset/audiobook/ab-dreamdoor.jpg"
+          alt="내 손 안의 인문학, 꿈의 문 오디오북 표지"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Body -->
+      <div class="ab-body">
+        <h3 class="ab-title">『내 손 안의 인문학, 꿈의 문』</h3>
+
+        <p class="ab-author">조선우</p>
+        <p class="ab-narrator">낭독 류승곤</p>
+
+        <div class="ab-actions">
+          <a
+            class="btn-space"
+            href="https://youtu.be/U4IceC04WEI"
+            target="_blank"
+            rel="noopener"
+          >
+            미리 듣기
+          </a>
+
+          <a
+            class="btn-space"
+            href="https://www.yes24.com/product/goods/104427811"
+            target="_blank"
+            rel="noopener"
+          >
+            판매/플랫폼
+          </a>
         </div>
-      </article>
+      </div>
 
-      <article class="card ab-card">
-        <div class="ab-cover" aria-hidden="true"></div>
-        <div class="ab-body">
-          <h3 class="ab-title">『디오니소스의 농담』</h3>
-          <p class="ab-meta">오디오북 · 제작 지원 선정</p>
+    </article>
 
-          <div class="ab-actions">
-            <a class="btn-space" href="#" target="_blank" rel="noopener">미리 듣기</a>
-            <a class="btn-space" href="#" target="_blank" rel="noopener">판매/플랫폼</a>
-          </div>
-        </div>
-      </article>
+  </section>
 
-    </section>
+</main>
 
-  </main>
 
 <footer class="site-footer">
   <p>
