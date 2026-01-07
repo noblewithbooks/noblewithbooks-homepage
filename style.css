@@ -4175,8 +4175,9 @@ body .dionysos-banner.dionysos-home-banner{
   .cinema-box .card.textbook-strip{ padding: 13px 14px; }
   .textbook-strip__title{ font-size: 0.88rem; }
 }
+
 /* =========================
-   NAV — Desktop + Mobile Toggle (compact pills)
+   NAV — Desktop + Mobile Toggle (compact pills, left-aligned)
 ========================= */
 
 /* nav shell */
@@ -4189,6 +4190,13 @@ body .dionysos-banner.dionysos-home-banner{
   margin-top: 6px;
 }
 
+/* link base */
+.nav a{
+  color: var(--text);
+  text-decoration: none;
+  border: 0;
+}
+
 /* =================================================
    MOBILE FIRST (default)
 ================================================= */
@@ -4196,7 +4204,7 @@ body .dionysos-banner.dionysos-home-banner{
 /* toggle button: visible on mobile (NOT full-width bar) */
 .nav-toggle{
   display: inline-flex;
-  width: auto;                 /* ← 100% 금지 */
+  width: auto;                 /* 100% 금지 */
   max-width: 100%;
   align-items: center;
   justify-content: center;
@@ -4242,12 +4250,13 @@ body .dionysos-banner.dionysos-home-banner{
 /* links wrapper: mobile default = hidden (compact wrap layout) */
 .nav-links{
   display: none;
-  width: auto;                 /* ← 100% 금지 */
+  width: auto;                 /* 100% 금지 */
   margin-top: 10px;
 
-  flex-direction: row;         /* ← column 금지 */
+  flex-direction: row;         /* column 금지 */
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start; /* 모바일 왼쪽 정렬 */
   gap: 10px;
 }
 
@@ -4256,24 +4265,47 @@ body .dionysos-banner.dionysos-home-banner{
   display: flex;
 }
 
-/* link base */
-.nav a{
-  color: var(--text);
-  text-decoration: none;
-  border: 0;
-}
-
 /* mobile buttons: keep compact pills */
 .nav-links a.btn-space{
-  width: auto;                 /* ← 100% 금지 */
+  width: auto;                 /* 100% 금지 */
   justify-content: center;
-  padding: 9px 12px;           /* 모바일에서 약간 슬림 */
+  padding: 9px 12px;
+}
+
+/* =================================================
+   MOBILE TUNING (compact)
+================================================= */
+@media (max-width: 760px){
+
+  /* Menu 버튼도 살짝 슬림 */
+  .nav-toggle{
+    padding: 8px 12px;
+  }
+
+  /* 메뉴 링크들 더 촘촘하게 */
+  .nav-links{
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  /* 캡슐 두께/글자 줄이기 */
+  .nav-links a.btn-space{
+    padding: 7px 10px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  /* 아이콘(●) 체급 살짝 다운 */
+  .nav-links a.btn-space .ico{
+    transform: scale(0.9);
+  }
 }
 
 /* =================================================
    DESKTOP ONLY
 ================================================= */
 @media (min-width: 1025px){
+
   .nav{
     justify-content: flex-end;
   }
@@ -4292,42 +4324,13 @@ body .dionysos-banner.dionysos-home-banner{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: flex-end;
     gap: 10px;
   }
 
   .nav-links a.btn-space{
     width: auto;
     padding: 9px 12px;
-  }
-}
-
-@media (max-width: 760px){
-
-  /* 메뉴 버튼(토글)도 살짝 슬림 */
-  .nav-toggle{
-    padding: 8px 12px;
-  }
-
-  /* 메뉴 링크들: 더 작게, 더 촘촘하게 */
-  .nav-links{
-    gap: 8px;
-    margin-top: 8px;
-  }
-
-  .nav-links a.btn-space{
-    padding: 7px 10px;   /* 핵심: 캡슐 두께 줄이기 */
-    font-size: 14px;     /* 글자도 한 단계 다운 */
-    gap: 8px;            /* 아이콘/텍스트 간격 */
-  }
-
-  /* (선택) 아이콘(●)이 너무 커 보이면 */
-  .nav-links a.btn-space .ico{
-    transform: scale(0.9);
-  }
-}
-
-@media (max-width: 760px){
-  .nav-links{
-    justify-content: flex-start; /* ← 왼쪽 기준 */
+    font-size: inherit; /* 데스크톱은 기본 폰트 */
   }
 }
