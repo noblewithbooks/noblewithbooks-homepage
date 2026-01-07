@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>오디오북 갤러리, Noblewithbooks</title>
+
+  <link rel="stylesheet" href="style.css?v=20251215-greenflash" />
+
+    <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NPRRLQZM70');
+  </script>
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
+       <p class="tagline">오디오북 갤러리</p>
+       <p class="subtag">(Étoile Bleue Créations / 푸른별창작소)</p>
+      </div>
+
+      <nav class="nav nav--toggle" aria-label="Primary">
+  <!-- Mobile: toggle button -->
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menu</span>
+  </button>
+
+  <!-- Links -->
+  <div class="nav-links" id="navLinks">
+    <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
+    <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
+    <a class="btn-space" href="contact.html"><span class="ico"></span>Contact</a>
+
+    <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
+    <a class="btn-space" href="editor.html"><span class="ico"></span>편집자 노트</a>
+    <a class="btn-space" href="books/"><span class="ico"></span>책 소개</a>
+    <a class="btn-space" href="ebooks.html"><span class="ico"></span>전자책</a>
+    <a class="btn-space" href="selected.html"><span class="ico"></span>KPIPA Edition</a>
+    <a class="btn-space" href="rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+    <a class="btn-space" href="honors.html"><span class="ico"></span>Honors</a>
+    <a class="btn-space" href="audiobook-gallery.html" aria-current="page"><span class="ico"></span>오디오북 갤러리</a>
+    <a class="btn-space" href="press.html" aria-current="page"><span class="ico"></span>언론의 시선</a>
+   
+
+  </div>
+</nav>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+    </div>
+  </header>
+
+    <main class="container audiobook-page">
+
+    <!-- Audiobook intro -->
+    <section class="card">
+      <h2 class="ab-headline">
+        오디오북 갤러리
+        <span class="ab-headset" aria-hidden="true">
+          <!-- dotted headphone motif (orange, thick dashed) -->
+          <svg class="ab-headset-svg" viewBox="0 0 120 56" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 30 C18 14, 34 4, 60 4 C86 4, 102 14, 102 30" fill="none"/>
+            <path d="M18 30 L18 46" fill="none"/>
+            <path d="M102 30 L102 46" fill="none"/>
+            <path d="M12 46 C18 46, 24 46, 30 46" fill="none"/>
+            <path d="M90 46 C96 46, 102 46, 108 46" fill="none"/>
+          </svg>
+        </span>
+      </h2>
+      <p class="muted">출간 오디오북을 한 눈에 모아 보는 공간입니다.</p>
+    </section>
+
+    <!-- Audiobook grid -->
+    <section class="ab-grid" aria-label="오디오북 목록">
+
+      <!-- AUDIOBOOK CARD (sample) -->
+      <article class="card ab-card">
+        <div class="ab-cover" aria-hidden="true"></div>
+        <div class="ab-body">
+          <h3 class="ab-title">『내 손 안의 인문학, 꿈의 문』</h3>
+          <p class="ab-meta">오디오북 · 미리 듣기</p>
+
+          <div class="ab-actions">
+            <a class="btn-space" href="#" target="_blank" rel="noopener">미리 듣기</a>
+            <a class="btn-space" href="#" target="_blank" rel="noopener">판매/플랫폼</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card ab-card">
+        <div class="ab-cover" aria-hidden="true"></div>
+        <div class="ab-body">
+          <h3 class="ab-title">『디오니소스의 농담』</h3>
+          <p class="ab-meta">오디오북 · 제작 지원 선정</p>
+
+          <div class="ab-actions">
+            <a class="btn-space" href="#" target="_blank" rel="noopener">미리 듣기</a>
+            <a class="btn-space" href="#" target="_blank" rel="noopener">판매/플랫폼</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+<footer class="site-footer">
+  <p>
+    Noblewithbooks (책읽는귀족, est. 2012) ·
+    Étoile Bleue Créations (푸른별창작소, Imprint, est. 2025) ·
+    © All rights reserved by Noblewithbooks / 본 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
+  </p>
+  <p>
+    (10388) 경기도 고양시 일산서구 대산로 123, 현대프라자 K-ILSAN Business Center 342호(주엽동) ·
+    전화 070-7613-8491 ·
+    이메일 idea444@naver.com
+  </p>
+</footer>
+
+</body>
+</html>
