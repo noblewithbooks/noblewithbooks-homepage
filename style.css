@@ -4350,3 +4350,57 @@ body .dionysos-banner.dionysos-home-banner{
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* =========================
+   NAV TOGGLE (mobile)
+   - required for .nav-links.is-open
+========================= */
+
+/* desktop default */
+.nav--toggle .nav-toggle{
+  display: none;
+}
+
+.nav--toggle .nav-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* mobile */
+@media (max-width: 720px){
+  .nav--toggle{
+    align-items: flex-start;
+  }
+
+  .nav--toggle .nav-toggle{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(18,24,38,0.14);
+    background: rgba(255,255,255,0.72);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .nav--toggle .nav-links{
+    display: none;              /* closed */
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav--toggle .nav-links.is-open{
+    display: flex;              /* opened */
+  }
+
+  .nav--toggle .nav-links .btn-space{
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 720px){
+  .nav--toggle .nav-links.is-open{ display: flex !important; }
+}
