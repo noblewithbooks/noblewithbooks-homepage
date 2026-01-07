@@ -4374,10 +4374,43 @@ body .dionysos-banner.dionysos-home-banner{
     align-items: flex-start;
   }
 
+/* =========================
+   NAV TOGGLE (clean)
+   desktop: links always visible, button hidden
+   mobile: button visible, links toggle
+========================= */
+
+/* layout */
+.nav--toggle{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* desktop default */
+.nav--toggle .nav-toggle{
+  display: none;
+}
+
+.nav--toggle .nav-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* mobile only */
+@media (max-width: 720px){
+  .nav--toggle{
+    align-items: flex-start;
+  }
+
   .nav--toggle .nav-toggle{
     display: inline-flex;
     align-items: center;
     gap: 10px;
+
     padding: 9px 12px;
     border-radius: 999px;
     border: 1px solid rgba(18,24,38,0.14);
@@ -4400,7 +4433,4 @@ body .dionysos-banner.dionysos-home-banner{
   .nav--toggle .nav-links .btn-space{
     justify-content: flex-start;
   }
-}
-@media (max-width: 720px){
-  .nav--toggle .nav-links.is-open{ display: flex !important; }
 }
