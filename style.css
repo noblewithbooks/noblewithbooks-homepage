@@ -4177,3 +4177,91 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 /* force rebuild 20260107 */
+/* =========================
+   NAV — Mobile Toggle (Home only wiring-safe)
+========================= */
+
+/* toggle button base */
+.nav-toggle{
+  display: none; /* desktop: hidden */
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(18,24,38,0.14);
+  background: rgba(255,255,255,0.76);
+  box-shadow: var(--shadow-soft);
+
+  color: var(--text);
+  font: inherit;
+
+  cursor: pointer;
+}
+
+.nav-toggle:active{
+  transform: translateY(1px);
+}
+
+/* hamburger icon (pure css) */
+.nav-toggle__icon{
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-toggle__icon::before,
+.nav-toggle__icon::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(18,24,38,0.55);
+}
+
+.nav-toggle__icon::before{ top: 1px; }
+.nav-toggle__icon::after{ bottom: 1px; }
+
+/* middle line */
+.nav-toggle__icon{
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 5px,
+    rgba(18,24,38,0.55) 5px,
+    rgba(18,24,38,0.55) 7px,
+    transparent 7px,
+    transparent 12px
+  );
+  border-radius: 99px;
+}
+
+/* links wrapper */
+.nav-links{
+  width: 100%;
+}
+
+/* Mobile behavior */
+@media (max-width: 720px){
+  /* show toggle */
+  .nav.nav--toggle .nav-toggle{
+    display: inline-flex;
+  }
+
+  /* start collapsed */
+  .nav.nav--toggle .nav-links{
+    display: none;
+    margin-top: 10px;
+  }
+
+  /* open state */
+  .nav.nav--toggle .nav-links.is-open{
+    display: block;
+  }
+}
