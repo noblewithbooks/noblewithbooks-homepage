@@ -4330,3 +4330,37 @@ body .dionysos-banner.dionysos-home-banner{
     font-size: inherit;
   }
 }
+
+/* =========================
+   NAV — Mobile force override (FINAL)
+========================= */
+@media (max-width: 760px){
+  .nav-toggle{
+    width: auto !important;
+    padding: 8px 12px !important;
+  }
+
+  .nav-links{
+    display: none;
+    width: auto !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+
+  .nav-links.is-open{
+    display: flex !important;
+  }
+
+  .nav-links a.btn-space{
+    width: auto !important;
+    padding: 7px 10px !important;
+    font-size: 14px !important;
+    gap: 8px !important;
+  }
+
+  .nav-links a.btn-space .ico{
+    transform: scale(0.9) !important;
+  }
+}
+
