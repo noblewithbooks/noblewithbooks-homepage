@@ -4301,21 +4301,17 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 
-/* =================================================
-   DESKTOP ONLY
-================================================= */
 @media (min-width: 1025px){
 
+  /* 데스크톱: 메뉴를 기존처럼 '자연스럽게' (오른쪽 고정 금지) */
   .nav{
-    justify-content: flex-end;
+    justify-content: flex-start; /* ← 핵심: 오른쪽으로 밀지 않음 */
   }
 
-  /* hide toggle */
   .nav-toggle{
     display: none;
   }
 
-  /* show links inline */
   .nav-links{
     display: flex;
     width: auto;
@@ -4324,13 +4320,13 @@ body .dionysos-banner.dionysos-home-banner{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start; /* ← 핵심: flex-end 제거 */
     gap: 10px;
   }
 
   .nav-links a.btn-space{
     width: auto;
     padding: 9px 12px;
-    font-size: inherit; /* 데스크톱은 기본 폰트 */
+    font-size: inherit;
   }
 }
