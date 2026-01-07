@@ -4364,3 +4364,14 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 
+@media (max-width: 760px){
+  .nav{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  .nav-links{
+    margin-top: 8px !important;
+  }
+}
