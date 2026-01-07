@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>한국어 교재 프로젝트 (Paris) | Noblewithbooks</title>
-  <link rel="stylesheet" href="style.css?v=20260107-3" />
+  <title>한국어 교재 프로젝트, Paris | Noblewithbooks</title>
+
+  <!-- site base -->
+  <link rel="stylesheet" href="style.css?v=20260107-5" />
+  <!-- textbook page only (strong override) -->
+  <link rel="stylesheet" href="textbook.css?v=20260107-1" />
 </head>
 
 <body>
@@ -20,105 +24,106 @@
       </nav>
     </div>
   </header>
-<main class="container textbook-page">
 
-  <!-- 본문 -->
-  <section class="card dionysos-banner textbook-article" aria-label="한국어 교재 프로젝트 (Paris)">
+  <main class="container textbook-page">
 
-    <header class="textbook-head">
-      <p class="dionysos-kicker">한국어 교재 프로젝트 (Paris)</p>
-      <h2 class="dionysos-title">파리에서의 교육 경험을 기반으로 한 교재 제작</h2>
+    <article class="tb-shell" aria-label="한국어 교재 프로젝트 (Paris)">
 
-      <p class="textbook-lede">
-        2026년 졸업과 편입학, 자격 취득을 거쳐
-        파리 현장에서 한국어를 가르치며 축적되는 교육 경험을
-        교재로 환원하는 계획을 정리해 둡니다.
-      </p>
-    </header>
+      <header class="tb-hero">
+        <p class="tb-kicker">TEXTBOOK PROJECT</p>
+        <h2 class="tb-title">한국어 교재 프로젝트, Paris</h2>
 
-    <div class="textbook-grid">
-
-      <!-- 경로 -->
-      <section class="textbook-card" aria-label="학업 및 자격 경로">
-        <h3 class="textbook-h3">경로</h3>
-
-        <ul class="textbook-steps">
-          <li>
-            <span class="step-title">방송통신대학교 졸업</span>
-            <span class="step-meta">
-              2026년 봄, 한국방송통신대학교 프랑스언어문화학과를 졸업합니다.
-            </span>
-          </li>
-
-          <li>
-            <span class="step-title">사이버 한국외국어대학교 편입학</span>
-            <span class="step-meta">
-              한국어학과 편입을 준비하고 있으며, 합격자 발표일은 2026년 1월 26일입니다.
-            </span>
-          </li>
-
-          <li>
-            <span class="step-title">한국어교원자격증 2급 취득</span>
-            <span class="step-meta">
-              편입 이후 2년의 과정을 거쳐 공식적인 한국어 교육 자격을 취득합니다.
-            </span>
-          </li>
-
-          <li>
-            <span class="step-title">파리 현장 수업</span>
-            <span class="step-meta">
-              파리에서 외국인을 대상으로 한국어를 가르치며 실제 교육 경험을 축적합니다.
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 교재 제작 원리 -->
-      <section class="textbook-card" aria-label="교재 제작 원리">
-        <h3 class="textbook-h3">교재 제작 원리</h3>
-
-        <p class="textbook-p">
-          교재는 <strong>수업 경험을 바탕으로 생성됩니다.</strong>
-          학습자의 질문, 이해의 지점, 막히는 순간,
-          문화적 차이에서 발생하는 오해와 반응을 기록하고,
-          그 기록이 교재의 문장과 구성으로 환원됩니다.
+        <p class="tb-lede">
+          파리 현장에서의 수업 경험을 기록하고,
+          그 기록을 다시 교재의 문장과 구성으로 환원하는 계획을 정리합니다.
         </p>
 
-        <p class="textbook-p">
-          학습자의 배경과 목적이 달라질수록 교재 역시 달라져야 합니다.
-          현장에서 쌓이는 판단과 경험이 기준이 되고,
-          축적이 깊어질수록 교재 역시 함께 정교해집니다.
-        </p>
+        <div class="tb-meta">
+          <span class="tb-chip">Field-driven</span>
+          <span class="tb-chip">Archive</span>
+          <span class="tb-chip">Education</span>
+        </div>
+      </header>
+
+      <section class="tb-grid">
+
+        <section class="tb-card" aria-label="학업 및 자격 경로">
+          <header class="tb-card__head">
+            <h3 class="tb-h3">경로</h3>
+            <p class="tb-sub">학업, 자격, 현장 수업까지의 흐름</p>
+          </header>
+
+          <ol class="tb-steps">
+            <li class="tb-step">
+              <p class="tb-step__title">방송통신대학교 졸업</p>
+              <p class="tb-step__meta">2026년 봄, 한국방송통신대학교 프랑스언어문화학과 졸업.</p>
+            </li>
+
+            <li class="tb-step">
+              <p class="tb-step__title">사이버 한국외국어대학교 편입학</p>
+              <p class="tb-step__meta">한국어학과 편입 준비, 합격자 발표일 2026년 1월 26일.</p>
+            </li>
+
+            <li class="tb-step">
+              <p class="tb-step__title">한국어교원자격증 2급 취득</p>
+              <p class="tb-step__meta">편입 이후 2년 과정으로 공식 자격 취득.</p>
+            </li>
+
+            <li class="tb-step">
+              <p class="tb-step__title">파리 현장 수업</p>
+              <p class="tb-step__meta">외국인 대상 수업으로 실제 교육 경험 축적.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="tb-card" aria-label="교재 제작 원리">
+          <header class="tb-card__head">
+            <h3 class="tb-h3">교재 제작 원리</h3>
+            <p class="tb-sub">현장에서 생기는 ‘막힘’이 교재의 핵심이 된다</p>
+          </header>
+
+          <p class="tb-p">
+            교재는 <strong>수업 경험을 바탕으로 생성됩니다.</strong>
+            학습자의 질문, 이해의 지점, 멈칫하는 순간,
+            문화적 차이에서 발생하는 오해와 반응을 기록합니다.
+            그 기록이 다시 문장과 구성으로 돌아와 교재가 됩니다.
+          </p>
+
+          <p class="tb-p">
+            학습자의 배경과 목적이 달라질수록 교재도 달라져야 합니다.
+            현장에서 축적되는 판단이 기준이 되고,
+            축적이 깊어질수록 교재도 함께 정교해집니다.
+          </p>
+
+          <div class="tb-callout" aria-label="원칙 요약">
+            <p class="tb-callout__k">원칙</p>
+            <p class="tb-callout__t">
+              “현장의 질문이 목차를 만들고, 현장의 실수가 문장을 만든다.”
+            </p>
+          </div>
+        </section>
+
       </section>
 
-    </div>
+      <footer class="tb-foot">
+        <p class="tb-note">
+          이 페이지는 준비 과정과 제작 흐름을 정리하기 위한 기록입니다.
+          실제 수업이 시작되면 축적되는 교육 경험과 언어적 판단이 교재 제작의 기준이 됩니다.
+        </p>
 
-    <footer class="textbook-foot">
-      <p class="dionysos-note">
-        이 페이지는 준비 과정과 제작 흐름을 미리 정리해 두기 위한 기록입니다.
-        실제 수업이 시작되면, 축적되는 교육 경험과 언어적 판단이
-        교재 제작의 기준으로 작용하게 될 것입니다.
-      </p>
+        <p class="tb-note tb-note--strong">
+          목표는 분명합니다. 파리의 교육 현장에서 축적되는 경험으로,
+          이 세상에 단 하나뿐인 창의적 한국어 교재를 만들 예정입니다.
+        </p>
+      </footer>
 
-      <p class="dionysos-note">
-        이 프로젝트의 목표는 분명합니다.
-        파리의 교육 현장에서 축적되는 경험을 바탕으로,
-        이 세상에 단 하나뿐인 창의적 한국어 교재를 만들 예정입니다.
-        그리고 그 교재를 통해 한국어가 더 멀리, 더 깊이 퍼져 나가도록
-        전 세계를 향해 나아가는 전사가 되겠습니다.
-      </p>
-    </footer>
+    </article>
 
-  </section>
-
-</main>
+  </main>
 
   <footer class="site-footer">
     <p>© Noblewithbooks</p>
   </footer>
 
 </body>
-
-<!-- rebuild -->
-
 </html>
