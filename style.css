@@ -4457,3 +4457,32 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 
+/* =========================
+   AUDIOBOOK — Headset motif
+========================= */
+.ab-headset{
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.ab-headset-svg{
+  width: 84px;
+  height: auto;
+  display: block;
+}
+
+/* IMPORTANT: make paths visible */
+.ab-headset-svg path{
+  stroke: var(--orange, #f26a2e);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  /* dotted/dashed motif */
+  stroke-dasharray: 9 8;
+
+  fill: none;
+}
+
