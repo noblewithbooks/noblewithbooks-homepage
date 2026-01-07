@@ -4327,5 +4327,7 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 @media (max-width: 760px){
-  .nav-links{ justify-content: center; }
+  .nav-links{
+    justify-content: flex-start; /* ← 왼쪽 기준 */
+  }
 }
