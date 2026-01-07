@@ -4325,3 +4325,7 @@ body .dionysos-banner.dionysos-home-banner{
     transform: scale(0.9);
   }
 }
+
+@media (max-width: 760px){
+  .nav-links{ justify-content: center; }
+}
