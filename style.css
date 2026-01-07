@@ -4176,7 +4176,7 @@ body .dionysos-banner.dionysos-home-banner{
   .textbook-strip__title{ font-size: 0.88rem; }
 }
 /* =========================
-   NAV — Desktop + Mobile Toggle (FINAL)
+   NAV — Desktop + Mobile Toggle (compact pills)
 ========================= */
 
 /* nav shell */
@@ -4193,15 +4193,16 @@ body .dionysos-banner.dionysos-home-banner{
    MOBILE FIRST (default)
 ================================================= */
 
-/* toggle button: visible on mobile */
+/* toggle button: visible on mobile (NOT full-width bar) */
 .nav-toggle{
-  display: flex;
-  width: 100%;
+  display: inline-flex;
+  width: auto;                 /* ← 100% 금지 */
+  max-width: 100%;
   align-items: center;
   justify-content: center;
   gap: 10px;
 
-  padding: 10px 12px;
+  padding: 10px 14px;
   border-radius: 999px;
 
   border: 1px solid rgba(18,24,38,0.14);
@@ -4238,14 +4239,16 @@ body .dionysos-banner.dionysos-home-banner{
     center / 100% 2px no-repeat;
 }
 
-/* links wrapper: mobile default = hidden */
+/* links wrapper: mobile default = hidden (compact wrap layout) */
 .nav-links{
   display: none;
-  width: 100%;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 10px;
+  width: auto;                 /* ← 100% 금지 */
   margin-top: 10px;
+
+  flex-direction: row;         /* ← column 금지 */
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
 /* opened state */
@@ -4260,10 +4263,11 @@ body .dionysos-banner.dionysos-home-banner{
   border: 0;
 }
 
-/* mobile buttons */
+/* mobile buttons: keep compact pills */
 .nav-links a.btn-space{
-  width: 100%;
+  width: auto;                 /* ← 100% 금지 */
   justify-content: center;
+  padding: 9px 12px;           /* 모바일에서 약간 슬림 */
 }
 
 /* =================================================
@@ -4283,14 +4287,16 @@ body .dionysos-banner.dionysos-home-banner{
   .nav-links{
     display: flex;
     width: auto;
+    margin-top: 0;
+
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
-    margin-top: 0;
-    flex-wrap: wrap;
   }
 
   .nav-links a.btn-space{
     width: auto;
+    padding: 9px 12px;
   }
 }
