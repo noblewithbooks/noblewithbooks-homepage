@@ -4385,7 +4385,7 @@ body .dionysos-banner.dionysos-home-banner{
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 /* card */
@@ -4486,3 +4486,14 @@ body .dionysos-banner.dionysos-home-banner{
   fill: none;
 }
 
+/* Audiobook intro copy — tighter */
+.ab-guide{
+  line-height: 1.45;
+  margin-top: 8px;
+  max-width: 72ch;
+}
+
+.ab-headset{
+  margin-left: 10px;
+  transform: translateY(2px);
+}
