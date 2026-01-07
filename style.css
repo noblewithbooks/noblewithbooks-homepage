@@ -4300,3 +4300,28 @@ body .dionysos-banner.dionysos-home-banner{
     padding: 9px 12px;
   }
 }
+
+@media (max-width: 760px){
+
+  /* 메뉴 버튼(토글)도 살짝 슬림 */
+  .nav-toggle{
+    padding: 8px 12px;
+  }
+
+  /* 메뉴 링크들: 더 작게, 더 촘촘하게 */
+  .nav-links{
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .nav-links a.btn-space{
+    padding: 7px 10px;   /* 핵심: 캡슐 두께 줄이기 */
+    font-size: 14px;     /* 글자도 한 단계 다운 */
+    gap: 8px;            /* 아이콘/텍스트 간격 */
+  }
+
+  /* (선택) 아이콘(●)이 너무 커 보이면 */
+  .nav-links a.btn-space .ico{
+    transform: scale(0.9);
+  }
+}
