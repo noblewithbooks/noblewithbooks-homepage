@@ -4497,3 +4497,9 @@ body .dionysos-banner.dionysos-home-banner{
   margin-left: 10px;
   transform: translateY(2px);
 }
+
+.translation-note{
+  margin-top: 18px;   /* ← 이게 ‘한 줄 띄움’ 역할 */
+  font-size: 12px;
+  line-height: 1.4;
+}
