@@ -4517,5 +4517,18 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .author-name {
-  margin-bottom: 0.8em;
+  margin-top: 22px;
+  margin-bottom: 6px;
+}
+
+.author-name strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.author-name .author-role {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
 }
