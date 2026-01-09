@@ -4511,3 +4511,7 @@ body .dionysos-banner.dionysos-home-banner{
   background: rgba(255,255,255,0.55);
   border: 1px dashed rgba(18,24,38,0.12);
 }
+
+.author-name {
+  margin-bottom: 0.8em;
+}
