@@ -6,13 +6,12 @@
   <title>책의 미래와 AI</title>
  <link rel="stylesheet" href="../style.css?v=stable" />
 
- <!-- 기존: <style> ... (전부) ... </style> -->
-<!-- 교체: 아래 <style>로 통갈이 -->
 
 <style>
 /* =========================================================
    Editor's Note — "Proof Sheet + Wide Margins"
-   - (중요) global 배경/바탕은 건드리지 않음
+   FIX: global style.css가 더 강해서 안 먹는 문제를 "특정성 + !important"로 제압
+   (배경/바탕은 건드리지 않음)
 ========================================================= */
 
 :root{
@@ -22,266 +21,236 @@
   --en-rule: rgba(15,23,42,0.18);
   --en-rule2: rgba(15,23,42,0.12);
   --en-paper: rgba(255,255,255,0.86);
-  --en-paper2: rgba(255,255,255,0.72);
 }
 
-/* global influence 최소화 (배경은 건드리지 않는다) */
+/* 페이지 범위 고정: 이 페이지 안에서만 무조건 적용 */
 main.vision-note{
   max-width: none !important;
   padding: 0 !important;
 }
 
-.vision-section{
-  border: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
 /* content shell */
-.en-note{
-  width: min(980px, 92vw);
-  margin: 0 auto;
-  padding: 18px 0 84px;
+main.vision-note .en-note{
+  width: min(980px, 92vw) !important;
+  margin: 0 auto !important;
+  padding: 18px 0 84px !important;
 }
 
 /* top bar */
-.vision-top{
-  display:flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 14px;
+main.vision-note .vision-top{
+  display:flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 14px !important;
 
-  margin: 14px 0 18px;
-  padding: 0 2px 10px;
+  margin: 14px 0 18px !important;
+  padding: 0 2px 10px !important;
 
-  font-family: var(--mono);
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: var(--en-faint);
+  font-family: var(--mono) !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  color: var(--en-faint) !important;
 
-  border-bottom: 1px solid var(--en-rule2);
+  border-bottom: 1px solid var(--en-rule2) !important;
 }
 
 /* hero */
-.vision-hero h1{
-  margin: 12px 0 10px;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  color: var(--en-ink);
+main.vision-note .vision-hero h1{
+  margin: 12px 0 10px !important;
+  font-size: 20px !important;
+  letter-spacing: -0.01em !important;
+  color: var(--en-ink) !important;
 }
 
 /* entry */
-.en-entry-mag{
-  position: relative;
-  margin: 14px 0 0;
-  padding: 14px 0 18px;
+main.vision-note .en-entry-mag{
+  position: relative !important;
+  margin: 14px 0 0 !important;
+  padding: 14px 0 18px !important;
 
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 
-  border-left: 2px solid var(--en-rule);
-  padding-left: 18px;
+  border-left: 2px solid var(--en-rule) !important;
+  padding-left: 18px !important;
 }
 
-.en-kicker-mag{
-  margin: 0 0 14px;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-family: var(--mono);
-  color: var(--en-faint);
+main.vision-note .en-kicker-mag{
+  margin: 0 0 14px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  font-family: var(--mono) !important;
+  color: var(--en-faint) !important;
 }
 
-.en-stand{
-  margin: 0 0 14px;
-  padding: 0;
+main.vision-note .en-stand{
+  margin: 0 0 14px !important;
+  padding: 0 !important;
 
-  font-size: 28px;
-  line-height: 1.28;
-  font-weight: 650;
-  letter-spacing: -0.02em;
+  font-size: 28px !important;
+  line-height: 1.28 !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.02em !important;
 
-  text-align: center;
-  color: var(--en-ink);
+  text-align: center !important;
+  color: var(--en-ink) !important;
+
+  /* 혹시 글로벌에서 카드처럼 만드는 걸 방지 */
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
-.en-entry-mag::after{
-  content:"";
-  display:block;
-  margin: 16px auto 0;
-  width: min(520px, 72%);
-  height: 1px;
-  background: linear-gradient(90deg, rgba(15,23,42,0.00), var(--en-rule), rgba(15,23,42,0.00));
-  opacity: 0.9;
+main.vision-note .en-entry-mag::after{
+  content:"" !important;
+  display:block !important;
+  margin: 16px auto 0 !important;
+  width: min(520px, 72%) !important;
+  height: 1px !important;
+  background: linear-gradient(
+    90deg,
+    rgba(15,23,42,0.00),
+    var(--en-rule),
+    rgba(15,23,42,0.00)
+  ) !important;
+  opacity: 0.9 !important;
 }
 
-.en-blurb{
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--en-rule);
+main.vision-note .en-blurb{
+  margin-top: 14px !important;
+  padding-top: 12px !important;
+  border-top: 1px dashed var(--en-rule) !important;
 }
 
-.en-blurb p{
-  margin: 0;
-  max-width: 46em;
-  font-size: 15px;
-  line-height: 1.95;
-  color: var(--en-dim);
+main.vision-note .en-blurb p{
+  margin: 0 !important;
+  max-width: 46em !important;
+  font-size: 15px !important;
+  line-height: 1.95 !important;
+  color: var(--en-dim) !important;
 }
 
 /* body */
-.vision-body{
-  background: var(--en-paper);
-  border: 1px solid var(--en-rule2);
-  border-radius: 14px;
-  padding: 22px 22px 18px;
+main.vision-note .vision-body{
+  background: rgba(255, 249, 219, 0.92) !important; /* 연한 노랑 종이 */
+  border: 1px solid var(--en-rule2) !important;
+  border-radius: 14px !important;
+  padding: 22px 22px 18px !important;
+
+  /* 글로벌 카드 그림자/여백 제거 */
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
-.en-body{
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
+main.vision-note .en-body{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
-.en-body p{
-  margin: 0 0 14px;
-  font-size: 16px;
-  line-height: 2.0;
-  letter-spacing: -0.01em;
-  color: var(--en-dim);
+main.vision-note .en-body p{
+  margin: 0 0 14px !important;
+  font-size: 16px !important;
+  line-height: 2.0 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--en-dim) !important;
 }
 
-.en-open{
-  font-size: 16.6px;
-  line-height: 2.05;
-  color: rgba(15,23,42,0.78);
+main.vision-note .en-open{
+  font-size: 16.6px !important;
+  line-height: 2.05 !important;
+  color: rgba(15,23,42,0.78) !important;
 }
 
-.en-body p strong{
-  color: rgba(15,23,42,0.92);
-  font-weight: 650;
+/* 강조(색 튀는 거 방지) */
+main.vision-note .en-body p strong{
+  color: var(--en-ink) !important;
+  font-weight: 650 !important;
 }
 
-.en-body em{
-  color: rgba(15,23,42,0.80);
-  font-style: italic;
-}
-
-.en-body p + p{
-  margin-top: 2px;
-}
-
-/* finale */
-.en-finale{
-  margin: 18px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--en-rule2);
-}
-
-.en-finale-kicker{
-  margin: 0 0 10px;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-family: var(--mono);
-  color: var(--en-faint);
-}
-
-.en-finale-body{
-  border-radius: 12px;
-  background: rgba(255,255,255,0.66);
-  border: 1px dashed var(--en-rule);
-  padding: 14px 14px 13px;
-}
-
-.en-finale-body p{
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.9;
-  color: var(--en-ink);
+main.vision-note .en-body em{
+  color: rgba(15,23,42,0.80) !important;
+  font-style: italic !important;
 }
 
 /* exit */
-.en-exit-stamp{
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--en-rule2);
+main.vision-note .en-exit-stamp{
+  margin-top: 14px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid var(--en-rule2) !important;
 }
 
-.en-exitline{
-  margin: 0 0 10px;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-family: var(--mono);
-  color: var(--en-faint);
+main.vision-note .en-exitline{
+  margin: 0 0 10px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  font-family: var(--mono) !important;
+  color: var(--en-faint) !important;
 }
 
-.en-close-stamp{
-  margin: 0;
-  padding: 14px 14px 13px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.66);
-  border: 1px dashed var(--en-rule);
-  font-size: 16px;
-  line-height: 1.9;
-  color: var(--en-ink);
+main.vision-note .en-close-stamp{
+  margin: 0 !important;
+  padding: 14px 14px 13px !important;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,0.66) !important;
+  border: 1px dashed var(--en-rule) !important;
+  font-size: 16px !important;
+  line-height: 1.9 !important;
+  color: var(--en-ink) !important;
+
+  box-shadow: none !important;
 }
 
-.en-stamp{
-  margin: 10px 0 0;
-  padding: 0;
-  font-size: 12px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  font-family: var(--mono);
-  color: var(--en-faint);
-  text-align: right;
+main.vision-note .en-stamp{
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.24em !important;
+  text-transform: uppercase !important;
+  font-family: var(--mono) !important;
+  color: var(--en-faint) !important;
+  text-align: right !important;
 }
 
 /* responsive */
 @media (max-width: 560px){
-  .en-note{ padding: 12px 0 66px; }
+  main.vision-note .en-note{ padding: 12px 0 66px !important; }
 
-  .vision-top{
-    font-size: 11px;
-    letter-spacing: 0.20em;
+  main.vision-note .vision-top{
+    font-size: 11px !important;
+    letter-spacing: 0.20em !important;
   }
 
-  .vision-hero h1{
-    font-size: 18px;
+  main.vision-note .vision-hero h1{ font-size: 18px !important; }
+
+  main.vision-note .en-entry-mag{
+    padding-left: 14px !important;
   }
 
-  .en-entry-mag{
-    padding-left: 14px;
+  main.vision-note .en-stand{ font-size: 22px !important; }
+
+  main.vision-note .en-blurb p{
+    font-size: 14.8px !important;
+    line-height: 1.95 !important;
   }
 
-  .en-stand{
-    font-size: 22px;
+  main.vision-note .vision-body{
+    padding: 16px 14px 14px !important;
+    border-radius: 12px !important;
   }
 
-  .en-blurb p{
-    font-size: 14.8px;
-    line-height: 1.95;
+  main.vision-note .en-body p{
+    font-size: 15.4px !important;
+    line-height: 2.0 !important;
   }
 
-  .vision-body{
-    padding: 16px 14px 14px;
-    border-radius: 12px;
-  }
-
-  .en-body p{
-    font-size: 15.4px;
-    line-height: 2.0;
-  }
-
-  .en-open{
-    font-size: 15.8px;
-  }
+  main.vision-note .en-open{ font-size: 15.8px !important; }
 }
 </style>
 
