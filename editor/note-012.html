@@ -3,302 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>럭키 데이 인 파리</title>
+  <title>책의 미래와 AI</title>
  <link rel="stylesheet" href="../style.css?v=stable" />
 
- <style>
+ <!-- 기존: <style> ... (전부) ... </style> -->
+<!-- 교체: 아래 <style>로 통갈이 -->
+
+<style>
 /* =========================================================
-   ENTRY BLOCK — "Editor Manuscript / Proof Sheet"
-   - 카드 느낌 제거
-   - 원고지 + 교정지 인상
-   - 제목은 중앙 강조, 주변은 절제
+   Editor's Note — "Proof Sheet + Wide Margins"
+   목표:
+   - 카드/박스 느낌 제거
+   - 원고/교정지 인상(여백, 규칙선, 절제된 톤)
+   - ENTRY는 중앙 타이틀 + 얇은 규칙선
+   - 본문은 가독성 최우선(리듬, 행간, 폭)
 ========================================================= */
 
-/* ENTRY wrapper 재정의 */
-.en-entry-mag{
-  margin: 24px 0 36px;
-  padding: 28px 26px 26px;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  border-left: 3px solid rgba(15,23,42,0.22);
+/* ---------- page base ---------- */
+:root{
+  --en-ink: rgba(15,23,42,0.92);
+  --en-dim: rgba(15,23,42,0.72);
+  --en-faint: rgba(15,23,42,0.52);
+  --en-rule: rgba(15,23,42,0.18);
+  --en-rule2: rgba(15,23,42,0.12);
+  --en-paper: rgba(255,255,255,0.86);
+  --en-paper2: rgba(255,255,255,0.72);
 }
 
-/* 상단 키커: 편집 메타 정보 */
-.en-kicker-mag{
-  margin: 0 0 18px;
-  font-size: 11px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  font-family: var(--mono);
-  color: rgba(15,23,42,0.55);
-}
-
-/* 제목: 원고 중앙 배치 */
-.en-stand{
-  margin: 0 0 22px;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  font-size: 26px;
-  line-height: 1.35;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: var(--ink);
-}
-
-/* 데크(요약): 편집자 주석 느낌 */
-.en-blurb{
-  margin-top: 0;
-  padding-top: 18px;
-  border-top: 1px dashed rgba(15,23,42,0.28);
-}
-
-.en-blurb p{
-  margin: 0;
-  font-size: 14.6px;
-  line-height: 1.9;
-  color: rgba(15,23,42,0.72);
-  max-width: 42em;
-}
-
-/* 모바일 조정 */
-@media (max-width: 560px){
-  .en-entry-mag{
-    padding: 22px 18px 22px;
-    border-left-width: 2px;
-  }
-
-  .en-stand{
-    font-size: 22px;
-  }
-}
-
-
-  /* ===== ENTRY: "masthead" ===== */
-  .en-entry-mag{
-    margin: 8px 0 26px;
-    padding: 18px 18px 16px;
-    border-radius: var(--radius);
-    background: var(--paper2);
-    border: 1px solid var(--rule2);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
-
-  /* top strip */
-  .en-entry-mag::before{
-    content:"";
-    position:absolute;
-    inset: 0 0 auto 0;
-    height: 44px;
-    background:
-      linear-gradient(90deg, rgba(2,132,199,0.16), rgba(255,255,255,0) 52%),
-      linear-gradient(90deg, rgba(244,63,94,0.14), rgba(255,255,255,0) 70%);
-    border-bottom: 1px solid var(--rule2);
-    pointer-events:none;
-  }
-
-  .en-kicker-mag{
-    position: relative;
-    margin: 0 0 10px;
-    padding-top: 4px;
-    font-size: 12px;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    font-family: var(--mono);
-    color: rgba(15,23,42,0.70);
-  }
-
-  /* 제목(네가 넣은 en-stand를 제목 카드로 바꿈) */
-  .en-stand{
-    position: relative;
-    margin: 10px 0 10px;
-    padding: 10px 12px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.55);
-    border: 1px solid var(--rule);
-    font-size: 18px;
-    line-height: 1.55;
-    letter-spacing: -0.01em;
-  }
-
-  /* 데크(요약) */
-  .en-blurb{
-    position: relative;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--rule);
-  }
-  .en-blurb p{
-    margin: 0;
-    font-size: 14.8px;
-    line-height: 1.85;
-    color: var(--muted);
-  }
-
-  /* ===== BODY typography: "cut + airy" ===== */
-  .en-body{
-    background: var(--paper);
-    border: 1px solid var(--rule2);
-    border-radius: calc(var(--radius) + 2px);
-    box-shadow: 0 10px 30px rgba(2, 10, 20, 0.06);
-    padding: 18px 18px 10px;
-  }
-
-  .en-body p{
-    margin: 0 0 14px;
-    font-size: 15.8px;
-    line-height: 1.95;
-    letter-spacing: -0.01em;
-  }
-
-  /* first paragraph = lead */
-  .en-open{
-    font-size: 16.4px;
-    line-height: 1.95;
-  }
-
-  /* highlight marks for Q/A without changing HTML */
-  .en-body p strong{
-    color: rgba(2,132,199,0.92);
-  }
-
-  .en-body em{
-    color: rgba(244,63,94,0.88);
-    font-style: italic;
-  }
-
-  /* ===== NOTE: "clipping with stitch" ===== */
-  .en-notegrid{
-    position: relative;
-    margin: 20px 0 24px;
-    padding: 16px 16px 14px 18px;
-    border-radius: var(--radius);
-    background: rgba(255,255,255,0.70);
-    border: 1px solid var(--rule);
-  }
-
-  .en-notegrid::before{
-    content:"";
-    position:absolute;
-    top: 12px;
-    bottom: 12px;
-    left: 10px;
-    width: 2px;
-    background: linear-gradient(180deg, rgba(2,132,199,0.70), rgba(244,63,94,0.70));
-    border-radius: 99px;
-    opacity: 0.8;
-  }
-
-  .en-boxcap{
-    margin: 0 0 10px;
-    font-size: 12px;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    font-family: var(--mono);
-    color: rgba(15,23,42,0.70);
-  }
-
-  .en-boxbody p{
-    margin: 0 0 12px;
-    font-size: 15.4px;
-    line-height: 1.92;
-  }
-  .en-boxbody p:last-child{ margin-bottom: 0; }
-
-  /* ===== FINALE: "data strip" ===== */
-  .en-finale{
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid var(--rule2);
-  }
-
-  .en-finale-kicker{
-    margin: 0 0 10px;
-    font-size: 12px;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    font-family: var(--mono);
-    color: rgba(15,23,42,0.70);
-  }
-
-  .en-finale-body{
-    border-radius: var(--radius);
-    background: rgba(2,132,199,0.06);
-    border: 1px solid rgba(2,132,199,0.22);
-    padding: 14px 14px 12px;
-  }
-  .en-finale-body p{
-    margin: 0 0 12px;
-    font-size: 15.4px;
-    line-height: 1.92;
-  }
-  .en-finale-body p:last-child{ margin-bottom: 0; }
-
-  /* ===== END: replace stamp with "footer strip" ===== */
-  .en-exit-stamp{
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px dashed var(--rule);
-  }
-
-  .en-close-stamp{
-    margin: 0;
-    padding: 12px 12px;
-    border-radius: 14px;
-    background: rgba(244,63,94,0.06);
-    border: 1px solid rgba(244,63,94,0.22);
-    font-size: 15.2px;
-    line-height: 1.85;
-  }
-
-  .en-stamp{
-    margin: 10px 0 0;
-    padding: 10px 12px 9px;
-    border-radius: 14px;
-    background: rgba(15,23,42,0.04);
-    border: 1px solid var(--rule2);
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    font-family: var(--mono);
-    color: rgba(15,23,42,0.70);
-    text-align: right;
-  }
-
-  /* spacing helpers (if en-box class exists) */
-  .en-box{
-    margin: 18px 0 22px;
-    padding: 14px 14px;
-    border-radius: 12px;
-  }
-
-  /* mobile */
-  @media (max-width: 560px){
-    .en-note{ padding: 22px 14px 56px; }
-    .vision-body::before{ left: 10px; }
-    .en-entry-mag{ padding: 16px 14px 14px; }
-    .en-stand{ font-size: 17px; }
-    .en-body{ padding: 16px 14px 8px; }
-    .en-body p{ font-size: 15.4px; }
-  }
-
-
-  /* ===== PAGE RESET (override global style.css influence) ===== */
-main.vision-note{
+/* global influence 최소화 */
+main{
   max-width: none !important;
   padding: 0 !important;
   background: transparent !important;
 }
 
-main.vision-note > .en-note{
-  max-width: 980px !important;
-  margin: 0 auto !important;
-}
-
-/* ===== neutralize global card styles on this page ===== */
 .vision-section{
   background: transparent !important;
   border: 0 !important;
@@ -307,8 +45,230 @@ main.vision-note > .en-note{
   margin: 0 !important;
 }
 
+/* content shell */
+.en-note{
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 18px 0 84px;
+}
 
+/* 상단 정보(EDITOR’S NOTE / date) */
+.vision-top{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+
+  margin: 14px 0 18px;
+  padding: 0 2px 10px;
+
+  font-family: var(--mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--en-faint);
+
+  border-bottom: 1px solid var(--en-rule2);
+}
+
+/* ---------- entry block ---------- */
+.en-entry-mag{
+  position: relative;
+  margin: 18px 0 28px;
+  padding: 18px 2px 20px;
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+
+  /* 왼쪽 교정선 느낌 */
+  border-left: 2px solid var(--en-rule);
+  padding-left: 18px;
+}
+
+.en-kicker-mag{
+  margin: 0 0 14px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  color: var(--en-faint);
+}
+
+/* 중앙 타이틀 */
+.en-stand{
+  margin: 0 0 14px;
+  padding: 0;
+
+  font-size: 28px;
+  line-height: 1.28;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+
+  text-align: center;
+  color: var(--en-ink);
+}
+
+/* 제목 아래 얇은 규칙선(원고지) */
+.en-entry-mag::after{
+  content:"";
+  display:block;
+  margin: 16px auto 0;
+  width: min(520px, 72%);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(15,23,42,0.00), var(--en-rule), rgba(15,23,42,0.00));
+  opacity: 0.9;
+}
+
+/* 데크 */
+.en-blurb{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--en-rule);
+}
+
+.en-blurb p{
+  margin: 0;
+  max-width: 46em;
+
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--en-dim);
+}
+
+/* ---------- body ---------- */
+.vision-body{
+  /* 본문을 ‘종이’ 위에 올린 듯하지만 카드처럼 두껍게는 금지 */
+  background: var(--en-paper);
+  border: 1px solid var(--en-rule2);
+  border-radius: 14px;
+
+  padding: 22px 22px 18px;
+}
+
+/* 본문 내부 wrapper(네 HTML에 있음) */
+.en-body{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.en-body p{
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 2.0;
+  letter-spacing: -0.01em;
+  color: var(--en-dim);
+}
+
+/* 첫 문단(리드) */
+.en-open{
+  font-size: 16.6px;
+  line-height: 2.05;
+  color: rgba(15,23,42,0.78);
+}
+
+/* 강조: 과한 컬러 금지, 잉크 톤으로 */
+.en-body p strong{
+  color: rgba(15,23,42,0.92);
+  font-weight: 650;
+}
+
+.en-body em{
+  color: rgba(15,23,42,0.80);
+  font-style: italic;
+}
+
+/* 문단 사이 ‘호흡’ */
+.en-body p + p{
+  margin-top: 2px;
+}
+
+/* ---------- exit / ending ---------- */
+.en-exit-stamp{
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--en-rule2);
+}
+
+.en-finale-kicker{
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  color: var(--en-faint);
+}
+
+/* 엔딩 문장: 도장 느낌 대신 ‘교정지 메모’ */
+.en-close-stamp{
+  margin: 0;
+  padding: 14px 14px 13px;
+
+  border-radius: 12px;
+  background: rgba(255,255,255,0.66);
+  border: 1px dashed var(--en-rule);
+
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--en-ink);
+}
+
+/* 날짜 스탬프: 오른쪽 정렬 + 절제 */
+.en-stamp{
+  margin: 10px 0 0;
+  padding: 0;
+
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  color: var(--en-faint);
+  text-align: right;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 560px){
+  .en-note{ width: min(980px, 92vw); padding: 12px 0 66px; }
+
+  .vision-top{
+    font-size: 11px;
+    letter-spacing: 0.20em;
+  }
+
+  .en-entry-mag{
+    margin: 14px 0 22px;
+    padding: 14px 2px 16px;
+    padding-left: 14px;
+    border-left-width: 2px;
+  }
+
+  .en-stand{
+    font-size: 22px;
+  }
+
+  .en-blurb p{
+    font-size: 14.8px;
+    line-height: 1.95;
+  }
+
+  .vision-body{
+    padding: 16px 14px 14px;
+    border-radius: 12px;
+  }
+
+  .en-body p{
+    font-size: 15.4px;
+    line-height: 2.0;
+  }
+
+  .en-open{
+    font-size: 15.8px;
+  }
+}
 </style>
+
 
 </head>
 
