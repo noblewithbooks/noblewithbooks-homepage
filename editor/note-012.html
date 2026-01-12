@@ -282,6 +282,30 @@
     .en-body{ padding: 16px 14px 8px; }
     .en-body p{ font-size: 15.4px; }
   }
+
+
+  /* ===== PAGE RESET (override global style.css influence) ===== */
+main.vision-note{
+  max-width: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+main.vision-note > .en-note{
+  max-width: 980px !important;
+  margin: 0 auto !important;
+}
+
+/* ===== neutralize global card styles on this page ===== */
+.vision-section{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
 </style>
 
 </head>
@@ -339,7 +363,7 @@
   </div>
 </header>
 
-<main class="vision-note">
+<main>
   <div class="en-note">
 
     <div class="vision-top">
@@ -350,7 +374,7 @@
 
   <!-- EDITOR'S NOTE — 2026.01.12 (same structure, new color theme) -->
 
-<section class="vision-section en-theme-amber" aria-label="편집자 노트 2026.01.12">
+<section aria-label="편집자 노트 2026.01.12">
 
   <!-- ENTRY BLOCK (magazine opener) -->
   <div class="en-entry-mag" aria-label="Entry Block">
@@ -368,8 +392,9 @@
   </div>
 
   <!-- 여기부터 본문 -->
-  <section class="vision-body">
-    <div class="en-body">
+ <section>
+  <div class="en-body">
+
 
       <p class="en-open">TV를 보다 보면, 내가 보는 뉴스와 토론 프로그램의 거의 80퍼센트 이상에서 AI가 작성한 문장을 마주한다. 엄밀히 말하면 문장인데, 그걸 사람이 발화하니까, 음성으로 들린다. AI가 작성한 문장은 바로 티가 난다. 적어도 나에게는 말이다. 그 이유는 내가 AI의 문장 패턴 몇 가지를 확실하게 알고 있기 때문이다. 가장 첫 번째로 많이 나타나는 패턴 하나를 지금 이 자리에서 이야기한다면 누구나 AI가 작성한 문장을 바로 잡아낼 수 있을 것이다. 하지만 나는 구체적인 표현은 여기서 말하지 않겠다. 앞으로는 그런 정보도 모두 ‘자산’이 될 수 있기 때문이다. 그래서 ‘공짜로’ 굳이 밝히고 싶지는 않다. </p>
 
