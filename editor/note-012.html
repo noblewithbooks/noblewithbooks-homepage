@@ -7,72 +7,74 @@
  <link rel="stylesheet" href="../style.css?v=stable" />
 
  <style>
-  /* =========================================================
-    Editor's Note — per-file style (self-contained)
-    NEW DESIGN: "Newspaper Cut + Margin Notes" Edition
-    (기존 보라/박스 느낌 버리고, 지면 자체를 새로 구성하는 톤)
-    - 큰 여백 + 세로 가이드 라인
-    - 본문은 2단 느낌(실제 2단은 모바일에서 깨지니 '단' 인상만)
-    - ENTRY는 '신문 헤더'처럼: 라벨/제목/데크(요약)
-    - NOTE는 '클리핑 박스'처럼: 좌측 스티치 라인
-    - END는 '스탬프' 대신 '데이터 스트립'처럼
-  ========================================================= */
+/* =========================================================
+   ENTRY BLOCK — "Editor Manuscript / Proof Sheet"
+   - 카드 느낌 제거
+   - 원고지 + 교정지 인상
+   - 제목은 중앙 강조, 주변은 절제
+========================================================= */
 
-  :root{
-    --ink: rgba(15, 23, 42, 0.92);
-    --muted: rgba(15, 23, 42, 0.66);
+/* ENTRY wrapper 재정의 */
+.en-entry-mag{
+  margin: 24px 0 36px;
+  padding: 28px 26px 26px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-left: 3px solid rgba(15,23,42,0.22);
+}
 
-    --paper: rgba(255, 252, 247, 0.98);
-    --paper2: rgba(255, 255, 255, 0.72);
+/* 상단 키커: 편집 메타 정보 */
+.en-kicker-mag{
+  margin: 0 0 18px;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  color: rgba(15,23,42,0.55);
+}
 
-    --rule: rgba(15, 23, 42, 0.18);
-    --rule2: rgba(15, 23, 42, 0.10);
+/* 제목: 원고 중앙 배치 */
+.en-stand{
+  margin: 0 0 22px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--ink);
+}
 
-    --accent: rgba(2, 132, 199, 0.92);    /* cyan/blue */
-    --accent2: rgba(244, 63, 94, 0.88);   /* rose */
+/* 데크(요약): 편집자 주석 느낌 */
+.en-blurb{
+  margin-top: 0;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(15,23,42,0.28);
+}
 
-    --mark: rgba(2, 132, 199, 0.10);
-    --mark2: rgba(244, 63, 94, 0.10);
+.en-blurb p{
+  margin: 0;
+  font-size: 14.6px;
+  line-height: 1.9;
+  color: rgba(15,23,42,0.72);
+  max-width: 42em;
+}
 
-    --shadow: 0 16px 40px rgba(2, 10, 20, 0.10);
-    --radius: 16px;
-
-    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  }
-
-  /* wrapper */
-  .en-note{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 34px 18px 72px;
-    color: var(--ink);
-  }
-
-  /* subtle paper */
-  body{
-    background:
-      radial-gradient(1100px 520px at 18% -6%, var(--mark), transparent 62%),
-      radial-gradient(980px 520px at 110% 0%, var(--mark2), transparent 66%),
-      linear-gradient(180deg, rgba(0,0,0,0.02), transparent 36%);
-  }
-
-  /* main column with a vertical guide line */
-  .vision-body,
+/* 모바일 조정 */
+@media (max-width: 560px){
   .en-entry-mag{
-    position: relative;
+    padding: 22px 18px 22px;
+    border-left-width: 2px;
   }
 
-  .vision-body::before{
-    content:"";
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    left: 16px;
-    width: 1px;
-    background: linear-gradient(180deg, transparent, var(--rule), transparent);
-    opacity: 0.9;
-    pointer-events:none;
+  .en-stand{
+    font-size: 22px;
   }
+}
+
 
   /* ===== ENTRY: "masthead" ===== */
   .en-entry-mag{
