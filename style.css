@@ -4536,3 +4536,8 @@ body .dionysos-banner.dionysos-home-banner{
 .press-item.interview{
   background: rgba(240,236,248,0.92);
 }
+
+/* Press — Award highlight (most important record) */
+.press-item:first-of-type{
+  border-left: 4px solid #2f6f55;
+}
