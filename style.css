@@ -4543,48 +4543,64 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 /* =========================================================
-   Editor’s Note — Local Footer (per-file, safe)
-   - affects only: .note-sign / .note-nav inside main.editor-note
-   - no global impact
+   Editor’s Note — Signature & Footer Nav (per-file, safe)
+   - Signature line (note-sign): editorial sign, not section title
+   - Navigation (note-nav): footer navigation
+   - Scope: main.editor-note only
+   - No global impact
 ========================================================= */
 
 main.editor-note .note-sign{
+  display: block;
+  width: 100%;
+  max-width: 860px;              /* 본문 폭과 정확히 일치 */
   margin: 56px auto 0;
   padding-top: 18px;
-  max-width: 860px; /* 본문(en-note) 폭과 맞춤 */
   text-align: center;
-  border-top: 1px solid var(--en-rule, rgba(15, 23, 42, .28));
+
+  /* 사인 라인: 얇고 절제된 구분선 */
+  border-top: 1px solid rgba(118, 90, 155, 0.32);
+
+  font-size: 13px;
+  letter-spacing: .02em;
+  opacity: .9;
 }
 
-
-/* kill any legacy pseudo decorations just for this file scope */
+/* legacy 장식 제거 */
 main.editor-note .note-sign::before,
 main.editor-note .note-sign::after{
   content: none !important;
   display: none !important;
 }
 
+/* footer navigation */
 main.editor-note .note-nav{
-  margin: 14px auto 0;
-  max-width: 860px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  width: 100%;
+  max-width: 860px;
+  margin: 14px auto 0;
   gap: 10px;
+
   font-size: 13px;
   letter-spacing: .02em;
   opacity: .95;
 }
 
-
 main.editor-note .note-nav a{
   display: inline-flex;
   align-items: center;
   padding: 7px 12px;
-  border: 1px solid var(--en-rule, rgba(15, 23, 42, .28));
+
+  border: 1px solid rgba(118, 90, 155, 0.32);
   border-radius: 999px;
   text-decoration: none;
+
+  /* 사인 아래라 너무 튀지 않게 */
+  background: rgba(118, 90, 155, 0.06);
   opacity: 1;
-  background: transparent;
 }
+
