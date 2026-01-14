@@ -4604,3 +4604,7 @@ body .dionysos-banner.dionysos-home-banner{
   opacity: 1;
 }
 
+.editor-footer{
+  margin-top: 56px;
+  padding-bottom: 48px;
+}
