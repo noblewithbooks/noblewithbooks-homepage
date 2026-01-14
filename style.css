@@ -4534,6 +4534,6 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .press-item.interview{
-  background: #f3f1ec;
-  border-left: 4px solid var(--accent, #6b5fd3);
+  background: rgba(248,246,242,0.92);
+  border-left: 4px solid rgba(118,82,186,0.6);
 }
