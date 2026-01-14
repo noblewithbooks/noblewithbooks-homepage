@@ -4627,3 +4627,14 @@ body .dionysos-banner.dionysos-home-banner{
 
   border-color: rgba(118, 90, 155, 0.38);
 }
+
+/* 모바일 탭 반응용 (hover 대체) */
+.editor-footer .note-nav a:active{
+  background: linear-gradient(
+    180deg,
+    rgba(238, 226, 252, 0.96),
+    rgba(230, 214, 248, 0.90)
+  );
+
+  border-color: rgba(118, 90, 155, 0.42);
+}
