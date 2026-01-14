@@ -4533,3 +4533,7 @@ body .dionysos-banner.dionysos-home-banner{
   opacity: 0.7;
 }
 
+.press-item.interview{
+  background: #f3f1ec;
+  border-left: 4px solid var(--accent, #6b5fd3);
+}
