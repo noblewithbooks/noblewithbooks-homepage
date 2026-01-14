@@ -7,296 +7,378 @@
  <link rel="stylesheet" href="../style.css?v=stable" />
 
   <style>
-    /* =========================================================
-      Editor's Note — per-file style (minimal, safe)
-      2026.01.05 Violet Edition
-      (큰 틀/구조는 샘플 유지, 텍스트 지면 디자인만 실험)
-    ========================================================= */
+  /* =========================================================
+    Editor's Note — per-file style (minimal, safe)
+    2026.01.05 Violet Edition (BRIGHT COLOR ON, NO MINT BLEED)
+    - 이 파일 안에서만 해결
+    - NOTE/FINALE 박스: “색 들어간 밝은 라일락” + 탁함 제거
+  ========================================================= */
 
-    :root{
-      --violet-ink: rgba(118, 90, 155, 0.92);
-      --violet-soft: rgba(118, 90, 155, 0.12);
-      --violet-line: rgba(118, 90, 155, 0.22);
-      --violet-quote: rgba(118, 90, 155, 0.34);
-      --paper-violet: rgba(246, 242, 252, 0.94);
-    }
+  :root{
+    /* ink */
+    --violet-ink: rgba(118, 90, 155, 0.92);
 
-    .en-note{
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 28px 18px 56px;
-      color: rgba(18,24,38,0.96);
-    }
+    /* surfaces (흰색 금지: 라일락 종이) */
+    --paper-violet: rgba(244, 236, 255, 0.98);
 
-    .vision-top{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(18,24,38,0.18);
-      padding-bottom: 14px;
-      margin-bottom: 36px;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.78;
-    }
+    /* accents */
+    --violet-soft: rgba(118, 90, 155, 0.10);
+    --violet-line: rgba(118, 90, 155, 0.20);
+    --violet-quote: rgba(118, 90, 155, 0.28);
 
-    .vision-hero h1{
-      color: var(--violet-ink);
-    }
+    /* box palette (색 “확실히” 보이게) */
+    --violet-box-a: rgba(232, 214, 252, 0.92);
+    --violet-box-b: rgba(244, 236, 255, 0.96);
+    --violet-box-c: rgba(214, 192, 246, 0.55);
+  }
 
-    .en-title{
-      margin: 0 0 18px;
-      font-size: 36px;
-      line-height: 1.12;
-    }
+  /* mint / global paper bleed OFF (this file only) */
+  .vision-note{
+    --paper: var(--paper-violet);
+    --mint-soft: transparent;
+    --mint-paper: transparent;
+  }
 
-    .en-body p{
-      margin: 0 0 14px;
-      font-size: 15.5px;
-      line-height: 1.9;
-    }
+  .en-note{
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 18px 56px;
+    color: rgba(18,24,38,0.96);
+  }
 
-    /* Dropcap for the very first body paragraph only */
-    .en-open::first-letter{
-      float: left;
-      font-size: 48px;
-      line-height: 0.9;
-      padding: 6px 10px 0 0;
-      font-weight: 650;
-      color: var(--violet-ink);
-    }
+  .vision-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(18,24,38,0.18);
+    padding-bottom: 14px;
+    margin-bottom: 36px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.78;
+  }
 
-    .en-box{
-      margin: 18px 0 22px;
-      padding: 14px 14px;
-      border-radius: 12px;
-    }
+  .vision-hero h1{
+    color: var(--violet-ink);
+  }
 
-    /* ===== ENTRY: magazine opener (replace-safe) ===== */
-    .en-entry-mag{
-      position: relative;
-      margin: 8px 0 28px;
-      padding: 22px 18px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.56);
-      border: 1px solid rgba(18,24,38,0.10);
-      box-shadow: 0 18px 44px rgba(2, 10, 20, 0.10);
-      overflow: hidden;
-    }
+  .en-title{
+    margin: 0 0 18px;
+    font-size: 36px;
+    line-height: 1.12;
+  }
 
-    .en-entry-mag::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        linear-gradient(90deg, var(--violet-soft), rgba(255,255,255,0) 38%),
-        radial-gradient(900px 260px at 100% 0%, rgba(18,24,38,0.10), transparent 60%);
-      pointer-events:none;
-      opacity: 0.9;
-    }
+  .en-body p{
+    margin: 0 0 14px;
+    font-size: 15.5px;
+    line-height: 1.9;
+  }
 
-    .en-kicker-mag{
-      position: relative;
-      margin: 0 0 12px;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      opacity: 0.75;
-    }
+  /* Dropcap for the very first body paragraph only */
+  .en-open::first-letter{
+    float: left;
+    font-size: 48px;
+    line-height: 0.9;
+    padding: 6px 10px 0 0;
+    font-weight: 650;
+    color: var(--violet-ink);
+  }
 
-    .en-stand{
-      position: relative;
-      margin: 14px 0 14px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: var(--violet-soft);
-      border: 1px solid var(--violet-line);
-      font-size: 15px;
-      line-height: 1.85;
-    }
+  .en-box{
+    margin: 18px 0 22px;
+    padding: 14px 14px;
+    border-radius: 12px;
+  }
 
-    .en-blurb{
-      position: relative;
-      margin-top: 6px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(18,24,38,0.10);
-    }
+  /* ===== ENTRY: magazine opener (replace-safe) ===== */
+  .en-entry-mag{
+    position: relative;
+    margin: 8px 0 28px;
+    padding: 22px 18px 18px;
+    border-radius: 18px;
 
-    .en-blurb p{
-      margin: 0;
-      font-size: 14.8px;
-      line-height: 1.85;
-      opacity: 0.95;
-    }
+    /* 흰색 느낌 줄이고 라일락 지면 톤으로 */
+    background: linear-gradient(
+      180deg,
+      rgba(244, 236, 255, 0.88),
+      rgba(232, 214, 252, 0.70)
+    );
 
-    @media (max-width: 560px){
-      .en-note{ padding: 22px 14px 48px; }
-      .vision-top{ margin-bottom: 28px; }
-      .vision-hero h1{ font-size: 32px; }
-      .en-open::first-letter{ font-size: 44px; }
-      .en-entry-mag{ padding: 18px 14px 14px; }
-    }
+    border: 1px solid rgba(118, 90, 155, 0.16);
+    box-shadow: 0 18px 44px rgba(2, 10, 20, 0.10);
+    overflow: hidden;
+  }
 
-    /* ===== Mid block #1: Pull quote (magazine) ===== */
-    .en-pull{
-      position: relative;
-      margin: 22px 0 26px;
-      padding: 18px 16px 14px;
-      border-radius: 18px;
-      background: var(--violet-soft);
-      border: 1px solid var(--violet-line);
-      box-shadow: 0 10px 26px rgba(2, 10, 20, 0.08);
-    }
-    .en-pull::before{
-      content: "“";
-      position: absolute;
-      top: -22px;
-      left: 14px;
-      font-size: 72px;
-      line-height: 1;
-      color: var(--violet-quote);
-      font-weight: 700;
-    }
-    .en-pull blockquote{ margin: 0; }
-    .en-pull p{
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.75;
-      letter-spacing: -0.01em;
-    }
-    .en-pull figcaption{
-      margin-top: 10px;
-      font-size: 12px;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      opacity: 0.72;
-    }
+  .en-entry-mag::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:
+      linear-gradient(90deg, rgba(118,90,155,0.12), rgba(255,255,255,0) 42%),
+      radial-gradient(900px 260px at 100% 0%, rgba(18,24,38,0.10), transparent 60%);
+    pointer-events:none;
+    opacity: 0.85;
+  }
 
-    /* ===== Mid block #2: Note box (magazine) ===== */
-    .en-notegrid{
-      margin: 22px 0 26px;
-      padding: 16px 16px 14px;
-      border-radius: 18px;
-      background: var(--paper-violet);
-      border: 1px solid var(--violet-line);
-    }
+  .en-kicker-mag{
+    position: relative;
+    margin: 0 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
 
-    .en-boxcap{
-      margin: 0 0 10px;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      opacity: 0.72;
-    }
-    .en-boxbody p{
-      margin: 0 0 12px;
-      font-size: 15.2px;
-      line-height: 1.88;
-    }
-    .en-boxbody p:last-child{ margin-bottom: 0; }
+  .en-stand{
+    position: relative;
+    margin: 14px 0 14px;
+    padding: 10px 12px;
+    border-radius: 14px;
 
-    /* ===== Finale: last page 느낌 ===== */
-    .en-finale{
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(18,24,38,0.12);
-    }
-    .en-finale-kicker{
-      margin: 0 0 12px;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      opacity: 0.72;
-    }
-    .en-finale-body{
-      position: relative;
-      padding: 16px 16px 14px;
-      border-radius: 18px;
-      background: var(--paper-violet);
-      border: 1px solid var(--violet-line);
-      box-shadow: 0 14px 38px rgba(2, 10, 20, 0.08);
-    }
-    .en-finale-body p{
-      margin: 0 0 14px;
-      font-size: 15.2px;
-      line-height: 1.9;
-    }
-    .en-finale-body p:last-child{ margin-bottom: 0; }
+    /* “하얀 박스” 금지: 확실히 라일락 */
+    background: linear-gradient(
+      180deg,
+      rgba(232, 214, 252, 0.78),
+      rgba(244, 236, 255, 0.92)
+    );
 
-    /* ===== Exit stamp card ===== */
-    .en-exit-stamp{
-      margin-top: 16px;
-      padding-top: 14px;
-      border-top: 1px dashed rgba(18,24,38,0.20);
-    }
-    .en-close-stamp{
-      margin: 0;
-      padding: 14px 14px;
-      border-radius: 16px;
-      background: var(--violet-soft);
-      border: 1px solid var(--violet-line);
-      font-size: 15.2px;
-      line-height: 1.85;
-    }
-    .en-stamp{
-      margin: 10px 0 0;
-      font-size: 12px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      opacity: 0.70;
-      text-align: right;
-    }
+    border: 1px solid rgba(118, 90, 155, 0.18);
+    font-size: 15px;
+    line-height: 1.85;
+  }
 
-    /* =========================================================
-   Editor’s Note — Local Footer (THIS FILE ONLY)
-   Fix: rule + capsule borders not visible on Violet Edition
-========================================================= */
+  .en-blurb{
+    position: relative;
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(18,24,38,0.10);
+  }
 
-main.vision-note .note-sign{
-  margin-top: 56px;
-  padding-top: 18px;
+  .en-blurb p{
+    margin: 0;
+    font-size: 14.8px;
+    line-height: 1.85;
+    opacity: 0.95;
+  }
 
-  /* 이 페이지 전용: 선이 반드시 보이도록 색 고정 */
-  border-top: 1px solid rgba(118, 90, 155, 0.32);
-}
+  @media (max-width: 560px){
+    .en-note{ padding: 22px 14px 48px; }
+    .vision-top{ margin-bottom: 28px; }
+    .vision-hero h1{ font-size: 32px; }
+    .en-open::first-letter{ font-size: 44px; }
+    .en-entry-mag{ padding: 18px 14px 14px; }
+  }
 
-main.vision-note .note-sign::before,
-main.vision-note .note-sign::after{
-  content: none !important;
-  display: none !important;
-}
+  /* ===== Mid block #1: Pull quote (magazine) ===== */
+  .en-pull{
+    position: relative;
+    margin: 22px 0 26px;
+    padding: 18px 16px 14px;
+    border-radius: 18px;
 
-main.vision-note .note-nav{
-  margin-top: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 13px;
-  letter-spacing: .02em;
-  opacity: .95;
-}
+    /* 흰색 금지: 라일락 바탕 */
+    background: linear-gradient(
+      180deg,
+      rgba(232, 214, 252, 0.70),
+      rgba(244, 236, 255, 0.92)
+    );
 
-main.vision-note .note-nav a{
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 12px;
+    border: 1px solid rgba(118, 90, 155, 0.18);
+    box-shadow: 0 10px 26px rgba(2, 10, 20, 0.08);
+  }
 
-  /* 캡슐 테두리도 동일 톤으로 확실히 */
-  border: 1px solid rgba(118, 90, 155, 0.32);
-  border-radius: 999px;
-  text-decoration: none;
+  .en-pull::before{
+    content: "“";
+    position: absolute;
+    top: -22px;
+    left: 14px;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--violet-quote);
+    font-weight: 700;
+  }
 
-  /* 배경이 밝아서 테두리가 묻힐 때를 대비한 아주 옅은 바탕 */
-  background: rgba(118, 90, 155, 0.06);
+  .en-pull blockquote{ margin: 0; }
 
-  /* 전역 a opacity/필터 실험에 눌리지 않게 */
-  opacity: 1;
-}
+  .en-pull p{
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.75;
+    letter-spacing: -0.01em;
+  }
 
-  </style>
+  .en-pull figcaption{
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    opacity: 0.72;
+  }
+
+  /* ===== Mid block #2: Note box (color ON, bright lilac) ===== */
+  .en-notegrid{
+    margin: 22px 0 26px;
+    padding: 16px 16px 14px;
+    border-radius: 18px;
+
+    /* 박스 바탕: 색이 “확실히” 보이게 */
+    background: linear-gradient(
+      180deg,
+      var(--violet-box-b),
+      rgba(244, 236, 255, 0.92)
+    );
+
+    border: 1px solid rgba(118, 90, 155, 0.20);
+    box-shadow: 0 14px 34px rgba(2, 10, 20, 0.08);
+  }
+
+  .en-boxcap{
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.72;
+  }
+
+  /* 바디: 한 톤 더 진하게 (색 들어간 느낌 핵심) */
+  .en-notegrid .en-boxbody{
+    padding: 14px 14px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(118, 90, 155, 0.18);
+
+    background: linear-gradient(
+      180deg,
+      var(--violet-box-a),
+      rgba(244, 236, 255, 0.86)
+    );
+
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.28),
+      0 10px 22px rgba(2, 10, 20, 0.06);
+  }
+
+  .en-boxbody p{
+    margin: 0 0 12px;
+    font-size: 15.2px;
+    line-height: 1.88;
+  }
+  .en-boxbody p:last-child{ margin-bottom: 0; }
+
+  /* ===== Finale: last page 느낌 (color ON) ===== */
+  .en-finale{
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(18,24,38,0.12);
+  }
+
+  .en-finale-kicker{
+    margin: 0 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.72;
+  }
+
+  .en-finale-body{
+    position: relative;
+    padding: 16px 16px 14px;
+    border-radius: 18px;
+
+    /* NOTE보다 살짝 깊게: “마지막 페이지” 밀도 */
+    background: linear-gradient(
+      180deg,
+      rgba(214, 192, 246, 0.68),
+      rgba(244, 236, 255, 0.94)
+    );
+
+    border: 1px solid rgba(118, 90, 155, 0.20);
+    box-shadow: 0 14px 38px rgba(2, 10, 20, 0.08);
+  }
+
+  .en-finale-body p{
+    margin: 0 0 14px;
+    font-size: 15.2px;
+    line-height: 1.9;
+  }
+  .en-finale-body p:last-child{ margin-bottom: 0; }
+
+  /* ===== Exit stamp card ===== */
+  .en-exit-stamp{
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(18,24,38,0.20);
+  }
+
+  .en-close-stamp{
+    margin: 0;
+    padding: 14px 14px;
+    border-radius: 16px;
+
+    /* 흰색 금지: 라일락 */
+    background: linear-gradient(
+      180deg,
+      rgba(232, 214, 252, 0.70),
+      rgba(244, 236, 255, 0.92)
+    );
+
+    border: 1px solid rgba(118, 90, 155, 0.18);
+    font-size: 15.2px;
+    line-height: 1.85;
+  }
+
+  .en-stamp{
+    margin: 10px 0 0;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    opacity: 0.70;
+    text-align: right;
+  }
+
+  /* =========================================================
+    Editor’s Note — Local Footer (THIS FILE ONLY)
+    Fix: rule + capsule borders not visible on Violet Edition
+  ========================================================= */
+
+  main.vision-note .note-sign{
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(118, 90, 155, 0.32);
+  }
+
+  main.vision-note .note-sign::before,
+  main.vision-note .note-sign::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  main.vision-note .note-nav{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: .02em;
+    opacity: .95;
+  }
+
+  main.vision-note .note-nav a{
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border: 1px solid rgba(118, 90, 155, 0.32);
+    border-radius: 999px;
+    text-decoration: none;
+
+    /* 캡슐도 흰색 금지: 라일락 */
+    background: rgba(232, 214, 252, 0.55);
+    opacity: 1;
+  }
+</style>
+
 </head>
 
 <body>
@@ -430,7 +512,6 @@ main.vision-note .note-nav a{
     
 
        <div class="en-box en-notegrid"
-     style="background: linear-gradient(
        180deg,
        rgba(246, 242, 252, 0.96),
        rgba(246, 242, 252, 0.90)
