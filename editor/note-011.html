@@ -377,6 +377,70 @@
     background: rgba(232, 214, 252, 0.55);
     opacity: 1;
   }
+
+  /* ===== Q&A: interview cut (less “magazine”, more “essay”) ===== */
+.en-qa{
+  margin: 18px 0 26px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 236, 255, 0.88),
+    rgba(232, 214, 252, 0.62)
+  );
+  border: 1px solid rgba(118, 90, 155, 0.18);
+  box-shadow: 0 14px 34px rgba(2, 10, 20, 0.07);
+}
+
+.en-qa .qa-item{
+  padding: 14px 2px 16px;
+  border-top: 1px solid rgba(118, 90, 155, 0.14);
+}
+.en-qa .qa-item:first-child{
+  border-top: none;
+  padding-top: 6px;
+}
+
+.en-qa .qa-q,
+.en-qa .qa-a{
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  column-gap: 10px;
+  align-items: start;
+}
+
+.en-qa .qa-a{ margin-top: 10px; }
+
+.en-qa .qa-tag{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(118, 90, 155, 0.22);
+  background: rgba(118, 90, 155, 0.08);
+  color: rgba(18, 24, 38, 0.92);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.en-qa p{
+  margin: 0;
+  font-size: 15.2px;
+  line-height: 1.9;
+}
+
+.en-qa .qa-q p{
+  font-weight: 650;
+  color: rgba(18, 24, 38, 0.96);
+}
+
+.en-qa .qa-a p{
+  opacity: 0.95;
+}
+
 </style>
 
 </head>
@@ -491,14 +555,40 @@
 
         <p>여기서 잠시, 몇 가지 질문과 답을 던져본다.</p>
 
-         <p><strong>Q.</strong> 우디 앨런 감독은 여전히 ‘운’을 믿는가?</p>
-         <p><strong>A.</strong> 그렇다. 그는 천재적 통찰력과 사유를 지닌 아주 노장이다. 지금은 인생의 끝자락에 도달한 시점인데도 여전히 ‘운’을 믿는 모양이다. 다만, 우디 앨런이 믿는 것은 고전적 의미의 운명이라기보다는 인간의 의지로는 통제할 수 없는 우연의 축적이 결국 삶의 방향을 결정한다는 냉소에 가깝다. 오히려 그 지점에서 그의 문제의식은 더 선명해진다.</p>
+         <section class="en-qa" aria-label="Q&A">
+  <div class="qa-item">
+    <div class="qa-q">
+      <span class="qa-tag">Q</span>
+      <p>우디 앨런 감독은 여전히 ‘운’을 믿는가?</p>
+    </div>
+    <div class="qa-a">
+      <span class="qa-tag">A</span>
+      <p>그렇다. 그는 천재적 통찰력과 사유를 지닌 아주 노장이다. 지금은 인생의 끝자락에 도달한 시점인데도 여전히 ‘운’을 믿는 모양이다. 다만, 우디 앨런이 믿는 것은 고전적 의미의 운명이라기보다는 인간의 의지로는 통제할 수 없는 우연의 축적이 결국 삶의 방향을 결정한다는 냉소에 가깝다. 오히려 그 지점에서 그의 문제의식은 더 선명해진다.</p>
+    </div>
+  </div>
 
-         <p><strong>Q.</strong> 과학자들은 합리주의자 아닌가?</p>
-         <p><strong>A.</strong> 아인슈타인 역시 세계적 천재 과학자인데도 ‘운명’을 믿었다. 『운명의 바람 소리를 들어라』를 보면, 많은 위대한 과학자와 사상가, 예술가들이 신지학을 믿고 ‘운명’이 있다고 생각했다는 기록이 나온다.</p>
+  <div class="qa-item">
+    <div class="qa-q">
+      <span class="qa-tag">Q</span>
+      <p>과학자들은 합리주의자 아닌가?</p>
+    </div>
+    <div class="qa-a">
+      <span class="qa-tag">A</span>
+      <p>아인슈타인 역시 세계적 천재 과학자인데도 ‘운명’을 믿었다. 『운명의 바람 소리를 들어라』를 보면, 많은 위대한 과학자와 사상가, 예술가들이 신지학을 믿고 ‘운명’이 있다고 생각했다는 기록이 나온다.</p>
+    </div>
+  </div>
 
-        <p><strong>Q.</strong> 그렇다면 ‘운명은 없다’고 말하는 사람들은?</p>
-        <p><strong>A.</strong> 그래서 ‘운명은 없다’거나 운명을 믿는 건 바보 같은 일이라고 단정하는 사람들은, 오히려 그 중간치의 사람들인 경우가 많은 것 같다. 아주 못 배운 사람들도 미신과 운명을 찰떡같이 믿고, 아주 위대한 천재들도 운명이 정해져 있다는 운명론을 신봉하니까 말이다.</p>
+  <div class="qa-item">
+    <div class="qa-q">
+      <span class="qa-tag">Q</span>
+      <p>그렇다면 ‘운명은 없다’고 말하는 사람들은?</p>
+    </div>
+    <div class="qa-a">
+      <span class="qa-tag">A</span>
+      <p>그래서 ‘운명은 없다’거나 운명을 믿는 건 바보 같은 일이라고 단정하는 사람들은, 오히려 그 중간치의 사람들인 경우가 많은 것 같다. 아주 못 배운 사람들도 미신과 운명을 찰떡같이 믿고, 아주 위대한 천재들도 운명이 정해져 있다는 운명론을 신봉하니까 말이다.</p>
+    </div>
+  </div>
+</section>
 
         <p><em>극과 극은 통하는 걸까.</em></p>
   
