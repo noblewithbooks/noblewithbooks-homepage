@@ -247,6 +247,55 @@
       opacity: 0.70;
       text-align: right;
     }
+
+    /* =========================================================
+   Editor’s Note — Local Footer (THIS FILE ONLY)
+   Fix: rule + capsule borders not visible on Violet Edition
+========================================================= */
+
+main.vision-note .note-sign{
+  margin-top: 56px;
+  padding-top: 18px;
+
+  /* 이 페이지 전용: 선이 반드시 보이도록 색 고정 */
+  border-top: 1px solid rgba(118, 90, 155, 0.32);
+}
+
+main.vision-note .note-sign::before,
+main.vision-note .note-sign::after{
+  content: none !important;
+  display: none !important;
+}
+
+main.vision-note .note-nav{
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: .02em;
+  opacity: .95;
+}
+
+main.vision-note .note-nav a{
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+
+  /* 캡슐 테두리도 동일 톤으로 확실히 */
+  border: 1px solid rgba(118, 90, 155, 0.32);
+  border-radius: 999px;
+  text-decoration: none;
+
+  /* 배경이 밝아서 테두리가 묻힐 때를 대비한 아주 옅은 바탕 */
+  background: rgba(118, 90, 155, 0.06);
+
+  /* 전역 a opacity/필터 실험에 눌리지 않게 */
+  opacity: 1;
+}
+
   </style>
 </head>
 

@@ -4543,28 +4543,25 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 /* =========================================================
-   Editor’s Note — Footer System (GLOBAL, stable)
-   Covers both main.editor-note and main.vision-note
-   Only affects .note-sign / .note-nav blocks
+   Editor’s Note — Local Footer (per-file, safe)
+   - affects only: .note-sign / .note-nav inside main.editor-note
+   - no global impact
 ========================================================= */
 
-main.editor-note .note-sign,
-main.vision-note .note-sign{
+main.editor-note .note-sign{
   margin-top: 56px;
   padding-top: 18px;
-  border-top: 1px solid var(--en-footer-rule, var(--en-rule));
+  border-top: 1px solid var(--en-rule, rgba(15, 23, 42, .28));
 }
 
+/* kill any legacy pseudo decorations just for this file scope */
 main.editor-note .note-sign::before,
-main.editor-note .note-sign::after,
-main.vision-note .note-sign::before,
-main.vision-note .note-sign::after{
+main.editor-note .note-sign::after{
   content: none !important;
   display: none !important;
 }
 
-main.editor-note .note-nav,
-main.vision-note .note-nav{
+main.editor-note .note-nav{
   margin-top: 14px;
   display: flex;
   justify-content: center;
@@ -4576,15 +4573,13 @@ main.vision-note .note-nav{
   opacity: .95;
 }
 
-main.editor-note .note-nav a,
-main.vision-note .note-nav a{
+main.editor-note .note-nav a{
   display: inline-flex;
   align-items: center;
   padding: 7px 12px;
-  border: 1px solid var(--en-footer-rule, var(--en-rule));
+  border: 1px solid var(--en-rule, rgba(15, 23, 42, .28));
   border-radius: 999px;
   text-decoration: none;
   opacity: 1;
+  background: transparent;
 }
-
-border: 1px solid var(--en-footer-rule, var(--en-rule)) !important;
