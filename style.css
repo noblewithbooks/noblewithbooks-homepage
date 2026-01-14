@@ -4546,10 +4546,12 @@ body .dionysos-banner.dionysos-home-banner{
    Editor Footer — Signature & Nav (global, stable)
    - Scope: .editor-footer only
    - Page-agnostic (editor-note / vision-note / others)
+   - Fix: unify button tone (lilac) + avoid mint blend + no white hover flash
 ========================================================= */
 
 .editor-footer{
   margin-top: 56px;
+  padding-bottom: 48px;
 }
 
 .editor-footer .note-sign{
@@ -4598,24 +4600,24 @@ body .dionysos-banner.dionysos-home-banner{
   border-radius: 999px;
   text-decoration: none;
 
-  background: rgba(118, 90, 155, 0.10);
-  color: rgba(18, 24, 38, 0.92);
+  /* ✅ 기본부터 '옅은 보라' (민트와 섞이지 않게 종이 톤) */
+  background: linear-gradient(
+    180deg,
+    rgba(246, 242, 252, 0.92),
+    rgba(238, 226, 252, 0.88)
+  );
 
+  color: rgba(18, 24, 38, 0.92);
   opacity: 1;
 }
 
-.editor-footer{
-  margin-top: 56px;
-  padding-bottom: 48px;
-}
-
 .editor-footer .note-nav a:hover{
- background:
-  linear-gradient(
+  /* ✅ 같은 톤에서 한 단계만 진하게 (흰색 번쩍임 방지) */
+  background: linear-gradient(
     180deg,
-    rgba(246, 242, 252, 0.92),
-    rgba(246, 242, 252, 0.88)
+    rgba(238, 226, 252, 0.96),
+    rgba(230, 214, 248, 0.90)
   );
 
- border-color: rgba(118, 90, 155, 0.34);
+  border-color: rgba(118, 90, 155, 0.38);
 }
