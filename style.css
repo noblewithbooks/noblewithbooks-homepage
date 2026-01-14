@@ -4599,13 +4599,6 @@ body .dionysos-banner.dionysos-home-banner{
   position: relative;
 }
 
-/* 가운데 구분점 */
-.note-nav a + a::before{
-  content: "·";
-  position: absolute;
-  left: -10px;
-  opacity: .7;
-}
 
 .note-sign{
   margin-top: 56px;
