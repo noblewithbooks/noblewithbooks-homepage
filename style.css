@@ -4591,6 +4591,12 @@ body .dionysos-banner.dionysos-home-banner{
   opacity: .95;
 }
 
+/* =========================================================
+   Editor Footer — Button (Light Violet Paper Tone)
+   - Mint background safe
+   - Desktop hover friendly
+========================================================= */
+
 .editor-footer .note-nav a{
   display: inline-flex;
   align-items: center;
@@ -4600,7 +4606,7 @@ body .dionysos-banner.dionysos-home-banner{
   border-radius: 999px;
   text-decoration: none;
 
-  /* ✅ 기본부터 '옅은 보라' (민트와 섞이지 않게 종이 톤) */
+  /* 기본 상태: 옅은 보라 종이 톤 (민트에 안 섞임) */
   background: linear-gradient(
     180deg,
     rgba(246, 242, 252, 0.92),
@@ -4612,7 +4618,7 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 .editor-footer .note-nav a:hover{
-  /* ✅ 같은 톤에서 한 단계만 진하게 (흰색 번쩍임 방지) */
+  /* hover: 같은 계열에서 한 단계만 진하게 */
   background: linear-gradient(
     180deg,
     rgba(238, 226, 252, 0.96),
