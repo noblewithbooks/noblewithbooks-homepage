@@ -4532,3 +4532,25 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 12px;
   opacity: 0.7;
 }
+
+/* =========================
+   RIGHTS & CATALOG — Mobile layout fix
+   (cover + body must stack, no empty left column)
+========================= */
+@media (max-width: 760px){
+  .book-card.rights-book{
+    display: block !important;     /* grid/flex 강제 해제 */
+  }
+
+  .book-card.rights-book > img.book-cover{
+    display: block !important;
+    width: 100% !important;
+    max-width: 260px;              /* 너무 커 보이면 220~260 사이로 조절 */
+    height: auto !important;
+    margin: 0 0 14px 0 !important; /* 이미지 아래 간격 */
+  }
+
+  .book-card.rights-book .book-body{
+    width: 100% !important;
+  }
+}
