@@ -4543,46 +4543,45 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 /* =========================================================
-   Editor’s Note — Signature & Footer Nav (per-file, safe)
-   - Signature line (note-sign): editorial sign, not section title
-   - Navigation (note-nav): footer navigation
-   - Scope: main.editor-note only
-   - No global impact
+   Editor Footer — Signature & Nav (global, stable)
+   - Scope: .editor-footer only
+   - Page-agnostic (editor-note / vision-note / others)
 ========================================================= */
 
-main.editor-note .note-sign{
+.editor-footer{
+  margin-top: 56px;
+}
+
+.editor-footer .note-sign{
   display: block;
   width: 100%;
-  max-width: 860px;              /* 본문 폭과 정확히 일치 */
-  margin: 56px auto 0;
+  max-width: 860px;
+  margin: 0 auto;
   padding-top: 18px;
   text-align: center;
 
-  /* 사인 라인: 얇고 절제된 구분선 */
   border-top: 1px solid rgba(118, 90, 155, 0.32);
 
   font-size: 13px;
   letter-spacing: .02em;
-  opacity: .9;
+  opacity: .92;
 }
 
-/* legacy 장식 제거 */
-main.editor-note .note-sign::before,
-main.editor-note .note-sign::after{
+.editor-footer .note-sign::before,
+.editor-footer .note-sign::after{
   content: none !important;
   display: none !important;
 }
 
-/* footer navigation */
-main.editor-note .note-nav{
+.editor-footer .note-nav{
+  width: 100%;
+  max-width: 860px;
+  margin: 14px auto 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
-  width: 100%;
-  max-width: 860px;
-  margin: 14px auto 0;
   gap: 10px;
 
   font-size: 13px;
@@ -4590,7 +4589,7 @@ main.editor-note .note-nav{
   opacity: .95;
 }
 
-main.editor-note .note-nav a{
+.editor-footer .note-nav a{
   display: inline-flex;
   align-items: center;
   padding: 7px 12px;
@@ -4599,8 +4598,9 @@ main.editor-note .note-nav a{
   border-radius: 999px;
   text-decoration: none;
 
-  /* 사인 아래라 너무 튀지 않게 */
-  background: rgba(118, 90, 155, 0.06);
+  background: rgba(118, 90, 155, 0.08);
+  color: rgba(18, 24, 38, 0.92);
+
   opacity: 1;
 }
 
