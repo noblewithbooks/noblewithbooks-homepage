@@ -4549,10 +4549,13 @@ body .dionysos-banner.dionysos-home-banner{
 ========================================================= */
 
 main.editor-note .note-sign{
-  margin-top: 56px;
+  margin: 56px auto 0;
   padding-top: 18px;
+  max-width: 860px; /* 본문(en-note) 폭과 맞춤 */
+  text-align: center;
   border-top: 1px solid var(--en-rule, rgba(15, 23, 42, .28));
 }
+
 
 /* kill any legacy pseudo decorations just for this file scope */
 main.editor-note .note-sign::before,
@@ -4562,7 +4565,8 @@ main.editor-note .note-sign::after{
 }
 
 main.editor-note .note-nav{
-  margin-top: 14px;
+  margin: 14px auto 0;
+  max-width: 860px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4572,6 +4576,7 @@ main.editor-note .note-nav{
   letter-spacing: .02em;
   opacity: .95;
 }
+
 
 main.editor-note .note-nav a{
   display: inline-flex;
