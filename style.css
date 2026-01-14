@@ -4543,43 +4543,34 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 /* ================================
-   Editor’s Note — local footer sign
-   (note-sign = issue footer)
+   Editor’s Note — Local Footer (Sign + Nav)
+   - One single rule line ABOVE the footer block (issue footer line)
+   - Nav as magazine-style capsule links
+   - No decorative dots between buttons
 ================================ */
 
-/* 1) 사인 블록: 위 마감선 1개를 구조로 고정 */
+/* 1) Footer Sign: structural top rule (ONLY ONE) */
 .note-sign{
   margin-top: 56px;
   padding-top: 18px;
   border-top: 1px solid var(--en-rule);
 }
 
-/* 2) 혹시 예전 실험 스타일(가상요소 선)이 남아있으면 완전 차단 */
+/* Safety: block any old pseudo-element decorations */
 .note-sign::before,
 .note-sign::after{
   content: none !important;
   display: none !important;
 }
 
-.note-nav{
-  margin-top: 14px;
-  display: flex;
-  gap: 14px;
-  justify-content: center; /* 혹은 space-between, 취향 */
-}
-
-/* ================================
-   Editor’s Note — footer navigation
-   magazine-style (Option 1)
-================================ */
-
+/* 2) Footer Nav: magazine-style capsules */
 .note-nav{
   margin-top: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
   flex-wrap: wrap;
+  gap: 10px;
   font-size: 13px;
   letter-spacing: .02em;
   opacity: .95;
@@ -4592,22 +4583,4 @@ body .dionysos-banner.dionysos-home-banner{
   border: 1px solid var(--en-rule);
   border-radius: 999px;
   text-decoration: none;
-}
-
-.note-nav a + a{
-  margin-left: 10px;
-  position: relative;
-}
-
-
-.note-sign{
-  margin-top: 56px;
-  padding-top: 18px;
-  border-top: 1px solid var(--en-rule);
-}
-
-.note-sign::before,
-.note-sign::after{
-  content: none !important;
-  display: none !important;
 }
