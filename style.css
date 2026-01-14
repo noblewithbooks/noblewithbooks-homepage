@@ -4539,5 +4539,5 @@ body .dionysos-banner.dionysos-home-banner{
 
 /* Press — Award highlight (most important record) */
 .press-item:first-of-type{
-  border: 2px solid #2f6f55;
+  border-left: 4px solid #2f6f55;
 }
