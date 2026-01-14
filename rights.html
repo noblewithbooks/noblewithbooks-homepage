@@ -15,6 +15,43 @@
     gtag('js', new Date());
     gtag('config', 'G-NPRRLQZM70');
   </script>
+<style>
+/* RIGHTS — Mobile-only fix (page-scoped, safer) */
+@media (max-width: 760px){
+
+  /* in case the list wrapper keeps a two-column layout on mobile */
+  .books-list.rights-list{
+    display: block !important;
+  }
+
+  .book-card.rights-book{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* match all rights covers, even if class names vary slightly */
+  .book-card.rights-book > img.book-cover{
+    display: block !important;
+    float: none !important;
+    position: static !important;
+
+    width: 100% !important;
+    max-width: 260px;
+    height: auto !important;
+
+    margin: 0 0 14px 0 !important;
+  }
+
+  .book-card.rights-book .book-body{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+</style>
+
+
 </head>
 
 <body>
@@ -71,6 +108,8 @@
 
 
     </div>
+
+    
   </header>
 
   <main class="container rights-page">
