@@ -142,6 +142,53 @@
   font-weight: 700;
   opacity: 0.88;
 }
+.editor-note__title{
+  background: linear-gradient(90deg, #c4007a 0%, #ff3fa4 60%, #c4007a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.editor-note__title::after{
+  content:"";
+  display:block;
+  width:120px;
+  height:4px;
+  margin-top:14px;
+  background: linear-gradient(90deg, #c4007a, transparent);
+  border-radius:999px;
+  opacity:0.6;
+}
+.note-subhead{
+  margin: 56px 0 18px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-left: 18px;
+}
+
+.note-subhead::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:6px;
+  height:24px;
+  background:#c4007a;
+  border-radius:3px;
+}
+
+.note-subhead::after{
+  content:"";
+  display:block;
+  margin-top:10px;
+  width:60px;
+  height:2px;
+  background:#c4007a;
+  opacity:0.4;
+}
   </style>
 </head>
 
@@ -160,7 +207,7 @@
       </div>
 
       <header class="note-hero">
-        <h2 class="editor-note__title">편집자 노트 11회차(20260216)<br>현미경과 망원경</h2>
+        <h2 class="editor-note__title">현미경과 망원경</h2>
       </header>
 
       <div class="note-body">
