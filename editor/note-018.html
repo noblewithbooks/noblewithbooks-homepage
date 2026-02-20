@@ -102,6 +102,39 @@
       background: linear-gradient(90deg, transparent, var(--line), transparent);
     }
 
+    /* Quote card */
+.note-quote{
+  margin: 56px 0;
+  padding: 34px 30px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.note-quote::before{
+  content:"";
+  position:absolute;
+  left: 18px;
+  top: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(198,132,28,.14);
+}
+
+.note-quote .q{
+  font-size: 18px;
+  line-height: 1.9;
+  margin: 0;
+  padding-left: 8px;
+}
+
+.note-quote .q strong{
+  font-weight: 700;
+  color: var(--ink);
+}
     .note-sign{
       margin-top: 72px;
       padding-top: 22px;
