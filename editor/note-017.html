@@ -201,29 +201,52 @@
       <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
     </div>
 
-    <nav class="nav nav--toggle" aria-label="Primary">
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
-        <span class="nav-toggle__icon" aria-hidden="true"></span>
-        <span class="nav-toggle__label">Menu</span>
-      </button>
+   
+   <nav class="nav nav--toggle" aria-label="Primary">
+  <!-- Mobile: toggle button -->
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menu</span>
+  </button>
 
-      <div class="nav-links" id="navLinks">
-        <a class="btn-space" href="../index.html">Home</a>
-        <a class="btn-space" href="../about.html">About</a>
-        <a class="btn-space" href="../contact.html">Contact</a>
-        <a class="btn-space" href="../notice.html">공지사항</a>
-        <a class="btn-space" href="../editor.html" aria-current="page">편집자 노트</a>
-        <a class="btn-space" href="../books/">책 소개</a>
-        <a class="btn-space" href="../ebooks.html">전자책</a>
-        <a class="btn-space" href="../audiobook-gallery.html">오디오북 갤러리</a>
-        <a class="btn-space" href="../selected.html">KPIPA Edition</a>
-        <a class="btn-space" href="../rights.html">Rights &amp; Catalog</a>
-        <a class="btn-space" href="../honors.html">Honors</a>
-        <a class="btn-space" href="../press.html">언론의 시선</a>
-      </div>
-    </nav>
+  <!-- Links -->
+  <div class="nav-links" id="navLinks">
+  <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+  <a class="btn-space" href="../about.html"><span class="ico"></span>About</a>
+  <a class="btn-space" href="../contact.html"><span class="ico"></span>Contact</a>
+
+  <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+  <a class="btn-space" href="../editor.html" aria-current="page"><span class="ico"></span>편집자 노트</a>
+
+  <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+  <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+  <a class="btn-space" href="../audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+  <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+  <a class="btn-space" href="../rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+  <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+  <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+</div>
+
+</nav>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+
   </div>
 </header>
+
   <main class="container">
 
     <article class="editor-note">
