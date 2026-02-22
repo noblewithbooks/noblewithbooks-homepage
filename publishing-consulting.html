@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>출판 컨설팅, Noblewithbooks</title>
+
+  <link rel="stylesheet" href="style.css?v=stable" />
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NPRRLQZM70');
+  </script>
+</head>
+
+<body class="consulting-page">
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
+      <p class="tagline">Publishing Consulting</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+<nav class="nav nav--toggle" aria-label="Primary">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menu</span>
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
+    <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
+    <a class="btn-space" href="contact.html"><span class="ico"></span>Contact</a>
+
+    <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
+    <a class="btn-space" href="editor.html"><span class="ico"></span>편집자 노트</a>
+    <a class="btn-space" href="books/"><span class="ico"></span>책 소개</a>
+    <a class="btn-space" href="ebooks.html"><span class="ico"></span>전자책</a>
+    <a class="btn-space" href="audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+    <a class="btn-space" href="selected.html"><span class="ico"></span>KPIPA Edition</a>
+    <a class="btn-space" href="rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+    <a class="btn-space" href="honors.html"><span class="ico"></span>Honors</a>
+    <a class="btn-space" href="press.html"><span class="ico"></span>언론의 시선</a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+  </div>
+</header>
+
+<main class="container consulting">
+
+  <article class="card consulting-card">
+
+    <header class="consulting-head">
+      <p class="consulting-kicker">출판 컨설팅</p>
+      <h2 class="consulting-title">Structure Before Publication</h2>
+    </header>
+
+    <div class="about-rule" aria-hidden="true"></div>
+
+    <section class="consulting-body">
+
+      <p class="about-paragraph about-paragraph--ko">
+        <span class="about-lead">원고는 감정으로 쓰지만,</span><br>
+        출간은 구조로 완성됩니다.<br><br>
+        책을 쓰고 싶지만 방향이 모호할 때,<br>
+        출간을 앞두고 전체 설계가 필요할 때,<br>
+        출판의 전략적 구조를 함께 설계합니다.
+      </p>
+
+      <p class="about-paragraph">
+        <strong>컨설팅 대상</strong><br>
+        · 출간을 준비 중인 예비 저자<br>
+        · 기획 방향을 재정립하고 싶은 저자<br>
+        · 원고는 있으나 구조 정리가 필요한 경우
+      </p>
+
+      <p class="about-paragraph">
+        <strong>진행 방식</strong><br>
+        1. 원고 또는 기획안 사전 검토<br>
+        2. 전체 콘셉트 및 타깃 독자 분석<br>
+        3. 목차 재구성 및 구조 설계<br>
+        4. A4 3~4페이지 분량 서면 리포트 제공
+      </p>
+
+      <p class="about-paragraph">
+        <strong>비용</strong><br>
+        기본 구조 설계: 150만원<br>
+        리포트 포함 심층 컨설팅: 200만원
+      </p>
+
+      <p class="about-paragraph">
+        <a href="contact.html" class="btn-space">상담 문의하기</a>
+      </p>
+
+    </section>
+
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <p>
+    Noblewithbooks (책읽는귀족, est. 2012) ·
+    Étoile Bleue Créations (푸른별창작소, Imprint, est. 2025) ·
+    © All rights reserved by Noblewithbooks · 이 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
+  </p>
+  <p>
+   (10388) 경기도 고양시 일산서구 대산로 123,
+            현대프라자 K일산비즈니스센터 342호(주엽동) · 
+    전화 070-7613-8491 ·
+    이메일 idea444@naver.com
+  </p>
+</footer>
+
+</body>
+</html>
