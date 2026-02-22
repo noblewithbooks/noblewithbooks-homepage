@@ -1,3 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>출판 컨설팅, Noblewithbooks</title>
+
+  <link rel="stylesheet" href="style.css?v=stable" />
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NPRRLQZM70');
+  </script>
+
+  <!-- Consulting Page Style (page-specific only) -->
+  <style>
+    .consulting-card { padding: 3rem 3.5rem; }
+
+    .consulting-head { margin-bottom: 2rem; }
+
+    .consulting-kicker {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .consulting-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .about-rule {
+      height: 1px;
+      background: rgba(0,0,0,0.08);
+      margin: 2rem 0 2.5rem 0;
+    }
+
+    .consulting-lead {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .consulting-contact {
+      margin-top: 3rem;
+      font-weight: 500;
+    }
+
+    .consulting-contact a {
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+    }
+
+    .about-note {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-top: 0.8rem;
+    }
+  </style>
+</head>
+
 <body class="consulting-page">
 
 <header class="header">
@@ -10,15 +77,16 @@
     </div>
 
     <nav class="nav nav--toggle" aria-label="Primary">
+      <!-- Mobile: toggle button -->
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
         <span class="nav-toggle__icon" aria-hidden="true"></span>
         <span class="nav-toggle__label">Menu</span>
       </button>
 
+      <!-- Links -->
       <div class="nav-links" id="navLinks">
         <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
         <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
-        <a class="btn-space" href="publishing-consulting.html" aria-current="page"><span class="ico"></span>출판 컨설팅</a>
         <a class="btn-space" href="contact.html"><span class="ico"></span>Contact</a>
 
         <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
@@ -36,6 +104,7 @@
   </div>
 </header>
 
+<!-- Mobile nav toggle script (safe placement: after header) -->
 <script>
 (function(){
   var btn = document.querySelector('.nav-toggle');
@@ -50,58 +119,6 @@
 })();
 </script>
 
-<!-- Consulting Page Style (Page-specific only) -->
-<style>
-  .consulting-card {
-    padding: 3rem 3.5rem;
-  }
-
-  .consulting-head {
-    margin-bottom: 2rem;
-  }
-
-  .consulting-kicker {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin-bottom: 0.5rem;
-  }
-
-  .consulting-title {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  .about-rule {
-    height: 1px;
-    background: rgba(0,0,0,0.08);
-    margin: 2rem 0 2.5rem 0;
-  }
-
-  .consulting-lead {
-    font-size: 1.9rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    letter-spacing: -0.02em;
-  }
-
-  .consulting-contact {
-    margin-top: 3rem;
-    font-weight: 500;
-  }
-
-  .consulting-contact a {
-    text-decoration: none;
-    border-bottom: 1px solid #222;
-  }
-
-  .about-note {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin-top: 0.8rem;
-  }
-</style>
-
 <main class="container consulting">
 
   <article class="card consulting-card">
@@ -113,87 +130,79 @@
 
     <div class="about-rule" aria-hidden="true"></div>
 
+    <section class="about-body" aria-label="Consulting text">
 
-<section class="about-body" aria-label="Consulting text">
+      <div class="consulting-lead">출판하고 싶은 너에게</div>
 
-  <!-- Lead Copy -->
-  <div class="consulting-lead">
-    출판하고 싶은 너에게
-  </div>
+      <p class="about-paragraph about-paragraph--ko">
+        같은 제목의 책을 통해<br>
+        저는 ‘출판을 꿈꾸는 마음’에 대해 이야기했습니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    같은 제목의 책을 통해<br>
-    저는 ‘출판을 꿈꾸는 마음’에 대해 이야기했습니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        출판사에 프러포즈하는 법,<br>
+        원고를 단장하는 법,<br>
+        선택받는 기준,<br>
+        그리고 때로는 독설처럼 들릴지 모를 솔직한 조언까지.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    출판사에 프러포즈하는 법,<br>
-    원고를 단장하는 법,<br>
-    선택받는 기준,<br>
-    그리고 때로는 독설처럼 들릴지 모를 솔직한 조언까지.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        그 책이 출판을 준비하는 모든 ‘너’를 위한 러브레터였다면,<br>
+        이 페이지는 그 다음 이야기입니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    그 책이 출판을 준비하는 모든 ‘너’를 위한 러브레터였다면,<br>
-    이 페이지는 그 다음 이야기입니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        이제는 한 사람의 원고를 직접 마주하며<br>
+        책의 구조를 설계하는 일을 시작합니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    이제는 한 사람의 원고를 직접 마주하며<br>
-    책의 구조를 설계하는 일을 시작합니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        20년 넘게 출판 현장에서<br>
+        원고를 고르고, 다듬고, 기획하고, 계약하고,<br>
+        출간과 마케팅의 전 과정을 거치며<br>
+        수많은 선택의 순간을 경험했습니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    20년 넘게 출판 현장에서<br>
-    원고를 고르고, 다듬고, 기획하고, 계약하고,<br>
-    출간과 마케팅의 전 과정을 거치며<br>
-    수많은 선택의 순간을 경험했습니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        그리고 철학을 전공한 사람으로서,<br>
+        저는 책을 하나의 인문학적 세계관 안에서 바라봅니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    그리고 철학을 전공한 사람으로서,<br>
-    저는 책을 하나의 인문학적 세계관 안에서 바라봅니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        이 책은 어떤 질문에서 출발하는지,<br>
+        어떤 사유의 흐름을 따라가는지,<br>
+        그 흐름이 독자에게 어떤 생각의 자리를 남기는지.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    이 책은 어떤 질문에서 출발하는지,<br>
-    어떤 사유의 흐름을 따라가는지,<br>
-    그 흐름이 독자에게 어떤 생각의 자리를 남기는지.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        저는 그 구조를 설계합니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    저는 그 구조를 설계합니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        좋은 문장을 쓰는 일과 좋은 책을 만드는 일은 다릅니다.<br>
+        책은 문장의 합이 아니라 사유의 구조이며,<br>
+        설계된 세계관입니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    좋은 문장을 쓰는 일과 좋은 책을 만드는 일은 다릅니다.<br>
-    책은 문장의 합이 아니라 사유의 구조이며,<br>
-    설계된 세계관입니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        『출판하고 싶은 너에게』에서<br>
+        “원고야, 화장은 아니더라도 단장은 하고 와”라고 말했던 것처럼,<br>
+        이제는 그 단장을 넘어 책 전체를 설계하는 자리로 나아가고자 합니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    『출판하고 싶은 너에게』에서<br>
-    “원고야, 화장은 아니더라도 단장은 하고 와”라고 말했던 것처럼,<br>
-    이제는 그 단장을 넘어 책 전체를 설계하는 자리로 나아가고자 합니다.
-  </p>
+      <p class="about-paragraph about-paragraph--ko">
+        많은 기획을 동시에 맡지 않습니다.<br>
+        한 권의 책이 제 자리를 찾을 수 있도록<br>
+        충분한 시간과 판단을 씁니다.
+      </p>
 
-  <p class="about-paragraph about-paragraph--ko">
-    많은 기획을 동시에 맡지 않습니다.<br>
-    한 권의 책이 제 자리를 찾을 수 있도록<br>
-    충분한 시간과 판단을 씁니다.
-  </p>
+      <div class="consulting-contact">
+        상담 문의: <a href="mailto:idea444@naver.com">idea444@naver.com</a>
+      </div>
 
-  <!-- Email Direct Display -->
-  <div class="consulting-contact">
-    상담 문의: 
-    <a href="mailto:idea444@naver.com">idea444@naver.com</a>
-  </div>
+      <p class="about-note">상담은 이메일로만 진행합니다.</p>
 
-  <p class="about-note">
-    상담은 이메일로만 진행합니다.
-  </p>
-
-</section>
+    </section>
 
   </article>
 
@@ -206,8 +215,8 @@
     © All rights reserved by Noblewithbooks · 이 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
   </p>
   <p>
-   (10388) 경기도 고양시 일산서구 대산로 123,
-            현대프라자 K일산비즈니스센터 342호(주엽동) · 
+    (10388) 경기도 고양시 일산서구 대산로 123,
+    현대프라자 K일산비즈니스센터 342호(주엽동) ·
     전화 070-7613-8491 ·
     이메일 idea444@naver.com
   </p>
