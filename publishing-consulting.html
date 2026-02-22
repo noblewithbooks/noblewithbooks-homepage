@@ -67,6 +67,56 @@
     .consulting-note {
   margin-top: 1.2rem;
 }
+
+/* =========================
+   Consulting Page Refinement
+   ========================= */
+
+/* 선언 문장 강조 */
+.consulting-statement{
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 4rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.6;
+}
+
+/* 대상 블록 강조 */
+.consulting-target{
+  margin: 5rem 0;
+  padding: 2.5rem 2rem;
+  border-left: 2px solid #111;
+}
+
+/* 철학 문장 첫 줄 강조 */
+.about-paragraph--ko strong{
+  font-weight: 600;
+}
+
+/* 하단 안내 블록 정리 */
+.consulting-note-block{
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* 모바일 리듬 조정 */
+@media (max-width: 768px){
+  .consulting-statement{
+    font-size: 1.2rem;
+    margin: 3rem 0;
+  }
+
+  .consulting-target{
+    padding: 2rem 1.2rem;
+    margin: 3.5rem 0;
+  }
+
+  .consulting-note-block{
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+}
   </style>
 </head>
 
@@ -180,7 +230,7 @@
         그 흐름이 독자에게 어떤 생각의 자리를 남기는지.
       </p>
 
-      <p class="about-paragraph about-paragraph--ko">
+      <p class="about-paragraph about-paragraph--ko consulting-statement">
         저는 그 구조를 설계합니다.
       </p>
 
@@ -195,6 +245,18 @@
         “원고야, 화장은 아니더라도 단장은 하고 와”라고 말했던 것처럼,<br>
         이제는 그 단장을 넘어 책 전체를 설계하는 자리로 나아가고자 합니다.
       </p>
+      
+      <div class="consulting-target">
+     <p class="about-paragraph about-paragraph--ko">
+      이 작업은<br>
+      처음 책을 준비하는 예비 작가,<br>
+      몇 권을 냈지만 다음 단계로 나아가고 싶은 저자,<br>
+      원고는 완성했지만 구조에 확신이 서지 않는 저자,<br>
+      자신의 사유를 한 권의 책으로 정리하고 싶은 분들,<br>
+      그리고 브랜드의 세계관과 철학을 하나의 메시지 체계로 정리하고자 하는 기업과 조직을 위한 자리입니다.
+       </p>
+       </div>
+
 
       <p class="about-paragraph about-paragraph--ko">
       많은 기획을 동시에 진행하지 않습니다.<br>
@@ -207,9 +269,16 @@
   상담 문의: idea444@naver.com
 </div>
 
-<p class="about-note consulting-note">
+<div class="consulting-note-block">
+  <p class="about-note consulting-note">
   상담은 이메일로만 진행합니다.
 </p>
+
+<p class="about-note consulting-note">
+  이 작업은 출간을 대행하는 서비스가 아니라,
+  책의 구조와 방향을 설계하는 컨설팅입니다.
+</p>
+</div>
     </section>
 
   </article>
