@@ -105,6 +105,27 @@
   margin-top: 3rem;
 }
 
+.consulting-list{
+  list-style:none;
+  padding-left:0;
+  margin:1.2rem 0 1.2rem 0;
+}
+
+.consulting-list li{
+  position:relative;
+  padding-left:1.4rem;
+  margin-bottom:0.6rem;
+  line-height:1.6;
+}
+
+.consulting-list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  font-weight:600;
+}
+
 /* 모바일 리듬 조정 */
 @media (max-width: 768px){
 
@@ -121,12 +142,14 @@
   .consulting-contact{
     margin-top: 2.5rem;
   }
-}
+
   .consulting-note-block{
     margin-top: 3rem;
     padding-top: 1.5rem;
   }
+
 }
+
   </style>
 </head>
 
@@ -257,15 +280,22 @@
       </p>
       
       <div class="consulting-target">
-     <p class="about-paragraph about-paragraph--ko">
-      이 작업은<br>
-      처음 책을 준비하는 예비 작가,<br>
-      몇 권을 냈지만 다음 단계로 나아가고 싶은 저자,<br>
-      원고는 완성했지만 구조에 확신이 서지 않는 저자,<br>
-      자신의 사유를 한 권의 책으로 정리하고 싶은 분들,<br>
-      그리고 브랜드의 세계관과 철학을 하나의 메시지 체계로 정리하고자 하는 기업과 조직을 위한 자리입니다.
-       </p>
-       </div>
+  <p class="about-paragraph about-paragraph--ko">
+    이 작업은
+  </p>
+
+  <ul class="consulting-list">
+    <li>처음 책을 준비하는 예비 작가</li>
+    <li>몇 권을 냈지만 다음 단계로 나아가고 싶은 저자</li>
+    <li>원고는 완성했지만 구조에 확신이 서지 않는 저자</li>
+    <li>자신의 사유를 한 권의 책으로 정리하고 싶은 분들</li>
+    <li>브랜드의 세계관과 철학을 하나의 메시지 체계로 정리하고자 하는 기업과 조직</li>
+  </ul>
+
+  <p class="about-paragraph about-paragraph--ko">
+    을 위한 자리입니다.
+  </p>
+</div>
 
 
       <p class="about-paragraph about-paragraph--ko">
