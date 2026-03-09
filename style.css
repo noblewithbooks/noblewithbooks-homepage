@@ -4638,3 +4638,15 @@ body .dionysos-banner.dionysos-home-banner{
 
   border-color: rgba(118, 90, 155, 0.42);
 }
+
+.dionysos-claim{
+  font-size:1.35rem;
+  text-align:center;
+  line-height:1.7;
+  font-weight:500;
+}
+
+.accent{
+  color:#d65c2e;
+  font-weight:700;
+}
