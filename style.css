@@ -4633,3 +4633,9 @@ body .dionysos-banner.dionysos-home-banner{
 .book-cover-link .cover-zoom{
   display: none !important;
 }
+
+/* Lightbox tone-down */
+.lightbox{
+  background: rgba(24,34,44,0.55) !important;
+  padding: 24px;
+}
