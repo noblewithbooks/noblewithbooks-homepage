@@ -4650,3 +4650,16 @@ body .dionysos-banner.dionysos-home-banner{
   color:#d65c2e;
   font-weight:700;
 }
+
+/* 🔥 GLOBAL FIX – 레이아웃 복구 */
+.header-inner{
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  width: auto !important;
+}
+
+.nav-links{
+  width: auto !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
