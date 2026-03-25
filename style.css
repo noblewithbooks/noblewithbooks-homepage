@@ -64,12 +64,12 @@ body{
   top: 0;
   z-index: 50;
 
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--line);
+  padding: 16px 18px 10px;
+  border-bottom: 0;
 
-  background: rgba(255,255,255,0.56);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .header-inner{
@@ -79,6 +79,13 @@ body{
   align-items: flex-start;
   justify-content: space-between;
   gap: 18px;
+
+  padding: 16px 18px;
+  border: 1px solid rgba(18,24,38,0.10);
+  border-radius: 0 0 18px 18px;
+  background: rgba(255,255,255,0.56);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .brand h1{
