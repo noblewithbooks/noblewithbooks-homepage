@@ -3824,6 +3824,10 @@ main > p{
   border: 1.5px solid rgba(240,90,40,0.32) !important;
 }
 
-.container{
-  outline: 5px solid red !important;
+.home-container{
+  max-width: 860px;
+}
+
+.home-container .hero{
+  height: 680px;
 }
