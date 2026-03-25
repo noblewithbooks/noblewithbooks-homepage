@@ -4643,7 +4643,7 @@ body .dionysos-banner.dionysos-home-banner{
 .lightbox-close{
   position: fixed;
   top: 32px;
-  right: 32px;
+  right: 48px;
   width: 2.75rem;
   height: 2.75rem;
   line-height: 2.75rem;
