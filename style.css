@@ -4656,3 +4656,8 @@ body .dionysos-banner.dionysos-home-banner{
   box-shadow: 0 8px 20px rgba(0,0,0,0.22);
   z-index: 20001;
 }
+.lightbox-close{
+  position: absolute;
+  top: 24vh;
+  right: 24vw;
+}
