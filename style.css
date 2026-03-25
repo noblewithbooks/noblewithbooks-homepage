@@ -3811,9 +3811,16 @@ main > p{
 
 .dionysos-kicker{
   color: #f05a28 !important;
+  font-size: 40px !important;
 }
 
-.dionysos-kicker{
+.dionysos-home-banner .dionysos-cta{
+  background: transparent !important;
   color: #f05a28 !important;
-  font-size: 40px !important;
+  border: 1.5px solid rgba(240,90,40,0.55) !important;
+  box-shadow: none !important;
+}
+
+.dionysos-home-banner{
+  border: 1.5px solid rgba(240,90,40,0.32) !important;
 }
