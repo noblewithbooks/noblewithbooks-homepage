@@ -4556,7 +4556,45 @@ body .dionysos-banner.dionysos-home-banner{
   }
 }
 
-/* ===== Editor note nav, purple pill buttons ===== */
+/* ===== Editor footer, latest version set ===== */
+.editor-footer{
+  margin-top: 56px;
+  padding-bottom: 48px;
+}
+
+.editor-footer .note-sign{
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-top: 18px;
+  text-align: center;
+  border-top: 1px solid rgba(118, 90, 155, 0.32);
+  font-size: 13px;
+  letter-spacing: .02em;
+  opacity: .92;
+}
+
+.editor-footer .note-sign::before,
+.editor-footer .note-sign::after{
+  content: none !important;
+  display: none !important;
+}
+
+.editor-footer .note-nav{
+  width: 100%;
+  max-width: 860px;
+  margin: 14px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: .02em;
+  opacity: .95;
+}
+
 .editor-footer .note-nav a{
   display: inline-flex;
   align-items: center;
