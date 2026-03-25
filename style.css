@@ -4555,3 +4555,38 @@ body .dionysos-banner.dionysos-home-banner{
     width: 100% !important;
   }
 }
+
+/* ===== Editor note nav, purple pill buttons ===== */
+.editor-footer .note-nav a{
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(118, 90, 155, 0.34);
+  border-radius: 999px;
+  text-decoration: none;
+  background: linear-gradient(
+    180deg,
+    rgba(246, 242, 252, 0.92),
+    rgba(238, 226, 252, 0.88)
+  );
+  color: rgba(18, 24, 38, 0.92);
+  opacity: 1;
+}
+
+.editor-footer .note-nav a:hover{
+  background: linear-gradient(
+    180deg,
+    rgba(238, 226, 252, 0.96),
+    rgba(230, 214, 248, 0.90)
+  );
+  border-color: rgba(118, 90, 155, 0.38);
+}
+
+.editor-footer .note-nav a:active{
+  background: linear-gradient(
+    180deg,
+    rgba(238, 226, 252, 0.96),
+    rgba(230, 214, 248, 0.90)
+  );
+  border-color: rgba(118, 90, 155, 0.42);
+}
