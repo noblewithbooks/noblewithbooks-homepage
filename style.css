@@ -4628,3 +4628,8 @@ body .dionysos-banner.dionysos-home-banner{
   );
   border-color: rgba(118, 90, 155, 0.42);
 }
+
+/* Books cover magnifier off */
+.book-cover-link .cover-zoom{
+  display: none !important;
+}
