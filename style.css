@@ -1486,20 +1486,6 @@ main > p{
 }
 
 
-/* Home 전용: 오렌지 지구 톤을 '옅게' 입히는 배너 */
-.dionysos-home-banner {
-  background: linear-gradient(
-    180deg,
-    rgba(242,140,40,0.22),
-    rgba(242,140,40,0.10)
-  );
-  border: 1px solid rgba(242,140,40,0.35);
-}
-
-.dionysos-home-banner .dionysos-title { color: rgba(24,34,44,0.95); }
-.dionysos-home-banner .dionysos-lede  { color: rgba(24,34,44,0.78); }
-.dionysos-home-banner .dionysos-note  { color: rgba(24,34,44,0.62); opacity: 1; }
-.dionysos-home-banner .dionysos-cta   { border-color: rgba(24,34,44,0.55); color: rgba(24,34,44,0.9); }
 /* ===== Books Page (Contents / Books) ===== */
 .books-page .wrap{
   width: min(980px, 92vw);
@@ -2034,10 +2020,9 @@ main > p{
 ========================================================= */
 
 .history-grid{
-  max-width: 1200px;
+  max-width: 920px;
   margin: 64px auto 72px;
-  padding: 0 24px;
-
+  padding: 0 18px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
