@@ -482,12 +482,17 @@ body{
    FOOTER
 ========================= */
 .site-footer{
-  margin-top: 80px;
+  max-width: 920px;
+  margin: 80px auto 0;
   padding: 24px 12px;
   text-align: center;
   font-size: 0.85rem;
   color: var(--muted);
   border-top: 1px solid rgba(18,24,38,0.10);
+}
+.site-footer p{
+  max-width: 920px;
+  margin: 0 auto 8px;
 }
 
 /* =========================
@@ -1086,8 +1091,9 @@ main > p{
    ========================= */
 
 .cinema-box{
-  width: min(980px, 92vw);
-  margin: 56px auto 18px;
+  width: 100%;
+  max-width: 100%;
+  margin: 56px 0 18px;
 }
 
 .cinema-strip{
@@ -3336,6 +3342,13 @@ main > p{
   color: rgba(44,28,74,0.94);
 }
 
+.textbook-strip-link{
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (max-width: 720px){
   .cinema-box .card.textbook-strip{ padding: 13px 14px; }
   .textbook-strip__title{ font-size: 0.88rem; }
@@ -3829,10 +3842,6 @@ main > p{
 
 .dionysos-home-banner{
   border: 1.5px solid rgba(240,90,40,0.32) !important;
-}
-
-.home-container{
-  max-width: 860px;
 }
 
 .home-container .hero{
