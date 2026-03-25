@@ -194,13 +194,16 @@
       border-bottom-color: var(--ink);
     }
 
-    /* Make header blend nicer (optional, doesn’t break your global CSS) */
-    .header{
-      background: transparent;
-    }
-    .header-inner{
-      backdrop-filter: blur(4px);
-    }
+    /* Header glass effect */
+.header{
+  background: transparent;
+}
+
+.header-inner{
+  background: rgba(255,252,246,.42);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
   </style>
 </head>
 
