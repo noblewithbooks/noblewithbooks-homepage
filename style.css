@@ -4639,3 +4639,20 @@ body .dionysos-banner.dionysos-home-banner{
   background: rgba(24,34,44,0.12) !important;
   padding: 24px;
 }
+/* Lightbox close button, closer to the image */
+.lightbox-close{
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  width: 2.75rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 999px;
+  background: rgba(24,34,44,0.72);
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  z-index: 20001;
+}
