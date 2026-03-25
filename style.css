@@ -164,8 +164,8 @@ body{
    HERO
 ========================= */
 .hero{
-  width: 100%;
-  max-width: 100%;
+  width: min(1280px, calc(100vw - 36px));
+  max-width: none;
   height: 760px;
   border-radius: 22px;
   overflow: hidden;
