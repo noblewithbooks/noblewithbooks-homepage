@@ -4650,3 +4650,49 @@ body .dionysos-banner.dionysos-home-banner{
   color:#d65c2e;
   font-weight:700;
 }
+/* ===== NAV RESET (정상 상태 복구) ===== */
+
+.header-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links{
+  display: flex;
+  gap: 28px;
+}
+
+/* 🔥 모바일 */
+@media (max-width: 768px){
+
+  .nav-links{
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    flex-direction: column;
+    background: #fff;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+  }
+
+  .nav-links.active{
+    display: flex;
+  }
+
+  .nav--toggle{
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* 🔥 데스크탑 */
+@media (min-width: 769px){
+  .nav--toggle{
+    display: none;
+  }
+}
