@@ -4663,11 +4663,13 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 @media (min-width: 1025px){
-  .header-inner,
-  .site-header .inner,
-  .topbar{
-    align-items: center;
-  }
+ .header-inner,
+.site-header .inner,
+.topbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
   .nav,
   .nav-links{
