@@ -4803,3 +4803,34 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 1rem;
   color: #777;
 }
+
+/* ===== textbook-paris: 첫 번째 박스(tb-hero) 여백 축소 + 디자인 보강 ===== */
+.textbook-page .tb-hero{
+  padding: 34px 28px 26px !important;
+  min-height: auto !important;
+  height: auto !important;
+  margin-bottom: 28px !important;
+
+  border: 2px solid rgba(123, 99, 255, 0.22);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,248,252,0.96) 100%);
+  box-shadow: 0 10px 24px rgba(20, 24, 40, 0.05);
+}
+
+/* 제목 아래 설명문이 지나치게 아래로 벌어지지 않게 */
+.textbook-page .tb-lede{
+  margin: 18px 0 18px !important;
+  max-width: 980px;
+  line-height: 1.75;
+}
+
+/* 칩 영역도 붙여줌 */
+.textbook-page .tb-meta{
+  margin-top: 0 !important;
+}
+
+/* 칩 약간 또렷하게 */
+.textbook-page .tb-chip{
+  border: 1px solid rgba(123, 99, 255, 0.18);
+  background: #fff;
+}
