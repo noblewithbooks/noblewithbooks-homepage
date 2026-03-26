@@ -4834,3 +4834,71 @@ body .dionysos-banner.dionysos-home-banner{
   border: 1px solid rgba(123, 99, 255, 0.18);
   background: #fff;
 }
+
+/* HEADER */
+.header{
+  padding: 12px 18px;
+}
+
+.header-inner{
+  max-width: 980px;
+  gap: 14px;
+}
+
+.brand h1{
+  font-size: 24px;
+}
+
+.tagline{
+  margin: 4px 0 1px;
+  font-size: 14px;
+}
+
+.subtag{
+  font-size: 12px;
+}
+
+/* NAV */
+.nav{
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.nav a.btn-space{
+  padding: 7px 11px;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.nav a.btn-space .ico{
+  width: 10px;
+  height: 10px;
+}
+
+/* HERO */
+.hero{
+  height: 620px;
+  margin: 20px auto 14px;
+  border-radius: 20px;
+}
+
+/* MANIFESTO */
+#home-manifesto{
+  width: min(760px, calc(100vw - 36px));
+  margin: -24px auto 28px;
+}
+
+#home-manifesto .manifesto-panel{
+  padding: 18px 16px 16px;
+  border-radius: 18px;
+}
+
+#home-manifesto .manifesto-core{
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  padding: 7px 14px;
+}
+
+#home-manifesto .manifesto-body{
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
