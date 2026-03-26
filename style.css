@@ -4695,3 +4695,12 @@ body .dionysos-banner.dionysos-home-banner{
     padding-bottom: 8px;
   }
 }
+
+@media (min-width: 1025px){
+  .header-inner{
+    display: grid;
+    grid-template-columns: auto 1fr; /* 로고는 왼쪽, 메뉴는 오른쪽 */
+    column-gap: 24px; /* 로고와 메뉴 사이 간격 */
+    align-items: center;
+  }
+}
