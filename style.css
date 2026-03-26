@@ -4700,3 +4700,24 @@ body .dionysos-banner.dionysos-home-banner{
     height: 9px;
   }
 }
+
+@media (min-width: 1025px){
+  .header-inner,
+  .site-header .inner,
+  .topbar{
+    align-items: center;
+  }
+
+  .nav,
+  .nav-links{
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1025px){
+  .brand,
+  .site-brand,
+  .logo-block{
+    padding-bottom: 8px;
+  }
+}
