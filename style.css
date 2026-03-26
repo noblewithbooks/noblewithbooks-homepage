@@ -4902,3 +4902,16 @@ body .dionysos-banner.dionysos-home-banner{
   font-size: 0.98rem;
   line-height: 1.65;
 }
+
+/* 모바일 화면에서 hero 높이를 조정 */
+@media (max-width: 760px){
+  .textbook-page .tb-hero{
+    height: auto !important;  /* 높이를 auto로 자동 조정 */
+    max-height: 400px;  /* 최대 높이를 400px로 제한 */
+    margin: 16px auto;  /* 여백을 적당히 조정 */
+  }
+
+  .textbook-page .tb-lede{
+    max-width: 100%;  /* 모바일에서 텍스트 영역을 화면에 꽉 맞게 */
+  }
+}
