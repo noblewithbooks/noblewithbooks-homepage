@@ -4663,79 +4663,17 @@ body .dionysos-banner.dionysos-home-banner{
 }
 
 @media (min-width: 1025px){
- .header-inner,
-.site-header .inner,
-.topbar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-  .nav,
-  .nav-links{
-    gap: 7px;
-    justify-content: flex-start;
-  }
-
-  .nav-links a.btn-space{
-    padding: 6px 9px;
-    font-size: 12.5px;
-    line-height: 1.15;
-    gap: 7px;
-  }
-
-  .nav-links a.btn-space .ico{
-    width: 9px;
-    height: 9px;
-  }
-
-  .brand,
-  .site-brand,
-  .logo-block{
-    padding-bottom: 8px;
-  }
-}
-
-@media (min-width: 1025px){
-  .header-inner{
-    display: grid;
-    grid-template-columns: auto 1fr; /* 로고는 왼쪽, 메뉴는 오른쪽 */
-    column-gap: 24px; /* 로고와 메뉴 사이 간격 */
-    align-items: center;
-  }
-}
-
-@media (min-width: 1025px){
-  .hero-media,
-  .hero-image,
-  .home-hero__media,
-  .main-hero__media,
-  .hero-card{
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-media img,
-  .hero-image img,
-  .home-hero__media img,
-  .main-hero__media img,
-  .hero-card img{
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-    object-position: center center;
-  }
-}
-
-@media (min-width: 1025px){
   .header{
     padding: 12px 18px;
   }
 
   .header-inner{
     max-width: 880px;
-    gap: 14px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+    align-items: center;
   }
 
   .brand h1{
@@ -4751,12 +4689,23 @@ body .dionysos-banner.dionysos-home-banner{
     font-size: 12px;
   }
 
-  .nav,
+  .nav{
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 0;
+  }
+
   .nav-links{
+    display: flex;
+    width: auto;
+    margin-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
     gap: 6px;
   }
 
-  .nav a.btn-space,
   .nav-links a.btn-space{
     padding: 5px 8px;
     font-size: 12px;
@@ -4764,41 +4713,28 @@ body .dionysos-banner.dionysos-home-banner{
     gap: 6px;
   }
 
-  .nav a.btn-space .ico,
   .nav-links a.btn-space .ico{
     width: 8px;
     height: 8px;
   }
 
   .hero{
-    width: min(1140px, calc(100vw - 72px));
-    height: 660px;
-    margin: 20px auto 14px;
+    width: min(1080px, calc(100vw - 96px));
+    height: 620px;
+    margin: 18px auto 14px;
     border-radius: 18px;
   }
 
   .hero-img{
-    object-position: center center;
+    object-position: 50% center;
   }
 
   #home-manifesto{
-    width: min(760px, calc(100vw - 72px));
-    margin: 14px auto 26px;
+    width: min(720px, calc(100vw - 96px));
+    margin: 14px auto 24px;
   }
 
-  #home-manifesto .manifesto-strip,
-  #home-manifesto .manifesto-panel{
+  #home-manifesto .manifesto-strip{
     padding: 10px 16px 0;
-  }
-
-  #home-manifesto .m-line,
-  #home-manifesto .manifesto-core{
-    font-size: clamp(1.05rem, 2vw, 1.42rem);
-  }
-
-  #home-manifesto .manifesto-body,
-  .home-line{
-    font-size: 1rem;
-    line-height: 1.6;
   }
 }
