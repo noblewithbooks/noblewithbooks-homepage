@@ -4738,3 +4738,26 @@ body .dionysos-banner.dionysos-home-banner{
     padding: 10px 16px 0;
   }
 }
+
+/* 교재 프로젝트 페이지 */
+.container.textbook-page {
+  max-width: 100%;
+  margin: 0 auto; /* 자동으로 좌우 여백 맞추기 */
+  padding: 0 18px; /* 양쪽 여백 추가 */
+}
+
+.tb-hero {
+  width: 100%;
+  max-width: 100%; /* 너비 100%로 맞추기 */
+  height: 500px; /* 높이 조정 */
+  margin: 20px auto;
+}
+
+.tb-meta {
+  margin-top: 20px;
+}
+
+.textbook-strip__title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
