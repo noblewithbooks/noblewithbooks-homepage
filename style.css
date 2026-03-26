@@ -4661,3 +4661,23 @@ body .dionysos-banner.dionysos-home-banner{
   top: 82vh;
   right: 24vw;
 }
+
+/* ===== NAV size down ===== */
+@media (min-width: 1025px){
+  .nav,
+  .nav-links{
+    gap: 8px;
+  }
+
+  .nav-links a.btn-space{
+    padding: 7px 10px;
+    font-size: 13px;
+    line-height: 1.15;
+    gap: 8px;
+  }
+
+  .nav-links a.btn-space .ico{
+    width: 10px;
+    height: 10px;
+  }
+}
