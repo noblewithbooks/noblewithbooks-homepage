@@ -4704,3 +4704,26 @@ body .dionysos-banner.dionysos-home-banner{
     align-items: center;
   }
 }
+
+@media (min-width: 1025px){
+  .hero-media,
+  .hero-image,
+  .home-hero__media,
+  .main-hero__media,
+  .hero-card{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-media img,
+  .hero-image img,
+  .home-hero__media img,
+  .main-hero__media img,
+  .hero-card img{
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
