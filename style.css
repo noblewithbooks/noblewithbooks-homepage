@@ -22,15 +22,16 @@
 
   /* white highlight */
   --pearl-white: rgba(255,255,255,0.42);
-}
 
+  --base-font: 15px;
+}
 *{ box-sizing: border-box; }
 
 body{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
                "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: var(--base-font);
   line-height: 1.6;
   color: var(--text);
 
