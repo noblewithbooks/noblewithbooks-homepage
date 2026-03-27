@@ -3913,7 +3913,7 @@ body .dionysos-banner.dionysos-home-banner{
   width: 100%;
   margin: 18px auto 86px;
   padding: 30px 30px 26px;
-  
+
   border-radius: 18px;
   background: rgba(255,255,255,0.78);
   border: 1px solid rgba(18,24,38,0.14);
@@ -5002,4 +5002,18 @@ body .dionysos-banner.dionysos-home-banner{
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
+}
+
+/* notice image */
+.notice-thumb{
+  margin: 14px 0 16px;
+}
+
+.notice-thumb img{
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(18,24,38,0.10);
 }
