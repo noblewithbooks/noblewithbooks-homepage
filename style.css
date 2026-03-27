@@ -1774,8 +1774,9 @@ main > p{
    - copy is 2 lines only
    ========================= */
 
-.cinema-box{
-  width: min(980px, 92vw);
+   .cinema-box{
+  width: 100%;
+  max-width: 840px;
   margin: 56px auto 18px;
 }
 
@@ -4663,22 +4664,23 @@ body .dionysos-banner.dionysos-home-banner{
   right: 24vw;
 }
 
+
 @media (min-width: 1025px){
   .header{
     padding: 12px 18px;
   }
 
   .header-inner{
-    max-width: 880px;
+    max-width: 840px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 20px;
+    column-gap: 16px;
     align-items: center;
   }
 
   .brand h1{
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .tagline{
@@ -4720,8 +4722,9 @@ body .dionysos-banner.dionysos-home-banner{
   }
 
   .hero{
-    width: min(1080px, calc(100vw - 96px));
-    height: 620px;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(360px, 42vw, 520px);
     margin: 18px auto 14px;
     border-radius: 18px;
   }
@@ -4731,7 +4734,7 @@ body .dionysos-banner.dionysos-home-banner{
   }
 
   #home-manifesto{
-    width: min(720px, calc(100vw - 96px));
+    width: min(760px, calc(100vw - 36px));
     margin: 14px auto 24px;
   }
 
@@ -4742,9 +4745,9 @@ body .dionysos-banner.dionysos-home-banner{
 
 /* 교재 프로젝트 페이지 */
 .container.textbook-page {
-  max-width: 100%;
-  margin: 0 auto; /* 자동으로 좌우 여백 맞추기 */
-  padding: 0 18px; /* 양쪽 여백 추가 */
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 18px;
 }
 
 .tb-hero {
