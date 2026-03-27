@@ -4937,3 +4937,72 @@ body .dionysos-banner.dionysos-home-banner{
     object-fit: contain !important;
   }
 }
+
+@media (max-width: 760px){
+  /* 공통 가로 넘침 방지 */
+  .container,
+  .header-inner,
+  .hero,
+  #home-manifesto,
+  .history-grid,
+  .archive-section,
+  .journal-grid,
+  .cinema-box{
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* 오른쪽 여백 과다 방지 */
+  .container{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* 시네마 박스는 세로 스택으로 강제 */
+  .cinema-box{
+    margin: 32px auto 18px !important;
+  }
+
+  .cinema-strip{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    justify-content: stretch !important;
+    align-items: stretch !important;
+  }
+
+  .film-cut{
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 132px !important;
+    margin: 0 !important;
+  }
+
+  .film-body{
+    left: 12px !important;
+    right: 12px !important;
+    top: 26px !important;
+    bottom: 26px !important;
+    padding: 8px !important;
+  }
+
+  .film-en{
+    font-size: 0.78rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .film-ko{
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* 모바일에서 필름/저널 섹션 좌우 들여쓰기 정리 */
+  .archive-section,
+  .archive-intro,
+  .journal-grid{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
