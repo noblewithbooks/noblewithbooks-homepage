@@ -920,7 +920,7 @@ body{
 
 /* quote */
 #home-manifesto .m-quote{
-  margin: 0 0 -8px;
+  margin: 0 0 -9px;
   font-size: 0.98rem;
   line-height: 1.5;
   color: rgba(18,24,38,0.70);
@@ -938,7 +938,7 @@ body{
 #home-manifesto .m-seq{
   position: relative;
   width: min(760px, calc(100vw - 48px));
-  margin: 16px auto 0;
+  margin: 17px auto 0;
   min-height: 3.8em;
   padding-bottom: 26px;
 }
