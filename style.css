@@ -920,11 +920,13 @@ body{
 
 /* quote */
 #home-manifesto .m-quote{
-  margin: 0 0 10px;
+  margin: 0 0 -6px;
   font-size: 0.98rem;
   line-height: 1.5;
   color: rgba(18,24,38,0.70);
 }
+
+
 #home-manifesto .m-source{
   display:block;
   margin-top: 6px;
@@ -936,11 +938,9 @@ body{
 #home-manifesto .m-seq{
   position: relative;
   width: min(760px, calc(100vw - 48px));
-  margin: 8px auto 0;
-
-  /* 문장 영역 고정: 흔들림/겹침 방지 */
+  margin: 14px auto 0;
   min-height: 3.8em;
-  padding-bottom: 26px; /* 아래 광선 자리 */
+  padding-bottom: 26px;
 }
 
 /* lines: 절대 투명 텍스트 금지 (clip/shimmer 전부 안 씀) */
