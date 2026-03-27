@@ -4915,3 +4915,19 @@ body .dionysos-banner.dionysos-home-banner{
     max-width: 100% !important;  /* 모바일에서 텍스트 영역을 화면에 꽉 맞게 */
   }
 }
+
+@media (max-width: 768px){
+  .hero{
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 16px auto 12px !important;
+  }
+
+  .hero img{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+}
