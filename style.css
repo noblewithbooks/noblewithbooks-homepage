@@ -1774,19 +1774,22 @@ main > p{
    - copy is 2 lines only
    ========================= */
 
-   .cinema-box{
-  width: min(980px, 92vw);
-  margin: 56px auto 18px;
+.cinema-box{
+  width: 100%;
+  max-width: 840px;
+  margin: 40px auto 18px;
 }
 
 .cinema-strip{
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
 }
 
+
+
+/* 1) 전체 박스: 두 번째처럼 '연하고 고급' */
 .film-cut{
   position: relative;
   display: inline-block;
@@ -1795,7 +1798,7 @@ main > p{
   text-decoration: none;
   border-radius: 10px;
   overflow: hidden;
-}
+
 
   /* 둔탁한 박스감 줄이고, 지면에 얹힌 느낌 */
   background: rgba(255,255,255,0.10);
