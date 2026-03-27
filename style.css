@@ -3910,10 +3910,10 @@ body .dionysos-banner.dionysos-home-banner{
 
 /* 전체 쉘 */
 .tb-shell{
-  width: min(1040px, 92vw);
+  width: 100%;
   margin: 18px auto 86px;
   padding: 30px 30px 26px;
-
+  
   border-radius: 18px;
   background: rgba(255,255,255,0.78);
   border: 1px solid rgba(18,24,38,0.14);
