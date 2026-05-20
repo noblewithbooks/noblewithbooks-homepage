@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>운명의 시간 · 편집자 노트</title>
+ <link rel="stylesheet" href="../style.css?v=stable" />
+
+  <style>
+    :root{
+      --vision-ink: rgba(18,28,48,0.96);
+      --vision-muted: rgba(18,28,48,0.68);
+      --vision-accent: rgba(58,110,180,0.95);
+      --vision-line: rgba(18,28,48,0.18);
+      --vision-paper: rgba(245,248,255,0.6);
+    }
+
+    .vision-note{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+      color: var(--vision-ink);
+    }
+
+    .vision-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--vision-line);
+      padding-bottom:14px;
+      margin-bottom:36px;
+      font-size:13px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--vision-muted);
+    }
+
+    .vision-hero h1{
+      font-size:clamp(32px,4.8vw,54px);
+      line-height:1.05;
+      letter-spacing:-0.02em;
+      margin:0 0 18px;
+    }
+    .vision-hero h1 span{
+      color:var(--vision-accent);
+    }
+
+    .vision-lead{
+      font-size:18px;
+      line-height:1.95;
+      color:var(--vision-muted);
+      max-width:70ch;
+      margin-bottom:48px;
+    }
+
+    .vision-body{
+      font-size:16px;
+      line-height:2.0;
+    }
+    .vision-body p{
+      margin:0 0 22px;
+    }
+
+    .vision-section{
+      margin:64px 0 36px;
+    }
+    .vision-section h3{
+      font-size:21px;
+      letter-spacing:-0.01em;
+      margin-bottom:18px;
+      padding-left:14px;
+      border-left:4px solid var(--vision-accent);
+    }
+
+    .vision-declare{
+      margin:70px 0;
+      padding:36px 28px;
+      background:var(--vision-paper);
+      border-radius:26px;
+      text-align:center;
+      font-size:20px;
+      line-height:1.9;
+    }
+
+    .vision-sign{
+      margin-top:64px;
+      padding-top:20px;
+      border-top:1px solid var(--vision-line);
+      font-size:13px;
+      line-height:1.9;
+      color:var(--vision-muted);
+    }
+
+    .vision-nav{
+      margin-top:18px;
+      font-size:13px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--vision-muted);
+    }
+    .vision-nav a{
+      text-decoration:none;
+      border-bottom:1px solid var(--vision-line);
+      color:inherit;
+      padding-bottom:2px;
+    }
+    .vision-nav a:hover{
+      border-bottom-color: var(--vision-ink);
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    
+   <nav class="nav nav--toggle" aria-label="Primary">
+  <!-- Mobile: toggle button -->
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menu</span>
+  </button>
+
+  <!-- Links -->
+ <div class="nav-links" id="navLinks">
+  <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+  <a class="btn-space" href="../about.html"><span class="ico"></span>About</a>
+  <a class="btn-space" href="../publishing-consulting.html"><span class="ico"></span>출판 컨설팅</a>
+  <a class="btn-space" href="../contact.html"><span class="ico"></span>Contact</a>
+
+  <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+  <a class="btn-space" href="../editor.html" aria-current="page"><span class="ico"></span>편집자 노트</a>
+
+  <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+  <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+  <a class="btn-space" href="../audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+  <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+  <a class="btn-space" href="../rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+  <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+  <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+</div>
+
+</nav>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+
+
+  </div>
+</header>
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · WORK RHYTHM</div>
+    <div>2026.05.20</div>
+  </div>
+
+  <section class="vision-hero">
+    <h1>
+      <span>운명의 시간</span><br>
+      비 오는 날, 오래된 책을 다시 읽다
+    </h1>
+    <p class="vision-lead">
+      마감이 끝난 다음 날, 몸은 먼저 속도를 낮추라고 말했다.  
+      그래서 나는 신청서를 잠시 미루고, 몇 해 전 내가 써두었던 『운명의 시간』을 다시 펼쳤다.
+    </p>
+  </section>
+
+  <section class="vision-body">
+
+    <p>오늘은 비가 추적추적 내리는 수요일이다. 어제까지 원고 작업과 서류 작업을 강행군으로 끝냈더니, 오늘은 조금 쉬었다가 가고 싶은 마음이 먼저 올라왔다. 비까지 내리니 더 그랬다. 그래서 아침에 일어나 거품 목욕을 했다. 요즘 이런저런 서류 작업과 원고 작업으로 몸이 뻐근해졌고, 그 긴장을 먼저 풀어줘야 했다.</p>
+
+    <p>목욕을 마친 뒤에는 이상하게도 2023년에 오리지널 전자책으로 출간했던 『운명의 시간』을 읽고 싶어졌다. 요즘 네이버에서 내 이름을 검색하면 도서 자료에 그 책이 자꾸 먼저 뜨기도 했고, 사실 내가 무슨 내용을 썼는지 나도 선명하게 기억하지 못했기 때문이다. 몇 년 전에 썼던 책을 어떻게 전부 기억하겠는가. 호기심이 생겨 책상 앞에 앉아 원고를 처음부터 끝까지 읽어보았다.</p>
+
+    <p>생각보다 아주 잘 썼다. 내가 썼지만, “참 잘 썼네”라는 생각을 하면서 끝까지 읽었다. 그러자 그 책을 쓸 당시의 생각과 방향이 다시 살아났다. 『운명의 시간』이라는 제목이 품고 있던 감각도 다시 선명해졌다. 책을 써놓으면 좋은 점이 바로 이런 데 있다. 그때 내가 무슨 생각을 하며 살았는지, 어떤 문장으로 나를 붙잡고 있었는지, 책 안에 고스란히 남아 있다.</p>
+
+    <p>일기나 블로그 글은 마음이 바뀌면 지우거나 버릴 수 있다. 하지만 책은 이미 발간된 뒤에는 쉽게 사라지지 않는다. 그대로 남는다. 그리고 그만큼 더 정밀하게 쓰고, 더 정리된 생각으로 남는다. 그래서 나중에 다시 읽어도 일기처럼 낯뜨겁기보다, 그 시절의 나를 하나의 문서처럼 마주하게 된다.</p>
+
+    <div class="vision-section">
+      <h3>마감 뒤에 몸이 먼저 기억한 것</h3>
+    </div>
+
+    <p>오늘 이렇게 옛날 원고를 읽으며 여유를 부릴 수 있었던 것은 어제까지 해야 할 일을 어느 정도 끝내놓았기 때문이다. 콘텐츠진흥원 원고 마감일은 어제였지만, 마지막 날에는 지원자들의 업로드가 몰려 서버가 불안정할 수도 있다는 안내가 있었다. 그래서 나는 엊그제 미리 마감을 했다.</p>
+
+    <p>그날 종일 앉아서 여덟 시간, 아홉 시간 가까이 원고를 마무리하다 보니 밤에는 자다가 발에 쥐가 났다. 잘 풀리지 않는 쥐라서 꽤 고생했다. 의자에 너무 오래 앉아 있으면 몸이 먼저 신호를 보낸다. 예전에는 이런 신호를 무시하고 밀어붙였지만, 이제는 그러면 안 된다는 걸 안다.</p>
+
+    <p>요즘 내 철칙은 웬만하면 하루 네 시간 이상 의자에 내리 앉아 있지 않는 것이다. 중간고사 공부를 할 때도 누워서 태블릿을 보며 공부했다. 물론 이번에는 마감이 있어서 어쩔 수 없었다. 응모는 하고 싶고, 시간은 부족했다. 그러니 발에 쥐가 나는 한이 있더라도 그날만큼은 끝까지 매달려야 했다. 다행히 원고와 서류는 제때 서버에 올렸다.</p>
+
+    <div class="vision-section">
+      <h3>시나리오의 문 앞에 처음 서다</h3>
+    </div>
+
+    <p>출판진흥원과 여러 기관의 사업에 응모해 선정되었던 경험이 있어, 이번에도 열심히 작성해보았다. 다만 이번 작업은 예전보다 훨씬 난이도가 높았다. 새로운 콘텐츠를 구성하고, 일부를 직접 집필하고, 시나리오 형식의 세계로 들어가야 했기 때문이다. 처음 써보는 시나리오 구성이라 막막한 순간도 있었다. 그래도 결국 끝까지 해냈다.</p>
+
+    <p>첫술에 배부를 수는 없다. 하지만 이제 시나리오 작업의 출발점에 섰다는 사실만으로도 충분히 축하할 만하다. 뭐든 시작이 어렵다. 일단 맛을 보면 다음부터는 조금 더 쉬워진다. 그저께 큰 원고를 마감했고, 어제는 또 다른 기관의 서류를 작성해 서버에 올렸다. 시나리오 작업보다는 수월했지만, 그래도 한나절을 다 투자해야 했다.</p>
+
+    <p>콘텐츠진흥원의 발표는 10월이다. 어제 작업했던 서류의 결과는 6월이나 7월쯤 나올 것이다. 만약 10월에 선정된다면, 그것은 정말 ‘운명의 시간’이 도래한 사건이 될 것이다. 큰 기대를 품고 단정할 일은 아니지만, 소망은 품을 수 있다. 아이디어와 콘셉트는 충분히 힘이 있다고 생각한다.</p>
+
+    <p>드라마나 영화는 실제 제작 단계로 들어가면 전문 작가와 제작진이 붙는 구조다. 그러니 기획 단계에서 중요한 것은 완벽한 대본 하나만이 아니라, 상품성과 확장성을 가진 세계관, 선명한 콘셉트, 앞으로 발전할 수 있는 이야기의 씨앗이다. 그런 점에서 이번 응모는 나에게 결과와 별개로 중요한 첫 진입이었다. 출판의 세계에서 영화와 드라마의 세계로 한 걸음 들어간 셈이다.</p>
+
+    <div class="vision-section">
+      <h3>오늘은 빠져나갈 구멍을 선택했다</h3>
+    </div>
+
+    <p>사실 오늘은 출판진흥원의 오디오북 제작 사업 신청서를 작성할 생각이었다. 그런데 접수도 내일부터이고, 마감까지도 아직 며칠 여유가 있다. 그래서 오늘은 한껏 여유를 부려보기로 했다. 나는 빠져나갈 구석이 있으면 이렇게 여유를 챙기는 편이다. 그것이 어쩌면 더 현명한 방식인지도 모른다.</p>
+
+    <p>매번 자신을 몰아붙이면 결국 몸과 마음이 먼저 닳는다. 조금이라도 쉴 수 있을 때 쉬고, 조금이라도 틈이 있을 때 누리고, 조금이라도 딴짓할 수 있을 때 딴짓해야 오래 간다. 사람의 몸과 정신은 여유가 있을 때 제 역량을 더 오래 발휘한다고 나는 생각한다.</p>
+
+    <p>올해 너무 해야 할 일이 많아서 출판진흥원의 사업에는 더 이상 응모하지 않으려고 했다. 그런데 오디오북 제작 지원 사업에는 마지막으로 한 번 더 지원해보기로 했다. 지금까지 우리 책읽는귀족은 여러 종의 오디오북 제작 지원에 선정되어 왔다. 그래서 더 내놓을 카드가 없을지도 모른다고 생각했다. 그런데 며칠 전 호수공원을 산책하다가, 아직 신청해볼 만한 책 세 종이 떠올랐다.</p>
+
+    <p>가만히 걸으며 생각하다 보면 이상하게도 밀려 있던 책들이 다시 떠오른다. 너무 쟁쟁한 책들 사이에서 잠시 뒤로 밀려 있었을 뿐, 여전히 가능성이 있는 원고들이 있다. 한 회에 세 종까지 신청할 수 있다면, 이번에는 그 세 종을 신청해볼 생각이다. 한 종이라도 선정되면 좋은 일이다. 선정되지 않더라도, 시간이 있는 한 응모는 해볼 만하다.</p>
+
+    <div class="vision-declare">
+      오늘의 여유는 게으름이 아니다.<br>
+      오래 가기 위해 속도를 조절하는 일이다.
+    </div>
+
+    <div class="vision-section">
+      <h3>침대와 홍삼, 다시 마련한 작업의 기반</h3>
+    </div>
+
+    <p>요즘 나는 좌식 생활을 접고 침대를 다시 마련했다. 좌식 생활을 몇 달 해보니 생각보다 힘든 점이 많았다. 몇십 년 동안 침대 생활을 해오다 보니, 침대가 없을 때는 잠자리가 편하지 않았고 낮에 일하거나 공부할 때도 집중이 잘 되지 않았다. 디오니소스 논술 교재도 원고의 큰 틀은 거의 잡아놓고도, 마지막 재배열 작업을 오래 미뤄두고 있었다. 중요한 작업에는 고도의 집중력과 에너지가 필요하다.</p>
+
+    <p>출판사를 처음 시작했을 때를 떠올리면, 그때의 나는 정말 철인처럼 일했다. 일산 백석동 작업실에서 1인 출판사를 운영하면서도 큰 출판사의 한 팀에 못지않은 시스템으로 움직였다. 영업, 경리, 편집, 경영을 모두 혼자 했다. 그러면서도 거의 매달 신간을 출간했다. 보통 단행본보다 분량이 많은 인문서들을 계속 만들어냈고, 출판진흥원이나 도서관 선정 도서로 이어지는 성과도 냈다.</p>
+
+    <p>그때의 에너지는 절박함에서 나왔고, 또 한편으로는 커피와 홍삼의 도움도 있었다. 진한 아메리카노를 마시며 긴 시간을 버텼고, 정관장 홍삼을 먹으며 집중력을 끌어올렸다. 그러나 코로나19 시기에 제주살이를 하면서 둘 다 끊었다. 매달 종이책 신간을 내야 한다는 압박이 사라졌고, 몸을 과하게 몰아붙일 이유도 줄어들었기 때문이다.</p>
+
+    <p>최근에는 다시 홍삼을 먹기 시작했다. 환절기이기도 하고, 파리로 가기 전에 몸을 잘 챙겨야 한다는 생각이 커졌기 때문이다. 체력이 부족해서 파리행이 미뤄지는 일은 만들고 싶지 않다. 침대도 마찬가지다. 파리행이 일 년도 채 남지 않았으니 새로 사기가 망설여졌지만, 중요한 작업들이 계속 밀리는 것을 보며 결국 들여놓았다.</p>
+
+    <p>이번에는 프레임과 매트리스를 따로 구입했다. 조금 번거롭긴 했지만, 좋은 가격에 마련할 수 있었다. 목재 프레임이라 방의 분위기도 바뀌었다. 매트리스도 슈퍼싱글로 잘 들였다. 침대 생활로 돌아오고 홍삼까지 다시 지원 사격을 해주니, 집중력과 에너지가 확실히 올라왔다. 엊그제 긴 시간 앉아 마무리 작업을 해낼 수 있었던 것도, 결국 환경이 어느 정도 조성되었기 때문이다.</p>
+
+    <p>집필은 고난도의 사고 작업이다. 편안한 환경 없이 오래 버티기 어렵다. 부산에서 수원으로 처음 올라왔을 때 작업실 환경이 제대로 잡히지 않아 정밀한 작업을 하지 못했던 것도 그 때문이다. 그 기간에는 오디오북 제작 수업을 듣고, 자체 오디오북을 녹음하고 편집하는 실험을 했다. 집필처럼 세밀한 뇌의 작업은 환경이 안정된 뒤에야 가능했다.</p>
+
+    <p>광교에서 새로운 작업실을 얻고부터는 다시 공부도 시작할 수 있었고, 작업도 이어갈 수 있었다. 다만 그동안 에너지가 팡팡 터지는 느낌은 부족했다. 올해는 파리행을 앞둔 마지막 집중 기간이다. 디오니소스 논술 프로젝트도 1차로 마쳐야 하고, 정조 코드도 더 발전시켜야 한다. 그래서 이제는 몸의 기반을 다시 세워야 할 시점이라고 느낀다.</p>
+
+    <div class="vision-section">
+      <h3>운명의 시간은 어디에서 시작되는가</h3>
+    </div>
+
+    <p>이번 시나리오 첫 진입 프로젝트를 무사히 마치고 나니, 10월 발표가 은근히 기다려진다. 현상적으로는 아무 변화가 없을 수도 있다. 하지만 내 안에 시나리오 집필 DNA가 서서히 태동하기 시작했다는 것 자체가 이미 큰 변화다. 이런 기회는 매년 찾아온다. 한 번 문 앞에 서본 사람은 다음번에는 문고리를 더 정확히 찾을 수 있다.</p>
+
+    <p>오늘 오전에 다시 읽은 『운명의 시간』을 생각하니, 내 안에서도 그 말이 다시 살아났다. 나의 운명의 시간은 언제 가시적으로 시작될까. 어쩌면 파리로 가는 비행기에 올라타는 그 순간일지도 모른다. 그때 비로소 나의 세계는 물리적으로도, 정신적으로도 다른 차원으로 넘어갈 것이다.</p>
+
+    <p>살아보니 환경은 정말 중요하다. 사람은 어디에서 사느냐에 따라 인생의 방향이 달라진다. 내가 어릴 때부터 서울에서 살았다면 아마 영화학과를 선택했을지도 모른다. 접근성은 생각보다 큰 힘이다. 포항에서는 영화학과가 가까운 선택지로 보이지 않았고, 연극이나 영화 관련 종사자를 접할 기회도 거의 없었다. 문화적 환경이 좁으면 상상할 수 있는 진로도 좁아진다.</p>
+
+    <p>하지만 이제라도 제 길을 찾아가고 있으니 다행이다. 파리로 인생의 방향을 정했다는 것이 가장 큰 수확이다. 그동안 인문학적 통찰력으로 세상을 읽고 사색해온 시간이 결국 나를 그 방향으로 데려간 것이라면, 그걸로 충분하다. 앞으로 파리지앙으로 살아갈 시간은 내 인생의 많은 결핍을 다른 방식으로 보상해줄 것이다.</p>
+
+    <p>올해는 더 집중해서 살아야 한다. 그래야 발걸음도 가볍게 파리행 비행기에 오를 수 있다. 그래서 홍삼이 필요하고, 침대도 필요하다. 둘 다 갖췄으니 이제 다시 공부와 작업에 매진해야 한다. 물론 산책과 휴식, 영화 감상 같은 삶의 여유도 함께 가져가야 한다.</p>
+
+    <p>인생은 불나방처럼 곧장 뛰어드는 방식으로 살아서는 오래 가지 못한다. 멀리 보고, 인내심을 갖고, 몸을 돌보며 나아가야 한다. 육체가 없다면 이 세상에 남아 어떤 문장도 쓸 수 없다. 나는 아직 하고 싶은 일도 많고, 해야 할 일도 많다. 그러니 건강하게 오래 살아야 한다. 오늘 나는 다시 깨닫는다. 내 인생의 에너지를 유지하는 것은 휴식과 홍삼과 마음의 여유와 침대라는 것을. 그래야 내가 기다리는 ‘운명의 시간’을 제대로 맞이할 수 있다.</p>
+
+  </section>
+  
+<footer class="editor-footer">
+  <div class="note-sign">
+    — Noblewithbooks · Étoile Bleue Créations · Editor’s Note · Digital Magazine Platform
+  </div>
+
+  <div class="note-nav">
+    <a href="../editor.html">← 편집자 노트 목록</a>
+    <a href="../index.html">Home</a>
+  </div>
+</footer>
+
+</main>
+
+</body>
+</html>
