@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>언어학자가 되기로 한 날 · 편집자 노트</title>
+ <link rel="stylesheet" href="../style.css?v=stable" />
+
+  <style>
+    :root{
+      --vision-ink: rgba(18,28,48,0.96);
+      --vision-muted: rgba(18,28,48,0.68);
+      --vision-accent: rgba(58,110,180,0.95);
+      --vision-line: rgba(18,28,48,0.18);
+      --vision-paper: rgba(245,248,255,0.6);
+    }
+
+    .vision-note{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+      color: var(--vision-ink);
+    }
+
+    .vision-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--vision-line);
+      padding-bottom:14px;
+      margin-bottom:36px;
+      font-size:13px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--vision-muted);
+    }
+
+    .vision-hero h1{
+      font-size:clamp(32px,4.8vw,54px);
+      line-height:1.05;
+      letter-spacing:-0.02em;
+      margin:0 0 18px;
+    }
+    .vision-hero h1 span{
+      color:var(--vision-accent);
+    }
+
+    .vision-lead{
+      font-size:18px;
+      line-height:1.95;
+      color:var(--vision-muted);
+      max-width:70ch;
+      margin-bottom:48px;
+    }
+
+    .vision-body{
+      font-size:16px;
+      line-height:2.0;
+    }
+    .vision-body p{
+      margin:0 0 22px;
+    }
+
+    .vision-section{
+      margin:64px 0 36px;
+    }
+    .vision-section h3{
+      font-size:21px;
+      letter-spacing:-0.01em;
+      margin-bottom:18px;
+      padding-left:14px;
+      border-left:4px solid var(--vision-accent);
+    }
+
+    .vision-declare{
+      margin:70px 0;
+      padding:36px 28px;
+      background:var(--vision-paper);
+      border-radius:26px;
+      text-align:center;
+      font-size:20px;
+      line-height:1.9;
+    }
+
+    .vision-sign{
+      margin-top:64px;
+      padding-top:20px;
+      border-top:1px solid var(--vision-line);
+      font-size:13px;
+      line-height:1.9;
+      color:var(--vision-muted);
+    }
+
+    .vision-nav{
+      margin-top:18px;
+      font-size:13px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--vision-muted);
+    }
+    .vision-nav a{
+      text-decoration:none;
+      border-bottom:1px solid var(--vision-line);
+      color:inherit;
+      padding-bottom:2px;
+    }
+    .vision-nav a:hover{
+      border-bottom-color: var(--vision-ink);
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+   <nav class="nav nav--toggle" aria-label="Primary">
+  <!-- Mobile: toggle button -->
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menu</span>
+  </button>
+
+  <!-- Links -->
+ <div class="nav-links" id="navLinks">
+  <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+  <a class="btn-space" href="../about.html"><span class="ico"></span>About</a>
+  <a class="btn-space" href="../publishing-consulting.html"><span class="ico"></span>출판 컨설팅</a>
+  <a class="btn-space" href="../contact.html"><span class="ico"></span>Contact</a>
+
+  <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+  <a class="btn-space" href="../editor.html" aria-current="page"><span class="ico"></span>편집자 노트</a>
+
+  <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+  <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+  <a class="btn-space" href="../audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+  <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+  <a class="btn-space" href="../rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+  <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+  <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+</div>
+
+</nav>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+  </div>
+</header>
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · LINGUIST</div>
+    <div>2026.06.15</div>
+  </div>
+
+  <section class="vision-hero">
+    <h1>
+      <span>언어학자가 되기로 한 날</span><br>
+      영화에서 언어로, 중심축이 조용히 이동한 오후
+    </h1>
+    <p class="vision-lead">
+      오늘 나는 하나의 문장을 얻었다. 나는 언어학자가 될 것이다.  
+      이 문장은 갑자기 온 것이 아니라, 오래전부터 내 안에 있었지만 아직 제 이름을 얻지 못한 문장이었다.
+    </p>
+  </section>
+
+  <section class="vision-body">
+
+    <p>오늘 나는 하나의 문장을 얻었다.</p>
+
+    <div class="vision-declare">
+      나는 언어학자가 될 것이다.
+    </div>
+
+    <p>이 문장은 갑자기 내게 온 것이 아니다. 오래전부터 내 안에 있었지만, 아직 제 이름을 얻지 못한 문장이었다. 철학을 공부하던 시절에는 그것이 개념에 대한 집착으로 나타났고, 출판 편집자로 살아온 시간에는 문장과 구조를 다루는 감각으로 드러났다. 경상도에서 서울로 올라와 말의 억양과 리듬, 사투리와 표준어 사이의 미묘한 힘의 차이를 느꼈을 때도, 나는 이미 언어를 관찰하고 있었다.</p>
+
+    <p>그때는 몰랐다. 나는 그냥 예민한 사람인 줄 알았다. 말투 하나, 억양 하나, 어미 하나에 마음이 걸리는 사람이었다.</p>
+
+    <p>하지만 이제는 안다. 그것은 예민함이 아니라 언어학자의 귀였을지도 모른다.</p>
+
+    <div class="vision-section">
+      <h3>빈 곳이 있다는 것은, 내가 들어갈 자리가 있다는 뜻</h3>
+    </div>
+
+    <p>나는 한국어교육학을 공부하면서 이상한 감각을 받았다. 이 분야에는 빈 공간이 많았다. 여백이 있었다. 누군가 아직 충분히 설명하지 않은 자리, 정리되지 않은 구멍, 구조화되지 않은 언어의 틈들이 보였다. 처음에는 그것이 허술함처럼 보였다. 그런데 곧 생각이 바뀌었다.</p>
+
+    <p>빈 곳이 있다는 것은, 내가 들어갈 자리가 있다는 뜻이었다.</p>
+
+    <p>영화는 오래도록 나의 중심에 있었다. 나는 영화가 인간과 세계를 가장 깊이 보여주는 예술이라고 믿었다. 지금도 그 믿음은 크게 달라지지 않았다. 다만 세계 기준으로 보면 영화는 이미 거대한 산맥이다. 이론도 있고, 산업도 있고, 학교도 있고, 비평도 있고, 전설도 있다. 물론 한국 영화판에는 여전히 빈틈이 있다. 내가 메우고 싶었던 구멍도 있었다. 그러나 세계 전체를 놓고 보면, 영화는 이미 오래전에 거대한 체계를 완성한 세계다.</p>
+
+    <p>반면 한국어학은 아직 젊다. 한국어교육학은 더더욱 그렇다. 프랑스어권 학습자를 위한 한국어 설명 체계는 아직 충분히 섬세하지 않다. 한국어와 프랑스어 사이의 구조적 차이를 AI 시대의 언어 데이터로 바꾸는 일은 이제 시작에 가깝다.</p>
+
+    <p>나는 거기서 나의 가능성을 보았다.</p>
+
+    <div class="vision-section">
+      <h3>중심축의 이동</h3>
+    </div>
+
+    <p>이제 중심축은 이동한다.</p>
+
+    <p>영화가 사라지는 것은 아니다. 다만 영화는 중심에서 옆으로 물러난다. 언어학이 중심에 선다.</p>
+
+    <p>나는 영화인이 되기 위해 언어를 쓰는 사람이 아니라, 언어학자로서 세계를 해석하고, 필요할 때 영화를 그 해석의 매체로 쓰는 사람이 될 것이다.</p>
+
+    <p>이 변화는 포기가 아니다. 순서가 바뀐 것이다.</p>
+
+    <p>예전에는 영화가 중심이고 언어가 보조였다. 이제는 언어학이 중심이고 영화가 확장이다.</p>
+
+    <div class="vision-declare">
+      영화를 버린 것이 아니다.<br>
+      언어를 중심에 놓았을 뿐이다.
+    </div>
+
+    <div class="vision-section">
+      <h3>내 삶의 조각들이 언어학 안으로 들어오다</h3>
+    </div>
+
+    <p>이 전환이 내게 이상하게도 불안하지 않은 이유는, 언어학이 내 삶의 여러 조각을 버리지 않고 모두 받아들이기 때문이다. 철학은 개념 분석으로 들어오고, 출판은 구조 설계로 들어오고, 프랑스어는 사랑으로 들어오고, 한국어교육학은 현장으로 들어온다. 경상도 억양과 서울말 사이에서 느꼈던 오래된 감각은 사회언어학의 문으로 이어지고, 전자책과 홈페이지를 만들며 만난 HTML과 코드의 세계는 인간 언어와 기계 언어 사이의 새로운 통로가 된다.</p>
+
+    <p>언어는 더 이상 말과 글에만 머물지 않는다. 언어는 구조이고, 데이터이고, 코드이고, 인터페이스다. 언어는 인간이 세계를 이해하는 방식이며, 앞으로는 AI가 인간에게 다가오는 방식이기도 하다.</p>
+
+    <div class="vision-section">
+      <h3>피지컬 AI 이후, 다시 언어의 시간이 온다</h3>
+    </div>
+
+    <p>지금 시대는 피지컬 AI를 말한다. 로봇, 반도체, 게임, 시뮬레이션, 몸을 가진 인공지능. 그러나 몸을 가진 AI가 인간 사회에 들어오려면 결국 말을 알아들어야 한다. 사람의 모호한 요청을 해석하고, 기억과 맥락을 이어붙이고, 감정의 온도를 조절하고, 다국어 사이를 자연스럽게 건너야 한다.</p>
+
+    <p>그때 필요한 것은 단순한 문장 생성 능력이 아니다. 섬세한 언어 모델, 학습자 오류 데이터, 문화적 맥락, 설명의 순서, 문법의 구조화다.</p>
+
+    <p>나는 그 지점에 관심이 있다. AI를 개발하는 사람이 아니라, AI가 인간의 언어를 더 잘 이해하고 가르치도록 만드는 사람. 한국어를 프랑스어권 학습자에게 설명 가능한 구조로 바꾸는 사람. 출판 편집자의 눈으로 언어 데이터를 편집하고, 언어학자의 눈으로 그 구조를 검증하는 사람.</p>
+
+    <p>그 길은 갑자기 나타난 새 길이 아니다. 내가 걸어온 길의 더 깊은 이름이다.</p>
+
+    <div class="vision-section">
+      <h3>교실은 종착지가 아니라 현장이다</h3>
+    </div>
+
+    <p>한국어교사는 그 길에서 필요한 현장이 될 것이다. 생계의 기반이자, 학습자의 실제 오류와 질문을 수집하는 장소. 그러나 그것이 나의 종착지는 아니다. 나는 교실을 연구자의 실험실로 삼고, 그곳에서 얻은 데이터를 논문과 교재와 플랫폼과 AI 언어교육 프로젝트로 바꿀 것이다.</p>
+
+    <p>석사에서는 한국어학과 언어학의 기초를 세우고, 박사에서는 본격적으로 대조언어학으로 들어갈 것이다. 한국어와 프랑스어. 모국어와 사랑하는 언어. 방언과 표준어. 인간 언어와 컴퓨터 언어. 교재와 데이터. 문장과 코드.</p>
+
+    <p>그 사이에 내가 설 자리가 있다.</p>
+
+    <div class="vision-section">
+      <h3>한국과 프랑스 사이의 빈 공간</h3>
+    </div>
+
+    <p>나는 한국으로 돌아가 취업할 생각이 없다. 내 자리는 파리일 것이다. 그러나 한국과 끊어지는 것도 아니다. 오히려 나는 한국과 프랑스 사이에서 일할 것이다. 두 나라 사이에는 아직 빈 공간이 많다. 행사로 끝나는 문화교류가 아니라, 언어와 출판과 교육과 AI를 엮는 구조적 프로젝트가 필요하다. 누군가는 그 빈 곳에 다리를 놓아야 한다.</p>
+
+    <p>나는 그 일을 할 수 있을 것 같다.</p>
+
+    <p>물론 지금 당장 할 수 있다는 뜻은 아니다. 내게는 시간이 필요하다. 프랑스어는 C2까지 가야 한다. 한국어학과 언어학은 더 깊이 공부해야 한다. 논문을 써야 하고, 현장 데이터를 쌓아야 하고, 플랫폼에 나의 언어 세계를 축적해야 한다.</p>
+
+    <p>하지만 이상하게도 조급하지 않다.</p>
+
+    <div class="vision-section">
+      <h3>시대의 시간과 나의 시간</h3>
+    </div>
+
+    <p>오히려 시대의 시간과 나의 시간이 조금 맞아가는 느낌이 든다. 지금은 AI 산업이 몸을 만들고 있다. 피지컬 AI와 반도체와 로봇이 먼저 달려가고 있다. 그 사이 나는 언어를 공부할 것이다. 몇 년 뒤 AI가 인간의 비서, 교사, 동료로 더 깊이 들어오려 할 때, 그때는 언어의 섬세함이 더 크게 필요해질 것이다.</p>
+
+    <p>그 시점에 나는 말할 수 있어야 한다.</p>
+
+    <div class="vision-declare">
+      나는 한국어를 안다.<br>
+      나는 프랑스어를 사랑한다.<br>
+      나는 두 언어의 차이를 연구했다.<br>
+      나는 문장을 구조로 바꾸는 사람이다.
+    </div>
+
+    <p>나는 학습자의 막힘을 보았다. 나는 책을 만들었고, 플랫폼을 만들었고, 언어를 데이터로 바꾸는 방법을 생각해왔다.</p>
+
+    <p>그 목소리에 힘을 주기 위해 박사 학위가 필요하다.</p>
+
+    <p>박사는 내게 취업용 자격증이 아니다. 그것은 발언권이다. 한국과 프랑스 사이에서 프로젝트를 제안할 수 있는 힘이다. 출판인의 감각을 학문적 권위로 끌어올리는 장치다. 개인의 직감을 공적 언어로 번역하는 과정이다.</p>
+
+    <div class="vision-section">
+      <h3>늦게 찾아온 이름</h3>
+    </div>
+
+    <p>나는 이제 이 방향을 중심에 둔다.</p>
+
+    <p>언어학자.</p>
+
+    <p>아직은 멀다. 하지만 이 이름은 낯설지 않다. 오히려 뒤늦게 나를 찾아온 이름 같다. 나는 늘 언어를 만지고 살았다. 책을 만들고, 문장을 고치고, 제목을 붙이고, 말투를 감지하고, 의미의 흐름을 잡았다. 이제 그 일을 더 깊고 정확한 학문의 언어로 다시 배울 것이다.</p>
+
+    <div class="vision-declare">
+      한국어는 나의 뿌리다.<br>
+      프랑스어는 나의 사랑이다.<br>
+      대조언어학은 그 둘 사이에 놓을 다리다.
+    </div>
+
+    <p>AI 시대의 언어 데이터와 교재는 그 다리를 세계로 확장하는 방식이다. 영화는 언젠가 그 모든 것을 다시 빛과 장면으로 보여줄 또 하나의 언어가 될 것이다.</p>
+
+    <p>오늘 나는 중심을 바꾸었다.</p>
+
+    <p>영화를 버린 것이 아니다. 언어를 중심에 놓았을 뿐이다.</p>
+
+    <p>그리고 이상하게도, 내가 나에게 조금 더 가까워진 느낌이 든다.</p>
+
+  </section>
+
+<footer class="editor-footer">
+  <div class="note-sign">
+    — Noblewithbooks · Étoile Bleue Créations · Editor’s Note · Digital Magazine Platform
+  </div>
+
+  <div class="note-nav">
+    <a href="../editor.html">← 편집자 노트 목록</a>
+    <a href="../index.html">Home</a>
+  </div>
+</footer>
+
+</main>
+
+</body>
+</html>
