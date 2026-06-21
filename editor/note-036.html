@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>비가 오는 날, 프랑스어의 바다로 · 편집자 노트</title>
+ <link rel="stylesheet" href="../style.css?v=stable" />
+
+  <style>
+    :root{
+      --vision-ink: rgba(18,28,48,0.96);
+      --vision-muted: rgba(18,28,48,0.68);
+      --vision-accent: rgba(58,110,180,0.95);
+      --vision-line: rgba(18,28,48,0.18);
+      --vision-paper: rgba(245,248,255,0.6);
+    }
+
+    .vision-note{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+      color: var(--vision-ink);
+    }
+
+    .vision-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--vision-line);
+      padding-bottom:14px;
+      margin-bottom:36px;
+      font-size:13px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--vision-muted);
+    }
+
+    .vision-hero h1{
+      font-size:clamp(32px,4.8vw,54px);
+      line-height:1.05;
+      letter-spacing:-0.02em;
+      margin:0 0 18px;
+    }
+    .vision-hero h1 span{
+      color:var(--vision-accent);
+    }
+
+    .vision-lead{
+      font-size:18px;
+      line-height:1.95;
+      color:var(--vision-muted);
+      max-width:70ch;
+      margin-bottom:48px;
+    }
+.vision-photo{
+  margin: 0 0 34px;
+}
+
+.vision-photo img{
+  display:block;
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(18,28,48,0.18);
+}
+
+.vision-photo figcaption{
+  max-width:760px;
+  margin:14px auto 0;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--vision-muted);
+  text-align:center;
+}
+    .vision-body{
+      font-size:16px;
+      line-height:2.0;
+    }
+    .vision-body p{
+      margin:0 0 22px;
+    }
+
+    .vision-section{
+      margin:64px 0 36px;
+    }
+    .vision-section h3{
+      font-size:21px;
+      letter-spacing:-0.01em;
+      margin-bottom:18px;
+      padding-left:14px;
+      border-left:4px solid var(--vision-accent);
+    }
+
+    .vision-declare{
+      margin:70px 0;
+      padding:36px 28px;
+      background:var(--vision-paper);
+      border-radius:26px;
+      text-align:center;
+      font-size:20px;
+      line-height:1.9;
+    }
+
+    .vision-sign{
+      margin-top:64px;
+      padding-top:20px;
+      border-top:1px solid var(--vision-line);
+      font-size:13px;
+      line-height:1.9;
+      color:var(--vision-muted);
+    }
+
+    .vision-nav{
+      margin-top:18px;
+      font-size:13px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--vision-muted);
+    }
+    .vision-nav a{
+      text-decoration:none;
+      border-bottom:1px solid var(--vision-line);
+      color:inherit;
+      padding-bottom:2px;
+    }
+    .vision-nav a:hover{
+      border-bottom-color: var(--vision-ink);
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+   <nav class="nav nav--toggle" aria-label="Primary">
+  <!-- Mobile: toggle button -->
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menu</span>
+  </button>
+
+  <!-- Links -->
+ <div class="nav-links" id="navLinks">
+  <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+  <a class="btn-space" href="../about.html"><span class="ico"></span>About</a>
+  <a class="btn-space" href="../publishing-consulting.html"><span class="ico"></span>출판 컨설팅</a>
+  <a class="btn-space" href="../contact.html"><span class="ico"></span>Contact</a>
+
+  <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+  <a class="btn-space" href="../editor.html" aria-current="page"><span class="ico"></span>편집자 노트</a>
+
+  <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+  <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+  <a class="btn-space" href="../audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+  <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+  <a class="btn-space" href="../rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+  <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+  <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+</div>
+
+</nav>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+  </div>
+</header>
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · FRENCH LANGUAGE</div>
+    <div>2026.06.29</div>
+  </div>
+
+  <section class="vision-hero">
+    <h1>
+      <span>비가 오는 날, 프랑스어의 바다로</span><br>
+      기말고사를 끝내고, 델프와 파리로 향하는 첫 수업의 문 앞에 서다
+    </h1>
+    <p class="vision-lead">
+      한국어교육학과 첫 기말고사를 무사히 마친 다음 날, 나는 프랑스어학원에 등록했다. 방송대 프랑스언어문화학과를 지나, 사이버 한국외대 한국어교육학과에 적응하고, 이제 다시 프랑스어와 델프라는 바다로 들어가는 기록.
+    </p>
+  </section>
+
+  <section class="vision-body">
+
+    <div class="vision-section">
+      <h3>비가 오는 날, 한 학기가 끝났다</h3>
+    </div>
+
+    <p>비가 오는 날이었다.<br>
+기말고사가 끝난 다음 날이었다.<br>
+사이버 한국외대 한국어교육학과 3학년에 편입하고 나서 치른 첫 기말고사.<br>
+무사히 마쳤다.<br>
+이제 한국어교사 자격증으로 가는 길에서 4분의 1이 끝난 셈이다.</p>
+
+    <p>그날, 나는 학원에 등록했다.<br>
+여름방학의 시작.<br>
+프랑스어학원에 등록했다.</p>
+
+    <p>이제는 정말 델프를 구체적으로 준비해야 하는 차례다.<br>
+방송대 프랑스언어문화학과를 졸업하고 한 학기가 지났다.<br>
+역시 졸업하고 나니, 프랑스어를 공부하는 게 끝이 났다.<br>
+수업과 시험이 있으니까 공부를 했는데, 지난해 12월 방송대에서 기말고사를 마치고 난 이후로 간간이 공부를 하다가 뚝 끊겼다. 물론 새로운 학교, 새로운 학과에 다니기 때문이기도 했다.</p>
+
+    <p>이제 한 학기가 지나니까, 적응 기간이 끝났다.<br>
+수업과 과제물, 시험까지 한 학기를 끝내 보니, 마음이 놓였다.<br>
+내가 충분히 감당할 만한 과정이었다.</p>
+
+    <p>그래서 프랑스어를 함께 공부하기 위해 프랑스어학원에 이제 등록할 수 있었다.</p>
+
+    <div class="vision-section">
+      <h3>학원에 등록하려고 방송대를 간 사람</h3>
+    </div>
+
+    <p>사실 얼마나 기다려왔던 순간인가.<br>
+제주도에서였나, 부산에서였나.<br>
+코로나19 시절 잠시 지방으로 피난 가 있던 그 시절에<br>
+우연히 유튜브로 알게 된 프랑스어 선생님.<br>
+그 수업을 듣고 프랑스어가 친근해졌다.<br>
+그리고 방송대에 편입학했다.<br>
+그 선생님이 원장인 학원에 등록하려고.</p>
+
+    <p>좀 웃기는 과정이지만,<br>
+학원에 등록하려고 방송대를 가는 건<br>
+내가 유일하지 않을까 싶다.</p>
+
+    <p>프랑스어를 너무 모르니까<br>
+학원 가서 너무 헤맬 것 같았다.<br>
+그래서 문법이라도 쌓고 가자고 방송대에 편입학했다.<br>
+그 학원은 말하기 위주로 가르치기 때문이다.</p>
+
+    <p>방송대에서 결국 말하기 이외의 것들은 얻었다.<br>
+이제 학원에서 말하기를 중심으로<br>
+처음부터 다시 하려고 한다.</p>
+
+    <div class="vision-section">
+      <h3>새로운 언어를 배우는 일</h3>
+    </div>
+
+    <p>등록하려고 가서 상담하면서<br>
+내가 쌤에게 물었다.</p>
+
+    <p>“제가 경상도 출신이라 발음이 너무 걱정되네요.”</p>
+
+    <p>쌤이 하시는 말씀.<br>
+“새로운 언어를 배우는 거니까 전혀 걱정 안 하셔도 됩니다.”</p>
+
+    <p>그 말 한 마디에 안심이 되었다.<br>
+아무래도 프랑스어는 정말 부드러운 발음인데,<br>
+경상도 억양은 우리말 중에서도 가장 센 발음이고 억양이기 때문에<br>
+항상 마음에 걸린 문제였다.<br>
+실제로도 경상도 사람이 프랑스어를 할 때 힘들다는 이야기를 들은 것도 같아서.</p>
+
+    <p>하지만 쌤이 책임져준다고 하니까,<br>
+시키는 대로 잘 따라가야겠다고 생각했다.</p>
+
+    <p>나는 프랑스어를 정말 잘하고 싶다.<br>
+하지만 마음처럼 그렇게 지독히 프랑스어 공부를 할 수도 없고,<br>
+열심히 공부하는 스타일이 아니라서<br>
+매일 꾸준히 혼자서는 할 수가 없다.<br>
+또 다른 전공으로 지금 사이버외대에 다니는 중이라서,<br>
+그 수업이며, 과제물이며, 시험이며 같이 감당하기가 버겁다고 핑계를 대볼까.</p>
+
+    <div class="vision-section">
+      <h3>학교라는 틀, 시험이라는 틀</h3>
+    </div>
+
+    <p>하지만 이젠 한국어교육 수업 과정도 적응이 되었으니,<br>
+다시 프랑스어의 바다에 풍덩 뛰어들어볼까 한다.<br>
+난 아무래도 혼자서 공부를 열심히 할 수 있는 스타일은 아닌 것 같다.<br>
+누가 붙들어주고, 틀을 만들어줘야 하는 것 같다.<br>
+학교라는 틀, 시험이라는 틀.<br>
+내가 살아오면서 가장 싫어했던 게 학교와 시험이었는데,<br>
+이 무슨 아이러니한 상황인지!</p>
+
+    <p>하지만 학교도 학교 나름, 시험도 시험 나름인 것 같다.<br>
+내가 복종하고 싶고, 그 시스템을 따르고 싶어하는 그런 학교, 그런 시험은<br>
+내가 순종할 것 같다.</p>
+
+    <div class="vision-section">
+      <h3>출석하지 못하던 사람</h3>
+    </div>
+
+    <p>이번에는 이 학원에 꾸준히 잘 다녀봐야지.<br>
+나는 사실 살아오면서 헬스장도 일주일을 넘겨본 적이 없고,<br>
+컴퓨터 학원도 예전에 사흘을 넘겨 다녀본 적도 없고,<br>
+일반 학원도 한 달을 넘겨 본 적도 없고,<br>
+프랑스어 학원도 몇 십년 전에 일주일을 넘겨본 적이 없었다.<br>
+뭘 끝까지 배워본 적이 없다.<br>
+아, 독일어도 대학교 다닐 때 문화원에서 회화 과정을 다녔는데<br>
+한 달을 넘겼나, 못 넘겼나.</p>
+
+    <p>나는 출석하는 데 뭔가 한계가 있는 듯하다.<br>
+방송대는 어떻게 졸업을 2년만에 했을까.<br>
+그건 출석을 안 하기 때문일까.<br>
+그런데 방송대 회화 수업은 한 학기밖에 못 다녔다.<br>
+역시 그만두었다. 매주 나가는 것이 귀찮았다.<br>
+나는 귀찮으면 그만두는 스타일인가 보다.<br>
+하지만 집에서 하는 수업은 잘 따라가는 듯.<br>
+사이버외대 한국어교육학과 수업도 한 학기 잘 마치는 걸 보면.</p>
+
+    <p>직장도 그랬다.<br>
+한 직장에 오래 다닐 수 없었다.<br>
+매일 출근하는 게 힘들었다.<br>
+학교에 매일 출석하는 게 힘들 듯이<br>
+회사도 마찬가지였다.<br>
+재택근무를 해줄 때는 결과도 더 좋았다.<br>
+세 살 버릇 여든 간다더니 딱 맞는 말이다.<br>
+<br>
+하지만 내 회사는 오래도록 하고 있다.<br>
+벌써 10년이 훌쩍 넘고, 아마 죽을 때까지 할 것이다.<br>
+이건 어떻게 가능한가.<br>
+출근이 없기 때문이다.<br>
+난 역시 출석이나 출근이 없는 데에서 강하다.</p>
+
+    <p>그래서 난 학원 같은 데 등록하는 걸 포기했다.<br>
+자신이 없어서다.</p>
+
+    <div class="vision-section">
+      <h3>마지막 시험대</h3>
+    </div>
+
+    <p>하지만 이 학원에서는 결과가 아마 다를 것 같다.<br>
+일단 가깝고, 일주일에 두 번만 가면 되니까.<br>
+또 전에도 말했지만, 이 학원에 다니기 위해<br>
+광교로 이사까지 왔으니,<br>
+계속 안 다닌다면 정말 말이 안 되는 일이다.</p>
+
+    <p>나는 마지막 시험대에 나를 세워 본다.<br>
+이 학원에서 끝장을 볼 생각이다.<br>
+프랑스어를 나에게 완성시켜줄 존재는<br>
+이 쌤밖에 없다.<br>
+말하기는 절대로 혼자서 못한다.<br>
+특히 발음 교정은.</p>
+
+    <p>나는 이 학원에서 내 프랑스어를 끝장내 보겠다.<br>
+델프도 끝장내 볼 생각이다.<br>
+그냥 인디언의 기우제처럼<br>
+‘될 때까지’ 다녀볼 생각이다.<br>
+그럼 언젠가는 되겠지.</p>
+
+    <div class="vision-section">
+      <h3>델프와 파리행 티켓 사이에서</h3>
+    </div>
+
+    <p>파리에 가는 게 조금 더 미루어지는 일이 있더라도<br>
+B1까지는 따고 가야지.<br>
+B2도 이 쌤에게 맡기면 따고 파리에 갈 수 있을 것도 같은데.<br>
+그럼 너무 늦어져서, 반 년만 더 미룰까 생각 중이다.</p>
+
+    <p>어쨌든 최소한 델프 B1은 통과하고 가고 싶네.<br>
+마음은 B2까지 합격하고 가고 싶은데,<br>
+나도 모르겠다.<br>
+물이 흘러가는 대로 가면 되겠지.<br>
+반 년이나, 일 년이나 그 시간이 무슨 의미가 있을까.<br>
+어쨌든 사이버외대 졸업하기 전에만 가면 되는 걸.<br>
+한국어교사 자격증이 나오는 것도 그때이고,<br>
+파리 가서 석사 과정에 들어가는 것도<br>
+학사를 졸업해야 가능한 것이기에<br>
+반 년, 일 년에 더 이상 연연해하지 말자.<br>
+어쨌든 오픈 마인드로<br>
+이제는 델프만 생각하기로 하자.<br>
+쌤이 나를 인도해주겠지.<br>
+시키는 대로만 따라하면<br>
+모두 다 가능하다고 말해주셨다.</p>
+
+    <div class="vision-section">
+      <h3>쌤이라는 귀인</h3>
+    </div>
+
+    <p>학원 등록하러 가는 날,<br>
+네이버 일일 운세를 보니,<br>
+귀인을 만난다고 했다.</p>
+
+    <p>쌤, 그래요.<br>
+내겐 쌤이 귀인이네요.<br>
+코로나19 시절, 제주도에서, 부산에서<br>
+나를 프랑스 파리에 대한 희망으로<br>
+붙들어준 쌤의 유튜브가 있어서<br>
+여기까지 온 것이니까요.</p>
+
+    <p>결국 나를 파리로 보내줄 사람도 쌤이겠네요.<br>
+델프에 합격시켜줄 테니까요.</p>
+
+    <div class="vision-section">
+      <h3>착한 학생이 되고 싶다</h3>
+    </div>
+
+    <p>열심히 한번 해볼랍니다.<br>
+나의 열심은 보통 사람들이 하는<br>
+그런 죽자고 하는 공부는 아닐 테지만요.<br>
+그래도 나름대로 쌤이 하라는 숙제는 잘 따라할게요.<br>
+제가 숙제는 그래도 잘한답니다.<br>
+초등학교 때도 그랬죠.<br>
+숙제만 잘해도 항상 좋은 성적을 받았는데,<br>
+지금도 그럴 거라고 생각해요.</p>
+
+    <p>잘 따라가겠습니다.<br>
+내가 나를 믿지 못하는 나.<br>
+공부에 있어서, 특히 출석에 있어서<br>
+나를 믿지 못하지만,<br>
+이젠 달라졌겠죠.</p>
+
+    <p>설레면서도 조금 걱정은 되지만,<br>
+이젠 달라졌겠죠.<br>
+달라져야죠.<br>
+파리가 걸려 있는 문제인데요.<br>
+그래도 사람은 잘 안 변한다는데,<br>
+일주일에 두 번은 잘 가겠죠.<br>
+델프에 통과하는 그날까지<br>
+출석도, 숙제도 잘하는<br>
+착한 학생이 되고 싶습니다.</p>
+
+    <p>나의 농띠 본성이 안 나오도록<br>
+조심, 또 조심하렵니다.<br>
+하지만 또 너무 열심히는 안 하렵니다.<br>
+그럼 또 금방 지칠 테니까요.<br>
+하여튼 프랑스어, 델프,<br>
+쌤만 믿고 열심히 따라가볼게요.<br>
+수업만은 최소 안 빼먹고<br>
+숙제만은 안 빼먹고<br>
+따라가볼랍니다.</p>
+
+    <div class="vision-section">
+      <h3>내 방식으로 사랑하는 프랑스어</h3>
+    </div>
+
+    <p>그날이 언제인지 모르지만,<br>
+내년 5월에 B1 통과할 것 같다고 하셨으니,<br>
+따라가겠습니다.<br>
+그리고 곧이어 B2를 갈 것이고,<br>
+한번 올해와 내년, 델프에 온힘을 쏟겠습니다.<br>
+물론 쉬어가면서요.<br>
+사람이 다 살자고 하는 건데,<br>
+공부도 뼈 빠지게는 안 하고 싶은 게<br>
+제 지론이죠.<br>
+델프 통과할 정도만<br>
+딱, 그 정도만 하도록 하겠습니다.</p>
+
+    <p>말은 이렇게 하지만,<br>
+프랑스어, 사랑합니다.<br>
+몸과 마음이 따로 놀아서 그렇지,<br>
+사랑은 합니다.</p>
+
+    <p>내 방식으로 사랑합니다.<br>
+델프 합격의 그날을 위해서<br>
+사실 B2를 통과해야<br>
+진심으로 기쁘겠죠.<br>
+B1은 누구나 다 잘 통과하니까요.<br>
+여튼, 그날을 기다리며<br>
+쌤을 잘 따라가보렵니다.</p>
+
+    <p>그래도 안심이 되네요.<br>
+쌤이라는 깃발만 잘 따라가면<br>
+델프 B2도 잘하면 한국에서<br>
+통과하고 파리 갈 수 있을 것만 같은 희망이 보이네요.</p>
+
+    <p>이제는 델프만 생각해보기로 합니다.<br>
+한국어교육 수업은 잘 따라가고 있으니까요.<br>
+또 그렇게 남은 학기들은 하면 될 테니까요.</p>
+
+    <div class="vision-section">
+      <h3>디오니소스 논술이라는 또 하나의 미션</h3>
+    </div>
+
+    <p>아, 그리고 내게 남은 과제가 또 있죠.<br>
+디오니소스 논술 교재도 계속 써야 하고,<br>
+제작도 해야 하고, 유통도 해야 하죠.<br>
+올해 안에 10권을 완성해야 합니다.<br>
+역시 잘 하겠죠.<br>
+1권을 지금 다 집필 완성했으니까요.<br>
+이제 기말고사도 끝났고<br>
+학원 수업도 7월부터이니까<br>
+그동안에 빨리 제작해서 유통을 해야겠죠.<br>
+첫 권의 틀이 세워졌으니<br>
+그다음은 덜 힘들겠죠.<br>
+그 미션도 올해 다 완성할 겁니다.</p>
+
+    <div class="vision-section">
+      <h3>쉬엄쉬엄, 열심히</h3>
+    </div>
+
+    <div class="vision-declare">
+      쉬엄쉬엄, 열심히,<br>
+      말이 안 되는 모순 같지만,<br>
+      그렇게 가보렵니다.
+    </div>
+
+    <p>학원 수업, 전 과정을 마치는 그날까지<br>
+변한 내 모습을 보고 싶군요.<br>
+출석을 잘하는 나.<br>
+그래서 결국 델프 시험에 합격하는 나를<br>
+보고 싶습니다.<br>
+발음도 완성한 내 모습을 꼭 보고 싶네요.</p>
+
+    <div class="vision-section">
+      <h3>마실 가듯이, 파리로</h3>
+    </div>
+
+    <p>델프만 통과하면 파리행 티켓을 끊고<br>
+바로 파리로 날아가려고 합니다.<br>
+물론 내년이죠.<br>
+교육 실습을 끝내고 나서.<br>
+교육 실습을 끝내야 한국을 떠날 수 있으니까.</p>
+
+    <div class="vision-declare">
+      학원, 마실 가듯이 매일 출석하는 걸로.<br>
+      그래도 동네니까.
+    </div>
+
+  </section>
+
+
+<footer class="editor-footer">
+  <div class="note-sign">
+    — Noblewithbooks · Étoile Bleue Créations · Editor’s Note · Digital Magazine Platform
+  </div>
+
+  <div class="note-nav">
+    <a href="../editor.html">← 편집자 노트 목록</a>
+    <a href="../index.html">Home</a>
+  </div>
+</footer>
+
+</main>
+
+</body>
+</html>
