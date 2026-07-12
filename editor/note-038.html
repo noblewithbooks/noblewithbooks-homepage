@@ -1,3 +1,196 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 문장 패턴 분석하기 — ‘흔들리다’를 사용하는 패턴 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+  <style>
+    :root{
+      --vision-ink: rgba(18,28,48,0.96);
+      --vision-muted: rgba(18,28,48,0.68);
+      --vision-accent: rgba(58,110,180,0.95);
+      --vision-line: rgba(18,28,48,0.18);
+      --vision-paper: rgba(245,248,255,0.6);
+    }
+
+    .vision-note{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+      color: var(--vision-ink);
+    }
+
+    .vision-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--vision-line);
+      padding-bottom:14px;
+      margin-bottom:36px;
+      font-size:13px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--vision-muted);
+    }
+
+    .vision-hero h1{
+      font-size:clamp(24px,3.2vw,38px);
+      line-height:1.25;
+      letter-spacing:-0.02em;
+      margin:0 0 18px;
+    }
+
+    .vision-hero h1 span{
+      color:var(--vision-accent);
+    }
+
+    .vision-lead{
+      font-size:16px;
+      line-height:1.9;
+      color:var(--vision-muted);
+      max-width:76ch;
+      margin-bottom:48px;
+    }
+
+    .vision-photo{
+      margin: 0 0 34px;
+    }
+
+    .vision-photo img{
+      display:block;
+      width:100%;
+      max-width:760px;
+      margin:0 auto;
+      border-radius:18px;
+      box-shadow:0 18px 45px rgba(18,28,48,0.18);
+    }
+
+    .vision-photo figcaption{
+      max-width:760px;
+      margin:14px auto 0;
+      font-size:13px;
+      line-height:1.8;
+      color:var(--vision-muted);
+      text-align:center;
+    }
+
+    .vision-body{
+      font-size:16px;
+      line-height:2.0;
+    }
+
+    .vision-body p{
+      margin:0 0 22px;
+    }
+
+    .vision-section{
+      margin:64px 0 36px;
+    }
+
+    .vision-section h3{
+      font-size:21px;
+      letter-spacing:-0.01em;
+      margin-bottom:18px;
+      padding-left:14px;
+      border-left:4px solid var(--vision-accent);
+    }
+
+    .vision-declare{
+      margin:70px 0;
+      padding:36px 28px;
+      background:var(--vision-paper);
+      border-radius:26px;
+      text-align:center;
+      font-size:20px;
+      line-height:1.9;
+    }
+
+    .vision-sign{
+      margin-top:64px;
+      padding-top:20px;
+      border-top:1px solid var(--vision-line);
+      font-size:13px;
+      line-height:1.9;
+      color:var(--vision-muted);
+    }
+
+    .vision-nav{
+      margin-top:18px;
+      font-size:13px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--vision-muted);
+    }
+
+    .vision-nav a{
+      text-decoration:none;
+      border-bottom:1px solid var(--vision-line);
+      color:inherit;
+      padding-bottom:2px;
+    }
+
+    .vision-nav a:hover{
+      border-bottom-color: var(--vision-ink);
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a class="brandlink" href="../index.html">Noblewithbooks</a></h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html"><span class="ico"></span>Home</a>
+        <a class="btn-space" href="../about.html"><span class="ico"></span>About</a>
+        <a class="btn-space" href="../publishing-consulting.html"><span class="ico"></span>출판 컨설팅</a>
+        <a class="btn-space" href="../contact.html"><span class="ico"></span>Contact</a>
+
+        <a class="btn-space" href="../notice.html"><span class="ico"></span>공지사항</a>
+        <a class="btn-space" href="../editor.html" aria-current="page"><span class="ico"></span>편집자 노트</a>
+
+        <a class="btn-space" href="../books/"><span class="ico"></span>책 소개</a>
+        <a class="btn-space" href="../ebooks.html"><span class="ico"></span>전자책</a>
+        <a class="btn-space" href="../audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+        <a class="btn-space" href="../selected.html"><span class="ico"></span>KPIPA Edition</a>
+        <a class="btn-space" href="../rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+        <a class="btn-space" href="../honors.html"><span class="ico"></span>Honors</a>
+        <a class="btn-space" href="../press.html"><span class="ico"></span>언론의 시선</a>
+      </div>
+    </nav>
+
+    <script>
+    (function(){
+      var btn = document.querySelector('.nav-toggle');
+      var links = document.getElementById('navLinks');
+      if(!btn || !links) return;
+
+      btn.addEventListener('click', function(){
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        links.classList.toggle('is-open', !isOpen);
+      });
+    })();
+    </script>
+
+  </div>
+</header>
+
+<main class="vision-note">
+
   <div class="vision-top">
     <div>EDITOR’S NOTE · AI SENTENCE PATTERN</div>
     <div>2026.07.13</div>
@@ -6,7 +199,7 @@
   <section class="vision-hero">
     <h1>
       <span>AI 문장 패턴 분석하기</span><br>
-      흔들리는 문장
+      ‘흔들리다’를 사용하는 패턴
     </h1>
 
     <p class="vision-lead">
@@ -17,15 +210,31 @@
   <section class="vision-body">
 
     <div class="vision-section">
-      <h3>'흔들리다'를 사용하는 패턴</h3>
+      <h3>‘흔들리다’를 사용하는 패턴</h3>
     </div>
 
-    <p>AI 문장에서 자주 관찰되는 동사 가운데 하나는 ‘흔들리다’이다. 이 표현은 원래 물리적인 움직임을 나타내지만, AI는 이를 추상적인 개념에도 매우 자주 사용한다. 예를 들어 “경계가 흔들린다”, “질서가 흔들린다”, “정체성이 흔들린다”, “기준이 흔들린다”와 같은 문장이 여기에 속한다.</p>
+    <p>AI 문장에서 자주 관찰되는 동사 가운데 하나는 “흔들리다”이다. 본래 물리적인 움직임을 나타내는 이 말은 AI 문장에서 경계, 질서, 기준, 정체성처럼 눈에 보이지 않는 추상적인 개념과 자주 결합한다. “경계가 흔들린다”, “기존의 질서가 흔들린다”, “정체성이 흔들린다”와 같은 문장이 여기에 속한다.</p>
 
-    <p>이 표현은 변화를 직관적으로 전달한다는 장점이 있다. 눈에 보이지 않는 개념도 마치 실제로 움직이는 것처럼 느껴지기 때문이다. 덕분에 문장은 짧은 표현만으로도 긴장감과 변화를 만들어 낸다.</p>
+    <p>이 표현은 추상적인 변화를 움직이는 장면처럼 보여 준다. 형태가 없는 개념에 물리적인 동작을 부여함으로써, 문장은 짧은 표현만으로도 변화와 불안정의 인상을 만들어 낸다. 독자는 무엇인가 달라지고 있다는 사실을 시각적으로 감지하게 된다.</p>
 
-    <p>그러나 같은 표현이 반복되면 문장은 점차 구체성을 잃기 시작한다. 무엇이 어떻게 변하고 있는지 설명하기보다, ‘흔들린다’는 말 자체가 설명을 대신하는 경우가 많기 때문이다. 독자는 변화가 있다는 인상은 받지만, 정작 무엇이 달라졌는지는 쉽게 파악하기 어렵다.</p>
+    <p>그러나 “흔들리다”가 반복될수록 구체적인 설명은 약해질 수 있다. 무엇이 어떤 원인으로 달라졌는지를 밝히기보다, 변화가 있다는 분위기만 전달하는 경우가 생기기 때문이다. “기준이 흔들린다”라는 문장만으로는 어떤 기준이 어떻게 달라졌는지 충분히 알기 어렵다.</p>
 
-    <p>‘흔들리다’는 AI 문장에서 반복적으로 나타나는 이미지화 패턴 가운데 하나이다. 추상적인 개념에 움직임을 부여해 문장을 생생하게 만들지만, 반복될수록 실제 의미보다 분위기를 전달하는 표현으로 기능할 가능성도 함께 지닌다.</p>
+    <p>“흔들리다”는 AI가 추상적인 개념을 이미지화할 때 사용하는 대표적인 동사 패턴이다. 문장을 생생하게 만드는 효과가 있지만, 구체적인 의미가 뒤따르지 않을 경우에는 실제 설명보다 변화의 인상만 남기는 표현이 되기도 한다.</p>
 
   </section>
+
+  <footer class="editor-footer">
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note · Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
