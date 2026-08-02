@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 문장 패턴 분석하기 — ‘통과하다’를 사용하는 패턴 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+   
+   <style>
+  :root{
+    --vision-ink: rgba(18,28,48,0.96);
+    --vision-muted: rgba(18,28,48,0.68);
+    --vision-accent: rgba(58,110,180,0.95);
+    --vision-line: rgba(18,28,48,0.18);
+    --vision-paper: rgba(245,248,255,0.6);
+  }
+
+  .vision-note{
+    max-width:920px;
+    margin:0 auto;
+    padding:28px 18px 70px;
+    color:var(--vision-ink);
+  }
+
+  .vision-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:14px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--vision-line);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--vision-muted);
+  }
+
+  .vision-hero h1{
+    margin:0 0 18px;
+    font-size:clamp(24px,3.2vw,38px);
+    line-height:1.25;
+    letter-spacing:-0.02em;
+  }
+
+  .vision-hero h1 span{
+    color:var(--vision-accent);
+  }
+
+  .vision-lead{
+    max-width:76ch;
+    margin-bottom:48px;
+    font-size:16px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-photo{
+    margin:0 0 34px;
+  }
+
+  .vision-photo img{
+    display:block;
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    border-radius:18px;
+    box-shadow:0 18px 45px rgba(18,28,48,0.18);
+  }
+
+  .vision-photo figcaption{
+    max-width:760px;
+    margin:14px auto 0;
+    font-size:13px;
+    line-height:1.8;
+    color:var(--vision-muted);
+    text-align:center;
+  }
+
+  .vision-body{
+    font-size:16px;
+    line-height:2;
+  }
+
+  .vision-body p{
+    margin:0 0 22px;
+  }
+
+  .vision-section{
+    margin:64px 0 36px;
+  }
+
+  .vision-section h3{
+    margin-bottom:18px;
+    padding-left:14px;
+    border-left:4px solid var(--vision-accent);
+    font-size:21px;
+    letter-spacing:-0.01em;
+  }
+
+  .vision-examples{
+    margin:30px 0;
+    padding:26px 28px;
+    border-left:3px solid var(--vision-accent);
+    background:var(--vision-paper);
+    border-radius:0 18px 18px 0;
+  }
+
+  .vision-examples p{
+    margin:0 0 6px;
+  }
+
+  .vision-examples p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-compare{
+    margin:34px 0;
+    padding:28px;
+    background:var(--vision-paper);
+    border-radius:22px;
+  }
+
+  .vision-compare p{
+    margin-bottom:8px;
+  }
+
+  .vision-compare p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-guide{
+    margin:34px 0;
+    padding:28px;
+    border:1px solid var(--vision-line);
+    border-radius:22px;
+  }
+
+  .vision-guide p{
+    margin-bottom:9px;
+  }
+
+  .vision-guide p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-declare{
+    margin:70px 0;
+    padding:36px 28px;
+    background:var(--vision-paper);
+    border-radius:26px;
+    text-align:center;
+    font-size:20px;
+    line-height:1.9;
+  }
+
+  .vision-sign{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--vision-line);
+    font-size:13px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:18px;
+    font-size:13px;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav a{
+    padding-bottom:2px;
+    border-bottom:1px solid var(--vision-line);
+    color:inherit;
+    text-decoration:none;
+  }
+
+  .vision-nav a:hover{
+    border-bottom-color:var(--vision-ink);
+  }
+
+  @media (max-width:640px){
+    .vision-top{
+      align-items:flex-start;
+      gap:12px;
+      font-size:11px;
+      letter-spacing:0.09em;
+    }
+
+    .vision-lead,
+    .vision-body{
+      font-size:15px;
+    }
+
+    .vision-section{
+      margin-top:50px;
+    }
+
+    .vision-examples,
+    .vision-compare,
+    .vision-guide{
+      padding:22px 20px;
+    }
+
+    .vision-declare{
+      margin:54px 0;
+      padding:30px 22px;
+      font-size:18px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <h1>
+        <a class="brandlink" href="../index.html">Noblewithbooks</a>
+      </h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html">
+          <span class="ico"></span>Home
+        </a>
+
+        <a class="btn-space" href="../about.html">
+          <span class="ico"></span>About
+        </a>
+
+        <a class="btn-space" href="../publishing-consulting.html">
+          <span class="ico"></span>출판 컨설팅
+        </a>
+
+        <a class="btn-space" href="../contact.html">
+          <span class="ico"></span>Contact
+        </a>
+
+        <a class="btn-space" href="../notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+
+        <a
+          class="btn-space"
+          href="../editor.html"
+          aria-current="page"
+        >
+          <span class="ico"></span>편집자 노트
+        </a>
+
+        <a class="btn-space" href="../books/">
+          <span class="ico"></span>책 소개
+        </a>
+
+        <a class="btn-space" href="../ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+
+        <a class="btn-space" href="../audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+
+        <a class="btn-space" href="../selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+
+        <a class="btn-space" href="../rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+
+        <a class="btn-space" href="../honors.html">
+          <span class="ico"></span>Honors
+        </a>
+
+        <a class="btn-space" href="../press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+
+    <script>
+      (function(){
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.getElementById('navLinks');
+
+        if(!btn || !links) return;
+
+        btn.addEventListener('click', function(){
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          links.classList.toggle('is-open', !isOpen);
+        });
+      })();
+    </script>
+
+  </div>
+</header>
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · AI SENTENCE PATTERN</div>
+    <div>2026.08.03.</div>
+  </div>
+
+  <section class="vision-hero">
+
+    <h1>
+      <span>AI 문장 패턴 분석하기</span><br>
+      ‘통과하다’를 사용하는 패턴
+    </h1>
+
+    <p class="vision-lead">
+      앞으로 편집자 노트에서는 「AI 문장 패턴 분석하기」 연재를
+      이어갑니다. 이 연재는 인간의 언어 직관을 바탕으로 AI 문장에
+      반복해서 나타나는 표현과 구조를 관찰하는 언어 연구의 기록입니다.
+      사람의 문장뿐 아니라 AI가 만들어 내는 문장 역시 하나의 언어
+      현상으로 바라보고, 그 안에 숨어 있는 패턴과 한계를 읽어 내려
+      합니다. 이는 향후 언어학자로서 인간의 언어 이해와 AI의 언어
+      생성 사이를 매개하는 연구로 나아가기 위한 과정이며, 이 연재는
+      앞으로 한 권의 책으로 출간될 예정입니다.
+    </p>
+
+  </section>
+
+  <section class="vision-body">
+
+    <div class="vision-section">
+      <h3>‘통과하다’를 사용하는 패턴</h3>
+    </div>
+
+  <p>
+    요즘 AI가 쓴 글을 읽다 보면 이상하리만큼 자주 마주치는 동사가 있다.
+    ‘통과하다’이다.
+  </p>
+
+  <p>
+    본래 ‘통과하다’는 일정한 장소나 관문을 지나간다는 뜻으로 사용한다.
+    터널을 통과하고, 국경을 통과하며, 심사를 통과한다. 어떤 기준이나
+    절차를 거쳐 승인받는다는 뜻도 자연스럽다. 문제는 AI가 이 동사를
+    추상적인 대상에까지 폭넓게 붙이면서 시작된다.
+  </p>
+
+  <div class="vision-examples">
+    <p>반론을 통과한 판단</p>
+    <p>질문을 통과하며 깊어진 생각</p>
+    <p>타인의 시선을 통과해 바라본 자신</p>
+    <p>긴 시간을 통과한 뒤 남은 기억</p>
+    <p>갈등을 통과하며 도달한 새로운 기준</p>
+  </div>
+
+  <p>
+    각각의 문장만 따로 보면 크게 어색하지 않다. 오히려 문학적이고
+    사유가 깊어 보인다. 그러나 여러 글에서 같은 표현이 반복되면 하나의
+    습관이 드러난다. AI는 질문과 반론, 시간과 시선, 갈등과 고통을 모두
+    지나가야 할 관문으로 바꾸고, 그 앞뒤의 관계를 ‘통과하다’ 하나로
+    정리한다.
+  </p>
+
+  <p>
+    ‘질문을 통과한다’는 말은 질문에 답했다는 뜻일 수도 있고, 질문을
+    오래 생각했다는 뜻일 수도 있으며, 질문으로 인해 기존의 생각이
+    바뀌었다는 뜻일 수도 있다. ‘반론을 통과한 판단’ 역시 반론을
+    검토했다는 것인지, 반론을 견뎌 냈다는 것인지, 반론을 받아들여
+    수정되었다는 것인지 분명하지 않다. 서로 다른 사고의 움직임이
+    ‘통과하다’라는 하나의 동사 속에 합쳐진다.
+  </p>
+
+  <p>
+    AI가 이 표현을 즐겨 사용하는 이유는 편리하기 때문이다.
+    ‘통과하다’에는 이동의 이미지가 있다. 어떤 생각이 하나의 지점에서
+    출발하여 여러 관문을 지난 뒤 더 나은 결론에 도달하는 장면을
+    손쉽게 만들어 준다. 문장에 전진하는 느낌도 생긴다. 질문을
+    통과하고, 반론을 통과하고, 시간을 통과한 생각은 이전보다 깊고
+    단단해진 것처럼 보인다.
+  </p>
+
+  <div class="vision-section">
+    <h3>‘통과하다’와 ‘도달하다’</h3>
+  </div>
+
+  <p>
+    특히 AI는 ‘통과하다’와 ‘도달하다’를 한 쌍처럼 사용한다.
+  </p>
+
+  <div class="vision-examples">
+    <p>질문을 통과해 본질에 도달한다.</p>
+    <p>갈등을 통과하며 새로운 이해에 도달한다.</p>
+    <p>타인의 시선을 통과해 진정한 자신에게 도달한다.</p>
+  </div>
+
+  <p>
+    이 구조에서는 사고의 과정이 하나의 길로 바뀐다. 질문과 갈등은
+    길 위의 관문이 되고, 본질과 이해와 자아는 그 길의 종착지가 된다.
+    문장은 그럴듯하게 완결되지만, 정작 그 사이에서 무엇을 검토했고
+    무엇이 달라졌는지는 빠져 있다. 이동은 있는데 변화의 내용이 없는
+    것이다.
+  </p>
+
+  <p>
+    물론 ‘통과하다’라는 표현 자체가 잘못된 것은 아니다. “오랜 검증을
+    통과한 이론”이나 “여러 차례의 심사를 통과한 작품”처럼 실제 기준과
+    절차가 존재할 때는 정확한 표현이다. 문학적인 글에서 “긴 겨울을
+    통과했다”라고 쓸 수도 있다. 한 번의 비유는 문장을 풍부하게 만든다.
+  </p>
+
+  <p>
+    그러나 질문도 통과하고, 반론도 통과하고, 시선도 통과하고, 고통도
+    통과하고, 시대도 통과하기 시작하면 비유는 더 이상 새로운 이미지를
+    만들지 못한다. 모든 경험이 비슷한 모양의 터널이 되고 모든 결론은
+    그 터널 끝에서 발견한 빛이 된다. AI 문장 특유의 상투성이 여기서
+    생긴다.
+  </p>
+
+  <div class="vision-declare">
+    AI는 서로 다른 사고와 경험의 과정을<br>
+    하나의 이동 경로로 바꾸어 표현한다.
+  </div>
+
+  <div class="vision-section">
+    <h3>‘통과하다’를 더 정확한 문장으로 바꾸기</h3>
+  </div>
+
+  <p>
+    이 표현을 고칠 때는 ‘통과하다’를 기계적으로 다른 동사로 바꾸기보다
+    두 대상의 관계를 먼저 밝혀야 한다.
+  </p>
+
+  <div class="vision-compare">
+    <p>“반론을 통과한 판단”은</p>
+    <p>“반론을 검토한 뒤 수정한 판단”이 될 수 있다.</p>
+  </div>
+
+  <div class="vision-compare">
+    <p>“질문을 통과하며 생각이 깊어진다”는</p>
+    <p>
+      “질문에 답하는 과정에서 처음의 전제를 의심하게 된다”로
+      바꿀 수 있다.
+    </p>
+  </div>
+
+  <div class="vision-compare">
+    <p>“타인의 시선을 통과해 자신을 바라본다”는</p>
+    <p>
+      “타인의 평가를 의식하며 자신을 새롭게 해석한다”라고
+      쓸 수 있다.
+    </p>
+  </div>
+
+  <div class="vision-compare">
+    <p>“긴 시간을 통과한 뒤 남은 기억”은</p>
+    <p>
+      “오랜 시간이 지나도 사라지지 않은 기억”이라고 하면
+      뜻이 더 분명해진다.
+    </p>
+  </div>
+
+  <div class="vision-compare">
+    <p>“갈등을 통과하며 새로운 기준에 도달한다”는</p>
+    <p>
+      “서로 충돌하는 주장을 비교하면서 판단의 기준을 다시 세운다”라고
+      쓸 수 있다.
+    </p>
+  </div>
+
+  <p>
+    이렇게 고치면 문장은 조금 덜 시적으로 보일 수 있다. 대신 누가
+    무엇을 했고, 그 과정에서 무엇이 달라졌는지가 드러난다. 글을
+    정확하게 만드는 것은 멋있는 동사를 찾는 일이 아니라 대상 사이의
+    관계에 알맞은 동사를 선택하는 일이다.
+  </p>
+
+  <p>
+    ‘통과하다’는 생각의 과정을 압축하는 유용한 비유다. 그래서 사람도
+    쓰고 AI도 쓴다. 다만 AI는 서로 다른 과정을 하나의 이동 경로로
+    바꾸는 데 이 말을 지나치게 의존한다. 검토하고, 견디고, 경험하고,
+    의심하고, 수정하는 일을 모두 ‘통과하다’로 처리한다.
+  </p>
+
+  <p>
+    문장에서 ‘통과하다’를 발견했다면 한 번 물어볼 필요가 있다.
+  </p>
+
+  <div class="vision-guide">
+    <p>무엇을 어떻게 지나왔다는 것인가.</p>
+    <p>그 과정에서 실제로 무엇이 달라졌는가.</p>
+    <p>‘통과하다’ 대신 더 정확한 동사를 쓸 수는 없는가.</p>
+  </div>
+
+  <p>
+    이 질문에 답할 수 없다면 그 문장은 생각의 과정을 보여준 것이
+    아니라, 생각이 깊어진 듯한 분위기만 만든 것인지도 모른다.
+  </p>
+
+</section>
+
+  <footer class="editor-footer">
+
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note ·
+      Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
