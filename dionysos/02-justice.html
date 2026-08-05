@@ -106,13 +106,65 @@
       margin: 0;
     }
 
-    .book-meta {
-      text-align: center;
-    }
+   .book-meta {
+  padding: 2rem 2.25rem;
+}
 
-    .book-meta p {
-      line-height: 1.9;
-    }
+.book-meta h3 {
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.book-meta-list {
+  display: grid;
+  grid-template-columns:
+    92px minmax(0, 1fr)
+    92px minmax(0, 1fr);
+  max-width: 960px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(40, 70, 75, 0.18);
+  border-bottom: 1px solid rgba(40, 70, 75, 0.18);
+}
+
+.book-meta-label,
+.book-meta-value {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(40, 70, 75, 0.12);
+  line-height: 1.5;
+}
+
+.book-meta-label {
+  font-weight: 700;
+  color: #304b50;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.book-meta-value {
+  margin: 0;
+  color: #435a5f;
+}
+
+.book-meta-value--full {
+  grid-column: span 3;
+}
+
+.book-meta-list > :nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .book-meta {
+    padding: 1.5rem 1rem;
+  }
+
+  .book-meta-list {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .book-meta-value--full {
+    grid-column: auto;
+  }
+}
 
     .long-copy p,
     .author-block p {
@@ -191,46 +243,42 @@
 
 
     <!-- BOOK INFORMATION -->
-    <section class="card book-meta">
+   <section class="card book-meta">
 
-      <h3>도서 정보</h3>
+  <h3>도서 정보</h3>
 
-      <p>
-        <strong>제목</strong><br>
-        정의: 바칼로레아 철학 논술
-      </p>
+  <dl class="book-meta-list">
 
-      <p>
-        <strong>부제</strong><br>
-        디오니소스 논술 프로젝트
-      </p>
+    <dt class="book-meta-label">제목</dt>
+    <dd class="book-meta-value">
+      정의: 바칼로레아 철학 논술
+    </dd>
 
-      <p>
-        <strong>저자</strong><br>
-        조선우
-      </p>
+    <dt class="book-meta-label">부제</dt>
+    <dd class="book-meta-value">
+      디오니소스 논술 프로젝트
+    </dd>
 
-      <p>
-        <strong>출판사</strong><br>
-        책읽는귀족
-      </p>
+    <dt class="book-meta-label">저자</dt>
+    <dd class="book-meta-value">조선우</dd>
 
-      <p>
-        <strong>형태</strong><br>
-        전자책
-      </p>
+    <dt class="book-meta-label">출판사</dt>
+    <dd class="book-meta-value">책읽는귀족</dd>
 
-      <p>
-        <strong>정가</strong><br>
-        12,000원
-      </p>
+    <dt class="book-meta-label">형태</dt>
+    <dd class="book-meta-value">전자책</dd>
 
-      <p>
-        <strong>ISBN</strong><br>
-        979-11-94765-13-4 (05100)
-      </p>
+    <dt class="book-meta-label">정가</dt>
+    <dd class="book-meta-value">12,000원</dd>
 
-    </section>
+    <dt class="book-meta-label">ISBN</dt>
+    <dd class="book-meta-value book-meta-value--full">
+      979-11-94765-13-4 (05100)
+    </dd>
+
+  </dl>
+
+</section>
 
 
     <!-- BOOK INTRODUCTION -->
