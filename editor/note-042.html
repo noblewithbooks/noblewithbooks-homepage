@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 문장 패턴 분석하기 — ‘통과하다’를 사용하는 패턴 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+   
+   <style>
+  :root{
+    --vision-ink: rgba(18,28,48,0.96);
+    --vision-muted: rgba(18,28,48,0.68);
+    --vision-accent: rgba(58,110,180,0.95);
+    --vision-line: rgba(18,28,48,0.18);
+    --vision-paper: rgba(245,248,255,0.6);
+  }
+
+  .vision-note{
+    max-width:920px;
+    margin:0 auto;
+    padding:28px 18px 70px;
+    color:var(--vision-ink);
+  }
+
+  .vision-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:14px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--vision-line);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--vision-muted);
+  }
+
+  .vision-hero h1{
+    margin:0 0 18px;
+    font-size:clamp(24px,3.2vw,38px);
+    line-height:1.25;
+    letter-spacing:-0.02em;
+  }
+
+  .vision-hero h1 span{
+    color:var(--vision-accent);
+  }
+
+  .vision-lead{
+    max-width:76ch;
+    margin-bottom:48px;
+    font-size:16px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-photo{
+    margin:0 0 34px;
+  }
+
+  .vision-photo img{
+    display:block;
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    border-radius:18px;
+    box-shadow:0 18px 45px rgba(18,28,48,0.18);
+  }
+
+  .vision-photo figcaption{
+    max-width:760px;
+    margin:14px auto 0;
+    font-size:13px;
+    line-height:1.8;
+    color:var(--vision-muted);
+    text-align:center;
+  }
+
+  .vision-body{
+    font-size:16px;
+    line-height:2;
+  }
+
+  .vision-body p{
+    margin:0 0 22px;
+  }
+
+  .vision-section{
+    margin:64px 0 36px;
+  }
+
+  .vision-section h3{
+    margin-bottom:18px;
+    padding-left:14px;
+    border-left:4px solid var(--vision-accent);
+    font-size:21px;
+    letter-spacing:-0.01em;
+  }
+
+  .vision-examples{
+    margin:30px 0;
+    padding:26px 28px;
+    border-left:3px solid var(--vision-accent);
+    background:var(--vision-paper);
+    border-radius:0 18px 18px 0;
+  }
+
+  .vision-examples p{
+    margin:0 0 6px;
+  }
+
+  .vision-examples p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-compare{
+    margin:34px 0;
+    padding:28px;
+    background:var(--vision-paper);
+    border-radius:22px;
+  }
+
+  .vision-compare p{
+    margin-bottom:8px;
+  }
+
+  .vision-compare p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-guide{
+    margin:34px 0;
+    padding:28px;
+    border:1px solid var(--vision-line);
+    border-radius:22px;
+  }
+
+  .vision-guide p{
+    margin-bottom:9px;
+  }
+
+  .vision-guide p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-declare{
+    margin:70px 0;
+    padding:36px 28px;
+    background:var(--vision-paper);
+    border-radius:26px;
+    text-align:center;
+    font-size:20px;
+    line-height:1.9;
+  }
+
+  .vision-sign{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--vision-line);
+    font-size:13px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:18px;
+    font-size:13px;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav a{
+    padding-bottom:2px;
+    border-bottom:1px solid var(--vision-line);
+    color:inherit;
+    text-decoration:none;
+  }
+
+  .vision-nav a:hover{
+    border-bottom-color:var(--vision-ink);
+  }
+
+  @media (max-width:640px){
+    .vision-top{
+      align-items:flex-start;
+      gap:12px;
+      font-size:11px;
+      letter-spacing:0.09em;
+    }
+
+    .vision-lead,
+    .vision-body{
+      font-size:15px;
+    }
+
+    .vision-section{
+      margin-top:50px;
+    }
+
+    .vision-examples,
+    .vision-compare,
+    .vision-guide{
+      padding:22px 20px;
+    }
+
+    .vision-declare{
+      margin:54px 0;
+      padding:30px 22px;
+      font-size:18px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <h1>
+        <a class="brandlink" href="../index.html">Noblewithbooks</a>
+      </h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html">
+          <span class="ico"></span>Home
+        </a>
+
+        <a class="btn-space" href="../about.html">
+          <span class="ico"></span>About
+        </a>
+
+        <a class="btn-space" href="../publishing-consulting.html">
+          <span class="ico"></span>출판 컨설팅
+        </a>
+
+        <a class="btn-space" href="../contact.html">
+          <span class="ico"></span>Contact
+        </a>
+
+        <a class="btn-space" href="../notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+
+        <a
+          class="btn-space"
+          href="../editor.html"
+          aria-current="page"
+        >
+          <span class="ico"></span>편집자 노트
+        </a>
+
+        <a class="btn-space" href="../books/">
+          <span class="ico"></span>책 소개
+        </a>
+
+        <a class="btn-space" href="../ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+
+        <a class="btn-space" href="../audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+
+        <a class="btn-space" href="../selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+
+        <a class="btn-space" href="../rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+
+        <a class="btn-space" href="../honors.html">
+          <span class="ico"></span>Honors
+        </a>
+
+        <a class="btn-space" href="../press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+
+    <script>
+      (function(){
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.getElementById('navLinks');
+
+        if(!btn || !links) return;
+
+        btn.addEventListener('click', function(){
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          links.classList.toggle('is-open', !isOpen);
+        });
+      })();
+    </script>
+
+  </div>
+</header>
+
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · AI SENTENCE PATTERN</div>
+    <div>2026.08.10.</div>
+  </div>
+
+  <section class="vision-hero">
+
+    <h1>
+      <span>AI 문장 패턴 분석하기</span><br>
+      ‘얼굴’을 사용하는 패턴
+    </h1>
+
+    <p class="vision-lead">
+      앞으로 편집자 노트에서는 「AI 문장 패턴 분석하기」 연재를
+      이어갑니다. 이 연재는 인간의 언어 직관을 바탕으로 AI 문장에
+      반복해서 나타나는 표현과 구조를 관찰하는 언어 연구의 기록입니다.
+      사람의 문장뿐 아니라 AI가 만들어 내는 문장 역시 하나의 언어
+      현상으로 바라보고, 그 안에 숨어 있는 패턴과 한계를 읽어 내려
+      합니다. 이는 향후 언어학자로서 인간의 언어 이해와 AI의 언어
+      생성 사이를 매개하는 연구로 나아가기 위한 과정이며, 이 연재는
+      앞으로 한 권의 책으로 출간될 예정입니다.
+    </p>
+
+  </section>
+
+  <section class="vision-body">
+
+    <div class="vision-section">
+      <h3>‘얼굴’을 사용하는 패턴</h3>
+    </div>
+
+    <p>
+      AI가 만들어 낸 글을 오래 읽다 보면 유난히 자주 등장하는 명사가
+      있다. ‘얼굴’이다.
+    </p>
+
+    <p>
+      물론 사람에게 얼굴이 있다. 그러나 AI의 문장에서는 도시에도
+      얼굴이 있고, 시대에도 얼굴이 있으며, 권력과 욕망과 자유와
+      기술에도 얼굴이 있다.
+    </p>
+
+    <div class="vision-examples">
+      <p>새로운 얼굴을 드러낸 도시</p>
+      <p>권력의 또 다른 얼굴</p>
+      <p>욕망이 보여 주는 낯선 얼굴</p>
+      <p>시대의 어두운 얼굴</p>
+      <p>기술이 가진 두 개의 얼굴</p>
+    </div>
+
+    <p>
+      하나씩 놓고 보면 익숙한 비유다. 사람도 오래전부터 “권력의 얼굴”,
+      “전쟁의 얼굴”, “도시의 얼굴” 같은 표현을 사용해 왔다. 추상적인
+      대상에 얼굴을 부여하면 눈에 보이지 않는 성격이나 속성을 하나의
+      이미지로 보여 줄 수 있기 때문이다.
+    </p>
+
+    <p>
+      문제는 AI가 이 비유를 지나치게 쉽게 호출한다는 데 있다.
+    </p>
+
+    <p>
+      어떤 대상에 여러 성격이 존재한다고 말하고 싶을 때 AI는 곧잘
+      ‘얼굴’을 꺼낸다. 이전과 다른 모습을 설명할 때는 ‘새로운 얼굴’,
+      잘 보이지 않았던 성격을 발견할 때는 ‘숨겨진 얼굴’, 부정적인 면을
+      지적할 때는 ‘어두운 얼굴’, 서로 다른 속성이 공존할 때는
+      ‘두 얼굴’이 된다.
+    </p>
+
+    <p>
+      즉 ‘얼굴’은 AI에게 매우 편리한 추상어 번역 장치다.
+    </p>
+
+    <p>
+      복잡한 대상의 성격을 구체적으로 설명하는 대신, 그것이 어떤
+      ‘얼굴’을 가지고 있다고 말하면 문장은 빠르게 비유적 형태를 갖춘다.
+      설명문이 조금 더 문학적으로 보이고, 추상적인 대상도 마치 하나의
+      인물처럼 살아 움직이는 듯한 느낌을 준다.
+    </p>
+
+    <p>
+      하지만 바로 그 편리함 때문에 서로 다른 의미가 같은 표현으로
+      처리된다.
+    </p>
+
+    <p>
+      “도시가 새로운 얼굴을 드러냈다”는 문장에서 새로운 것은 무엇일까.
+      건축물이 달라졌다는 뜻일 수도 있고, 산업 구조가 바뀌었다는 뜻일
+      수도 있다. 관광객이 늘었다는 의미일 수도 있고, 이전에는 알려지지
+      않았던 문화가 주목받기 시작했다는 뜻일 수도 있다.
+    </p>
+
+    <p>
+      “권력의 또 다른 얼굴” 역시 마찬가지다. 통제의 방식이 달라졌다는
+      것인지, 권력이 예상 밖의 긍정적 기능을 한다는 것인지, 겉으로
+      보이는 모습과 실제 작동 방식이 다르다는 것인지 표현만으로는
+      알기 어렵다.
+    </p>
+
+    <p>
+      ‘얼굴’은 대상을 보여 주는 것 같지만, 때로는 정작 무엇이
+      달라졌는지를 가린다.
+    </p>
+
+    <div class="vision-section">
+      <h3>‘얼굴을 드러내다’라는 구조</h3>
+    </div>
+
+    <p>
+      AI는 특히 ‘얼굴’과 ‘드러내다’를 자주 결합한다.
+    </p>
+
+    <div class="vision-examples">
+      <p>도시는 새로운 얼굴을 드러낸다.</p>
+      <p>기술은 또 다른 얼굴을 드러낸다.</p>
+      <p>욕망은 예상하지 못한 얼굴을 드러낸다.</p>
+      <p>갈등은 사회의 민낯을 드러낸다.</p>
+    </div>
+
+    <p>
+      이 문장에는 공통된 구조가 있다.
+    </p>
+
+    <p>
+      처음에는 보이지 않던 무언가가 있었고, 시간이 지나거나 사건이
+      발생하면서 그것이 모습을 나타냈다는 이야기다. AI는 이 변화를
+      시각적인 장면으로 바꾼다. 추상적인 속성은 얼굴이 되고, 변화나
+      발견은 그 얼굴이 드러나는 사건이 된다.
+    </p>
+
+    <p>
+      그래서 문장은 쉽게 극적인 느낌을 얻는다.
+    </p>
+
+    <p>
+      그러나 실제 글쓰기에서 중요한 것은 ‘무엇이 드러났는가’이다.
+      그 대상의 성격이 달라진 것인지, 우리가 그것을 바라보는 관점이
+      달라진 것인지, 원래 존재하던 사실이 새롭게 발견된 것인지
+      구별해야 한다.
+    </p>
+
+    <p>
+      이 차이를 설명하지 않은 채 “새로운 얼굴을 드러냈다”라고 쓰면
+      변화의 원인이 사라진다.
+    </p>
+
+    <div class="vision-declare">
+      AI는 추상적인 대상의 서로 다른 성격을<br>
+      ‘얼굴’이라는 하나의 이미지로 바꾸어 표현한다.
+    </div>
+
+    <div class="vision-section">
+      <h3>‘얼굴’을 더 정확한 문장으로 바꾸기</h3>
+    </div>
+
+    <p>
+      ‘얼굴’이라는 표현을 고칠 때도 단순히 다른 명사로 교체할 필요는
+      없다. 먼저 그 문장에서 실제로 말하려는 변화가 무엇인지
+      확인해야 한다.
+    </p>
+
+    <div class="vision-compare">
+      <p>“도시가 새로운 얼굴을 드러냈다”는</p>
+      <p>
+        “낡은 공장 지대가 문화 공간으로 바뀌면서 도시의 분위기도
+        달라졌다”라고 쓸 수 있다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“권력의 또 다른 얼굴을 보여 준다”는</p>
+      <p>
+        “권력이 강압뿐 아니라 보상과 설득을 통해서도 작동한다는
+        사실을 보여 준다”라고 쓸 수 있다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“기술의 어두운 얼굴이 드러났다”는</p>
+      <p>
+        “기술이 편의를 제공하는 동시에 개인정보 침해의 위험을
+        키울 수 있다는 사실이 드러났다”라고 바꿀 수 있다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“욕망의 낯선 얼굴을 발견한다”는</p>
+      <p>
+        “자신이 원한다고 믿었던 것이 사실은 타인의 욕망을 모방한
+        결과였음을 깨닫는다”라고 쓸 수 있다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“시대의 두 얼굴을 보여 준다”는</p>
+      <p>
+        “경제적 번영과 사회적 불평등이 동시에 확대되던 시대의
+        모순을 보여 준다”라고 쓸 수 있다.
+      </p>
+    </div>
+
+    <p>
+      이렇게 쓰면 문장은 조금 길어진다. 그러나 무엇이 새롭고, 무엇이
+      어둡고, 무엇이 서로 충돌하는지가 분명해진다.
+    </p>
+
+    <p>
+      ‘얼굴’은 매우 오래되고 강력한 은유다. 인간은 보이지 않는 것을
+      이해하기 위해 끊임없이 사물에 몸을 부여해 왔다. 국가에는 심장이
+      있고, 조직에는 손발이 있으며, 산에는 허리가 있고, 도시에는
+      얼굴이 있다. 이런 표현 자체가 문제인 것은 아니다.
+    </p>
+
+    <p>
+      문제는 하나의 비유가 너무 많은 역할을 맡기 시작할 때 생긴다.
+    </p>
+
+    <p>
+      도시의 변화도 얼굴이고, 권력의 속성도 얼굴이며, 시대의 모순도
+      얼굴이고, 기술의 위험도 얼굴이 되면 서로 다른 대상들이 비슷한
+      문장 속에 들어간다. 비유는 남아 있지만 관찰은 희미해진다.
+    </p>
+
+    <p>
+      AI 문장에서 ‘얼굴’을 발견했다면 이런 질문을 던져볼 수 있다.
+    </p>
+
+    <div class="vision-guide">
+      <p>그 얼굴은 구체적으로 무엇을 뜻하는가.</p>
+      <p>실제로 달라진 것은 대상인가, 그것을 바라보는 관점인가.</p>
+      <p>‘얼굴’이라는 비유를 지웠을 때 더 정확하게 설명할 수 있는 것은 무엇인가.</p>
+    </div>
+
+    <p>
+      이 질문에 답하는 순간 문장은 비유에서 다시 관찰로 돌아온다.
+    </p>
+
+    <p>
+      좋은 비유는 설명을 대신하는 말이 아니다. 정확하게 본 뒤에
+      비로소 선택할 수 있는 말이다.
+    </p>
+
+  </section>
+
+  <footer class="editor-footer">
+
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note ·
+      Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </footer>
+
+</main>
+</body>
+</html>
