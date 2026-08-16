@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 문장 패턴 분석하기 — ‘통과하다’를 사용하는 패턴 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+   
+   <style>
+  :root{
+    --vision-ink: rgba(18,28,48,0.96);
+    --vision-muted: rgba(18,28,48,0.68);
+    --vision-accent: rgba(58,110,180,0.95);
+    --vision-line: rgba(18,28,48,0.18);
+    --vision-paper: rgba(245,248,255,0.6);
+  }
+
+  .vision-note{
+    max-width:920px;
+    margin:0 auto;
+    padding:28px 18px 70px;
+    color:var(--vision-ink);
+  }
+
+  .vision-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:14px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--vision-line);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--vision-muted);
+  }
+
+  .vision-hero h1{
+    margin:0 0 18px;
+    font-size:clamp(24px,3.2vw,38px);
+    line-height:1.25;
+    letter-spacing:-0.02em;
+  }
+
+  .vision-hero h1 span{
+    color:var(--vision-accent);
+  }
+
+  .vision-lead{
+    max-width:76ch;
+    margin-bottom:48px;
+    font-size:16px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-photo{
+    margin:0 0 34px;
+  }
+
+  .vision-photo img{
+    display:block;
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    border-radius:18px;
+    box-shadow:0 18px 45px rgba(18,28,48,0.18);
+  }
+
+  .vision-photo figcaption{
+    max-width:760px;
+    margin:14px auto 0;
+    font-size:13px;
+    line-height:1.8;
+    color:var(--vision-muted);
+    text-align:center;
+  }
+
+  .vision-body{
+    font-size:16px;
+    line-height:2;
+  }
+
+  .vision-body p{
+    margin:0 0 22px;
+  }
+
+  .vision-section{
+    margin:64px 0 36px;
+  }
+
+  .vision-section h3{
+    margin-bottom:18px;
+    padding-left:14px;
+    border-left:4px solid var(--vision-accent);
+    font-size:21px;
+    letter-spacing:-0.01em;
+  }
+
+  .vision-examples{
+    margin:30px 0;
+    padding:26px 28px;
+    border-left:3px solid var(--vision-accent);
+    background:var(--vision-paper);
+    border-radius:0 18px 18px 0;
+  }
+
+  .vision-examples p{
+    margin:0 0 6px;
+  }
+
+  .vision-examples p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-compare{
+    margin:34px 0;
+    padding:28px;
+    background:var(--vision-paper);
+    border-radius:22px;
+  }
+
+  .vision-compare p{
+    margin-bottom:8px;
+  }
+
+  .vision-compare p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-guide{
+    margin:34px 0;
+    padding:28px;
+    border:1px solid var(--vision-line);
+    border-radius:22px;
+  }
+
+  .vision-guide p{
+    margin-bottom:9px;
+  }
+
+  .vision-guide p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-declare{
+    margin:70px 0;
+    padding:36px 28px;
+    background:var(--vision-paper);
+    border-radius:26px;
+    text-align:center;
+    font-size:20px;
+    line-height:1.9;
+  }
+
+  .vision-sign{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--vision-line);
+    font-size:13px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:18px;
+    font-size:13px;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav a{
+    padding-bottom:2px;
+    border-bottom:1px solid var(--vision-line);
+    color:inherit;
+    text-decoration:none;
+  }
+
+  .vision-nav a:hover{
+    border-bottom-color:var(--vision-ink);
+  }
+
+  @media (max-width:640px){
+    .vision-top{
+      align-items:flex-start;
+      gap:12px;
+      font-size:11px;
+      letter-spacing:0.09em;
+    }
+
+    .vision-lead,
+    .vision-body{
+      font-size:15px;
+    }
+
+    .vision-section{
+      margin-top:50px;
+    }
+
+    .vision-examples,
+    .vision-compare,
+    .vision-guide{
+      padding:22px 20px;
+    }
+
+    .vision-declare{
+      margin:54px 0;
+      padding:30px 22px;
+      font-size:18px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <h1>
+        <a class="brandlink" href="../index.html">Noblewithbooks</a>
+      </h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html">
+          <span class="ico"></span>Home
+        </a>
+
+        <a class="btn-space" href="../about.html">
+          <span class="ico"></span>About
+        </a>
+
+        <a class="btn-space" href="../publishing-consulting.html">
+          <span class="ico"></span>출판 컨설팅
+        </a>
+
+        <a class="btn-space" href="../contact.html">
+          <span class="ico"></span>Contact
+        </a>
+
+        <a class="btn-space" href="../notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+
+        <a
+          class="btn-space"
+          href="../editor.html"
+          aria-current="page"
+        >
+          <span class="ico"></span>편집자 노트
+        </a>
+
+        <a class="btn-space" href="../books/">
+          <span class="ico"></span>책 소개
+        </a>
+
+        <a class="btn-space" href="../ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+
+        <a class="btn-space" href="../audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+
+        <a class="btn-space" href="../selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+
+        <a class="btn-space" href="../rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+
+        <a class="btn-space" href="../honors.html">
+          <span class="ico"></span>Honors
+        </a>
+
+        <a class="btn-space" href="../press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+
+    <script>
+      (function(){
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.getElementById('navLinks');
+
+        if(!btn || !links) return;
+
+        btn.addEventListener('click', function(){
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          links.classList.toggle('is-open', !isOpen);
+        });
+      })();
+    </script>
+
+  </div>
+</header>
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · AI SENTENCE PATTERN</div>
+    <div>2026.08.24.</div>
+  </div>
+
+  <section class="vision-hero">
+
+    <h1>
+      <span>AI 문장 패턴 분석하기</span><br>
+      AI는 추상을 어떻게 구체화하는가
+    </h1>
+
+    <p class="vision-lead">
+      앞으로 편집자 노트에서는 「AI 문장 패턴 분석하기」 연재를
+      이어갑니다. 이 연재는 인간의 언어 직관을 바탕으로 AI 문장에
+      반복해서 나타나는 표현과 구조를 관찰하는 언어 연구의 기록입니다.
+      사람의 문장뿐 아니라 AI가 만들어 내는 문장 역시 하나의 언어
+      현상으로 바라보고, 그 안에 숨어 있는 패턴과 한계를 읽어 내려
+      합니다. 이는 향후 언어학자로서 인간의 언어 이해와 AI의 언어
+      생성 사이를 매개하는 연구로 나아가기 위한 과정이며, 이 연재는
+      앞으로 한 권의 책으로 출간될 예정입니다.
+    </p>
+
+  </section>
+
+  <section class="vision-body">
+
+    <div class="vision-section">
+      <h3>반복되는 표현에서 하나의 경향을 발견하다</h3>
+    </div>
+
+    <p>
+      지금까지 AI 문장에서 반복해서 나타나는 몇 가지 표현을
+      살펴보았다.
+    </p>
+
+    <p>
+      ‘흔들리다’, ‘들고 있다’, ‘잡고 있다’, ‘통과하다’, ‘얼굴’.
+      각각은 서로 다른 단어처럼 보인다. 그러나 이 표현들을 한자리에
+      놓고 보면 공통된 방향이 보이기 시작한다.
+    </p>
+
+    <p>
+      AI는 눈에 보이지 않는 추상적인 개념을 설명할 때 그것을 그대로
+      추상적인 상태에 두기보다, 인간이 몸으로 경험할 수 있는 장면이나
+      사물의 형태로 바꾸어 표현하는 경향을 보인다.
+    </p>
+
+    <div class="vision-examples">
+      <p>신념이 흔들린다.</p>
+      <p>질문을 들고 있다.</p>
+      <p>가능성을 붙잡고 있다.</p>
+      <p>불안의 시간을 통과한다.</p>
+      <p>권력의 또 다른 얼굴이 드러난다.</p>
+    </div>
+
+    <p>
+      신념은 실제로 흔들리지 않는다. 질문을 손에 들 수도 없고,
+      가능성을 붙잡을 수도 없다. 시간은 터널처럼 통과할 수 있는
+      공간이 아니며, 권력에는 실제 얼굴이 없다.
+    </p>
+
+    <p>
+      그런데 AI의 문장에서는 추상적인 생각과 감정과 관계가 자주
+      물질적인 세계의 성질을 얻는다.
+    </p>
+
+    <p>
+      생각은 물건이 되고, 시간은 공간이 되며, 추상적인 성격은 얼굴이
+      된다.
+    </p>
+
+    <div class="vision-declare">
+      AI는 추상적인 개념을 설명할 때<br>
+      그것을 인간이 경험할 수 있는 물리적 장면으로 번역하는 경향이 있다.
+    </div>
+
+    <div class="vision-section">
+      <h3>추상적인 것은 왜 자꾸 몸을 얻는가</h3>
+    </div>
+
+    <p>
+      인간의 언어에도 이러한 비유는 오래전부터 존재했다.
+    </p>
+
+    <p>
+      우리는 마음이 흔들린다고 말하고, 기회를 잡는다고 말하며,
+      힘든 시간을 지나왔다고 표현한다. 보이지 않는 것을 이해하기 위해
+      눈에 보이는 세계의 경험을 빌려오는 것은 인간 언어의 자연스러운
+      방식이기도 하다.
+    </p>
+
+    <p>
+      따라서 이런 표현을 사용한다는 사실 자체가 AI 문장의 특징이라고
+      말할 수는 없다.
+    </p>
+
+    <p>
+      차이는 빈도와 적용 범위에서 나타난다.
+    </p>
+
+    <p>
+      AI는 하나의 표현이 어떤 추상적 상황을 설명하는 데 성공하면,
+      그 구조를 다른 대상에도 빠르게 확장한다. 그래서 질문을 들고,
+      가능성을 잡고, 시대를 통과하고, 기술의 얼굴을 발견하는 문장이
+      연달아 만들어진다.
+    </p>
+
+    <p>
+      각각의 문장은 문법적으로 틀리지 않고 의미도 이해할 수 있다.
+      그러나 같은 방식의 구체화가 반복되면 서로 다른 생각들이 비슷한
+      장면으로 변한다.
+    </p>
+
+    <p>
+      복잡한 차이를 설명하기보다 이미 익숙한 물리적 이미지에
+      추상적인 의미를 넣는 것이다.
+    </p>
+
+    <div class="vision-section">
+      <h3>물체가 되고, 공간이 되고, 얼굴이 된다</h3>
+    </div>
+
+    <p>
+      지금까지 관찰한 표현은 몇 가지 방식으로 나누어 볼 수 있다.
+    </p>
+
+    <div class="vision-examples">
+      <p>‘들고 있다’와 ‘잡고 있다’ — 추상적인 것을 물체로 만든다.</p>
+      <p>‘통과하다’ — 시간과 경험을 공간으로 만든다.</p>
+      <p>‘흔들리다’ — 생각과 관계에 물리적인 운동을 부여한다.</p>
+      <p>‘얼굴’ — 추상적인 대상에 신체의 형태를 부여한다.</p>
+    </div>
+
+    <p>
+      표현은 서로 다르지만 작동 방식은 비슷하다.
+    </p>
+
+    <p>
+      눈에 보이지 않는 것을 눈에 보이는 것처럼 만들고, 움직이지 않는
+      것을 움직이게 하며, 형태가 없는 것에 형태를 부여한다.
+    </p>
+
+    <p>
+      이렇게 만들어진 문장은 이해하기 쉽다. 독자는 추상적인 설명을
+      긴 논리로 따라가지 않아도 하나의 장면을 떠올릴 수 있다.
+    </p>
+
+    <p>
+      동시에 여기에는 한계도 있다.
+    </p>
+
+    <p>
+      구체적인 이미지는 설명을 돕지만, 이미지가 설명 자체를 대신하기
+      시작하면 의미의 차이가 사라질 수 있기 때문이다.
+    </p>
+
+    <p>
+      무엇을 들고 있는지, 무엇을 잡았는지, 무엇을 통과했는지,
+      어떤 얼굴이 나타났는지를 말하는 것만으로는 실제 변화의 내용까지
+      설명되지 않는다.
+    </p>
+
+    <div class="vision-section">
+      <h3>구체화와 구체성은 다르다</h3>
+    </div>
+
+    <p>
+      여기에서 중요한 구별이 하나 생긴다.
+    </p>
+
+    <p>
+      추상적인 말을 물리적인 이미지로 바꾸는 것과, 실제 내용을
+      구체적으로 설명하는 것은 같은 일이 아니다.
+    </p>
+
+    <div class="vision-compare">
+      <p>“그는 새로운 가능성을 붙잡았다”는</p>
+      <p>
+        가능성이 무엇인지 설명하지 않는 한 이미지의 구체화에
+        머물 수 있다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“그는 불안의 시간을 통과했다”는</p>
+      <p>
+        어떤 사건을 겪었고 무엇이 달라졌는지를 말해야 비로소
+        경험의 내용이 구체화된다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“도시는 새로운 얼굴을 드러냈다”는</p>
+      <p>
+        건축, 산업, 인구, 문화 가운데 무엇이 달라졌는지를 밝혀야
+        실제 변화가 보인다.
+      </p>
+    </div>
+
+    <p>
+      AI가 만들어 내는 문장을 읽을 때 우리가 자주 느끼는 묘한
+      이질감도 여기에서 생길 수 있다.
+    </p>
+
+    <p>
+      문장은 구체적인 장면을 가진 것처럼 보이는데, 정작 그 장면
+      안에서 일어난 일은 충분히 설명되지 않은 경우다.
+    </p>
+
+    <p>
+      다시 말해 이미지에는 몸이 있지만 정보에는 몸이 없다.
+    </p>
+
+    <div class="vision-declare">
+      구체적인 이미지를 사용하는 것과<br>
+      구체적으로 설명하는 것은 같은 일이 아니다.
+    </div>
+
+    <div class="vision-section">
+      <h3>AI 문장을 읽는 하나의 방법</h3>
+    </div>
+
+    <p>
+      이제 AI 문장에서 이런 표현을 발견하면 단어 하나만 고칠 것이
+      아니라 그 뒤의 사고 구조를 살펴볼 수 있다.
+    </p>
+
+    <div class="vision-guide">
+      <p>추상적인 대상이 물체나 공간처럼 바뀌지는 않았는가.</p>
+      <p>비유가 실제 설명을 대신하고 있지는 않은가.</p>
+      <p>이미지를 지운 뒤에도 문장의 의미가 충분히 남아 있는가.</p>
+      <p>무엇이 실제로 변했는지를 더 정확하게 말할 수 있는가.</p>
+    </div>
+
+    <p>
+      이런 질문을 던지면 ‘AI가 자주 쓰는 표현’을 찾는 작업은 단순한
+      말버릇 수집을 넘어선다.
+    </p>
+
+    <p>
+      개별적인 단어 뒤에서 AI가 추상적인 세계를 어떤 방식으로
+      정리하고 표현하는지가 조금씩 보이기 시작한다.
+    </p>
+
+    <p>
+      최근 살펴본 ‘삭제하다’는 여기에서 또 다른 방향을 보여 준다.
+      ‘삭제하다’는 추상을 물리적인 이미지로 만드는 표현이라기보다,
+      기억과 감정과 역사 같은 인간의 경험을 마치 처리 가능한
+      데이터처럼 다루는 데 가깝다.
+    </p>
+
+    <p>
+      이것은 지금까지 살펴본 ‘추상의 물리화’와는 다른 갈래일 수 있다.
+      AI가 인간의 경험을 디지털 세계의 언어로 번역하는 또 하나의
+      패턴이 존재하는지 앞으로 더 많은 사례를 통해 살펴볼 필요가 있다.
+    </p>
+
+    <p>
+      하나의 표현을 관찰하면 또 다른 표현이 보이고, 개별적인 표현을
+      모으면 그 뒤에 있는 더 큰 언어 패턴이 모습을 드러낸다.
+    </p>
+
+    <p>
+      이 연재에서 찾으려는 것은 바로 그 지점이다.
+      AI가 어떤 말을 자주 사용하는지를 넘어, AI가 언어로 세계를
+      어떤 방식으로 구성하고 있는지를 읽어 내는 것.
+    </p>
+
+  </section>
+
+  <footer class="editor-footer">
+
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note ·
+      Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </footer>
+
+</main>
+</body>
+</html>
