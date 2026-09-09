@@ -3,16 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>About, Noblewithbooks</title>
 
- <link rel="stylesheet" href="style.css?v=stable" />
+  <link rel="stylesheet" href="style.css?v=stable" />
 
+  <style>
+    /* ABOUT — IDENTITY */
+    .about-page .about-rule--identity {
+      margin: clamp(44px, 7vw, 68px) auto 28px;
+    }
+
+    .about-page .about-identity {
+      width: 100%;
+      text-align: center;
+    }
+
+    .about-page .about-identity-copy {
+      margin: 0 auto 30px;
+      font-size: clamp(1.16rem, 2.5vw, 1.55rem);
+      line-height: 1.7;
+      letter-spacing: -0.025em;
+      font-weight: 750;
+      color: rgba(62, 36, 20, 0.96);
+      word-break: keep-all;
+    }
+
+    .about-page .about-architecture {
+      width: min(100%, 620px);
+      margin: 0 auto;
+    }
+
+    .about-page .about-architecture img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      border: 1px solid rgba(18, 24, 38, 0.12);
+      box-shadow: 0 24px 58px rgba(2, 10, 20, 0.18);
+    }
+
+    @media (max-width: 720px) {
+      .about-page .about-rule--identity {
+        margin: 40px auto 24px;
+      }
+
+      .about-page .about-identity-copy {
+        margin-bottom: 22px;
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+
+      .about-page .about-architecture img {
+        border-radius: 12px;
+        box-shadow: 0 16px 36px rgba(2, 10, 20, 0.16);
+      }
+    }
+  </style>
 
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-NPRRLQZM70');
   </script>
@@ -24,49 +77,91 @@
   <div class="header-inner">
 
     <div class="brand">
-      <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
+      <h1>
+        <a class="brandlink" href="index.html">Noblewithbooks</a>
+      </h1>
       <p class="tagline">About</p>
       <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
     </div>
 
-<nav class="nav nav--toggle" aria-label="Primary">
-  <!-- Mobile: toggle button -->
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
-    <span class="nav-toggle__icon" aria-hidden="true"></span>
-    <span class="nav-toggle__label">Menu</span>
-  </button>
+    <nav class="nav nav--toggle" aria-label="Primary">
 
-  <!-- Links -->
-  <div class="nav-links" id="navLinks">
-    <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
-    <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
-    <a class="btn-space" href="contact.html"><span class="ico"></span>Contact</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
 
-    <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
-    <a class="btn-space" href="editor.html"><span class="ico"></span>편집자 노트</a>
-    <a class="btn-space" href="books/"><span class="ico"></span>책 소개</a>
-    <a class="btn-space" href="ebooks.html"><span class="ico"></span>전자책</a>
-    <a class="btn-space" href="audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
-    <a class="btn-space" href="selected.html"><span class="ico"></span>KPIPA Edition</a>
-    <a class="btn-space" href="rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
-    <a class="btn-space" href="honors.html"><span class="ico"></span>Honors</a>
-    <a class="btn-space" href="press.html"><span class="ico"></span>언론의 시선</a>
-  </div>
-</nav>
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="index.html">
+          <span class="ico"></span>Home
+        </a>
 
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.getElementById('navLinks');
-  if(!btn || !links) return;
+        <a class="btn-space" href="about.html" aria-current="page">
+          <span class="ico"></span>About
+        </a>
 
-  btn.addEventListener('click', function(){
-    var isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
-    links.classList.toggle('is-open', !isOpen);
-  });
-})();
-</script>
+        <a class="btn-space" href="contact.html">
+          <span class="ico"></span>Contact
+        </a>
+
+        <a class="btn-space" href="notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+
+        <a class="btn-space" href="editor.html">
+          <span class="ico"></span>편집자 노트
+        </a>
+
+        <a class="btn-space" href="books/">
+          <span class="ico"></span>책 소개
+        </a>
+
+        <a class="btn-space" href="ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+
+        <a class="btn-space" href="audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+
+        <a class="btn-space" href="selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+
+        <a class="btn-space" href="rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+
+        <a class="btn-space" href="honors.html">
+          <span class="ico"></span>Honors
+        </a>
+
+        <a class="btn-space" href="press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+
+    <script>
+      (function () {
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.getElementById('navLinks');
+
+        if (!btn || !links) return;
+
+        btn.addEventListener('click', function () {
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          links.classList.toggle('is-open', !isOpen);
+        });
+      })();
+    </script>
 
   </div>
 </header>
@@ -92,10 +187,39 @@
       </p>
 
       <p class="about-paragraph about-paragraph--en">
-        <span class="about-lead">Whatever form books may take in the future,</span><br>
+        <span class="about-lead">
+          Whatever form books may take in the future,
+        </span><br>
         Noblewithbooks will keep making books,<br>
         in one way or another, at any time.
       </p>
+
+    </section>
+
+    <div
+      class="about-rule about-rule--identity"
+      aria-hidden="true"
+    ></div>
+
+    <section
+      class="about-identity"
+      aria-label="책읽는귀족의 정체성"
+    >
+
+      <p class="about-identity-copy">
+        ‘나’는 ‘걸어 다니는 출판사’이다.
+      </p>
+
+      <figure class="about-architecture">
+        <img
+          src="asset/images/내 인생의 건축학 개론.png"
+          alt="철학을 지반으로 출판과 교육, 프랑스어, 한국어교육, 언어학과 저작 활동을 층층이 쌓아 올린 내 인생의 건축학 개론"
+          width="1122"
+          height="1402"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
 
     </section>
 
@@ -107,11 +231,14 @@
   <p>
     Noblewithbooks (책읽는귀족, est. 2012) ·
     Étoile Bleue Créations (푸른별창작소, Imprint, est. 2025) ·
-    © All rights reserved by Noblewithbooks · 이 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
+    © All rights reserved by Noblewithbooks ·
+    이 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
   </p>
+
   <p>
-   (10388) 경기도 고양시 일산서구 대산로 123,
-            현대프라자 K일산비즈니스센터 342호(주엽동) · 이메일 idea444@naver.com
+    (10388) 경기도 고양시 일산서구 대산로 123,
+    현대프라자 K일산비즈니스센터 342호(주엽동) ·
+    이메일 idea444@naver.com
   </p>
 </footer>
 
