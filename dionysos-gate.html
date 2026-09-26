@@ -44,7 +44,7 @@
 
     .series-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.4rem;
       margin-top: 1.5rem;
     }
@@ -65,6 +65,14 @@
     }
 
     .series-book--justice {
+      border-top: 7px solid #d74949;
+    }
+
+    .series-book--equality {
+      border-top: 7px solid #315da8;
+    }
+
+    .series-book--happiness {
       border-top: 7px solid #d74949;
     }
 
@@ -113,6 +121,7 @@
 
     .series-method__item {
       padding: 1.2rem;
+      border: 1px solid rgba(211, 132, 68, 0.28);
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.56);
       text-align: center;
@@ -190,6 +199,42 @@
             },
             "url": "https://noblewithbooks.com/dionysos/02-justice.html"
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Book",
+            "name": "평등: 바칼로레아 철학 논술",
+            "inLanguage": "ko",
+            "author": {
+              "@type": "Person",
+              "name": "조선우"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "책읽는귀족"
+            },
+            "url": "https://noblewithbooks.com/dionysos/03-equality.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Book",
+            "name": "행복: 바칼로레아 철학 논술",
+            "inLanguage": "ko",
+            "author": {
+              "@type": "Person",
+              "name": "조선우"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "책읽는귀족"
+            },
+            "url": "https://noblewithbooks.com/dionysos/04-happiness.html"
+          }
         }
       ]
     }
@@ -262,14 +307,18 @@
         영화와 예술, 문학과 현실 사회의 장면을 연결하여
         우리말로 사유하는 새로운 철학 논술의 형식을 제안합니다.
       </p>
-      
-<p class="series-status">
-  『디오니소스 논술』은 인간과 세계의 핵심 질문을 주제별로 탐구하는 총 10권의 철학 논술 시리즈입니다.
-</p>
+
+      <p class="series-status">
+        『디오니소스 논술』은 인간과 세계의 핵심 질문을 주제별로 탐구하는 총 10권의 철학 논술 시리즈입니다.
+      </p>
+
       <p class="dionysos-note">
-  1권 <strong>『자유』</strong> ·
-  2권 <strong>『정의』</strong> 출간
-</p>
+        1권 <strong>『자유』</strong> ·
+        2권 <strong>『정의』</strong> ·
+        3권 <strong>『평등』</strong> ·
+        4권 <strong>『행복』</strong>
+      </p>
+
     </div>
 
   </section>
@@ -324,10 +373,10 @@
           디오니소스 논술 프로젝트 2권
         </p>
 
-      <p class="series-book__description">
-  프랑스 바칼로레아 철학 기출문제에서 출발해
-  정의와 평등, 힘과 평화, 의무의 관계를 탐구하는 책.
-</p>
+        <p class="series-book__description">
+          프랑스 바칼로레아 철학 기출문제에서 출발해
+          정의와 평등, 힘과 평화, 의무의 관계를 탐구하는 책.
+        </p>
 
         <p class="series-book__key">
           “무엇이 정의로운가”
@@ -344,13 +393,66 @@
       </article>
 
 
-      <!--
-        새 권을 추가할 때는 위 article 블록을 복사하여
-        권수, 제목, 설명, 링크만 변경합니다.
+      <!-- 3권 -->
+      <article class="series-book series-book--equality">
 
-        카드 수가 늘어나면 자동으로 다음 줄에 배치되므로
-        10권 이상도 같은 구조로 확장할 수 있습니다.
-      -->
+        <p class="series-book__number">VOLUME 03</p>
+
+        <h4 class="series-book__title">평등</h4>
+
+        <p class="series-book__subtitle">
+          디오니소스 논술 프로젝트 3권
+        </p>
+
+        <p class="series-book__description">
+          프랑스 바칼로레아 철학 기출문제에서 출발해
+          평등과 정의, 기회와 차등 대우의 관계를 탐구하는 책.
+        </p>
+
+        <p class="series-book__key">
+          “무엇을 같게 하고 무엇을 다르게 대해야 하는가”
+        </p>
+
+        <a
+          class="btn-space series-book__link"
+          href="dionysos/03-equality.html"
+          aria-label="디오니소스 논술 3권 평등 자세히 보기"
+        >
+          자세히 보기
+        </a>
+
+      </article>
+
+
+      <!-- 4권 -->
+      <article class="series-book series-book--happiness">
+
+        <p class="series-book__number">VOLUME 04</p>
+
+        <h4 class="series-book__title">행복</h4>
+
+        <p class="series-book__subtitle">
+          디오니소스 논술 프로젝트 4권
+        </p>
+
+        <p class="series-book__description">
+          프랑스 바칼로레아 철학 기출문제 열 개를 따라
+          행복과 이성, 욕망, 관계와 삶의 조건을 탐구하는 책.
+        </p>
+
+        <p class="series-book__key">
+          “우리는 어떻게 살아야 행복한가”
+        </p>
+
+        <a
+          class="btn-space series-book__link"
+          href="dionysos/04-happiness.html"
+          aria-label="디오니소스 논술 4권 행복 자세히 보기"
+        >
+          자세히 보기
+        </a>
+
+      </article>
 
     </div>
 
@@ -473,67 +575,6 @@
     </p>
 
   </section>
-
-        <!-- 3권 -->
-      <article class="series-book series-book--equality">
-
-        <p class="series-book__number">VOLUME 03</p>
-
-        <h4 class="series-book__title">평등</h4>
-
-        <p class="series-book__subtitle">
-          디오니소스 논술 프로젝트 3권
-        </p>
-
-        <p class="series-book__description">
-          프랑스 바칼로레아 철학 기출문제에서 출발해
-          평등과 정의, 기회와 차등 대우의 관계를 탐구하는 책.
-        </p>
-
-        <p class="series-book__key">
-          “무엇을 같게 하고 무엇을 다르게 대해야 하는가”
-        </p>
-
-        <a
-          class="btn-space series-book__link"
-          href="dionysos/03-equality.html"
-          aria-label="디오니소스 논술 3권 평등 자세히 보기"
-        >
-          자세히 보기
-        </a>
-
-      </article>
-
-
-      <!-- 4권 -->
-      <article class="series-book series-book--happiness">
-
-        <p class="series-book__number">VOLUME 04</p>
-
-        <h4 class="series-book__title">행복</h4>
-
-        <p class="series-book__subtitle">
-          디오니소스 논술 프로젝트 4권
-        </p>
-
-        <p class="series-book__description">
-          프랑스 바칼로레아 철학 기출문제 열 개를 따라
-          행복과 이성, 욕망, 관계와 삶의 조건을 탐구하는 책.
-        </p>
-
-        <p class="series-book__key">
-          “우리는 어떻게 살아야 행복한가”
-        </p>
-
-        <a
-          class="btn-space series-book__link"
-          href="dionysos/04-happiness.html"
-          aria-label="디오니소스 논술 4권 행복 자세히 보기"
-        >
-          자세히 보기
-        </a>
-
-      </article>
 
 </main>
 
