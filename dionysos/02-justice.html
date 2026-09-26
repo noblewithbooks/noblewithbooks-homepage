@@ -179,6 +179,58 @@
       margin-top: 2rem;
       text-align: right;
     }
+
+    .book-series-label {
+  margin: 0.35rem 0 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #5f7478;
+}
+
+/* BOOK HERO WITH COVER */
+.book-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(170px, 240px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.book-cover-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.book-cover {
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.book-hero-copy {
+  min-width: 0;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .book-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .book-cover {
+    max-width: 190px;
+  }
+
+  .book-hero-copy {
+    text-align: center;
+  }
+}
   </style>
 </head>
 
@@ -230,15 +282,18 @@
         바칼로레아 철학 논술
       </p>
 
-      <p class="dionysos-lede">
-        디오니소스 논술 프로젝트 2권
-      </p>
+                <p class="book-series-label">
+            디오니소스 논술 프로젝트 2권
+          </p>
 
-      <p class="dionysos-note">
-        분노를 질문으로, 질문을 판단으로,<br>
-        <strong>판단을 자기 문장으로 바꾸는 철학 논술</strong>
-      </p>
+          <p class="dionysos-lede">
+            프랑스 바칼로레아 철학 기출문제에서 출발해<br>
+            정의와 평등, 힘과 평화, 의무의 관계를 탐구하는 책
+          </p>
 
+          <p class="dionysos-note">
+            <strong>무엇이 정의로운가</strong>
+          </p>
     </section>
 
 
