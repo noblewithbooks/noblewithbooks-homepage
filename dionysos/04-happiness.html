@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>행복 | 디오니소스 논술 4권 | Noblewithbooks</title>
+  <title>행복: 바칼로레아 철학 논술 | 디오니소스 논술 프로젝트 | Noblewithbooks</title>
 
   <meta
     name="description"
@@ -21,7 +21,7 @@
 
   <meta
     property="og:title"
-    content="행복 | 디오니소스 논술 프로젝트 4권"
+    content="행복: 바칼로레아 철학 논술"
   />
 
   <meta
@@ -61,7 +61,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Book",
-    "name": "행복",
+    "name": "행복: 바칼로레아 철학 논술",
     "alternateName": "디오니소스 논술 프로젝트 4권 『행복』",
     "description": "프랑스 바칼로레아에 실제 출제된 행복 관련 철학 문제 열 개를 따라 행복과 이성, 욕망, 관계와 삶의 조건을 탐구하는 철학 논술서.",
     "url": "https://noblewithbooks.com/dionysos/04-happiness.html",
@@ -95,6 +95,59 @@
   </script>
 
   <style>
+
+    /* BOOK HERO WITH COVER */
+    .book-hero-layout {
+      display: grid;
+      grid-template-columns: minmax(170px, 240px) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .book-cover-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-cover {
+      display: block;
+      width: 100%;
+      max-width: 230px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .book-hero-copy {
+      min-width: 0;
+      text-align: left;
+    }
+
+    .book-series-label {
+      margin: 0.35rem 0 1.5rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #5f7478;
+    }
+
+    @media (max-width: 700px) {
+      .book-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .book-cover {
+        max-width: 190px;
+      }
+
+      .book-hero-copy {
+        text-align: center;
+      }
+    }
+
     .book-page-nav {
       display: flex;
       flex-wrap: wrap;
@@ -221,25 +274,41 @@
       class="card dionysos-banner"
       aria-labelledby="book-title">
 
-      <h2
-        id="book-title"
-        class="dionysos-title dionysos-title--accent">
-        행복
-      </h2>
+      <div class="book-hero-layout">
 
-      <p class="dionysos-lede">
-        디오니소스 논술 프로젝트 4권
-      </p>
+        <div class="book-cover-wrap">
+          <img
+            class="book-cover"
+            src="../asset/images/04-happiness-cover.jpg"
+            alt="『행복: 바칼로레아 철학 논술』 표지"
+          />
+        </div>
 
-      <p class="dionysos-lede">
-        프랑스 바칼로레아 철학 기출문제 열 개를 따라<br>
-        행복과 이성, 욕망, 관계와 삶의 조건을 탐구하는 책
-      </p>
+        <div class="book-hero-copy">
 
-      <p class="dionysos-note">
-        우리는 어떻게 살아야<br>
-        <strong>행복한가.</strong>
-      </p>
+          <h2
+            id="book-title"
+            class="dionysos-title dionysos-title--accent">
+            행복: 바칼로레아 철학 논술
+          </h2>
+
+          <p class="book-series-label">
+            디오니소스 논술 프로젝트
+          </p>
+
+          <p class="dionysos-lede">
+            프랑스 바칼로레아 철학 기출문제 열 개를 따라<br>
+            행복과 이성, 욕망, 관계와 삶의 조건을 탐구하는 책
+          </p>
+
+          <p class="dionysos-note">
+            우리는 어떻게 살아야<br>
+            <strong>행복한가.</strong>
+          </p>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -252,11 +321,11 @@
       <dl class="book-meta-list">
 
         <dt class="book-meta-label">제목</dt>
-        <dd class="book-meta-value">행복</dd>
+        <dd class="book-meta-value">행복: 바칼로레아 철학 논술</dd>
 
         <dt class="book-meta-label">부제</dt>
         <dd class="book-meta-value">
-          바칼로레아 철학 논술 · 디오니소스 논술 프로젝트
+          디오니소스 논술 프로젝트
         </dd>
 
         <dt class="book-meta-label">저자</dt>

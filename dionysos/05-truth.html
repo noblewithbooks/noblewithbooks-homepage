@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>평등 | 디오니소스 논술 3권 | Noblewithbooks</title>
+  <title>진리: 바칼로레아 철학 논술 | 디오니소스 논술 프로젝트 | Noblewithbooks</title>
 
   <meta
     name="description"
@@ -13,7 +13,7 @@
 
   <link
     rel="canonical"
-    href="https://noblewithbooks.com/dionysos/03-equality.html"
+    href="https://noblewithbooks.com/dionysos/05-truth.html"
   />
 
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
 
   <meta
     property="og:title"
-    content="평등 | 디오니소스 논술 프로젝트 3권"
+    content="진리: 바칼로레아 철학 논술"
   />
 
   <meta
@@ -31,11 +31,11 @@
 
   <meta
     property="og:url"
-    content="https://noblewithbooks.com/dionysos/03-equality.html"
+    content="https://noblewithbooks.com/dionysos/05-truth.html"
   />
 
   <meta property="og:site_name" content="Noblewithbooks" />
-  <meta property="book:isbn" content="979-11-94765-14-1" />
+  <meta property="book:isbn" content="979-11-94765-16-5" />
 
   <link rel="stylesheet" href="../style.css?v=stable2" />
 
@@ -61,14 +61,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Book",
-    "name": "평등",
-    "alternateName": "디오니소스 논술 프로젝트 3권 『평등』",
-    "description": "프랑스 바칼로레아 철학 기출문제에서 출발해 평등과 정의, 기회와 차등 대우의 관계를 탐구하는 철학 논술서.",
-    "url": "https://noblewithbooks.com/dionysos/03-equality.html",
-    "isbn": "979-11-94765-14-1",
+    "name": "진리: 바칼로레아 철학 논술",
+    "alternateName": "디오니소스 논술 프로젝트 『진리』",
+    "description": "프랑스 바칼로레아 철학 기출문제 열두 개를 따라 진리와 설득, 사실과 해석, 현실과 표상의 관계를 탐구하는 철학 논술서.",
+    "url": "https://noblewithbooks.com/dionysos/05-truth.html",
+    "isbn": "979-11-94765-16-5",
     "inLanguage": "ko",
     "bookFormat": "https://schema.org/EBook",
-    "datePublished": "2026-08-31",
+    "datePublished": "2026-10-31",
     "author": {
       "@type": "Person",
       "name": "조선우"
@@ -95,6 +95,59 @@
   </script>
 
   <style>
+
+    /* BOOK HERO WITH COVER */
+    .book-hero-layout {
+      display: grid;
+      grid-template-columns: minmax(170px, 240px) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .book-cover-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-cover {
+      display: block;
+      width: 100%;
+      max-width: 230px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .book-hero-copy {
+      min-width: 0;
+      text-align: left;
+    }
+
+    .book-series-label {
+      margin: 0.35rem 0 1.5rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #5f7478;
+    }
+
+    @media (max-width: 700px) {
+      .book-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .book-cover {
+        max-width: 190px;
+      }
+
+      .book-hero-copy {
+        text-align: center;
+      }
+    }
+
     .book-page-nav {
       display: flex;
       flex-wrap: wrap;
@@ -220,25 +273,41 @@
       class="card dionysos-banner"
       aria-labelledby="book-title">
 
-      <h2
-        id="book-title"
-        class="dionysos-title dionysos-title--accent">
-        진리
-      </h2>
+      <div class="book-hero-layout">
 
-      <p class="dionysos-lede">
-        디오니소스 논술 프로젝트 5권
-      </p>
+        <div class="book-cover-wrap">
+          <img
+            class="book-cover"
+            src="../asset/images/05-truth-cover.jpg"
+            alt="『진리: 바칼로레아 철학 논술』 표지"
+          />
+        </div>
 
-      <p class="dionysos-lede">
-        프랑스 바칼로레아 철학 기출문제 열두 개를 따라<br>
-        진리와 설득, 사실과 해석, 현실과 표상의 관계를 탐구하는 책
-      </p>
+        <div class="book-hero-copy">
 
-      <p class="dionysos-note">
-        우리는 진짜를 어떻게 아는가.<br>
-        <strong>진리는 설명 너머에 있다.</strong>
-      </p>
+          <h2
+            id="book-title"
+            class="dionysos-title dionysos-title--accent">
+            진리: 바칼로레아 철학 논술
+          </h2>
+
+          <p class="book-series-label">
+            디오니소스 논술 프로젝트
+          </p>
+
+          <p class="dionysos-lede">
+            프랑스 바칼로레아 철학 기출문제 열두 개를 따라<br>
+            진리와 설득, 사실과 해석, 현실과 표상의 관계를 탐구하는 책
+          </p>
+
+          <p class="dionysos-note">
+            우리는 진짜를 어떻게 아는가.<br>
+            <strong>진리는 설명 너머에 있다.</strong>
+          </p>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -251,11 +320,11 @@
       <dl class="book-meta-list">
 
         <dt class="book-meta-label">제목</dt>
-        <dd class="book-meta-value">진리</dd>
+        <dd class="book-meta-value">진리: 바칼로레아 철학 논술</dd>
 
         <dt class="book-meta-label">부제</dt>
         <dd class="book-meta-value">
-          바칼로레아 철학 논술 · 디오니소스 논술 프로젝트
+          디오니소스 논술 프로젝트
         </dd>
 
         <dt class="book-meta-label">저자</dt>
