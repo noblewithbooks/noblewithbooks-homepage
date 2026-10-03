@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 문장 패턴 분석하기 — AI는 감정을 왜 ‘공간’처럼 말하는가 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+   
+   <style>
+  :root{
+    --vision-ink: rgba(18,28,48,0.96);
+    --vision-muted: rgba(18,28,48,0.68);
+    --vision-accent: rgba(58,110,180,0.95);
+    --vision-line: rgba(18,28,48,0.18);
+    --vision-paper: rgba(245,248,255,0.6);
+  }
+
+  .vision-note{
+    max-width:920px;
+    margin:0 auto;
+    padding:28px 18px 70px;
+    color:var(--vision-ink);
+  }
+
+  .vision-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:14px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--vision-line);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--vision-muted);
+  }
+
+  .vision-hero h1{
+    margin:0 0 18px;
+    font-size:clamp(24px,3.2vw,38px);
+    line-height:1.25;
+    letter-spacing:-0.02em;
+  }
+
+  .vision-hero h1 span{
+    color:var(--vision-accent);
+  }
+
+  .vision-lead{
+    max-width:76ch;
+    margin-bottom:48px;
+    font-size:16px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-photo{
+    margin:0 0 34px;
+  }
+
+  .vision-photo img{
+    display:block;
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    border-radius:18px;
+    box-shadow:0 18px 45px rgba(18,28,48,0.18);
+  }
+
+  .vision-photo figcaption{
+    max-width:760px;
+    margin:14px auto 0;
+    font-size:13px;
+    line-height:1.8;
+    color:var(--vision-muted);
+    text-align:center;
+  }
+
+  .vision-body{
+    font-size:16px;
+    line-height:2;
+  }
+
+  .vision-body p{
+    margin:0 0 22px;
+  }
+
+  .vision-section{
+    margin:64px 0 36px;
+  }
+
+  .vision-section h3{
+    margin-bottom:18px;
+    padding-left:14px;
+    border-left:4px solid var(--vision-accent);
+    font-size:21px;
+    letter-spacing:-0.01em;
+  }
+
+  .vision-examples{
+    margin:30px 0;
+    padding:26px 28px;
+    border-left:3px solid var(--vision-accent);
+    background:var(--vision-paper);
+    border-radius:0 18px 18px 0;
+  }
+
+  .vision-examples p{
+    margin:0 0 6px;
+  }
+
+  .vision-examples p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-compare{
+    margin:34px 0;
+    padding:28px;
+    background:var(--vision-paper);
+    border-radius:22px;
+  }
+
+  .vision-compare p{
+    margin-bottom:8px;
+  }
+
+  .vision-compare p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-guide{
+    margin:34px 0;
+    padding:28px;
+    border:1px solid var(--vision-line);
+    border-radius:22px;
+  }
+
+  .vision-guide p{
+    margin-bottom:9px;
+  }
+
+  .vision-guide p:last-child{
+    margin-bottom:0;
+  }
+
+  .vision-declare{
+    margin:70px 0;
+    padding:36px 28px;
+    background:var(--vision-paper);
+    border-radius:26px;
+    text-align:center;
+    font-size:20px;
+    line-height:1.9;
+  }
+
+  .vision-sign{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--vision-line);
+    font-size:13px;
+    line-height:1.9;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:18px;
+    font-size:13px;
+    color:var(--vision-muted);
+  }
+
+  .vision-nav a{
+    padding-bottom:2px;
+    border-bottom:1px solid var(--vision-line);
+    color:inherit;
+    text-decoration:none;
+  }
+
+  .vision-nav a:hover{
+    border-bottom-color:var(--vision-ink);
+  }
+
+  @media (max-width:640px){
+    .vision-top{
+      align-items:flex-start;
+      gap:12px;
+      font-size:11px;
+      letter-spacing:0.09em;
+    }
+
+    .vision-lead,
+    .vision-body{
+      font-size:15px;
+    }
+
+    .vision-section{
+      margin-top:50px;
+    }
+
+    .vision-examples,
+    .vision-compare,
+    .vision-guide{
+      padding:22px 20px;
+    }
+
+    .vision-declare{
+      margin:54px 0;
+      padding:30px 22px;
+      font-size:18px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <h1>
+        <a class="brandlink" href="../index.html">Noblewithbooks</a>
+      </h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html">
+          <span class="ico"></span>Home
+        </a>
+
+        <a class="btn-space" href="../about.html">
+          <span class="ico"></span>About
+        </a>
+
+        <a class="btn-space" href="../publishing-consulting.html">
+          <span class="ico"></span>출판 컨설팅
+        </a>
+
+        <a class="btn-space" href="../contact.html">
+          <span class="ico"></span>Contact
+        </a>
+
+        <a class="btn-space" href="../notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+
+        <a
+          class="btn-space"
+          href="../editor.html"
+          aria-current="page"
+        >
+          <span class="ico"></span>편집자 노트
+        </a>
+
+        <a class="btn-space" href="../books/">
+          <span class="ico"></span>책 소개
+        </a>
+
+        <a class="btn-space" href="../ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+
+        <a class="btn-space" href="../audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+
+        <a class="btn-space" href="../selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+
+        <a class="btn-space" href="../rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+
+        <a class="btn-space" href="../honors.html">
+          <span class="ico"></span>Honors
+        </a>
+
+        <a class="btn-space" href="../press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+
+    <script>
+      (function(){
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.getElementById('navLinks');
+
+        if(!btn || !links) return;
+
+        btn.addEventListener('click', function(){
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          links.classList.toggle('is-open', !isOpen);
+        });
+      })();
+    </script>
+
+  </div>
+</header>
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · AI SENTENCE PATTERN</div>
+    <div>2026.10.12.</div>
+  </div>
+
+
+  <section class="vision-hero">
+
+    <h1>
+      <span>AI 문장 패턴 분석하기</span><br>
+      AI는 무엇을 자꾸 ‘쌓는가’
+    </h1>
+
+    <p class="vision-lead">
+      AI 문장을 읽다 보면 보이지 않는 것들이 자꾸 쌓인다.
+      경험을 쌓고, 지식을 쌓고, 신뢰를 쌓고,
+      경력을 쌓고, 데이터를 쌓고, 성과까지 쌓는다.
+      실제로 경험이나 신뢰에는 높이도 무게도 없다.
+      그런데 ‘쌓다’라는 동사가 붙는 순간
+      시간 속에서 만들어진 변화는
+      하나씩 포개지는 물질처럼 보이기 시작한다.
+      무엇인가를 쌓는다는 것은
+      아래에서부터 차곡차곡 올리고,
+      이전에 놓인 것 위에 새로운 것을 더하는 일이다.
+      이번 글에서는 AI가 무엇을 자꾸 쌓고,
+      그 표현이 시간과 경험을 어떻게 누적 가능한 것으로 바꾸는지 살펴본다.
+    </p>
+
+  </section>
+
+
+  <section class="vision-body">
+
+    <div class="vision-section">
+      <h3>경험에는 원래 높이가 없다</h3>
+    </div>
+
+    <p>
+      ‘쌓다’는 원래
+      물건을 하나씩 포개어 올리는 동사다.
+    </p>
+
+    <p>
+      벽돌을 쌓고,
+      책을 쌓고,
+      눈을 쌓아 올린다.
+    </p>
+
+    <p>
+      그런데 문장에서는
+      눈에 보이지 않는 것들도 계속 쌓인다.
+    </p>
+
+    <div class="vision-examples">
+      <p>경험을 쌓는다.</p>
+      <p>지식을 쌓는다.</p>
+      <p>경력을 쌓는다.</p>
+      <p>신뢰를 쌓는다.</p>
+      <p>성과를 쌓는다.</p>
+      <p>데이터를 쌓는다.</p>
+      <p>실력을 쌓는다.</p>
+      <p>관계를 쌓는다.</p>
+    </div>
+
+    <p>
+      경험과 지식에는
+      실제 층도 높이도 없다.
+    </p>
+
+    <p>
+      그러나 ‘쌓다’가 붙으면
+      시간이 지나면서 무엇인가 계속 늘어나는 모습이 만들어진다.
+    </p>
+
+    <div class="vision-declare">
+      시간은 보이지 않지만<br>
+      ‘쌓다’와 만나는 순간 층을 가진다.
+    </div>
+
+
+    <div class="vision-section">
+      <h3>경험은 하나씩 위로 올라간다</h3>
+    </div>
+
+    <p>
+      ‘경험을 쌓다’는
+      가장 익숙한 표현 가운데 하나다.
+    </p>
+
+    <div class="vision-examples">
+      <p>다양한 경험을 쌓는다.</p>
+      <p>현장 경험을 쌓는다.</p>
+      <p>실무 경험을 쌓는다.</p>
+      <p>풍부한 경험을 쌓는다.</p>
+      <p>새로운 경험을 쌓는다.</p>
+    </div>
+
+    <p>
+      경험은 사실
+      서로 다른 시간에 일어난 사건들의 집합이다.
+    </p>
+
+    <p>
+      실패한 경험도 있고,
+      기억에 남지 않는 경험도 있으며,
+      서로 충돌하는 경험도 있다.
+    </p>
+
+    <p>
+      그런데 ‘쌓는다’고 표현하면
+      모든 경험이 이전 경험 위에 올라가
+      하나의 높이를 만드는 것처럼 보인다.
+    </p>
+
+    <div class="vision-compare">
+      <p>“여러 현장에서 서로 다른 일을 해 보았다.”</p>
+      <p>
+        경험의 종류와 차이가 드러난다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“다양한 현장 경험을 쌓았다.”</p>
+      <p>
+        여러 경험이 하나의 축적된 자산처럼 보인다.
+      </p>
+    </div>
+
+    <p>
+      두 번째 문장은 훨씬 간결하지만
+      각각의 경험이 어떻게 달랐는지는 사라진다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>지식도 저장되는 물질이 된다</h3>
+    </div>
+
+    <p>
+      AI는 지식도 자주 쌓는다.
+    </p>
+
+    <div class="vision-examples">
+      <p>기초 지식을 쌓는다.</p>
+      <p>전문 지식을 쌓는다.</p>
+      <p>배경지식을 쌓는다.</p>
+      <p>폭넓은 지식을 쌓는다.</p>
+      <p>지식을 차곡차곡 쌓는다.</p>
+    </div>
+
+    <p>
+      이 표현 안에서 지식은
+      하나씩 저장할 수 있는 물건처럼 보인다.
+    </p>
+
+    <p>
+      배우면 늘어나고,
+      많이 배울수록 더 높아진다.
+    </p>
+
+    <p>
+      그러나 실제 학습은
+      새로운 정보를 계속 더하는 일만은 아니다.
+    </p>
+
+    <p>
+      이미 알고 있던 것을 수정하기도 하고,
+      잘못 이해한 것을 버리기도 하며,
+      서로 떨어져 있던 내용을 새롭게 연결하기도 한다.
+    </p>
+
+    <div class="vision-compare">
+      <p>“관련 개념을 계속 공부하며 지식을 쌓았다.”</p>
+      <p>
+        학습이 계속 누적되는 과정처럼 보인다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>
+        “처음에는 두 개념을 같은 것으로 이해했지만
+        자료를 더 읽으면서 차이를 구분하게 되었다.”
+      </p>
+      <p>
+        지식이 늘어난 것보다 이해의 방식이 바뀐 과정이 드러난다.
+      </p>
+    </div>
+
+    <p>
+      ‘쌓다’는 학습의 양을 보여 주기에는 편리하지만
+      이해가 바뀌는 과정까지 설명하지는 않는다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>신뢰는 왜 조금씩 쌓이는가</h3>
+    </div>
+
+    <p>
+      신뢰도 AI가 자주 쌓는 대상이다.
+    </p>
+
+    <div class="vision-examples">
+      <p>신뢰를 쌓는다.</p>
+      <p>고객과 신뢰를 쌓는다.</p>
+      <p>서로에 대한 신뢰를 쌓는다.</p>
+      <p>오랜 시간 신뢰를 쌓아 왔다.</p>
+      <p>작은 행동으로 신뢰를 쌓는다.</p>
+    </div>
+
+    <p>
+      여기서 신뢰는
+      한 번에 생기는 감정이 아니라
+      작은 행동들이 반복되면서 높아지는 구조물이 된다.
+    </p>
+
+    <p>
+      약속을 지키고,
+      같은 태도를 유지하고,
+      실수를 인정하는 행동들이
+      하나씩 아래에 놓인다.
+    </p>
+
+    <p>
+      그래서 ‘신뢰를 쌓다’는 표현은
+      관계가 시간 속에서 만들어진다는 사실을 잘 보여 준다.
+    </p>
+
+    <div class="vision-declare">
+      ‘쌓다’에는 시간이 들어 있다.<br>
+      한 번의 행동보다 반복된 행동을 상상하게 한다.
+    </div>
+
+
+    <div class="vision-section">
+      <h3>경력과 성과는 높이로 바뀐다</h3>
+    </div>
+
+    <p>
+      경력과 성과를 말할 때도
+      ‘쌓다’는 매우 자주 등장한다.
+    </p>
+
+    <div class="vision-examples">
+      <p>경력을 쌓는다.</p>
+      <p>탄탄한 경력을 쌓는다.</p>
+      <p>실적을 쌓는다.</p>
+      <p>성과를 쌓는다.</p>
+      <p>성공 경험을 쌓는다.</p>
+    </div>
+
+    <p>
+      이런 표현에서는
+      사람이 해 온 일이
+      하나의 높이처럼 보이기 시작한다.
+    </p>
+
+    <p>
+      많이 쌓을수록
+      더 높은 위치에 도달한 것처럼 느껴진다.
+    </p>
+
+    <div class="vision-compare">
+      <p>
+        “그는 세 곳의 출판사에서 편집자로 일했고
+        여러 분야의 책을 직접 기획했다.”
+      </p>
+      <p>
+        실제 경력의 내용이 드러난다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“오랜 기간 탄탄한 편집 경력을 쌓았다.”</p>
+      <p>
+        경력 전체가 하나의 안정된 자산처럼 보인다.
+      </p>
+    </div>
+
+    <p>
+      두 번째 표현은 간결하고 긍정적이지만
+      실제로 무엇을 했는지까지 알려 주지는 않는다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>데이터를 쌓으면 진실에 가까워지는가</h3>
+    </div>
+
+    <p>
+      최근 AI 관련 문장에서
+      특히 자주 보이는 것이
+      ‘데이터를 쌓다’라는 표현이다.
+    </p>
+
+    <div class="vision-examples">
+      <p>충분한 데이터를 쌓는다.</p>
+      <p>사용자 데이터를 쌓는다.</p>
+      <p>학습 데이터를 쌓는다.</p>
+      <p>사례 데이터를 축적한다.</p>
+      <p>데이터를 지속적으로 쌓아 간다.</p>
+    </div>
+
+    <p>
+      여기서는 데이터가
+      많이 모일수록 더 나은 판단이 가능하다는 이미지가 만들어진다.
+    </p>
+
+    <p>
+      그러나 데이터는
+      단순히 양이 많다고 의미가 커지는 것은 아니다.
+    </p>
+
+    <p>
+      무엇을 수집했는지,
+      어떤 기준으로 분류했는지,
+      빠진 것은 무엇인지에 따라
+      같은 양의 데이터도 전혀 다른 결과를 만들 수 있다.
+    </p>
+
+    <div class="vision-compare">
+      <p>“충분한 데이터를 쌓으면 정확한 판단이 가능하다.”</p>
+      <p>
+        데이터의 양과 정확성이 자연스럽게 연결된다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>
+        “자료가 많아졌지만 특정 연령과 지역에 편중되어 있어
+        전체 집단을 설명하기는 어려웠다.”
+      </p>
+      <p>
+        데이터의 양보다 구성과 한계가 드러난다.
+      </p>
+    </div>
+
+    <p>
+      ‘쌓다’는 양의 증가를 잘 보여 주지만
+      그 안에 무엇이 들어 있는지는 말해 주지 않는다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>AI는 왜 자꾸 무언가를 쌓는가</h3>
+    </div>
+
+    <p>
+      시간 속에서 일어나는 변화는
+      한눈에 보기 어렵다.
+    </p>
+
+    <p>
+      경험은 지나가고,
+      관계는 변하며,
+      지식은 계속 수정된다.
+    </p>
+
+    <p>
+      그러나 ‘쌓다’라고 표현하면
+      시간의 흐름이 하나의 물질적인 증가로 바뀐다.
+    </p>
+
+    <div class="vision-examples">
+      <p>경험 → 하나씩 더해지는 층</p>
+      <p>지식 → 저장할 수 있는 내용</p>
+      <p>신뢰 → 반복된 행동이 만든 높이</p>
+      <p>경력 → 시간이 만든 자산</p>
+      <p>성과 → 계속 추가되는 결과</p>
+      <p>데이터 → 양으로 늘어나는 자료</p>
+    </div>
+
+    <p>
+      서로 다른 변화들이
+      모두 같은 방식으로 설명된다.
+    </p>
+
+    <p>
+      시간이 지나고,
+      무엇인가 더해지고,
+      이전보다 많아진다.
+    </p>
+
+    <p>
+      ‘쌓다’는 복잡한 시간의 흐름을
+      아주 단순한 누적의 이미지로 바꾼다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>쌓이면 성장의 서사가 만들어진다</h3>
+    </div>
+
+    <p>
+      ‘쌓다’는 AI가 성장 과정을 설명할 때
+      특히 편리한 동사다.
+    </p>
+
+    <div class="vision-examples">
+      <p>기초를 다진다.</p>
+      <p>경험을 쌓는다.</p>
+      <p>실력을 키운다.</p>
+      <p>성과를 쌓는다.</p>
+      <p>전문가로 성장한다.</p>
+    </div>
+
+    <p>
+      이 순서를 이어 놓으면
+      시간은 위로 올라가는 계단처럼 보인다.
+    </p>
+
+    <p>
+      어제보다 오늘 더 많이 가지고,
+      오늘보다 내일 더 높은 곳에 도달한다.
+    </p>
+
+    <p>
+      그러나 실제 성장은
+      언제나 이런 방향으로 움직이지 않는다.
+    </p>
+
+    <p>
+      한동안 발전이 없을 수도 있고,
+      이미 익힌 방식을 버려야 할 수도 있으며,
+      이전보다 서툴러지는 시기를 통과할 수도 있다.
+    </p>
+
+    <div class="vision-compare">
+      <p>
+        “계속 경험을 쌓으며 실력을 높였다.”
+      </p>
+      <p>
+        성장이 한 방향으로 누적되는 과정처럼 보인다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>
+        “처음 익힌 방식을 버리고 다시 연습하면서
+        한동안 오히려 이전보다 더 느려졌다.”
+      </p>
+      <p>
+        실제 학습에 나타나는 후퇴와 재구성의 과정이 드러난다.
+      </p>
+    </div>
+
+    <p>
+      ‘쌓다’는 성장의 방향을 선명하게 만들지만
+      그 과정의 굴곡을 감출 수도 있다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>모든 것이 쌓이는 것은 아니다</h3>
+    </div>
+
+    <p>
+      ‘쌓다’는 자연스럽고 익숙한 표현이다.
+    </p>
+
+    <p>
+      그러나 여러 문장에서 반복되면
+      서로 다른 변화가 모두 같은 모양이 된다.
+    </p>
+
+    <div class="vision-examples">
+      <p>경험을 쌓는다.</p>
+      <p>지식을 쌓는다.</p>
+      <p>신뢰를 쌓는다.</p>
+      <p>관계를 쌓는다.</p>
+      <p>실력을 쌓는다.</p>
+      <p>성과를 쌓는다.</p>
+    </div>
+
+    <p>
+      목적어만 바뀌었을 뿐
+      변화의 방향은 모두 같다.
+    </p>
+
+    <p>
+      계속 더해지고,
+      점점 많아지고,
+      이전보다 높아진다.
+    </p>
+
+    <p>
+      그러나 관계는 깊어질 수도 있고 멀어질 수도 있으며,
+      지식은 늘기보다 바뀔 수도 있고,
+      경험은 쌓이기보다 어떤 판단을 뒤집을 수도 있다.
+    </p>
+
+    <div class="vision-declare">
+      모든 변화를 ‘쌓는다’고 말하면<br>
+      시간은 언제나 위로만 움직이게 된다.
+    </div>
+
+
+    <div class="vision-section">
+      <h3>‘쌓다’를 없애 보면 무엇이 남는가</h3>
+    </div>
+
+    <p>
+      AI 문장을 편집할 때에는
+      ‘쌓다’를 잠시 제거해 보는 방법이 유용하다.
+    </p>
+
+    <div class="vision-compare">
+      <p>“풍부한 경험을 쌓았다.”</p>
+      <p>
+        서로 다른 규모의 프로젝트를 직접 맡으면서
+        일정과 예산을 조정하는 법을 익혔다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“고객과 신뢰를 쌓았다.”</p>
+      <p>
+        납기를 지키고 문제가 생길 때마다 먼저 상황을 설명했다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“전문 지식을 쌓았다.”</p>
+      <p>
+        관련 논문을 읽으며 기존에 알고 있던 개념의 차이를 다시 정리했다.
+      </p>
+    </div>
+
+    <div class="vision-compare">
+      <p>“데이터를 꾸준히 쌓았다.”</p>
+      <p>
+        매달 같은 기준으로 이용자의 선택과 이탈 시점을 기록했다.
+      </p>
+    </div>
+
+    <p>
+      이렇게 바꾸면
+      ‘쌓다’가 압축하고 있던 실제 행동이 드러난다.
+    </p>
+
+    <p>
+      무엇이 얼마나 늘었는지가 아니라
+      무엇을 반복했고,
+      무엇이 달라졌는지를 보여 주게 된다.
+    </p>
+
+    <p>
+      그 뒤에 다시 ‘쌓다’를 사용할 수 있다.
+    </p>
+
+    <p>
+      구체적인 변화가 먼저 있다면
+      ‘쌓다’는 내용을 대신하는 말이 아니라
+      시간의 흐름을 묶어 주는 표현이 된다.
+    </p>
+
+
+    <div class="vision-section">
+      <h3>AI 문장을 읽는 또 하나의 방법</h3>
+    </div>
+
+    <p>
+      앞으로 AI 문장에서 ‘쌓다’를 만날 때는
+      무엇이 얼마나 많아졌는지만 볼 필요가 없다.
+    </p>
+
+    <div class="vision-guide">
+      <p>무엇을 쌓고 있는가.</p>
+      <p>그 대상은 실제로 하나씩 더해질 수 있는 것인가.</p>
+      <p>양의 증가와 질적인 변화가 같은 것으로 취급되고 있지는 않은가.</p>
+      <p>시간이 언제나 위로 올라가는 성장 과정처럼 표현되고 있지는 않은가.</p>
+      <p>경험이나 지식의 실제 내용이 문장 안에 있는가.</p>
+      <p>여러 문장에서 목적어만 바뀐 채 ‘쌓다’가 반복되고 있지는 않은가.</p>
+      <p>‘쌓다’를 빼면 어떤 행동과 변화가 실제로 일어났는지가 보이는가.</p>
+    </div>
+
+    <p>
+      이런 질문을 던지면
+      AI가 시간과 경험을
+      어떻게 누적 가능한 물질로 바꾸는지가 보인다.
+    </p>
+
+    <p>
+      경험에는 층이 생기고,
+      경력에는 높이가 생기며,
+      신뢰에는 무게가 생기고,
+      데이터에는 양이 생긴다.
+    </p>
+
+    <p>
+      그리고 시간은
+      무엇인가를 계속 더해 가는 과정처럼 보인다.
+    </p>
+
+    <p>
+      ‘쌓다’는 오랜 시간의 변화를
+      짧고 선명하게 보여 주는 동사다.
+    </p>
+
+    <p>
+      동시에 수정과 후퇴,
+      단절과 방향 전환까지
+      모두 단순한 증가로 바꿀 수도 있다.
+    </p>
+
+    <p>
+      AI 문장을 분석할 때 중요한 것은
+      ‘쌓다’를 사용하지 않는 일이 아니다.
+    </p>
+
+    <p>
+      무엇이 늘었다고 말하기 전에
+      그 시간 동안 실제로 무엇이 달라졌는지를
+      살펴보는 일이다.
+    </p>
+
+    <div class="vision-declare">
+      AI는 시간을 설명하기 위해 무언가를 쌓는다.<br>
+      좋은 문장은 그 층마다 무엇이 놓여 있는지도 보여 준다.
+    </div>
+
+  </section>
+
+
+  <footer class="editor-footer">
+
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note ·
+      Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </footer>
+
+</main>
+</body>
+</html>
