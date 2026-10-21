@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>‘명륜동 시대’를 생각하며 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+  <style>
+    :root {
+      --vision-ink: rgba(18,28,48,0.96);
+      --vision-muted: rgba(18,28,48,0.68);
+      --vision-accent: rgba(58,110,180,0.95);
+      --vision-line: rgba(18,28,48,0.18);
+      --vision-paper: rgba(245,248,255,0.6);
+    }
+
+    .vision-note {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+      color: var(--vision-ink);
+    }
+
+    .vision-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--vision-line);
+      padding-bottom: 14px;
+      margin-bottom: 36px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--vision-muted);
+    }
+
+    .vision-hero h1 {
+      font-size: clamp(32px,4.8vw,54px);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .vision-hero h1 span {
+      color: var(--vision-accent);
+    }
+
+    .vision-lead {
+      font-size: 18px;
+      line-height: 1.95;
+      color: var(--vision-muted);
+      max-width: 70ch;
+      margin-bottom: 48px;
+    }
+
+    .vision-photo {
+      margin: 0 0 34px;
+    }
+
+    .vision-photo img {
+      display: block;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(18,28,48,0.18);
+    }
+
+    .vision-photo figcaption {
+      max-width: 760px;
+      margin: 14px auto 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--vision-muted);
+      text-align: center;
+    }
+
+    .vision-body {
+      font-size: 16px;
+      line-height: 2.0;
+    }
+
+    .vision-body p {
+      margin: 0 0 22px;
+    }
+
+    .vision-section {
+      margin: 64px 0 36px;
+    }
+
+    .vision-section h3 {
+      font-size: 21px;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      padding-left: 14px;
+      border-left: 4px solid var(--vision-accent);
+    }
+
+    .vision-declare {
+      margin: 70px 0;
+      padding: 36px 28px;
+      background: var(--vision-paper);
+      border-radius: 26px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.9;
+    }
+
+    .vision-sign {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--vision-line);
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--vision-muted);
+    }
+
+    .vision-nav {
+      margin-top: 18px;
+      font-size: 13px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--vision-muted);
+    }
+
+    .vision-nav a {
+      text-decoration: none;
+      border-bottom: 1px solid var(--vision-line);
+      color: inherit;
+      padding-bottom: 2px;
+    }
+
+    .vision-nav a:hover {
+      border-bottom-color: var(--vision-ink);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1>
+        <a class="brandlink" href="../index.html">Noblewithbooks</a>
+      </h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html">
+          <span class="ico"></span>Home
+        </a>
+        <a class="btn-space" href="../about.html">
+          <span class="ico"></span>About
+        </a>
+        <a class="btn-space" href="../publishing-consulting.html">
+          <span class="ico"></span>출판 컨설팅
+        </a>
+        <a class="btn-space" href="../contact.html">
+          <span class="ico"></span>Contact
+        </a>
+        <a class="btn-space" href="../notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+        <a class="btn-space" href="../editor.html" aria-current="page">
+          <span class="ico"></span>편집자 노트
+        </a>
+        <a class="btn-space" href="../books/">
+          <span class="ico"></span>책 소개
+        </a>
+        <a class="btn-space" href="../ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+        <a class="btn-space" href="../audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+        <a class="btn-space" href="../selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+        <a class="btn-space" href="../rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+        <a class="btn-space" href="../honors.html">
+          <span class="ico"></span>Honors
+        </a>
+        <a class="btn-space" href="../press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · MYEONGNYUN-DONG</div>
+    <time datetime="2026-10-19">2026.10.19</time>
+  </div>
+
+  <section class="vision-hero" aria-labelledby="note-title">
+    <h1 id="note-title">
+      <span>‘명륜동 시대’를 생각하며</span>
+    </h1>
+
+    <p class="vision-lead">
+      아직 광교에 살고 있지만, 마음은 벌써 명륜동에 가 있다.
+      익숙한 동네를 걸으면서도 앞으로 걷게 될 골목을 떠올린다.
+      몸은 여기에 있는데, 다음 계절을 기다리는 마음은
+      먼저 그곳에 도착한 모양이다.
+    </p>
+  </section>
+
+  <section class="vision-body" aria-label="편집자 노트 본문">
+
+    <p>
+      서울에서 다시 산다면 사대문 안에 살고 싶었다.
+      창경궁 옆에 보금자리를 두고, 오래된 서울의 시간을 이웃하며 사는 것.
+      광화문이 가까워지면 씨네큐브에 가는 일도 한결 가벼워지겠다.
+      영화를 보고 덕수궁 돌담길을 걷다가 돌아오는 저녁을 생각한다.
+      내게 필요한 것은 이런 일상을 누릴 수 있는 거리였다.
+      혼자 있는 시간을 좋아하지만, 세상으로 나가는 문은 가까이 있어야 했다.
+      고독을 선택하는 것과 고립되는 것은 다른 일이니까.
+    </p>
+
+    <p>
+      명륜동에서는 프랑스어 공부에 좀 더 시간을 쓰려고 한다.
+      장을 보고, 음식을 만들고, 설거지를 하다 하루가 저무는 날이면 생각한다.
+      잘 먹고 사는 일도 중요하지만, 지금 내게는 배워야 할 것이 많다고.
+      밥 한 끼를 사 먹고 얻은 시간으로 프랑스어 문장을 읽거나,
+      쓰다 만 원고를 이어 쓰고 싶다.
+    </p>
+
+    <p>
+      종로는 내 프랑스어의 출발점이기도 하다.
+      이십 년 전, 유명하다는 문법 수업에 등록했다가 사흘 만에 그만두었다.
+      그때는 이 언어를 다시 만나리라고 생각하지 못했다.
+      그런데 이제는 프랑스 방송을 틀어놓고, 들리는 말의 뜻을 따라가며,
+      파리에서 한국어를 가르칠 날을 준비한다.
+      한때 포기했던 언어를 품고 다시 종로로 돌아간다니, 묘한 기분이다.
+    </p>
+
+    <p>
+      출판도 계속한다.
+      《디오니소스 논술》 열 권을 마무리하고,
+      그동안 미뤄둔 내 이야기를 쓰려고 한다.
+      직접 원고를 쓰고 책으로 만드는 동안에도
+      다음 책에 담고 싶은 생각들이 쌓여왔다.
+      철학을 공부하던 나, 출판사를 꾸려온 편집자, 다시 언어를 배우는 학생.
+      그 시간들이 어떻게 이어져 왔는지 써보고 싶다.
+    </p>
+
+    <p>
+      명륜동을 생각하면 파리로 떠날 날만 기다리게 되지는 않는다.
+      그곳에서 보내게 될 한국의 시간도 기대된다.
+      공부하다 창경궁 담장을 따라 걷고,
+      보고 싶은 영화가 걸리면 씨네큐브로 향하는 생활.
+      떠나기 전까지의 날들을 그렇게 채우고 싶다.
+    </p>
+
+    <p>
+      아직 짐 하나 싸지 않았는데 ‘명륜동 시대’라는 이름부터 붙여놓았다.
+      다음에 살 곳을 정하는 일은
+      다음에 어떤 사람으로 살고 싶은지 생각하는 일이기도 한가 보다.
+      이삿날보다 먼저, 내 생활이 조금씩 움직이고 있다.
+    </p>
+
+  </section>
+
+  <footer class="editor-footer">
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note · Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+
+  if (!btn || !links) return;
+
+  btn.addEventListener('click', function () {
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+</body>
+</html>
