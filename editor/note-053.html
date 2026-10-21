@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>‘명륜동 시대’를 생각하며 · 편집자 노트</title>
+  <link rel="stylesheet" href="../style.css?v=stable" />
+
+  <style>
+    :root {
+      --vision-ink: rgba(18,28,48,0.96);
+      --vision-muted: rgba(18,28,48,0.68);
+      --vision-accent: rgba(58,110,180,0.95);
+      --vision-line: rgba(18,28,48,0.18);
+      --vision-paper: rgba(245,248,255,0.6);
+    }
+
+    .vision-note {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+      color: var(--vision-ink);
+    }
+
+    .vision-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--vision-line);
+      padding-bottom: 14px;
+      margin-bottom: 36px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--vision-muted);
+    }
+
+    .vision-hero h1 {
+      font-size: clamp(32px,4.8vw,54px);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .vision-hero h1 span {
+      color: var(--vision-accent);
+    }
+
+    .vision-lead {
+      font-size: 18px;
+      line-height: 1.95;
+      color: var(--vision-muted);
+      max-width: 70ch;
+      margin-bottom: 48px;
+    }
+
+    .vision-photo {
+      margin: 0 0 34px;
+    }
+
+    .vision-photo img {
+      display: block;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(18,28,48,0.18);
+    }
+
+    .vision-photo figcaption {
+      max-width: 760px;
+      margin: 14px auto 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--vision-muted);
+      text-align: center;
+    }
+
+    .vision-body {
+      font-size: 16px;
+      line-height: 2.0;
+    }
+
+    .vision-body p {
+      margin: 0 0 22px;
+    }
+
+    .vision-section {
+      margin: 64px 0 36px;
+    }
+
+    .vision-section h3 {
+      font-size: 21px;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      padding-left: 14px;
+      border-left: 4px solid var(--vision-accent);
+    }
+
+    .vision-declare {
+      margin: 70px 0;
+      padding: 36px 28px;
+      background: var(--vision-paper);
+      border-radius: 26px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.9;
+    }
+
+    .vision-sign {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--vision-line);
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--vision-muted);
+    }
+
+    .vision-nav {
+      margin-top: 18px;
+      font-size: 13px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--vision-muted);
+    }
+
+    .vision-nav a {
+      text-decoration: none;
+      border-bottom: 1px solid var(--vision-line);
+      color: inherit;
+      padding-bottom: 2px;
+    }
+
+    .vision-nav a:hover {
+      border-bottom-color: var(--vision-ink);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1>
+        <a class="brandlink" href="../index.html">Noblewithbooks</a>
+      </h1>
+      <p class="tagline">편집자 노트</p>
+      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+    </div>
+
+    <nav class="nav nav--toggle" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="btn-space" href="../index.html">
+          <span class="ico"></span>Home
+        </a>
+        <a class="btn-space" href="../about.html">
+          <span class="ico"></span>About
+        </a>
+        <a class="btn-space" href="../publishing-consulting.html">
+          <span class="ico"></span>출판 컨설팅
+        </a>
+        <a class="btn-space" href="../contact.html">
+          <span class="ico"></span>Contact
+        </a>
+        <a class="btn-space" href="../notice.html">
+          <span class="ico"></span>공지사항
+        </a>
+        <a class="btn-space" href="../editor.html" aria-current="page">
+          <span class="ico"></span>편집자 노트
+        </a>
+        <a class="btn-space" href="../books/">
+          <span class="ico"></span>책 소개
+        </a>
+        <a class="btn-space" href="../ebooks.html">
+          <span class="ico"></span>전자책
+        </a>
+        <a class="btn-space" href="../audiobook-gallery.html">
+          <span class="ico"></span>오디오북 갤러리
+        </a>
+        <a class="btn-space" href="../selected.html">
+          <span class="ico"></span>KPIPA Edition
+        </a>
+        <a class="btn-space" href="../rights.html">
+          <span class="ico"></span>Rights &amp; Catalog
+        </a>
+        <a class="btn-space" href="../honors.html">
+          <span class="ico"></span>Honors
+        </a>
+        <a class="btn-space" href="../press.html">
+          <span class="ico"></span>언론의 시선
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+<main class="vision-note">
+
+  <div class="vision-top">
+    <div>EDITOR’S NOTE · KOREAN LANGUAGE EDUCATION</div>
+    <time datetime="2026-10-21">2026.10.21</time>
+  </div>
+
+  <section class="vision-hero" aria-labelledby="note-title">
+    <h1 id="note-title">
+      <span>한국어 교재 기획 아이디어를 건져 올리다</span>
+    </h1>
+
+    <p class="vision-lead">
+      한국어 교재 개발은 졸업하고 나서 본격적으로 시작할 생각이었다.
+      그런데 예상보다 훨씬 빨리 아이디어를 건져 올렸다.
+      그것도 2학기 중간고사를 준비하는 도중이었다.
+      20년 출판 경력에서 얻은 감각이 말해주었다.
+      바로 이것이라고.
+    </p>
+  </section>
+
+  <section class="vision-body" aria-label="편집자 노트 본문">
+
+    <p>
+      한국어교육을 공부하기 시작하면서 두 가지 목표를 세웠다.
+      하나는 한국어교원이 되는 것이고, 다른 하나는 기존 교재와 차별화된
+      새로운 형식의 한국어 교재를 개발하는 것이었다.
+      오랫동안 출판 일을 해온 만큼 한국어교육과 출판을 연결하는 일은
+      자연스러운 계획이었다.
+      졸업하고 실제로 학생들을 가르치면서 교재를 기획하게 되리라 생각했다.
+      그런데 예상보다 훨씬 빨리 아이디어를 건져 올렸다.
+      그것도 2학기 중간고사를 준비하는 도중이었다.
+    </p>
+
+    <p>
+      시험공부를 하던 중이었다.
+      한국어의 구조와 의미, 교수법에 관한 내용을 공부하다가
+      문득 하나의 생각이 떠올랐다.
+      처음에는 잠깐 스쳐 지나가는 발상처럼 보였지만,
+      조금 더 생각하는 순간 확신이 들었다.
+      바로 이것이었다.
+      내가 만들고 싶었던 새로운 한국어 교재의 방향이
+      한순간에 선명해졌다.
+      시험을 준비하면서 뜻밖의 수확을 얻은 셈이다.
+    </p>
+
+    <p>
+      사실 교재를 개발하겠다는 목표는 있었지만,
+      구체적으로 어떤 형식이어야 할지는 정하지 못한 상태였다.
+      시중에 나와 있는 교재를 조금 더 친절하게 편집하거나
+      디자인을 세련되게 바꾸는 일에는 관심이 없었다.
+      그런 방식이라면 굳이 새로운 교재를 만들 이유가 없었다.
+      내가 원했던 것은 기존의 틀에서 벗어난 독창적인 기획이었다.
+      학습자가 한국어를 배우는 방식에 새로운 접근을 제시할 수 있는
+      교재를 만들고 싶었다.
+    </p>
+
+    <p>
+      이번에 떠올린 아이디어가 바로 그 답이었다.
+    </p>
+
+    <p>
+      20년 동안 출판 일을 하다 보면 좋은 아이디어를 알아보는 감각이 생긴다.
+      수많은 원고를 기획하고 편집하고 책으로 만드는 과정에서
+      어떤 기획이 경쟁력을 갖는지 판단하는 눈이 길러진다.
+      때로는 오랫동안 고민해도 만족스러운 기획이 나오지 않지만,
+      어떤 아이디어는 떠오르는 순간부터 가능성이 명확하게 보인다.
+      이번이 바로 그런 경우였다.
+      기획의 핵심이 분명하고, 실제 교재로 구현할 수 있으며,
+      기존 교재와의 차별성도 확실하다.
+    </p>
+
+    <p>
+      지금까지 출판 일을 하면서 쌓아온 경험에 비추어볼 때,
+      이번 아이디어에 대해서는 조금의 망설임도 없다.
+      내 출판 인생에서 손꼽을 만한 창의적인 기획이라고 생각한다.
+      제대로 구현한다면 최고의 창의적 한국어 교재를 만들 수 있다는
+      자신감이 있다.
+    </p>
+
+    <p>
+      구체적인 아이디어는 아직 공개할 수 없다.
+      출판 기획에서 가장 중요한 것은 독창성이고,
+      새로운 형식의 교재라면 더욱 그렇다.
+      아이디어를 공개하는 일은 실제 책을 완성한 다음으로
+      미뤄두려고 한다.
+      지금은 이 기획을 온전히 내 것으로 발전시키는 데
+      집중할 생각이다.
+    </p>
+
+    <p>
+      앞으로 남은 과정도 명료하다.
+      한국어교원으로 실제 수업을 진행하면서
+      구상한 방법을 적용해보는 것이다.
+      일종의 교육 현장 임상 실험이다.
+      학습자들이 어떻게 반응하는지,
+      실제로 학습에 어떤 효과를 가져오는지 직접 확인할 계획이다.
+      현장에서 활용하면서 필요한 부분을 점검한 뒤
+      곧바로 출간할 생각이다.
+      아이디어 자체를 두고 더 이상 고민할 필요는 없다고 판단했다.
+      이제 필요한 것은 실행이다.
+    </p>
+
+    <p>
+      생각해보면 흥미로운 일이다.
+      한국어교원이 되기 위해 공부하던 학생이
+      시험을 준비하다가 자신의 새로운 출판 기획을 발견했다.
+      시험 성적을 얻기 위해 읽던 내용이
+      하나의 독창적인 출판 아이디어로 연결된 것이다.
+      한국어교육과 출판을 결합하겠다는 계획이
+      머릿속의 구상에서 실제 프로젝트로 바뀌는 순간이었다.
+    </p>
+
+    <p>
+      한국어 교재 개발은 이제 더 이상 풀어야 할 숙제가 아니다.
+      기획은 이미 완성형이다.
+      졸업 이후에 고민할 과제로 남겨두었던 일을
+      예상보다 일찍 해결한 셈이다.
+      앞으로 한국어교원으로 활동하면서 이 기획을
+      실제 수업에 적용하고,
+      현장에서 확인한 결과를 반영해 출간하면 된다.
+      교재 개발이라는 하나의 과제를 해결했으니,
+      이제 다른 공부와 새로운 도전에도
+      더욱 집중할 수 있게 되었다.
+    </p>
+
+    <p>
+      무엇보다 기쁜 것은 새로운 교재에 대한 고민이
+      예상보다 일찍 끝났다는 사실이다.
+      졸업하고 나서 본격적으로 기획할 생각이었는데,
+      아직 2학기 중간고사도 끝나지 않은 시점에
+      핵심 아이디어를 찾아냈다.
+      앞으로 남은 학업에도 더욱 집중할 수 있게 되었다.
+      무엇을 만들 것인지 분명해졌으니,
+      이제 배우는 지식 하나하나가 교재 개발을 위한 자산이 될 것이다.
+    </p>
+
+    <p>
+      20년 동안 책을 만들어왔지만,
+      새로운 기획이 떠오르는 순간의 즐거움은 여전하다.
+      이번에는 그 즐거움이 조금 특별하다.
+      한국어교육이라는 새로운 분야에서,
+      그동안 축적해온 출판 경험을 마음껏 발휘할
+      기회를 발견했기 때문이다.
+    </p>
+
+    <p>
+      이제 걱정은 끝났다.
+      한국어교원이 되어 현장에서 직접 가르치고,
+      내 아이디어를 적용해본 다음 책으로 완성하면 된다.
+    </p>
+
+    <p>
+      졸업 후에나 시작될 줄 알았던 프로젝트가 벌써 출발선에 섰다.
+      예상보다 빠른 출발이다.
+      그리고 이번 기획만큼은 그 어느 때보다 자신 있다.
+    </p>
+
+  </section>
+
+  <footer class="editor-footer">
+    <div class="note-sign">
+      — Noblewithbooks · Étoile Bleue Créations · Editor’s Note · Digital Magazine Platform
+    </div>
+
+    <div class="note-nav">
+      <a href="../editor.html">← 편집자 노트 목록</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.getElementById('navLinks');
+
+  if (!btn || !links) return;
+
+  btn.addEventListener('click', function () {
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    links.classList.toggle('is-open', !isOpen);
+  });
+})();
+</script>
+
+</body>
+</html>
