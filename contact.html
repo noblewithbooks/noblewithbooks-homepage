@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -7,7 +8,6 @@
   <meta name="description" content="Noblewithbooks (Étoile Bleue Créations / 푸른별창작소) 연락처 및 위치 안내 페이지입니다.">
 
   <link rel="stylesheet" href="style.css?v=stable" />
-
 
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPRRLQZM70"></script>
@@ -19,116 +19,127 @@
   </script>
 </head>
 
-
 <body>
 
   <header class="header">
-  <div class="header-inner">
+    <div class="header-inner">
 
-    <div class="brand">
-      <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
-      <p class="tagline">Contact</p>
-      <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+      <div class="brand">
+        <h1><a class="brandlink" href="index.html">Noblewithbooks</a></h1>
+        <p class="tagline">Contact</p>
+        <p class="subtag">(Étoile Bleue Créations · 푸른별창작소)</p>
+      </div>
+
+      <nav class="nav nav--toggle" aria-label="Primary">
+        <!-- Mobile: toggle button -->
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+          <span class="nav-toggle__label">Menu</span>
+        </button>
+
+        <!-- Links -->
+        <div class="nav-links" id="navLinks">
+          <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
+          <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
+          <a class="btn-space" href="publishing-consulting.html"><span class="ico"></span>출판 컨설팅</a>
+          <a class="btn-space" href="contact.html" aria-current="page"><span class="ico"></span>Contact</a>
+          <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
+          <a class="btn-space" href="editor.html"><span class="ico"></span>편집자 노트</a>
+          <a class="btn-space" href="books/"><span class="ico"></span>책 소개</a>
+          <a class="btn-space" href="ebooks.html"><span class="ico"></span>전자책</a>
+          <a class="btn-space" href="audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
+          <a class="btn-space" href="selected.html"><span class="ico"></span>KPIPA Edition</a>
+          <a class="btn-space" href="rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
+          <a class="btn-space" href="honors.html"><span class="ico"></span>Honors</a>
+          <a class="btn-space" href="press.html"><span class="ico"></span>언론의 시선</a>
+        </div>
+      </nav>
+
+      <script>
+      (function(){
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.getElementById('navLinks');
+        if(!btn || !links) return;
+
+        btn.addEventListener('click', function(){
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          links.classList.toggle('is-open', !isOpen);
+        });
+      })();
+      </script>
+
     </div>
+  </header>
 
-    <nav class="nav nav--toggle" aria-label="Primary">
-  <!-- Mobile: toggle button -->
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
-    <span class="nav-toggle__icon" aria-hidden="true"></span>
-    <span class="nav-toggle__label">Menu</span>
-  </button>
+  <!-- CONTACT PAGE -->
+  <main class="container contact">
+    <section class="card">
+      <h2>Contact</h2>
 
-  <!-- Links -->
-  <div class="nav-links" id="navLinks">
-    <a class="btn-space" href="index.html"><span class="ico"></span>Home</a>
-    <a class="btn-space" href="about.html"><span class="ico"></span>About</a>
-    <a class="btn-space" href="publishing-consulting.html"><span class="ico"></span>출판 컨설팅</a>
-   
-    <a class="btn-space" href="contact.html" aria-current="page"><span class="ico"></span>Contact</a>
+      <p class="muted">Noblewithbooks 관련 문의 및 위치 안내입니다.</p>
+     <p class="muted">일반 문의는 이메일로 부탁드립니다. 긴급한 경우 전화로 연락해 주시기 바랍니다.</p>
+<p class="muted">For general inquiries, please contact us by email. For urgent matters, please call us.</p>
 
-    <a class="btn-space" href="notice.html"><span class="ico"></span>공지사항</a>
-    <a class="btn-space" href="editor.html"><span class="ico"></span>편집자 노트</a>
-    <a class="btn-space" href="books/"><span class="ico"></span>책 소개</a>
-    <a class="btn-space" href="ebooks.html"><span class="ico"></span>전자책</a>
-    <a class="btn-space" href="audiobook-gallery.html"><span class="ico"></span>오디오북 갤러리</a>
-    <a class="btn-space" href="selected.html"><span class="ico"></span>KPIPA Edition</a>
-    <a class="btn-space" href="rights.html"><span class="ico"></span>Rights &amp; Catalog</a>
-    <a class="btn-space" href="honors.html"><span class="ico"></span>Honors</a>
-    <a class="btn-space" href="press.html"><span class="ico"></span>언론의 시선</a>
-  </div>
-</nav>
+      <div class="contact-grid">
 
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.getElementById('navLinks');
-  if(!btn || !links) return;
+        <!-- KR -->
+        <section class="contact-block" aria-label="한국어 주소 및 연락처">
+          <h3>KR</h3>
 
-  btn.addEventListener('click', function(){
-    var isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
-    links.classList.toggle('is-open', !isOpen);
-  });
-})();
-</script>
-
-  </div>
-</header>
-
-<!-- CONTACT PAGE -->
-<main class="container contact">
-  <section class="card">
-    <h2>Contact</h2>
-    <p class="muted">Noblewithbooks 관련 문의 및 위치 안내입니다.</p>
-    <p class="muted">전화 문의는 운영하지 않습니다. 모든 문의는 이메일로 부탁드립니다.</p>
-      <p class="muted">Phone inquiries are not available. Please contact us by email.</p>
-
-
-    <div class="contact-grid">
-      <!-- KR -->
-      <section class="contact-block" aria-label="한국어 주소 및 연락처">
-        <h3>KR</h3>
-
-        <div class="contact-item">
-          <div class="contact-label">주소</div>
-          <div class="contact-value">
-            (10388) 경기도 고양시 일산서구 대산로 123,<br>
-            현대프라자 K일산비즈니스센터 342호(주엽동)
+          <div class="contact-item">
+            <div class="contact-label">주소</div>
+            <div class="contact-value">
+              (10388) 경기도 고양시 일산서구 대산로 123,<br>
+              현대프라자 K일산비즈니스센터 342호(주엽동)
+            </div>
           </div>
-        </div>
 
-       
-        <div class="contact-item">
-          <div class="contact-label">이메일</div>
-          <div class="contact-value">
-            <a class="contact-link" href="mailto:idea444@naver.com">idea444@naver.com</a>
+          <div class="contact-item">
+            <div class="contact-label">대표전화</div>
+            <div class="contact-value">
+              <a class="contact-link" href="tel:07080940416">070-8094-0416</a>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- EN -->
-      <section class="contact-block" aria-label="English address and contact">
-        <h3>EN</h3>
-
-        <div class="contact-item">
-          <div class="contact-label">Address</div>
-          <div class="contact-value">
-            342, K-ILSAN Business Center (Hyundai Plaza), 123, Daesan-ro, Ilsanseo-gu, Goyang-si,
-            Gyeonggi-do 10388, Republic of Korea
+          <div class="contact-item">
+            <div class="contact-label">이메일</div>
+            <div class="contact-value">
+              <a class="contact-link" href="mailto:idea444@naver.com">idea444@naver.com</a>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div class="contact-item">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">
-            <a class="contact-link" href="mailto:idea444@naver.com">idea444@naver.com</a>
+        <!-- EN -->
+        <section class="contact-block" aria-label="English address and contact">
+          <h3>EN</h3>
+
+          <div class="contact-item">
+            <div class="contact-label">Address</div>
+            <div class="contact-value">
+              342, K-ILSAN Business Center (Hyundai Plaza), 123, Daesan-ro, Ilsanseo-gu, Goyang-si,
+              Gyeonggi-do 10388, Republic of Korea
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
 
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">
+              <a class="contact-link" href="tel:07080940416">070-8094-0416</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a class="contact-link" href="mailto:idea444@naver.com">idea444@naver.com</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -138,7 +149,8 @@
       © All rights reserved by Noblewithbooks · 이 사이트의 모든 콘텐츠에 대한 저작권은 책읽는귀족에 있습니다.
     </p>
     <p>
-      (10388) 경기도 고양시 일산서구 대산로 123, 현대프라자 K일산비즈니스센터 342호(주엽동) · 이메일 idea444@naver.com
+      (10388) 경기도 고양시 일산서구 대산로 123, 현대프라자 K일산비즈니스센터 342호(주엽동) ·
+      대표전화 070-8094-0416 · 이메일 idea444@naver.com
     </p>
   </footer>
 
